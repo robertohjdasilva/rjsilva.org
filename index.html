@@ -107,7 +107,7 @@
     .hero{
       background:var(--brown);
       color:#fff;
-      padding:16px 0 18px;
+      padding:12px 0 16px;
     }
 
     .hero-inner{
@@ -136,7 +136,19 @@
       overflow:hidden;
       border:1px solid rgba(255,255,255,.10);
       box-shadow: var(--shadow);
-      min-height:250px;
+      min-height:240px;
+      position:relative;
+    }
+
+    .hero-image::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to right,
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.05)
+      );
     }
 
     .hero-image img{
