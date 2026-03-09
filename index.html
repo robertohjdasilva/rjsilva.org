@@ -24,6 +24,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family: Georgia, "Times New Roman", serif;
@@ -32,7 +33,10 @@
       line-height:1.6;
     }
 
-    a{color:inherit;text-decoration:none}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
 
     .container{
       width:min(var(--max), calc(100% - 40px));
@@ -42,7 +46,7 @@
     .topbar{
       background:var(--brown);
       color:#fff;
-      padding:14px 0;
+      padding:16px 0;
       border-bottom:1px solid rgba(255,255,255,.08);
     }
 
@@ -56,17 +60,15 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:22px;
       min-width:0;
     }
 
     .brand img{
-      width:58px;
-      height:58px;
-      object-fit:cover;
-      border-radius:50%;
-      border:2px solid rgba(255,255,255,.18);
-      background:#fff;
+      height:72px;
+      width:auto;
+      object-fit:contain;
+      display:block;
     }
 
     .brand-text{
@@ -201,13 +203,8 @@
       color:var(--muted);
     }
 
-    .center{text-align:center}
-
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:34px;
-      align-items:center;
+    .center{
+      text-align:center;
     }
 
     .card{
@@ -233,8 +230,7 @@
     }
 
     .book-card h3,
-    .about h3,
-    .essays h3{
+    .about h3{
       margin:0 0 10px;
       font-size:28px;
       color:var(--brown);
@@ -282,6 +278,7 @@
       border:1px solid var(--border);
       border-radius:14px;
       box-shadow:var(--shadow);
+      transition:.15s ease;
     }
 
     .essay-link strong{
@@ -342,7 +339,6 @@
         flex-wrap:wrap;
       }
 
-      .grid-2,
       .book-card,
       .about-wrap{
         grid-template-columns:1fr;
@@ -359,6 +355,10 @@
       .hero-card{
         padding:26px 22px;
       }
+
+      .brand img{
+        height:58px;
+      }
     }
   </style>
 </head>
@@ -367,7 +367,7 @@
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="brand">
-        <img src="images/logo.png" alt="RJ Silva logo" />
+        <img src="images/logo.jpg" alt="RJ Silva logo" />
         <div class="brand-text">
           <h2 class="brand-title">Engineering with a Heart</h2>
           <p class="brand-subtitle">
@@ -378,8 +378,8 @@
 
       <nav class="nav">
         <a href="#project">Project</a>
-        <a href="#book">Book</a>
         <a href="#essays">Essays</a>
+        <a href="#book">Book</a>
         <a href="#about">About</a>
       </nav>
     </div>
@@ -388,7 +388,7 @@
   <header class="hero">
     <div class="container">
       <div class="hero-card">
-        <span class="eyebrow">RJ Silva</span>
+        <span class="eyebrow">R.J. Silva</span>
         <h1>Technology should serve humanity.</h1>
         <p>
           Through essays, reflections, and stories, this project explores the hidden human purpose
@@ -439,30 +439,10 @@
     </div>
   </section>
 
-  <section id="book">
-    <div class="container">
-      <div class="card book-card">
-        <img src="images/book.jpg" alt="Impossible Crossing book cover" />
-        <div>
-          <h3>Impossible Crossing</h3>
-          <p>
-            <em>Impossible Crossing</em> is an integral part of this project. It tells the story of a life
-            shaped by struggle, perseverance, education, migration, and purpose.
-          </p>
-          <p>
-            From washing a muddy truck in the Amazon to becoming a principal engineer in the United States,
-            the book provides the human foundation for everything this site explores.
-          </p>
-          <a class="btn btn-primary" href="#">Learn more</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="essays">
     <div class="container">
       <div class="center">
-        <h2 class="section-title">Recent reflections</h2>
+        <h2 class="section-title">Recent Reflections</h2>
         <p class="section-intro">
           These essays begin with story and grow into a broader philosophy:
           engineering, compassion, systems, and the lives they touch.
@@ -484,6 +464,26 @@
           <strong>Technology Without Compassion Is Incomplete</strong>
           <span>Why systems should serve people, not just efficiency.</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="container">
+      <div class="card book-card">
+        <img src="images/book.jpg" alt="Impossible Crossing book cover" />
+        <div>
+          <h3>Impossible Crossing</h3>
+          <p>
+            <em>Impossible Crossing</em> is an integral part of this project. It tells the story of a life
+            shaped by struggle, perseverance, education, migration, and purpose.
+          </p>
+          <p>
+            From washing a muddy truck in the Amazon to becoming a principal engineer in the United States,
+            the book provides the human foundation for everything this site explores.
+          </p>
+          <a class="btn btn-primary" href="#">Learn more</a>
+        </div>
       </div>
     </div>
   </section>
