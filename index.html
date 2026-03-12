@@ -166,14 +166,45 @@
       font-size:15px;
       white-space:nowrap;
       justify-self:end;
+      align-items:center;
     }
 
-    .nav a{
+    .nav a,
+    .lang-btn{
       color:rgba(255,255,255,.88);
     }
 
-    .nav a:hover{
+    .nav a:hover,
+    .lang-btn:hover{
       color:#fff;
+    }
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-left:6px;
+      padding-left:14px;
+      border-left:1px solid rgba(255,255,255,.18);
+    }
+
+    .lang-btn{
+      background:none;
+      border:none;
+      padding:0;
+      font:inherit;
+      cursor:pointer;
+    }
+
+    .lang-btn.active{
+      color:#fff;
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .lang-label{
+      color:rgba(255,255,255,.5);
+      font-size:13px;
     }
 
     /* HERO */
@@ -518,6 +549,12 @@
         width:100%;
       }
 
+      .lang-switch{
+        margin-left:0;
+        padding-left:0;
+        border-left:none;
+      }
+
       .hero{
         height:auto;
         min-height:0;
@@ -659,21 +696,27 @@
   <div class="topbar">
     <div class="container topbar-inner">
       <div class="brand">
-        <img src="images/logo.jpg" alt="RJ Silva logo" />
+        <img src="images/logo.jpg" alt="RJ Silva logo" data-i18n-attr="alt:logoAlt" />
       </div>
 
       <div class="brand-text">
-        <h2 class="brand-title">Engineering with a Heart</h2>
-        <p class="brand-subtitle">
+        <h2 class="brand-title" data-i18n="brandTitle">Engineering with a Heart</h2>
+        <p class="brand-subtitle" data-i18n="brandSubtitle">
           A reflection on engineering, humanity, and purpose.
         </p>
       </div>
 
       <nav class="nav">
-        <a href="#project">Project</a>
-        <a href="#essays">Essays</a>
-        <a href="#book">Book</a>
-        <a href="#about">About</a>
+        <a href="#project" data-i18n="navProject">Project</a>
+        <a href="#essays" data-i18n="navEssays">Essays</a>
+        <a href="#book" data-i18n="navBook">Book</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <div class="lang-switch" aria-label="Language selector">
+          <span class="lang-label" data-i18n="langLabel">Language</span>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <span class="lang-label">/</span>
+          <button type="button" class="lang-btn" data-lang="pt">PT</button>
+        </div>
       </nav>
     </div>
   </div>
@@ -684,20 +727,20 @@
     <div class="hero-content">
       <div class="hero-layout">
         <div class="hero-box left">
-          <h1 class="hero-title">Every system begins with a human story.</h1>
+          <h1 class="hero-title" data-i18n="heroTitle">Every system begins with a human story.</h1>
         </div>
 
         <div class="hero-spacer" aria-hidden="true"></div>
 
         <div class="hero-box right">
-          <p class="hero-text">
+          <p class="hero-text" data-i18n="heroText">
             Through essays, reflections, and stories, this project explores the hidden
             human purpose behind the systems engineers build.
           </p>
 
           <div class="actions">
-            <a class="btn btn-primary" href="#essays">Read the essays</a>
-            <a class="btn btn-secondary" href="#book">Explore the book</a>
+            <a class="btn btn-primary" href="#essays" data-i18n="heroBtnEssays">Read the essays</a>
+            <a class="btn btn-secondary" href="#book" data-i18n="heroBtnBook">Explore the book</a>
           </div>
         </div>
       </div>
@@ -708,8 +751,8 @@
 
   <section id="project">
     <div class="container center">
-      <h2 class="section-title">Memoir and Manifesto</h2>
-      <p class="section-intro">
+      <h2 class="section-title" data-i18n="projectTitle">Memoir and Manifesto</h2>
+      <p class="section-intro" data-i18n="projectIntro">
         This is a space where technology, resilience, ethics, and human dignity meet.
         It grows out of a life lived across Brazil, Europe, and the United States — between struggle and opportunity,
         invention and responsibility.
@@ -718,23 +761,23 @@
 
     <div class="container feature-list">
       <div class="feature">
-        <h4>Engineering</h4>
-        <p>
+        <h4 data-i18n="feature1Title">Engineering</h4>
+        <p data-i18n="feature1Text">
           The systems that quietly power modern life — that help people connect, move, heal, discover, and solve problems once thought impossible.
         </p>
       </div>
 
       <div class="feature">
-        <h4>Humanity</h4>
-        <p>
+        <h4 data-i18n="feature2Title">Humanity</h4>
+        <p data-i18n="feature2Text">
           A reminder that behind every system there are people: families, workers,
           students, communities, and lives shaped by technology.
         </p>
       </div>
 
       <div class="feature">
-        <h4>Purpose</h4>
-        <p>
+        <h4 data-i18n="feature3Title">Purpose</h4>
+        <p data-i18n="feature3Text">
           Reflections on what progress means when measured not only by efficiency,
           but by fairness, empathy, and dignity.
         </p>
@@ -745,29 +788,29 @@
   <section id="essays">
     <div class="container">
       <div class="center">
-        <h2 class="section-title">Recent Reflections</h2>
-        <p class="section-intro">
+        <h2 class="section-title" data-i18n="essaysTitle">Recent Reflections</h2>
+        <p class="section-intro" data-i18n="essaysIntro">
           Essays exploring the human stories behind the systems that shape our world.
         </p>
       </div>
 
       <div class="essay-links">
         <a class="essay-link" href="#">
-          <div class="essay-type">Essay · March 2026</div>
-          <strong>The Muddy Truck in the Amazon</strong>
-          <span>The origin story behind Engineering with a Heart.</span>
+          <div class="essay-type" data-i18n="essay1Type">Essay · March 2026</div>
+          <strong data-i18n="essay1Title">The Muddy Truck in the Amazon</strong>
+          <span data-i18n="essay1Text">The origin story behind Engineering with a Heart.</span>
         </a>
 
         <a class="essay-link" href="#">
-          <div class="essay-type">Reflection · March 2026</div>
-          <strong>Living Between Two World</strong>
-          <span>A reflection on engineering, inequality, gratitude, and purpose.</span>
+          <div class="essay-type" data-i18n="essay2Type">Reflection · March 2026</div>
+          <strong data-i18n="essay2Title">Living Between Two Worlds</strong>
+          <span data-i18n="essay2Text">A reflection on engineering, inequality, gratitude, and purpose.</span>
         </a>
 
         <a class="essay-link" href="#">
-          <div class="essay-type">Ethics · April 2026</div>
-          <strong>Technology Without Compassion Is Incomplete</strong>
-          <span>Why systems should serve people, not just efficiency.</span>
+          <div class="essay-type" data-i18n="essay3Type">Ethics · April 2026</div>
+          <strong data-i18n="essay3Title">Technology Without Compassion Is Incomplete</strong>
+          <span data-i18n="essay3Text">Why systems should serve people, not just efficiency.</span>
         </a>
       </div>
     </div>
@@ -777,31 +820,31 @@
     <div class="container">
       <div class="card book-card book-feature">
         <div class="book-cover-wrap">
-          <img src="images/book.jpg" alt="Impossible Crossing book cover" />
-            <div class="book-actions">
-              <a class="btn btn-primary" href="#">Learn more</a>
-            </div>
+          <img src="images/book.jpg" alt="Impossible Crossing book cover" data-i18n-attr="alt:bookAlt" />
+          <div class="book-actions">
+            <a class="btn btn-primary" href="#" data-i18n="bookBtn">Learn more</a>
+          </div>
         </div>
   
         <div class="book-copy">
-          <div class="section-kicker">Featured Book</div>
-          <h3>The Book: <em>Impossible Crossing</em></h3>
+          <div class="section-kicker" data-i18n="bookKicker">Featured Book</div>
+          <h3 data-i18n="bookTitle">The Book: <em>Impossible Crossing</em></h3>
   
-          <p>
+          <p data-i18n="bookP1">
             <em>Impossible Crossing</em> is the human story behind <em>Engineering with a Heart</em>.
             It follows a life shaped not only by hardship, perseverance, and crossing between worlds,
             but by the extraordinary people who appeared along the way — family, friends, mentors,
             and unexpected guides whose example, kindness, courage, and influence helped give that journey meaning.
           </p>
   
-          <p>
+          <p data-i18n="bookP2">
             More than a story of personal struggle, it is a tribute to the people and places that formed a life:
             the culture, streets, classrooms, friendships, and acts of compassion that made growth possible.
             The book provides the human foundation for the reflections explored throughout this site — on technology,
             dignity, service, and the belief that progress matters most when it honors people.
           </p>
   
-          <p class="book-meta">Memoir • Resilience • Brazil • Migration • Human dignity</p>
+          <p class="book-meta" data-i18n="bookMeta">Memoir • Resilience • Brazil • Migration • Human dignity</p>
         </div>
       </div>
     </div>
@@ -810,11 +853,11 @@
   <section id="about">
     <div class="container">
       <div class="card about-wrap">
-        <img src="images/rj.jpg" alt="RJ Silva portrait" />
+        <img src="images/rj.jpg" alt="RJ Silva portrait" data-i18n-attr="alt:portraitAlt" />
         <div class="about">
-          <h3>About R.J. Silva</h3>
+          <h3 data-i18n="aboutTitle">About R.J. Silva</h3>
         
-          <p>
+          <p data-i18n="aboutP1">
             R.J. Silva is a Brazilian-born engineer and U.S. citizen whose work bridges cultures,
             disciplines, and ideas. Over a career spanning distributed systems, large-scale
             infrastructure, networking, observability, and software architecture, he has helped
@@ -822,7 +865,7 @@
             remained the same: people, their stories, and the ways knowledge can serve life.
           </p>
         
-          <p>
+          <p data-i18n="aboutP2">
             Having lived in Brazil, Spain, Belgium, and the United States, he writes from the
             perspective of someone who has crossed different cultures and worlds, witnessing both
             hardship and opportunity. That journey shapes both <em>Engineering with a Heart</em>
@@ -830,7 +873,7 @@
             gratitude for the people, encounters, and acts of generosity that quietly shaped his life.
           </p>
         
-          <div class="quote">
+          <div class="quote" data-i18n="quote">
             “Technology matters most when it helps us see one another more clearly, serve one
             another more faithfully, and build with both excellence and compassion.”
           </div>
@@ -840,42 +883,159 @@
   </section>
 
   <footer>
-    <div class="container">
+    <div class="container" data-i18n="footer">
       © 2022–2026 R.J. Silva · Engineering with a Heart
     </div>
   </footer>
 
+  <script>
+    const translations = {
+      en: {
+        pageTitle: "Engineering with a Heart | R.J. Silva",
+        pageDescription: "Engineering with a Heart — A reflection on engineering, humanity, and the purpose behind the systems we have built.",
+        logoAlt: "RJ Silva logo",
+        bookAlt: "Impossible Crossing book cover",
+        portraitAlt: "RJ Silva portrait",
+        brandTitle: "Engineering with a Heart",
+        brandSubtitle: "A reflection on engineering, humanity, and purpose.",
+        navProject: "Project",
+        navEssays: "Essays",
+        navBook: "Book",
+        navAbout: "About",
+        langLabel: "Language",
+        heroTitle: "Every system begins with a human story.",
+        heroText: "Through essays, reflections, and stories, this project explores the hidden human purpose behind the systems engineers build.",
+        heroBtnEssays: "Read the essays",
+        heroBtnBook: "Explore the book",
+        projectTitle: "Memoir and Manifesto",
+        projectIntro: "This is a space where technology, resilience, ethics, and human dignity meet. It grows out of a life lived across Brazil, Europe, and the United States — between struggle and opportunity, invention and responsibility.",
+        feature1Title: "Engineering",
+        feature1Text: "The systems that quietly power modern life — that help people connect, move, heal, discover, and solve problems once thought impossible.",
+        feature2Title: "Humanity",
+        feature2Text: "A reminder that behind every system there are people: families, workers, students, communities, and lives shaped by technology.",
+        feature3Title: "Purpose",
+        feature3Text: "Reflections on what progress means when measured not only by efficiency, but by fairness, empathy, and dignity.",
+        essaysTitle: "Recent Reflections",
+        essaysIntro: "Essays exploring the human stories behind the systems that shape our world.",
+        essay1Type: "Essay · March 2026",
+        essay1Title: "The Muddy Truck in the Amazon",
+        essay1Text: "The origin story behind Engineering with a Heart.",
+        essay2Type: "Reflection · March 2026",
+        essay2Title: "Living Between Two Worlds",
+        essay2Text: "A reflection on engineering, inequality, gratitude, and purpose.",
+        essay3Type: "Ethics · April 2026",
+        essay3Title: "Technology Without Compassion Is Incomplete",
+        essay3Text: "Why systems should serve people, not just efficiency.",
+        bookBtn: "Learn more",
+        bookKicker: "Featured Book",
+        bookTitle: "The Book: <em>Impossible Crossing</em>",
+        bookP1: "<em>Impossible Crossing</em> is the human story behind <em>Engineering with a Heart</em>. It follows a life shaped not only by hardship, perseverance, and crossing between worlds, but by the extraordinary people who appeared along the way — family, friends, mentors, and unexpected guides whose example, kindness, courage, and influence helped give that journey meaning.",
+        bookP2: "More than a story of personal struggle, it is a tribute to the people and places that formed a life: the culture, streets, classrooms, friendships, and acts of compassion that made growth possible. The book provides the human foundation for the reflections explored throughout this site — on technology, dignity, service, and the belief that progress matters most when it honors people.",
+        bookMeta: "Memoir • Resilience • Brazil • Migration • Human dignity",
+        aboutTitle: "About R.J. Silva",
+        aboutP1: "R.J. Silva is a Brazilian-born engineer and U.S. citizen whose work bridges cultures, disciplines, and ideas. Over a career spanning distributed systems, large-scale infrastructure, networking, observability, and software architecture, he has helped build complex systems and earned 29 U.S. patents — but his deepest interest has always remained the same: people, their stories, and the ways knowledge can serve life.",
+        aboutP2: "Having lived in Brazil, Spain, Belgium, and the United States, he writes from the perspective of someone who has crossed different cultures and worlds, witnessing both hardship and opportunity. That journey shapes both <em>Engineering with a Heart</em> and <em>Impossible Crossing</em>, a memoir rooted not in self-celebration but in gratitude for the people, encounters, and acts of generosity that quietly shaped his life.",
+        quote: "“Technology matters most when it helps us see one another more clearly, serve one another more faithfully, and build with both excellence and compassion.”",
+        footer: "© 2022–2026 R.J. Silva · Engineering with a Heart"
+      },
+      pt: {
+        pageTitle: "Engineering with a Heart | R.J. Silva",
+        pageDescription: "Engineering with a Heart — Uma reflexão sobre engenharia, humanidade e o propósito por trás dos sistemas que construímos.",
+        logoAlt: "Logotipo de RJ Silva",
+        bookAlt: "Capa do livro Impossible Crossing",
+        portraitAlt: "Retrato de RJ Silva",
+        brandTitle: "Engineering with a Heart",
+        brandSubtitle: "Uma reflexão sobre engenharia, humanidade e propósito.",
+        navProject: "Projeto",
+        navEssays: "Ensaios",
+        navBook: "Livro",
+        navAbout: "Sobre",
+        langLabel: "Idioma",
+        heroTitle: "Todo sistema começa com uma história humana.",
+        heroText: "Por meio de ensaios, reflexões e histórias, este projeto explora o propósito humano oculto por trás dos sistemas que os engenheiros constroem.",
+        heroBtnEssays: "Ler os ensaios",
+        heroBtnBook: "Explorar o livro",
+        projectTitle: "Memórias e Manifesto",
+        projectIntro: "Este é um espaço onde tecnologia, resiliência, ética e dignidade humana se encontram. Ele nasce de uma vida vivida entre o Brasil, a Europa e os Estados Unidos — entre luta e oportunidade, invenção e responsabilidade.",
+        feature1Title: "Engenharia",
+        feature1Text: "Os sistemas que silenciosamente movem a vida moderna — ajudando as pessoas a se conectar, se deslocar, se curar, descobrir e resolver problemas antes considerados impossíveis.",
+        feature2Title: "Humanidade",
+        feature2Text: "Um lembrete de que por trás de cada sistema existem pessoas: famílias, trabalhadores, estudantes, comunidades e vidas moldadas pela tecnologia.",
+        feature3Title: "Propósito",
+        feature3Text: "Reflexões sobre o que significa progresso quando ele é medido não apenas pela eficiência, mas também pela justiça, empatia e dignidade.",
+        essaysTitle: "Reflexões Recentes",
+        essaysIntro: "Ensaios que exploram as histórias humanas por trás dos sistemas que moldam o nosso mundo.",
+        essay1Type: "Ensaio · Março de 2026",
+        essay1Title: "O Caminhão Coberto de Lama na Amazônia",
+        essay1Text: "A história de origem por trás de Engineering with a Heart.",
+        essay2Type: "Reflexão · Março de 2026",
+        essay2Title: "Vivendo Entre Dois Mundos",
+        essay2Text: "Uma reflexão sobre engenharia, desigualdade, gratidão e propósito.",
+        essay3Type: "Ética · Abril de 2026",
+        essay3Title: "Tecnologia Sem Compaixão É Incompleta",
+        essay3Text: "Por que os sistemas devem servir às pessoas, e não apenas à eficiência.",
+        bookBtn: "Saiba mais",
+        bookKicker: "Livro em Destaque",
+        bookTitle: "O Livro: <em>Impossible Crossing</em>",
+        bookP1: "<em>Impossible Crossing</em> é a história humana por trás de <em>Engineering with a Heart</em>. Ele acompanha uma vida moldada não apenas por dificuldades, perseverança e travessias entre mundos, mas também pelas pessoas extraordinárias que surgiram ao longo do caminho — família, amigos, mentores e guias inesperados, cujo exemplo, bondade, coragem e influência ajudaram a dar sentido a essa jornada.",
+        bookP2: "Mais do que uma história de luta pessoal, é uma homenagem às pessoas e aos lugares que formaram uma vida: a cultura, as ruas, as salas de aula, as amizades e os atos de compaixão que tornaram o crescimento possível. O livro oferece a base humana para as reflexões exploradas neste site — sobre tecnologia, dignidade, serviço e a convicção de que o progresso importa mais quando honra as pessoas.",
+        bookMeta: "Memórias • Resiliência • Brasil • Migração • Dignidade humana",
+        aboutTitle: "Sobre R.J. Silva",
+        aboutP1: "R.J. Silva é um engenheiro nascido no Brasil e cidadão americano, cujo trabalho conecta culturas, disciplinas e ideias. Ao longo de uma carreira que abrange sistemas distribuídos, infraestrutura em grande escala, redes, observabilidade e arquitetura de software, ele ajudou a construir sistemas complexos e conquistou 29 patentes nos Estados Unidos — mas seu interesse mais profundo sempre foi o mesmo: as pessoas, suas histórias e as maneiras pelas quais o conhecimento pode servir à vida.",
+        aboutP2: "Tendo vivido no Brasil, na Espanha, na Bélgica e nos Estados Unidos, ele escreve a partir da perspectiva de alguém que atravessou diferentes culturas e mundos, testemunhando tanto dificuldades quanto oportunidades. Essa jornada molda tanto <em>Engineering with a Heart</em> quanto <em>Impossible Crossing</em>, um livro de memórias enraizado não na autoglorificação, mas na gratidão pelas pessoas, pelos encontros e pelos gestos de generosidade que silenciosamente marcaram sua vida.",
+        quote: "“A tecnologia tem mais valor quando nos ajuda a enxergar uns aos outros com mais clareza, a servir uns aos outros com mais fidelidade e a construir com excelência e compaixão.”",
+        footer: "© 2022–2026 R.J. Silva · Engineering with a Heart"
+      }
+    };
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    function applyLanguage(lang) {
+      const selected = translations[lang] ? lang : 'en';
+      const content = translations[selected];
+
+      document.documentElement.lang = selected === 'pt' ? 'pt-BR' : 'en';
+      document.title = content.pageTitle;
+      if (metaDescription) metaDescription.setAttribute('content', content.pageDescription);
+
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (content[key] !== undefined) {
+          el.innerHTML = content[key];
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+        const [attr, key] = el.getAttribute('data-i18n-attr').split(':');
+        if (content[key] !== undefined) {
+          el.setAttribute(attr, content[key]);
+        }
+      });
+
+      document.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === selected);
+      });
+
+      localStorage.setItem('preferredLanguage', selected);
+    }
+
+    function detectInitialLanguage() {
+      const saved = localStorage.getItem('preferredLanguage');
+      if (saved && translations[saved]) return saved;
+
+      const browserLanguages = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || 'en'];
+
+      return browserLanguages.some((lang) => String(lang).toLowerCase().startsWith('pt')) ? 'pt' : 'en';
+    }
+
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+    });
+
+    applyLanguage(detectInitialLanguage());
+  </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
