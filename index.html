@@ -93,6 +93,58 @@
       color:rgba(255,255,255,.78);
     }
 
+    .section-kicker{
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    
+    .book-feature{
+      align-items:start;
+    }
+    
+    .book-copy h3{
+      margin:0 0 12px;
+      font-size:30px;
+      line-height:1.15;
+      color:var(--brown);
+    }
+    
+    .book-meta{
+      margin-top:14px;
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    
+    .book-actions{
+      margin-top:18px;
+    }
+    
+    .book-cover-wrap{
+      position:relative;
+    }
+    
+    .book-cover-wrap::after{
+      content:"";
+      position:absolute;
+      inset:auto 12px -12px 12px;
+      height:22px;
+      background:rgba(42,26,18,.10);
+      filter:blur(14px);
+      border-radius:50%;
+      z-index:0;
+    }
+    
+    .book-cover-wrap img{
+      position:relative;
+      z-index:1;
+    }
+    
     .nav{
       display:flex;
       gap:18px;
@@ -709,19 +761,34 @@
 
   <section id="book">
     <div class="container">
-      <div class="card book-card">
-        <img src="images/book.jpg" alt="Impossible Crossing book cover" />
-        <div>
-          <h3>Impossible Crossing</h3>
+      <div class="card book-card book-feature">
+        <div class="book-cover-wrap">
+          <img src="images/book.jpg" alt="Impossible Crossing book cover" />
+        </div>
+  
+        <div class="book-copy">
+          <div class="section-kicker">Featured Book</div>
+          <h3>The Book: <em>Impossible Crossing</em></h3>
+  
           <p>
-            <em>Impossible Crossing</em> is an integral part of this project. It tells the story of a life
-            shaped by struggle, perseverance, education, migration, and purpose.
+            <em>Impossible Crossing</em> is the human story behind <em>Engineering with a Heart</em>.
+            It follows a life shaped not only by hardship, perseverance, and crossing between worlds,
+            but by the extraordinary people who appeared along the way — family, friends, mentors,
+            and unexpected guides whose example, kindness, courage, and influence helped give that journey meaning.
           </p>
+  
           <p>
-            From washing a muddy truck in the Amazon to becoming a principal engineer in the United States,
-            the book provides the human foundation for everything this site explores.
+            More than a story of personal struggle, it is a tribute to the people and places that formed a life:
+            the culture, streets, classrooms, friendships, and acts of compassion that made growth possible.
+            The book provides the human foundation for the reflections explored throughout this site — on technology,
+            dignity, service, and the belief that progress matters most when it honors people.
           </p>
-          <a class="btn btn-primary" href="#">Learn more</a>
+  
+          <p class="book-meta">Memoir • Resilience • Brazil • Migration • Human dignity</p>
+  
+          <div class="book-actions">
+            <a class="btn btn-primary" href="#">Learn more</a>
+          </div>
         </div>
       </div>
     </div>
@@ -759,6 +826,7 @@
 
 </body>
 </html>
+
 
 
 
