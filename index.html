@@ -504,6 +504,13 @@
       font-size:14px;
     }
 
+
+    .section-actions{
+      display:flex;
+      justify-content:center;
+      margin-top:18px;
+    }
+
     /* MOBILE / TABLET FIXES */
     @media (max-width: 900px){
       .topbar{
@@ -708,7 +715,7 @@
 
       <nav class="nav">
         <a href="#project" data-i18n="navProject">Project</a>
-        <a href="#essays" data-i18n="navEssays">Essays</a>
+        <a href="essays.html" data-i18n="navEssays">Essays</a>
         <a href="#book" data-i18n="navBook">Book</a>
         <a href="#about" data-i18n="navAbout">About</a>
         <div class="lang-switch" aria-label="Language selector">
@@ -739,7 +746,7 @@
           </p>
 
           <div class="actions">
-            <a class="btn btn-primary" href="#essays" data-i18n="heroBtnEssays">Read the essays</a>
+            <a class="btn btn-primary" href="essays.html" data-i18n="heroBtnEssays">Read the essays</a>
             <a class="btn btn-secondary" href="#book" data-i18n="heroBtnBook">Explore the book</a>
           </div>
         </div>
@@ -795,23 +802,27 @@
       </div>
 
       <div class="essay-links">
-        <a class="essay-link" href="#">
+        <a class="essay-link" href="essays.html#muddy-truck">
           <div class="essay-type" data-i18n="essay1Type">Essay · March 2026</div>
           <strong data-i18n="essay1Title">The Muddy Truck in the Amazon</strong>
           <span data-i18n="essay1Text">The origin story behind Engineering with a Heart.</span>
         </a>
 
-        <a class="essay-link" href="#">
+        <a class="essay-link" href="essays.html#two-worlds">
           <div class="essay-type" data-i18n="essay2Type">Reflection · March 2026</div>
           <strong data-i18n="essay2Title">Living Between Two Worlds</strong>
           <span data-i18n="essay2Text">A reflection on engineering, inequality, gratitude, and purpose.</span>
         </a>
 
-        <a class="essay-link" href="#">
+        <a class="essay-link" href="essays.html#compassion">
           <div class="essay-type" data-i18n="essay3Type">Ethics · April 2026</div>
           <strong data-i18n="essay3Title">Technology Without Compassion Is Incomplete</strong>
           <span data-i18n="essay3Text">Why systems should serve people, not just efficiency.</span>
         </a>
+      </div>
+
+      <div class="section-actions">
+        <a class="btn btn-primary" href="essays.html" data-i18n="essaysBtn">View all essays</a>
       </div>
     </div>
   </section>
@@ -926,6 +937,7 @@
         essay3Type: "Ethics · April 2026",
         essay3Title: "Technology Without Compassion Is Incomplete",
         essay3Text: "Why systems should serve people, not just efficiency.",
+        essaysBtn: "View all essays",
         bookBtn: "Learn more",
         bookKicker: "Featured Book",
         bookTitle: "The Book: <em>Impossible Crossing</em>",
@@ -974,6 +986,7 @@
         essay3Type: "Ética · Abril de 2026",
         essay3Title: "Tecnologia Sem Compaixão É Incompleta",
         essay3Text: "Por que os sistemas devem servir às pessoas, e não apenas à eficiência.",
+        essaysBtn: "Ver todos os ensaios",
         bookBtn: "Saiba mais",
         bookKicker: "Livro em Destaque",
         bookTitle: "O Livro: <em>Impossible Crossing</em>",
