@@ -40,13 +40,18 @@
     .lang-btn.active{color:#fff;text-decoration:underline;text-underline-offset:3px}
     .lang-label{color:rgba(255,255,255,.5);font-size:13px}
     .top-hero-divider{height:1px;background:#ffffff}
-    .hero{position:relative;padding:62px 0 54px;color:#fff;background:linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.34)), url("images/bridge.jpg") center 60%/cover no-repeat;overflow:hidden}
-    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center, rgba(0,0,0,0) 34%, rgba(0,0,0,.38) 100%);pointer-events:none}
-    .hero-content{position:relative;z-index:2;width:min(var(--max), calc(100% - 40px));margin:0 auto;text-align:center}
-    .hero-kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#f1cc8a;font-weight:700;margin-bottom:10px}
-    .hero-title{margin:0 auto 12px;max-width:16ch;font-size:clamp(30px, 5vw, 56px);line-height:1.02;letter-spacing:-.7px;text-wrap:balance}
-    .hero-text{margin:0 auto;max-width:760px;font-size:clamp(17px, 2.1vw, 21px);color:rgba(255,255,255,.94)}
-    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+    .hero{position:relative;height:270px;display:flex;align-items:center;color:#fff;background:linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.22)), url("images/bridge.jpg") center 70%/cover no-repeat;overflow:hidden}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center, rgba(0,0,0,0) 38%, rgba(0,0,0,.42) 100%);pointer-events:none}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center 58%, rgba(255,210,120,0.30) 0%, rgba(255,210,120,0.16) 18%, rgba(255,210,120,0.05) 32%, rgba(0,0,0,0) 55%);pointer-events:none;mix-blend-mode:screen}
+    .hero-content{position:relative;z-index:2;width:min(var(--max), calc(100% - 40px));margin:0 auto}
+    .hero-layout{display:grid;grid-template-columns:350px minmax(160px,1fr) 330px;gap:26px;align-items:stretch;min-height:270px;width:100%}
+    .hero-box{display:flex;flex-direction:column;text-align:center}
+    .hero-box.left{justify-content:center;align-items:center}
+    .hero-box.right{justify-content:center;align-items:center;gap:30px}
+    .hero-title{margin:0;font-size:clamp(24px, 3.8vw, 43px);line-height:1.03;letter-spacing:-.6px;text-wrap:balance}
+    .hero-text{margin:0;font-size:clamp(16px, 1.9vw, 19px);color:rgba(255,255,255,.94);max-width:330px;line-height:1.45}
+    .hero-spacer{min-height:1px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:nowrap;justify-content:center;align-items:center;margin-top:0}
     .btn{display:inline-block;padding:13px 18px;border-radius:10px;font-weight:700;font-size:15px;transition:.2s ease;white-space:nowrap}
     .btn-primary{background:var(--gold);color:#fff}
     .btn-primary:hover{background:var(--gold-dark)}
@@ -77,10 +82,13 @@
       .brand-subtitle{font-size:14px;line-height:1.35}
       .nav{justify-self:auto;justify-content:center;flex-wrap:wrap;gap:14px 18px;white-space:normal;width:100%}
       .lang-switch{margin-left:0;padding-left:0;border-left:none}
-      .hero{padding:46px 0 42px;background-position:center center}
+      .hero{height:auto;min-height:0;padding:36px 0 34px;background-position:center center}
       .hero-content,.container{width:min(var(--max), calc(100% - 28px))}
-      .hero-title{font-size:clamp(28px, 10vw, 48px)}
-      .hero-text{font-size:clamp(16px, 4.8vw, 20px)}
+      .hero-layout{grid-template-columns:1fr;gap:22px;min-height:auto}
+      .hero-spacer{display:none}
+      .hero-box.left,.hero-box.right{min-height:auto;justify-content:center;align-items:center}
+      .hero-title{font-size:clamp(22px, 10vw, 42px);max-width:10ch}
+      .hero-text{max-width:26ch;font-size:clamp(15px, 4.8vw, 19px)}
       .section-title{font-size:clamp(28px, 8vw, 34px)}
       .section-intro{font-size:17px}
     }
@@ -93,7 +101,10 @@
       .essay-card,.notes-card{padding:20px}
       .essay-card h3{font-size:24px}
       .essay-card p{font-size:16px}
-      .hero-actions{flex-direction:column;align-items:center}
+      .hero{padding:30px 0 28px}
+      .hero-title{max-width:11ch;line-height:1.02}
+      .hero-text{max-width:24ch}
+      .hero-actions{flex-direction:column;align-items:center;width:100%}
       .hero-actions .btn,.essay-actions .btn{width:min(100%, 280px);text-align:center}
     }
   </style>
@@ -125,12 +136,21 @@
   <div class="top-hero-divider"></div>
   <header class="hero">
     <div class="hero-content">
-      <div class="hero-kicker" data-i18n="heroKicker">Essay Collection</div>
-      <h1 class="hero-title" data-i18n="heroTitle">Essays and reflections behind the project.</h1>
-      <p class="hero-text" data-i18n="heroText">This page gathers the essays that shape the vision of <em>Engineering with a Heart</em> — technology, ethics, resilience, migration, gratitude, and the human lives behind the systems we build.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#essay-list" data-i18n="heroBtnPrimary">Browse the essays</a>
-        <a class="btn btn-secondary" href="index.html" data-i18n="heroBtnSecondary">Return to homepage</a>
+      <div class="hero-layout">
+        <div class="hero-box left">
+          <h1 class="hero-title" data-i18n="heroTitle">Essays and reflections behind the project.</h1>
+        </div>
+
+        <div class="hero-spacer" aria-hidden="true"></div>
+
+        <div class="hero-box right">
+          <p class="hero-text" data-i18n="heroText">This page gathers the essays that shape the vision of <em>Engineering with a Heart</em> — technology, ethics, resilience, migration, gratitude, and the human lives behind the systems we build.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#essay-list" data-i18n="heroBtnPrimary">Browse the essays</a>
+            <a class="btn btn-secondary" href="index.html" data-i18n="heroBtnSecondary">Return to homepage</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -221,7 +241,6 @@
         navBook: "Book",
         navAbout: "About",
         langLabel: "Language",
-        heroKicker: "Essay Collection",
         heroTitle: "Essays and reflections behind the project.",
         heroText: "This page gathers the essays that shape the vision of <em>Engineering with a Heart</em> — technology, ethics, resilience, migration, gratitude, and the human lives behind the systems we build.",
         heroBtnPrimary: "Browse the essays",
@@ -266,7 +285,6 @@
         navBook: "Livro",
         navAbout: "Sobre",
         langLabel: "Idioma",
-        heroKicker: "Coleção de Ensaios",
         heroTitle: "Ensaios e reflexões por trás do projeto.",
         heroText: "Esta página reúne os ensaios que moldam a visão de <em>Engineering with a Heart</em> — tecnologia, ética, resiliência, migração, gratidão e as vidas humanas por trás dos sistemas que construímos.",
         heroBtnPrimary: "Ver os ensaios",
