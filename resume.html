@@ -331,7 +331,8 @@
         <h1>Roberto H. Jacob da Silva</h1>
         <p class="lead">
           Distributed systems, observability, networking, virtualization, and diagnostics —
-          built across Brazil, Spain, Belgium, and the United States.
+          with recent leadership in VM orchestration reliability, Linux cgroups-based isolation,
+          and distributed trace analysis at cloud scale.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="./resume.pdf" target="_blank" rel="noopener">Open PDF Resume</a>
@@ -342,10 +343,10 @@
       <aside class="hero-card">
         <h2>Professional snapshot</h2>
         <ul>
-          <li>20+ years across networking, cloud platforms, observability, and diagnostics</li>
-          <li>Inventor on 29 U.S. patents spanning networking, distributed systems, telemetry, cloud, and IoT</li>
-          <li>Author of <em>Impossible Crossing</em> and creator of <em>Engineering with a Heart</em></li>
-          <li>B.S.E. in Electronics Engineering from ITA, Brazil</li>
+          <li>20+ years across distributed systems, networking, virtualization, observability, and diagnostics</li>
+          <li>Inventor on 29 U.S. patents spanning networking, distributed systems, observability, cloud infrastructure, and IoT</li>
+          <li>Recent leadership in VM orchestration reliability, distributed tracing, and automated diagnostics for CI/CD infrastructure</li>
+          <li>Author of <em>Impossible Crossing</em> and founder of <em>Engineering with a Heart</em></li>
         </ul>
       </aside>
     </div>
@@ -359,18 +360,20 @@
         <h2>Professional summary</h2>
         <p>
           Principal Software Engineer with 20+ years of experience designing large-scale distributed systems,
-          networking software, observability platforms, and diagnostic infrastructure for enterprise environments.
-          My work spans Ethernet switching, IP networking, remote access, virtualization, cloud platforms,
-          telemetry systems, and distributed tracing.
+          networking software, and observability platforms used to diagnose and stabilize complex production
+          environments. My work spans Ethernet switching, IP networking, virtualization, cloud platforms,
+          telemetry systems, Linux-based infrastructure, and distributed tracing.
         </p>
         <p>
           Across my career I have contributed as developer, architect, debugger, systems thinker, and technical
           writer — combining deep systems programming with architectural leadership focused on reliability,
-          visibility, performance, and operational transparency.
+          visibility, performance, and operational transparency. Recent work includes stabilizing distributed
+          virtual machine infrastructure through cgroups-based resource isolation, VM networking improvements,
+          and automated diagnostics for large-scale CI/CD workloads.
         </p>
         <p>
           In parallel with engineering, I write about resilience, technology, and the human side of building systems.
-          I am the author of <em>Impossible Crossing</em> and the voice behind <em>Engineering with a Heart</em>.
+          I am the author of <em>Impossible Crossing</em> and the founder of <em>Engineering with a Heart</em>.
         </p>
 
         <div class="meta-grid">
@@ -385,18 +388,18 @@
         <div class="section-kicker">Strengths</div>
         <h2>Core expertise</h2>
         <div class="chips">
+          <span class="chip">Observability &amp; Diagnostics</span>
           <span class="chip">Distributed Systems</span>
-          <span class="chip">Observability & Diagnostics</span>
+          <span class="chip">Virtualization &amp; Cloud Platforms</span>
           <span class="chip">Networking</span>
           <span class="chip">Ethernet Switching</span>
-          <span class="chip">IP / TCP/IP</span>
           <span class="chip">Telemetry</span>
-          <span class="chip">Virtualization</span>
-          <span class="chip">Cloud Infrastructure</span>
+          <span class="chip">Linux cgroups &amp; Resource Isolation</span>
+          <span class="chip">VM Orchestration</span>
+          <span class="chip">OpenTelemetry &amp; Distributed Tracing</span>
           <span class="chip">Systems Programming</span>
           <span class="chip">Performance Analysis</span>
-          <span class="chip">Testing & Debugging</span>
-          <span class="chip">Architecture & Technical Writing</span>
+          <span class="chip">Testing &amp; Debugging</span>
         </div>
       </section>
 
@@ -409,15 +412,16 @@
             <div class="role-header">
               <div>
                 <h3>Microsoft</h3>
-                <div class="sub">Principal Software Engineer · Jan 2022 – Present · Redmond, Washington, United States</div>
+                <div class="sub">Principal Software Engineer · 2022 – Present · Redmond, Washington, United States</div>
               </div>
             </div>
             <ul>
-              <li>Lead architect and primary developer of an observability and diagnostics platform for a distributed VM orchestration system used in large-scale CI/CD infrastructure.</li>
-              <li>Designed and implemented end-to-end distributed tracing using OpenTelemetry, covering gRPC communication, asynchronous coroutine execution, and scheduler activity through centralized trace-context propagation.</li>
-              <li>Built a custom distributed trace analysis platform with a trace database, ingestion pipeline, analysis tooling, and developer UI for timeline visualization and automated debugging.</li>
-              <li>Developed automated post-run analysis to detect failures, instrumentation gaps, regressions, and critical execution paths across distributed traces.</li>
-              <li>Improved infrastructure reliability through enhancements in VM deployment flows, workload distribution, cgroups, namespaces, and lifecycle stability.</li>
+              <li>Lead architect and primary developer of an observability and diagnostics platform for a distributed VM orchestration system used in large-scale CI/CD infrastructure, applying deep expertise in distributed systems, telemetry, performance analysis, and cloud infrastructure.</li>
+              <li>Designed and implemented end-to-end distributed tracing using OpenTelemetry across multiple services, capturing gRPC communication, asynchronous coroutine execution, and scheduler operations, reducing incident investigation time by 83% (4.2 hours → 10 minutes).</li>
+              <li>Built a custom distributed trace analysis platform, including a high-performance trace database, ingestion pipeline, and developer UI enabling trace timeline visualization and diagnostics-driven debugging of complex distributed workflows.</li>
+              <li>Developed automated post-run diagnostics for distributed traces, detecting failures, instrumentation gaps, and performance regressions while identifying critical execution paths across large CI workloads.</li>
+              <li>Redesigned the trace ingestion architecture, evolving from early prototypes based on Grafana Tempo and Azure Storage to a dedicated ingestion pipeline, reducing indexing time for large trace datasets from ~40 minutes → &lt;10 minutes and historical trace comparison latency from ~2 minutes → &lt;5 seconds.</li>
+              <li>Strengthened platform reliability by diagnosing and resolving systemic issues across distributed CI infrastructure and implementing Linux cgroups-based resource isolation, reducing pipeline failure rates from 20% → &lt;5%, eliminating production OOM incidents, and improving VM lifecycle stability.</li>
             </ul>
           </article>
 
@@ -425,14 +429,13 @@
             <div class="role-header">
               <div>
                 <h3>Lenovo</h3>
-                <div class="sub">Principal Software Engineer · Oct 2014 – Jan 2022 · Remote, United States</div>
+                <div class="sub">Principal Software Engineer · 2014 – 2022 · Remote, United States</div>
               </div>
             </div>
             <ul>
-              <li>Architected hybrid cloud infrastructure, private cloud components, network telemetry, and enterprise networking software for data center and edge platforms.</li>
-              <li>Led strategy and roadmap for on-premises compute, storage, and networking capabilities in the ThinkAgile CP hybrid cloud platform.</li>
-              <li>Designed telemetry-driven network visibility solutions for Lenovo switches, including congestion detection, resource overutilization analysis, and operational insight.</li>
-              <li>Contributed to virtual networking, embedded switching, and network functions virtualization performance optimization; recognized as a Lenovo Master Inventor.</li>
+              <li>Architected hybrid cloud infrastructure, network telemetry, and enterprise networking software for data center and edge platforms; recognized as a Lenovo Master Inventor for sustained innovation.</li>
+              <li>Led design of telemetry-driven network visibility solutions for Lenovo switches, including analytics use cases for congestion detection, resource overutilization, and operational insight.</li>
+              <li>Contributed to private cloud and virtual networking architecture, including multi-site network extension, embedded switching, and performance optimization for network functions virtualization.</li>
             </ul>
           </article>
 
@@ -440,28 +443,23 @@
             <div class="role-header">
               <div>
                 <h3>IBM</h3>
-                <div class="sub">Principal Software Engineer · May 2013 – Sep 2014 · San Jose, California, United States</div>
+                <div class="sub">Principal Software Engineer · 2013 – 2014 · San Jose, California, United States</div>
               </div>
             </div>
             <ul>
-              <li>Developed automated testing, logging, tracing, and diagnostics infrastructure for distributed enterprise and networking systems.</li>
-              <li>Implemented a Google Test-based framework that enforced coverage and memory checks and reduced defect escape during development.</li>
-              <li>Re-designed logging and tracing infrastructure to improve message organization, platform visibility, and forwarding of syslog events to external servers.</li>
+              <li>Developed automated testing, logging, and diagnostics infrastructure for distributed enterprise and networking systems, improving reliability, debuggability, and engineering productivity.</li>
             </ul>
           </article>
 
           <article class="role">
             <div class="role-header">
               <div>
-                <h3>Nokia / Alcatel-Lucent</h3>
-                <div class="sub">Staff Software Architect / Distinguished Member of Technical Staff and earlier engineering roles · Dec 1998 – Apr 2013 · Spain, Belgium, and United States</div>
+                <h3>Nokia</h3>
+                <div class="sub">Staff Software Engineer · 2003 – 2013 · Calabasas, California, United States</div>
               </div>
             </div>
             <ul>
-              <li>Designed distributed networking software and high-availability telecom and data-center infrastructure, including Ethernet switching, virtual chassis, multi-chassis link aggregation, IP forwarding, PPP, and protocol-level systems.</li>
-              <li>Led architecture, design, coding, and test support for core networking features that became foundational to the company's data center strategy.</li>
-              <li>Created debugging tools and training material that substantially reduced troubleshooting time and raised the quality bar across large engineering teams.</li>
-              <li>Earlier roles included work in Belgium on IP forwarding performance and in Spain on device drivers for voice control ASICs in SDH access systems.</li>
+              <li>Designed distributed networking software and high-availability telecom/data-center infrastructure, including Ethernet switching, virtual chassis, link aggregation, IP forwarding, PPP, and protocol-level systems for carrier-scale platforms.</li>
             </ul>
           </article>
 
@@ -524,18 +522,22 @@
             </li>
             <li>
               <a href="index.html" target="_self">Engineering with a Heart</a>
-              <span>Essays and reflections on human-centered innovation, engineering, and responsibility</span>
+              <span>Platform for essays on human-centered innovation and responsible technology</span>
             </li>
           </ul>
         </section>
 
         <section class="section">
           <div class="section-kicker">Background</div>
-          <h2>International experience, education & languages</h2>
+          <h2>Education, awards & languages</h2>
           <ul class="pub-list">
             <li>
               <a href="https://www.ita.br/" target="_blank" rel="noopener">Instituto Tecnológico de Aeronáutica (ITA)</a>
               <span>B.S.E. in Electronics Engineering · Brazil</span>
+            </li>
+            <li>
+              <strong>Awards</strong>
+              <span>Lenovo Master Inventor; recipient of multiple engineering excellence awards at Lenovo and Nokia</span>
             </li>
             <li>
               <strong>Countries worked and lived</strong>
