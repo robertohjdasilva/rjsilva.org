@@ -34,46 +34,22 @@
       width:min(var(--max), calc(100% - 40px));
       margin:0 auto;
     }
-    .topbar {
-      background:var(--brown);
-      color:#fff;
-      padding:16px 0;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      position:sticky;
-      top:0;
-      z-index:20;
-    }
-    .topbar-inner {
-      display:grid;
-      grid-template-columns:auto 1fr auto;
-      align-items:center;
-      gap:24px;
-    }
-    .brand-title {
-      margin:0;
-      font-size:26px;
-      line-height:1.1;
-      letter-spacing:.2px;
-    }
-    .brand-subtitle {
-      margin:4px 0 0;
-      font-size:15px;
-      color:rgba(255,255,255,.78);
-    }
-    .nav {
-      display:flex;
-      gap:18px;
-      font-size:15px;
-      white-space:nowrap;
-      justify-self:end;
-      align-items:center;
-    }
-    .nav a {
-      color:rgba(255,255,255,.88);
-    }
-    .nav a:hover {
-      color:#fff;
-    }
+    .topbar{background:var(--brown);color:#fff;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .topbar-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+    .top-hero-divider{height:1px;background:#ffffff}
+    .brand{display:flex;align-items:center;min-width:0}
+    .brand img{height:72px;width:auto;object-fit:contain;display:block}
+    .brand-text{text-align:center;min-width:0}
+    .brand-title{margin:0;font-size:28px;line-height:1.1;letter-spacing:.2px}
+    .brand-subtitle{margin:4px 0 0;font-size:16px;color:rgba(255,255,255,.78)}
+    .brand-subtitle-main{margin:0;font-size:22px;line-height:1.2;color:rgba(255,255,255,.92)}
+    .nav{display:flex;gap:18px;font-size:15px;white-space:nowrap;justify-self:end;align-items:center}
+    .nav a,.lang-btn{color:rgba(255,255,255,.88)}
+    .nav a:hover,.lang-btn:hover{color:#fff}
+    .lang-switch{display:flex;align-items:center;gap:8px;margin-left:6px;padding-left:14px;border-left:1px solid rgba(255,255,255,.18)}
+    .lang-btn{background:none;border:none;padding:0;font:inherit;cursor:pointer}
+    .lang-btn.active{color:#fff;text-decoration:underline;text-underline-offset:3px}
+    .lang-label{color:rgba(255,255,255,.5);font-size:13px}
     .hero {
       padding:64px 0 34px;
       background:
@@ -114,6 +90,7 @@
       flex-wrap:wrap;
       gap:12px;
       margin-top:28px;
+      justify-content:center;
     }
     .btn {
       display:inline-flex;
@@ -294,40 +271,87 @@
       .hero-grid, .two-col, .meta-grid {
         grid-template-columns:1fr;
       }
-      .topbar-inner {
-        grid-template-columns:1fr;
+      .topbar{
+        padding:18px 0 14px;
+      }
+      .topbar-inner{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
         gap:14px;
+        text-align:center;
       }
-      .nav {
-        justify-self:start;
+      .brand{
+        justify-content:center;
+      }
+      .brand img{
+        height:62px;
+        max-width:min(100%, 300px);
+      }
+      .brand-text{
+        width:100%;
+      }
+      .brand-title{
+        font-size:22px;
+      }
+      .brand-subtitle{
+        font-size:14px;
+        line-height:1.35;
+      }
+      .nav{
+        justify-self:auto;
+        justify-content:center;
         flex-wrap:wrap;
+        gap:14px 18px;
+        white-space:normal;
+        width:100%;
       }
+      .lang-switch{
+        margin-left:0;
+        padding-left:0;
+        border-left:none;
+      }
+    }
+    @media (max-width: 560px){
+      .brand img{height:auto;width:min(100%, 320px)}
+      .brand-title{font-size:20px}
+      .brand-subtitle{max-width:28ch;margin-left:auto;margin-right:auto}
+      .nav{font-size:14px;gap:10px 16px}
+      .hero-actions{flex-direction:column;align-items:center;width:100%}
+      .hero-actions .btn{width:min(100%, 280px);text-align:center}
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
+  <div class="topbar">
     <div class="container topbar-inner">
       <div class="brand">
-        <div>
-          <p class="brand-title">Engineering with a Heart</p>
-          <p class="brand-subtitle">Resume & professional profile</p>
-        </div>
+        <a href="index.html"><img src="images/logo.jpg" alt="RJ Silva logo" data-i18n-attr="alt:logoAlt" /></a>
       </div>
-      <div></div>
+      <div class="brand-text">
+        <p class="brand-subtitle brand-subtitle-main" data-i18n="brandSubtitle">A reflection on engineering, humanity, and purpose.</p>
+      </div>
       <nav class="nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="essays.html">Essays</a>
-        <a href="book.html">Book</a>
-        <a href="resume.html" aria-current="page">Resume</a>
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="essays.html" data-i18n="navEssays">Essays</a>
+        <a href="index.html#book" data-i18n="navBook">Book</a>
+        <a href="resume.html" aria-current="page" data-i18n="navResume">Resume</a>
+        <a href="index.html#about" data-i18n="navAbout">About</a>
+        <div class="lang-switch" aria-label="Language selector">
+          <span class="lang-label" data-i18n="langLabel">Language</span>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <span class="lang-label">/</span>
+          <button type="button" class="lang-btn" data-lang="pt">PT</button>
+        </div>
       </nav>
     </div>
-  </header>
+  </div>
+  <div class="top-hero-divider"></div>
 
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Principal Software Engineer</div>
+        <div class="eyebrow" data-i18n="heroEyebrow">Principal Software Engineer</div>
         <h1>Roberto H. Jacob da Silva</h1>
         <p class="lead">
           Distributed systems, observability, networking, virtualization, and diagnostics —
@@ -335,13 +359,12 @@
           and distributed trace analysis at cloud scale.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="./resume.pdf" target="_blank" rel="noopener">Open PDF Resume</a>
-          <a class="btn btn-secondary" href="https://www.linkedin.com/in/robertohjdasilva" target="_blank" rel="noopener">View LinkedIn</a>
-          <a class="btn btn-secondary" href="index.html">Back to Home</a>
+          <a class="btn btn-primary" href="./resume.pdf" target="_blank" rel="noopener" data-i18n="heroBtnPdf">Open PDF Resume</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/robertohjdasilva" target="_blank" rel="noopener" data-i18n="heroBtnLinkedIn">View LinkedIn</a>
         </div>
       </div>
       <aside class="hero-card">
-        <h2>Professional snapshot</h2>
+        <h2 data-i18n="heroCardTitle">Professional snapshot</h2>
         <ul>
           <li>20+ years across distributed systems, networking, virtualization, observability, and diagnostics</li>
           <li>Inventor on 29 U.S. patents spanning networking, distributed systems, observability, cloud infrastructure, and IoT</li>
@@ -596,5 +619,70 @@
   <footer>
     © Roberto H. Jacob da Silva · Resume page for Engineering with a Heart
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        pageTitle: "Resume | Roberto H. Jacob da Silva",
+        pageDescription: "Resume and professional profile of Roberto H. Jacob da Silva — Principal Software Engineer specializing in distributed systems, observability, and networking.",
+        logoAlt: "RJ Silva logo",
+        brandSubtitle: "A reflection on engineering, humanity, and purpose.",
+        navHome: "Home",
+        navEssays: "Essays",
+        navBook: "Book",
+        navResume: "Resume",
+        navAbout: "About",
+        langLabel: "Language",
+        heroEyebrow: "Principal Software Engineer",
+        heroBtnPdf: "Open PDF Resume",
+        heroBtnLinkedIn: "View LinkedIn",
+        heroCardTitle: "Professional snapshot"
+      },
+      pt: {
+        pageTitle: "Currículo | Roberto H. Jacob da Silva",
+        pageDescription: "Currículo e perfil profissional de Roberto H. Jacob da Silva — Principal Software Engineer especializado em sistemas distribuídos, observabilidade e redes.",
+        logoAlt: "Logotipo de RJ Silva",
+        brandSubtitle: "Uma reflexão sobre engenharia, humanidade e propósito.",
+        navHome: "Início",
+        navEssays: "Ensaios",
+        navBook: "Livro",
+        navResume: "Currículo",
+        navAbout: "Sobre",
+        langLabel: "Idioma",
+        heroEyebrow: "Principal Software Engineer",
+        heroBtnPdf: "Abrir currículo em PDF",
+        heroBtnLinkedIn: "Ver LinkedIn",
+        heroCardTitle: "Resumo profissional"
+      }
+    };
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const langButtons = document.querySelectorAll('.lang-btn');
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+      document.title = dict.pageTitle;
+      if (metaDescription) metaDescription.setAttribute('content', dict.pageDescription);
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+
+      document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+        const spec = el.getAttribute('data-i18n-attr');
+        const [attr, key] = spec.split(':');
+        if (dict[key]) el.setAttribute(attr, dict[key]);
+      });
+
+      langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+      localStorage.setItem('siteLanguage', lang);
+    }
+
+    const savedLang = localStorage.getItem('siteLanguage') || 'en';
+    applyTranslations(savedLang);
+    langButtons.forEach(btn => btn.addEventListener('click', () => applyTranslations(btn.dataset.lang)));
+  </script>
 </body>
 </html>
