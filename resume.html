@@ -261,6 +261,93 @@
     .patent-list {
       columns:1;
     }
+    .recommendations-grid {
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:18px;
+      margin-top:20px;
+    }
+    .testimonial-card {
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      min-height:100%;
+    }
+    .testimonial-top {
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+    }
+    .testimonial-avatar {
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      flex:0 0 58px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg, rgba(201,137,43,.18), rgba(42,26,18,.10));
+      border:1px solid rgba(42,26,18,.12);
+      color:var(--brown);
+      font-weight:700;
+      letter-spacing:.06em;
+      font-size:18px;
+    }
+    .testimonial-meta {
+      min-width:0;
+      flex:1;
+    }
+    .testimonial-name {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:19px;
+      line-height:1.2;
+      font-weight:700;
+      color:var(--brown);
+      text-decoration:none;
+    }
+    .testimonial-name:hover { color:var(--gold-dark); }
+    .testimonial-role {
+      margin-top:4px;
+      color:var(--text);
+      font-size:14px;
+      font-weight:600;
+      line-height:1.45;
+    }
+    .testimonial-context {
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .testimonial-quote {
+      margin:0;
+      color:var(--text);
+      font-size:15px;
+      line-height:1.7;
+    }
+    .testimonial-footer {
+      margin-top:auto;
+      padding-top:4px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .recommendations-note {
+      margin-top:18px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .recommendations-note a {
+      color:var(--gold-dark);
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+    .recommendations-note a:hover { color:var(--brown); }
     footer {
       padding:24px 0 50px;
       color:var(--muted);
@@ -268,7 +355,7 @@
       font-size:14px;
     }
     @media (max-width: 980px) {
-      .hero-grid, .two-col, .meta-grid {
+      .hero-grid, .two-col, .meta-grid, .recommendations-grid {
         grid-template-columns:1fr;
       }
       .topbar{
@@ -606,33 +693,86 @@
         <div class="section-kicker" data-i18n="recommendationsKicker">Recommendations</div>
         <h2 data-i18n="recommendationsTitle">Selected Recommendations</h2>
         <p data-i18n="recommendationsIntro">A curated selection of LinkedIn recommendations highlighting technical depth, mentorship, architectural thinking, communication, and long-term professional trust.</p>
-        <ul class="pub-list">
-          <li>
-            <a href="https://www.linkedin.com/in/miroslavhalas" target="_blank" rel="noopener" data-i18n="rec1Title">Miroslav Halas · Vice President, Engineering · ex-Apple, Lenovo, and Bank of America</a>
-            <span data-i18n="rec1Desc">Described Roberto as instrumental in shaping technology vision, integrating acquired intellectual property, mentoring senior engineers, and operating effectively at every level — from deep code reviews to architecture, planning, hiring, and broader organizational leadership.</span>
-          </li>
-          <li>
-            <a href="https://ro.linkedin.com/in/radu-iorga" target="_blank" rel="noopener" data-i18n="rec2Title">Radu Iorga · Software Engineering Manager, Microsoft Azure Core Networking</a>
-            <span data-i18n="rec2Desc">Praised Roberto’s mentorship, depth of knowledge in software engineering and systems architecture, and exceptional ability to document and communicate complex technical ideas with unusual clarity.</span>
-          </li>
-          <li>
-            <a href="https://in.linkedin.com/in/abhishek-sinha-1628b916" target="_blank" rel="noopener" data-i18n="rec3Title">Abhishek Sinha · Director, Global Network Engineering, Oracle Cloud Infrastructure</a>
-            <span data-i18n="rec3Desc">Highlighted Roberto’s methodical design approach, architectural strength, problem-solving ability, reliability, and consistent delivery of high-quality software in complex engineering environments.</span>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/vincemagret928" target="_blank" rel="noopener" data-i18n="rec4Title">Vincent Magret · SRE Manager at Google</a>
-            <span data-i18n="rec4Desc">Emphasized Roberto’s depth of analysis, trustworthy judgment on complex problems and effort estimation, and his ability to produce software that is accurately documented, carefully implemented, and ultimately less prone to defects.</span>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/john-seabaugh-7665424" target="_blank" rel="noopener" data-i18n="rec5Title">John Seabaugh · Vice President of Business Development</a>
-            <span data-i18n="rec5Desc">Noted that beyond Roberto’s technical strength and communication ability, the strongest feedback from senior leaders was how positively he would impact a team as a person — a perspective that adds unusual weight coming from a recruiter and business leader.</span>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/raven" target="_blank" rel="noopener" data-i18n="rec6Title">Chris Ravenscroft · Senior Director, R&amp;D, SRE/DevOps</a>
-            <span data-i18n="rec6Desc">Observed that beyond patents and technical sharpness, Roberto stands out as a warm and passionate teammate whose mentoring style inspires both peers and leadership.</span>
-          </li>
-        </ul>
-        <p style="margin-top:16px;"><a href="https://www.linkedin.com/in/robertohjdasilva" target="_blank" rel="noopener" data-i18n="recommendationsLinkNote">Additional recommendations and endorsements are available on LinkedIn.</a></p>
+        <div class="recommendations-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-avatar" aria-hidden="true">MH</div>
+              <div class="testimonial-meta">
+                <a class="testimonial-name" href="https://www.linkedin.com/in/miroslavhalas" target="_blank" rel="noopener">Miroslav Halas</a>
+                <div class="testimonial-role" data-i18n="rec1Title">Vice President, Engineering — GEICO · ex-Apple, Lenovo, and Bank of America</div>
+                <div class="testimonial-context" data-i18n="rec1Context">Former manager at Lenovo who brought Roberto into a major cloud engineering initiative.</div>
+              </div>
+            </div>
+            <p class="testimonial-quote" data-i18n="rec1Desc">Described Roberto as instrumental in shaping technology vision, integrating acquired intellectual property, mentoring senior engineers, and operating effectively at every level — from deep code reviews to architecture, planning, hiring, and broader organizational leadership.</p>
+            <div class="testimonial-footer" data-i18n="rec1Footer">Highlights strategic leadership, technical breadth, and executive-level trust.</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-avatar" aria-hidden="true">RI</div>
+              <div class="testimonial-meta">
+                <a class="testimonial-name" href="https://ro.linkedin.com/in/radu-iorga" target="_blank" rel="noopener">Radu Iorga</a>
+                <div class="testimonial-role" data-i18n="rec2Title">Software Engineering Manager, Microsoft Azure Core Networking</div>
+                <div class="testimonial-context" data-i18n="rec2Context">Senior engineer mentored by Roberto in a large-scale cloud networking environment.</div>
+              </div>
+            </div>
+            <p class="testimonial-quote" data-i18n="rec2Desc">Praised Roberto’s mentorship, depth of knowledge in software engineering and systems architecture, and exceptional ability to document and communicate complex technical ideas with unusual clarity.</p>
+            <div class="testimonial-footer" data-i18n="rec2Footer">Highlights mentorship, technical depth, and world-class communication.</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-avatar" aria-hidden="true">AS</div>
+              <div class="testimonial-meta">
+                <a class="testimonial-name" href="https://in.linkedin.com/in/abhishek-sinha-1628b916" target="_blank" rel="noopener">Abhishek Sinha</a>
+                <div class="testimonial-role" data-i18n="rec3Title">Director, Global Network Engineering, Oracle Cloud Infrastructure</div>
+                <div class="testimonial-context" data-i18n="rec3Context">Peer recommendation emphasizing design discipline and execution quality.</div>
+              </div>
+            </div>
+            <p class="testimonial-quote" data-i18n="rec3Desc">Highlighted Roberto’s methodical design approach, architectural strength, problem-solving ability, reliability, and consistent delivery of high-quality software in complex engineering environments.</p>
+            <div class="testimonial-footer" data-i18n="rec3Footer">Highlights design rigor, reliability, and consistent high-quality delivery.</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-avatar" aria-hidden="true">VM</div>
+              <div class="testimonial-meta">
+                <a class="testimonial-name" href="https://www.linkedin.com/in/vincemagret928" target="_blank" rel="noopener">Vincent Magret</a>
+                <div class="testimonial-role" data-i18n="rec4Title">Multidisciplinary SRE Manager, Google Cloud</div>
+                <div class="testimonial-context" data-i18n="rec4Context">Former manager who emphasized trust, judgment, and disciplined engineering execution.</div>
+              </div>
+            </div>
+            <p class="testimonial-quote" data-i18n="rec4Desc">Emphasized Roberto’s depth of analysis, trustworthy judgment on complex problems and effort estimation, and his ability to produce software that is accurately documented, carefully implemented, and ultimately less prone to defects.</p>
+            <div class="testimonial-footer" data-i18n="rec4Footer">Highlights trustworthiness, analytical rigor, and engineering discipline.</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-avatar" aria-hidden="true">JS</div>
+              <div class="testimonial-meta">
+                <a class="testimonial-name" href="https://www.linkedin.com/in/john-seabaugh-7665424" target="_blank" rel="noopener">John Seabaugh</a>
+                <div class="testimonial-role" data-i18n="rec5Title">Vice President of Business Development</div>
+                <div class="testimonial-context" data-i18n="rec5Context">External business and recruiting perspective on Roberto’s professional impact.</div>
+              </div>
+            </div>
+            <p class="testimonial-quote" data-i18n="rec5Desc">Noted that beyond Roberto’s technical strength and communication ability, the strongest feedback from senior leaders was how positively he would impact a team as a person — a perspective that adds unusual weight coming from a recruiter and business leader.</p>
+            <div class="testimonial-footer" data-i18n="rec5Footer">Highlights cross-functional reputation, interpersonal strength, and executive presence.</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-top">
+              <div class="testimonial-avatar" aria-hidden="true">CR</div>
+              <div class="testimonial-meta">
+                <a class="testimonial-name" href="https://www.linkedin.com/in/raven" target="_blank" rel="noopener">Chris Ravenscroft</a>
+                <div class="testimonial-role" data-i18n="rec6Title">Senior Director, R&amp;D, SRE/DevOps</div>
+                <div class="testimonial-context" data-i18n="rec6Context">Engineering leadership perspective focused on warmth, mentorship, and team impact.</div>
+              </div>
+            </div>
+            <p class="testimonial-quote" data-i18n="rec6Desc">Observed that beyond patents and technical sharpness, Roberto stands out as a warm and passionate teammate whose mentoring style inspires both peers and leadership.</p>
+            <div class="testimonial-footer" data-i18n="rec6Footer">Highlights human-centered leadership and the ability to elevate teams.</div>
+          </article>
+        </div>
+        <p class="recommendations-note"><span data-i18n="recommendationsLinkIntro">Additional recommendations and endorsements are available on</span> <a href="https://www.linkedin.com/in/robertohjdasilva" target="_blank" rel="noopener">LinkedIn</a>.</p>
       </section>
 
       <section class="section">
@@ -780,19 +920,31 @@
         recommendationsKicker: "Recommendations",
         recommendationsTitle: "Selected Recommendations",
         recommendationsIntro: "A curated selection of LinkedIn recommendations highlighting technical depth, mentorship, architectural thinking, communication, and long-term professional trust.",
-        rec1Title: "Miroslav Halas · Vice President, Engineering · ex-Apple, Lenovo, and Bank of America",
+        rec1Context: "Former manager at Lenovo who brought Roberto into a major cloud engineering initiative.",
+        rec1Footer: "Highlights strategic leadership, technical breadth, and executive-level trust.",
+        rec1Title: "Vice President, Engineering — GEICO · ex-Apple, Lenovo, and Bank of America",
         rec1Desc: "Described Roberto as instrumental in shaping technology vision, integrating acquired intellectual property, mentoring senior engineers, and operating effectively at every level — from deep code reviews to architecture, planning, hiring, and broader organizational leadership.",
-        rec2Title: "Radu Iorga · Software Engineering Manager, Microsoft Azure Core Networking",
+        rec2Title: "Software Engineering Manager, Microsoft Azure Core Networking",
+        rec2Context: "Engenheiro sênior mentorado por Roberto em um ambiente de cloud networking em larga escala.",
+        rec2Footer: "Destaca mentoria, profundidade técnica e comunicação de altíssimo nível.",
         rec2Desc: "Praised Roberto’s mentorship, depth of knowledge in software engineering and systems architecture, and exceptional ability to document and communicate complex technical ideas with unusual clarity.",
-        rec3Title: "Abhishek Sinha · Director, Global Network Engineering, Oracle Cloud Infrastructure",
+        rec3Title: "Director, Global Network Engineering, Oracle Cloud Infrastructure",
+        rec3Context: "Recomendação de par destacando disciplina de design e qualidade de execução.",
+        rec3Footer: "Destaca rigor de design, confiabilidade e entrega consistente de alta qualidade.",
         rec3Desc: "Highlighted Roberto’s methodical design approach, architectural strength, problem-solving ability, reliability, and consistent delivery of high-quality software in complex engineering environments.",
-        rec4Title: "Vincent Magret · SRE Manager at Google",
+        rec4Title: "Multidisciplinary SRE Manager, Google Cloud",
+        rec4Context: "Ex-gestor que destacou confiança, julgamento técnico e disciplina de execução em engenharia.",
+        rec4Footer: "Destaca confiabilidade, rigor analítico e disciplina de engenharia.",
         rec4Desc: "Emphasized Roberto’s depth of analysis, trustworthy judgment on complex problems and effort estimation, and his ability to produce software that is accurately documented, carefully implemented, and ultimately less prone to defects.",
-        rec5Title: "John Seabaugh · Vice President of Business Development",
+        rec5Title: "Vice President of Business Development",
+        rec5Context: "Perspectiva externa de negócios e recrutamento sobre o impacto profissional de Roberto.",
+        rec5Footer: "Destaca reputação cross-functional, força interpessoal e presença executiva.",
         rec5Desc: "Noted that beyond Roberto’s technical strength and communication ability, the strongest feedback from senior leaders was how positively he would impact a team as a person — a perspective that adds unusual weight coming from a recruiter and business leader.",
-        rec6Title: "Chris Ravenscroft · Senior Director, R&amp;D, SRE/DevOps",
+        rec6Title: "Senior Director, R&amp;D, SRE/DevOps",
+        rec6Context: "Perspectiva de liderança de engenharia focada em humanidade, mentoria e impacto sobre o time.",
+        rec6Footer: "Destaca liderança humana e a capacidade de elevar equipes.",
         rec6Desc: "Observed that beyond patents and technical sharpness, Roberto stands out as a warm and passionate teammate whose mentoring style inspires both peers and leadership.",
-        recommendationsLinkNote: "Additional recommendations and endorsements are available on LinkedIn.",
+        recommendationsLinkIntro: "Additional recommendations and endorsements are available on",
         ipKicker: "Intellectual Property",
         patentsTitle: "Patents",
         footerText: "© Roberto H. Jacob da Silva · Resume page for Engineering with a Heart"
@@ -895,6 +1047,8 @@
         recommendationsKicker: "Recomendações",
         recommendationsTitle: "Recomendações Selecionadas",
         recommendationsIntro: "Uma seleção curada de recomendações do LinkedIn destacando profundidade técnica, mentoria, visão arquitetural, comunicação e confiança profissional construída ao longo do tempo.",
+        rec1Context: "Ex-gestor na Lenovo que trouxe Roberto para uma importante iniciativa de engenharia de cloud.",
+        rec1Footer: "Destaca liderança estratégica, amplitude técnica e confiança em nível executivo.",
         rec1Title: "Miroslav Halas · Vice-Presidente de Engenharia · ex-Apple, Lenovo e Bank of America",
         rec1Desc: "Descreveu Roberto como peça fundamental na definição da visão tecnológica, na integração de propriedade intelectual adquirida, na mentoria de engenheiros seniores e na atuação eficaz em todos os níveis — desde revisões profundas de código até arquitetura, planejamento, contratação e liderança organizacional mais ampla.",
         rec2Title: "Radu Iorga · Gerente de Engenharia de Software, Microsoft Azure Core Networking",
@@ -907,7 +1061,7 @@
         rec5Desc: "Observou que, além da força técnica e da capacidade de comunicação de Roberto, o feedback mais marcante de líderes seniores foi o impacto extremamente positivo que ele teria sobre uma equipe como pessoa — uma perspectiva especialmente valiosa por vir de um recrutador e líder de negócios.",
         rec6Title: "Chris Ravenscroft · Diretor Sênior de P&amp;D, SRE/DevOps",
         rec6Desc: "Observou que, além das patentes e da excelência técnica, Roberto se destaca como um colega caloroso e apaixonado, cujo estilo de mentoria inspira tanto pares quanto lideranças.",
-        recommendationsLinkNote: "Outras recomendações e endossos estão disponíveis no LinkedIn.",
+        recommendationsLinkIntro: "Outras recomendações e endossos estão disponíveis no",
         ipKicker: "Propriedade Intelectual",
         patentsTitle: "Patentes",
         footerText: "© Roberto H. Jacob da Silva · Página de currículo de Engineering with a Heart"
