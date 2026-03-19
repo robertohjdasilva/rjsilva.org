@@ -6,7 +6,7 @@
   <title>About | Roberto H. Jacob da Silva</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/favicon.png">
-  <meta name="description" content="About Roberto H. Jacob da Silva — engineer, inventor, author, and creator of Engineering with a Heart." />
+  <meta name="description" content="About Roberto H. Jacob da Silva — engineer, inventor, author, singer, and creator of Engineering with a Heart." />
   <style>
     :root{
       --bg:#f5f2ec;
@@ -31,9 +31,8 @@
     .brand{display:flex;align-items:center;min-width:0}
     .brand img{height:72px;width:auto;object-fit:contain;display:block}
     .brand-text{text-align:center;min-width:0}
-    .brand-title{margin:0;font-size:24px;line-height:1.0;letter-spacing:.2px}
-    .brand-subtitle{margin:4px 0 0;font-size:16px;color:rgba(255,255,255,.78)}
     .brand-subtitle-main{margin:0;font-size:22px;line-height:1.2;color:rgba(255,255,255,.92)}
+    .brand-subtitle{margin:4px 0 0;font-size:16px;color:rgba(255,255,255,.78)}
     .nav{display:flex;gap:18px;font-size:15px;white-space:nowrap;justify-self:end;align-items:center}
     .nav a,.lang-btn{color:rgba(255,255,255,.88)}
     .nav a:hover,.lang-btn:hover{color:#fff}
@@ -44,16 +43,16 @@
     .hero{position:relative;padding:78px 0 60px;color:#fff;background:linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.28)),radial-gradient(circle at 18% 22%, rgba(201,137,43,.18), transparent 34%),linear-gradient(135deg, #2a1a12, #67462b);overflow:hidden}
     .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center 50%, rgba(255,210,120,0.18) 0%, rgba(255,210,120,0.08) 22%, rgba(0,0,0,0) 54%);pointer-events:none;mix-blend-mode:screen}
     .hero-content{position:relative;z-index:2}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .hero-copy{text-align:center}
     .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#f0c98f;font-weight:700;margin-bottom:12px}
     .hero h1{margin:0;font-size:clamp(34px, 5vw, 54px);line-height:1.02;letter-spacing:-.03em}
-    .hero p{margin:18px 0 0;max-width:760px;font-size:20px;color:rgba(255,255,255,.88)}
+    .hero p{margin:18px auto 0;max-width:760px;font-size:20px;color:rgba(255,255,255,.88)}
     .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:22px;box-shadow:0 14px 34px rgba(0,0,0,.14)}
     .hero-card h2{margin:0 0 12px;font-size:20px;color:#fff}
     .hero-card ul{margin:0;padding-left:18px;color:rgba(255,255,255,.86);font-size:15px}
     .hero-card li+li{margin-top:6px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;justify-content:center}
-    .hero-copy{text-align:center}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-size:15px;font-weight:700;border:1px solid rgba(255,255,255,.18);transition:.2s ease}
     .btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
     .btn-primary:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
@@ -66,32 +65,28 @@
     .section h2{margin:0 0 14px;font-size:30px;line-height:1.15;color:var(--brown)}
     .section p{margin:0 0 14px;font-size:18px}
     .section p:last-child{margin-bottom:0}
-    .two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
-    .profile-card{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start}
-    .portrait{width:100%;border-radius:20px;display:block;object-fit:cover;box-shadow:var(--shadow);border:1px solid var(--border)}
-    .quote{margin-top:18px;padding:18px 20px;border-left:4px solid var(--gold);background:#fff;border-radius:0 16px 16px 0;color:var(--brown);font-size:20px;line-height:1.55;font-style:italic}
-    .stats{display:grid;grid-template-columns:repeat(4, 1fr);gap:14px;margin-top:20px}
+    .two-col{display:grid;grid-template-columns:1.08fr .92fr;gap:22px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
     .stat{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;text-align:center}
     .stat strong{display:block;font-size:32px;line-height:1;color:var(--brown);margin-bottom:8px}
     .stat span{color:var(--muted);font-size:14px}
-    .list-card, .info-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
-    .list-card h3, .info-card h3{margin:0 0 10px;font-size:23px;color:var(--brown)}
-    .list-card ul{margin:0;padding-left:20px;color:var(--text)}
-    .list-card li+li{margin-top:8px}
-    .muted{color:var(--muted)}
+    .list-card,.info-card,.callout{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
+    .list-card h3,.info-card h3,.callout h3{margin:0 0 10px;font-size:23px;color:var(--brown)}
+    .list-card ul{margin:0;padding-left:20px}
+    .list-card li+li{margin-top:9px}
     .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
     .pill{display:inline-flex;align-items:center;padding:9px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:14px;color:var(--brown)}
     .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .quote{margin-top:18px;padding:18px 20px;border-left:4px solid var(--gold);background:#fff;border-radius:0 16px 16px 0;color:var(--brown);font-size:20px;line-height:1.55;font-style:italic}
     footer{padding:24px 0 50px;color:var(--muted);text-align:center;font-size:14px}
     @media (max-width: 980px){
-      .hero-grid,.two-col,.profile-card,.stats{grid-template-columns:1fr}
+      .hero-grid,.two-col,.stats{grid-template-columns:1fr}
       .topbar{padding:18px 0 14px}
       .topbar-inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
       .brand{justify-content:center}
       .brand img{height:62px;max-width:min(100%, 300px)}
-      .brand-title{font-size:22px}
-      .brand-subtitle{font-size:14px}
       .brand-subtitle-main{font-size:19px}
+      .brand-subtitle{font-size:14px}
       .nav{justify-content:center;flex-wrap:wrap;gap:12px 16px;font-size:15px}
       .lang-switch{margin-left:0;padding-left:0;border-left:none}
       .hero{padding:60px 0 46px}
@@ -112,7 +107,7 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="R.J. Silva home">
-        <img src="images/logo.jpg" alt="R.J. Silva logo" />
+        <img src="images/logo.jpg" alt="RJ Silva logo" data-i18n-attr="alt:logoAlt" />
       </a>
       <div class="brand-text">
         <p class="brand-subtitle-main" data-i18n="brandSubtitleMain">Engineering with a Heart</p>
@@ -125,7 +120,7 @@
         <a href="resume.html" data-i18n="navResume">Resume</a>
         <a href="about.html" data-i18n="navAbout">About</a>
         <div class="lang-switch" aria-label="Language switcher">
-          <span class="lang-label">LANG</span>
+          <span class="lang-label" data-i18n="langLabel">Language</span>
           <button class="lang-btn active" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="pt">PT</button>
         </div>
@@ -139,20 +134,20 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <div class="eyebrow" data-i18n="heroEyebrow">About the Author and Engineer</div>
-          <h1 data-i18n="heroTitle">A life shaped by engineering, storytelling, resilience, and gratitude.</h1>
+          <h1 data-i18n="heroTitle">A life shaped by engineering, writing, music, and gratitude.</h1>
+          <p data-i18n="heroText">Roberto H. Jacob da Silva moves between complex systems, deeply personal storytelling, and songs that carry memory. This page brings those dimensions together in one human portrait.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="resume.html" data-i18n="heroBtnResume">View Resume</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/robertohjdasilva/" target="_blank" rel="noopener noreferrer" data-i18n="heroBtnLinkedIn">Visit LinkedIn</a>
+            <a class="btn btn-secondary" href="book.html" data-i18n="heroBtnBook">Explore the Book</a>
           </div>
         </div>
         <aside class="hero-card">
-          <h2 data-i18n="heroCardTitle">At a glance</h2>
-          <p data-i18n="heroText">Roberto H. Jacob da Silva builds complex systems, writes about the human meaning behind technology, and believes the most valuable work is the kind that serves people with both excellence and heart.</p>
+          <h2 data-i18n="heroCardTitle">At a Glance</h2>
           <ul>
-            <li data-i18n="heroCard1">Creator of <em>Engineering with a Heart</em>, a space for reflection on technology, humanity, and purpose.</li>
-            <li data-i18n="heroCard2">Author of <em>Impossible Crossing</em>, a memoir rooted in perseverance, migration, gratitude, and discovery.</li>
-            <li data-i18n="heroCard3">A voice shaped by life across Brazil, Europe, and the United States.</li>
-            <li data-i18n="heroCard4">Equally at home in engineering, storytelling, and public reflection.</li>
+            <li data-i18n="heroCard1">Engineer and inventor working across distributed systems, observability, networking, diagnostics, and cloud infrastructure.</li>
+            <li data-i18n="heroCard2">Author of <em>Impossible Crossing</em> and creator of <em>Engineering with a Heart</em>.</li>
+            <li data-i18n="heroCard3">A life lived across Brazil, Europe, and the United States.</li>
+            <li data-i18n="heroCard4">Music is not a side note here; it is part of the emotional structure of the journey.</li>
           </ul>
         </aside>
       </div>
@@ -163,38 +158,25 @@
   <main class="main">
     <div class="container">
       <section class="section">
-        <div class="section-kicker" data-i18n="introKicker">Introduction</div>
-        <div class="profile-card">
-          <img class="portrait" src="images/rj.jpg" alt="Portrait of Roberto H. Jacob da Silva" data-i18n-attr="alt:portraitAlt" />
-          <div>
-            <h2 data-i18n="introTitle">About Roberto H. Jacob da Silva</h2>
-            <p data-i18n="introP1">Roberto H. Jacob da Silva is a Brazilian-born engineer, inventor, author, and storyteller whose work connects deep technical systems with human meaning. Over a career of more than two decades, he has designed and led work in distributed systems, networking, virtualization, cloud infrastructure, observability, and diagnostics.</p>
-            <p data-i18n="introP2">His professional path includes major engineering roles at Microsoft, Lenovo, IBM, and Nokia, along with a long record of innovation recognized through 29 U.S. patents. At the same time, his writing has remained rooted in a different but equally important question: how can knowledge, technology, and opportunity become more human, more understandable, and more useful to others?</p>
-            <div class="quote" data-i18n="introQuote">“Technology matters most when it helps us see one another more clearly, serve one another more faithfully, and build with both excellence and compassion.”</div>
-          </div>
-        </div>
+        <div class="section-kicker" data-i18n="journeyKicker">Journey</div>
+        <h2 data-i18n="journeyTitle">A Bridge Across Worlds</h2>
+        <p data-i18n="journeyP1">Roberto H. Jacob da Silva writes and builds from the perspective of someone who has crossed multiple worlds: Brazil and the United States, scarcity and opportunity, technical rigor and human reflection, private struggle and public contribution. That crossing is not a branding device. It is the lived foundation beneath both <em>Impossible Crossing</em> and <em>Engineering with a Heart</em>.</p>
+        <p data-i18n="journeyP2">The project exists in the space where human story, engineering practice, public understanding, and community meaning meet. It grows out of a life shaped by gratitude for family, teachers, mentors, friends, colleagues, and the unexpected acts of generosity that quietly changed what seemed possible.</p>
+        <p data-i18n="journeyP3">That is why the work on this site is intentionally hybrid. It does not separate technical excellence from memory, purpose, dignity, or service. It asks what engineering looks like when it remains intellectually serious and deeply human at the same time.</p>
         <div class="stats">
-          <div class="stat"><strong>20+</strong><span data-i18n="stat1">years in software engineering</span></div>
-          <div class="stat"><strong>29</strong><span data-i18n="stat2">U.S. patents</span></div>
-          <div class="stat"><strong>4</strong><span data-i18n="stat3">major global technology companies</span></div>
-          <div class="stat"><strong>2</strong><span data-i18n="stat4">creative platforms: book and essays</span></div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="info-card">
-          <div class="section-kicker" data-i18n="journeyKicker">Journey</div>
-          <h2 data-i18n="journeyTitle">A bridge across worlds</h2>
-          <p data-i18n="journeyP1">Having lived in Brazil, Spain, Belgium, and the United States, Roberto writes from the perspective of someone who has crossed different cultures, languages, and realities. That journey shapes both his memoir and his public writing: not as a celebration of achievement for its own sake, but as an expression of gratitude for the people, sacrifices, and unexpected acts of generosity that made the journey possible.</p>
-          <p data-i18n="journeyP2">This is one reason <em>Engineering with a Heart</em> exists. The project stands at the intersection of engineering practice, public explanation, personal memory, and service. It asks how technical work can remain rigorous while also becoming more legible, humane, and meaningful to the communities it ultimately serves.</p>
+          <div class="stat"><strong>29</strong><span data-i18n="stat1">U.S. patents</span></div>
+          <div class="stat"><strong>20+</strong><span data-i18n="stat2">years in software engineering</span></div>
+          <div class="stat"><strong>4</strong><span data-i18n="stat3">countries lived and worked</span></div>
+          <div class="stat"><strong>3</strong><span data-i18n="stat4">main expressions: engineering, book, music</span></div>
         </div>
       </section>
 
       <section class="section two-col">
         <div class="list-card">
-          <div class="section-kicker" data-i18n="workKicker">Professional Focus</div>
-          <h2 data-i18n="workTitle">What he builds</h2>
-          <p class="muted" data-i18n="workText">Roberto’s technical work spans the architecture and diagnostics of complex systems at scale, with particular depth in distributed systems, observability, networking, performance, virtualization, and platform reliability.</p>
+          <div class="section-kicker" data-i18n="buildKicker">Professional Focus</div>
+          <h2 data-i18n="buildTitle">What He Builds</h2>
+          <p data-i18n="buildP1">Roberto’s technical work centers on the architecture, visibility, and diagnosis of complex systems at scale. Across Microsoft, Lenovo, IBM, Nokia, and earlier roles, he has built distributed systems, tracing and telemetry platforms, diagnostics frameworks, networking software, virtualization infrastructure, and reliability tooling for environments where failures are difficult to see and expensive to misunderstand.</p>
+          <p data-i18n="buildP2">His work is strongest where deep systems knowledge meets clarity: making invisible behavior observable, turning massive telemetry into understanding, and helping engineers explain, stabilize, and improve the platforms that quietly power modern life.</p>
           <div class="pill-row">
             <span class="pill">Distributed Systems</span>
             <span class="pill">Observability</span>
@@ -203,51 +185,63 @@
             <span class="pill">Virtualization</span>
             <span class="pill">Cloud Infrastructure</span>
             <span class="pill">Telemetry</span>
-            <span class="pill">Performance</span>
+            <span class="pill">Reliability</span>
           </div>
         </div>
         <div class="list-card">
-          <div class="section-kicker" data-i18n="writingKicker">Writing and Public Work</div>
-          <h2 data-i18n="writingTitle">What he writes</h2>
-          <p class="muted" data-i18n="writingText">His writing lives in two complementary forms: memoir and reflection. <em>Impossible Crossing</em> tells a deeply personal story of perseverance, migration, education, and grace. <em>Engineering with a Heart</em> expands that voice into essays about technology, ethics, resilience, and the human stories behind the systems we build.</p>
+          <div class="section-kicker" data-i18n="writeKicker">Writing and Public Work</div>
+          <h2 data-i18n="writeTitle">What He Writes</h2>
+          <p data-i18n="writeP1">His writing moves in two complementary directions. In <em>Impossible Crossing</em>, he tells a life story marked by poverty, migration, education, faith, love, resilience, and the people whose presence changed its direction. In <em>Engineering with a Heart</em>, that same voice expands into reflection on technology, ethics, inequality, service, and the human meaning behind the systems we build.</p>
+          <p data-i18n="writeP2">What gives the writing force is not spectacle, bitterness, or self-congratulation. It is a mature narrative voice that looks at life with gratitude, lucidity, dignity, and unusual emotional restraint. The result is writing that invites readers to walk alongside the journey rather than admire it from a distance.</p>
           <div class="links">
-            <a class="btn btn-primary" href="book.html" data-i18n="writingBtnBook">Explore the Book</a>
-            <a class="btn btn-secondary" href="essays.html" data-i18n="writingBtnEssays">Read Essays</a>
+            <a class="btn btn-primary" href="book.html" data-i18n="writeBtnBook">Explore the Book</a>
+            <a class="btn btn-secondary" href="essays.html" data-i18n="writeBtnEssays">Read Essays</a>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section two-col">
         <div class="info-card">
-          <div class="section-kicker" data-i18n="musicKicker">Beyond Engineering</div>
-          <h2 data-i18n="musicTitle">Music, voice, and creative expression</h2>
-          <p data-i18n="musicP1">Music is also part of Roberto’s creative life. Singing and recorded performances reflect another side of the same impulse behind his engineering and writing: attention, emotion, craft, and the desire to communicate something real.</p>
-          <p data-i18n="musicP2">For this website, the strongest approach is to treat music as a curated supporting section rather than a main pillar. A small future area for selected performances or recordings can enrich the site by showing another dimension of voice and personality without competing with the core identity of the platform.</p>
+          <div class="section-kicker" data-i18n="musicKicker">Creative Life</div>
+          <h2 data-i18n="musicTitle">Music, Voice, and Creative Expression</h2>
+          <p data-i18n="musicP1">Music is not an accessory in Roberto’s life. It is one of the languages through which memory, love, longing, courage, and hope have been lived and understood. Across the book, the recordings, and the personal reflections behind each song, music appears as refuge, study companion, emotional archive, family bond, and stage for improbable dreams.</p>
+          <p data-i18n="musicP2">Some songs are tied to decisive chapters of life: Air Supply became fuel during the years of impossible academic ambition; “Goodbye Yellow Brick Road” marks the moment he first dared to sing in public; “Halo” carries the joy of recording with his daughter Gabriela; “A Thousand Years” reflects the love of a father for his daughters; “Never Ending Story” preserves a priceless evening in Recife with relatives now gone. Again and again, music becomes the place where feelings continue after words stop.</p>
+          <p data-i18n="musicP3">That is why this site treats music as a true pillar of identity alongside engineering and the book. Over time, this area can grow into selected recordings, stories behind the songs, playlists, and reflections that show how deeply voice and melody helped shape the journey.</p>
+        </div>
+        <div class="callout">
+          <h3 data-i18n="musicSideTitle">Why this matters here</h3>
+          <p data-i18n="musicSideP1">The emotional core of <em>Impossible Crossing</em> extends naturally into music. The final pages of the book turn into playlists because some chapters are completed not only in prose, but in sound.</p>
+          <p data-i18n="musicSideP2">For this reason, the site works best when readers can see three connected dimensions at once: the engineer, the author, and the singer.</p>
+          <div class="quote" data-i18n="musicQuote">“This is my story in words. Then it continues in sound.”</div>
         </div>
       </section>
 
       <section class="section">
-        <div class="section-kicker" data-i18n="linksKicker">Selected Links</div>
-        <h2 data-i18n="linksTitle">Explore more</h2>
-        <p data-i18n="linksText">These links bring together the main parts of the site: personal writing, the book, and the broader vision behind the project.</p>
+        <div class="section-kicker" data-i18n="connectKicker">Selected Links</div>
+        <h2 data-i18n="connectTitle">Where This Story Continues</h2>
+        <p data-i18n="connectText">This website is only one part of a broader personal and creative ecosystem. These links connect the main public expressions of the project today.</p>
         <div class="links">
-          <a class="btn btn-primary" href="essays.html" data-i18n="linksBtnEssays">Essays</a>
-          <a class="btn btn-secondary" href="book.html" data-i18n="linksBtnBook">Impossible Crossing</a>
-          <a class="btn btn-secondary" href="https://www.linkedin.com/in/robertohjdasilva/" target="_blank" rel="noopener noreferrer" data-i18n="linksBtnLinkedIn">LinkedIn</a>
+          <a class="btn btn-primary" href="resume.html" data-i18n="connectBtnResume">Resume</a>
+          <a class="btn btn-secondary" href="book.html" data-i18n="connectBtnBook">Impossible Crossing</a>
+          <a class="btn btn-secondary" href="essays.html" data-i18n="connectBtnEssays">Essays</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/robertohjdasilva/" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnLinkedIn">LinkedIn</a>
+          <a class="btn btn-secondary" href="https://www.facebook.com/robertohjacobdasilva" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnFacebook">Facebook</a>
+          <a class="btn btn-secondary" href="https://www.instagram.com/robertohjacobdasilva/" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnInstagram">Instagram</a>
         </div>
       </section>
     </div>
   </main>
 
   <footer>
-    <div class="container">
-      <span data-i18n="footerText">© 2026 Roberto H. Jacob da Silva. Built with reflection, engineering, and heart.</span>
-    </div>
+    <div class="container" data-i18n="footerText">© 2026 Roberto H. Jacob da Silva. Built with reflection, engineering, and heart.</div>
   </footer>
 
   <script>
     const translations = {
       en: {
+        pageTitle: "About | Roberto H. Jacob da Silva",
+        pageDescription: "About Roberto H. Jacob da Silva — engineer, inventor, author, singer, and creator of Engineering with a Heart.",
+        logoAlt: "RJ Silva logo",
         brandSubtitleMain: "Engineering with a Heart",
         brandSubtitle: "A reflection on engineering, humanity, and purpose",
         navHome: "Home",
@@ -255,63 +249,60 @@
         navBook: "Book",
         navResume: "Resume",
         navAbout: "About",
+        langLabel: "Language",
         heroEyebrow: "About the Author and Engineer",
-        heroTitle: "A life shaped by engineering, storytelling, resilience, and gratitude.",
-        heroText: "Roberto H. Jacob da Silva builds complex systems, writes about the human meaning behind technology, and believes the most valuable work is the kind that serves people with both excellence and heart.",
+        heroTitle: "A life shaped by engineering, writing, music, and gratitude.",
+        heroText: "Roberto H. Jacob da Silva moves between complex systems, deeply personal storytelling, and songs that carry memory. This page brings those dimensions together in one human portrait.",
         heroBtnResume: "View Resume",
-        heroBtnLinkedIn: "Visit LinkedIn",
-        heroCardTitle: "At a glance",
-        heroCard1: "Creator of <em>Engineering with a Heart</em>, a space for reflection on technology, humanity, and purpose.",
-        heroCard2: "Author of <em>Impossible Crossing</em>, a memoir rooted in perseverance, migration, gratitude, and discovery.",
-        heroCard3: "A voice shaped by life across Brazil, Europe, and the United States.",
-        heroCard4: "Equally at home in engineering, storytelling, and public reflection.",
-        introKicker: "Introduction",
-        portraitAlt: "Portrait of Roberto H. Jacob da Silva",
-        introTitle: "About Roberto H. Jacob da Silva",
-        introP1: "Roberto H. Jacob da Silva is a Brazilian-born engineer, inventor, author, and storyteller whose work connects deep technical systems with human meaning. Over a career of more than two decades, he has designed and led work in distributed systems, networking, virtualization, cloud infrastructure, observability, and diagnostics.",
-        introP2: "His professional path includes major engineering roles at Microsoft, Lenovo, IBM, and Nokia, along with a long record of innovation recognized through 29 U.S. patents. At the same time, his writing has remained rooted in a different but equally important question: how can knowledge, technology, and opportunity become more human, more understandable, and more useful to others?",
-        introQuote: "“Technology matters most when it helps us see one another more clearly, serve one another more faithfully, and build with both excellence and compassion.”",
-        stat1: "years in software engineering",
-        stat2: "U.S. patents",
-        stat3: "major global technology companies",
-        stat4: "creative platforms: book and essays",
+        heroBtnBook: "Explore the Book",
+        heroCardTitle: "At a Glance",
+        heroCard1: "Engineer and inventor working across distributed systems, observability, networking, diagnostics, and cloud infrastructure.",
+        heroCard2: "Author of <em>Impossible Crossing</em> and creator of <em>Engineering with a Heart</em>.",
+        heroCard3: "A life lived across Brazil, Europe, and the United States.",
+        heroCard4: "Music is not a side note here; it is part of the emotional structure of the journey.",
         journeyKicker: "Journey",
-        journeyTitle: "A bridge across worlds",
-        journeyP1: "Having lived in Brazil, Spain, Belgium, and the United States, Roberto writes from the perspective of someone who has crossed different cultures, languages, and realities. That journey shapes both his memoir and his public writing: not as a celebration of achievement for its own sake, but as an expression of gratitude for the people, sacrifices, and unexpected acts of generosity that made the journey possible.",
-        journeyP2: "This is one reason <em>Engineering with a Heart</em> exists. The project stands at the intersection of engineering practice, public explanation, personal memory, and service. It asks how technical work can remain rigorous while also becoming more legible, humane, and meaningful to the communities it ultimately serves.",
-        valuesTitle: "Guiding themes",
-        values1: "Engineering excellence should remain connected to human usefulness.",
-        values2: "Invisible systems deserve clearer public explanation.",
-        values3: "Storytelling can widen access to technical worlds.",
-        values4: "Gratitude, dignity, and resilience matter in both life and work.",
-        values5: "A meaningful career is built not only on performance, but also on service.",
-        workKicker: "Professional Focus",
-        workTitle: "What he builds",
-        workText: "Roberto’s technical work spans the architecture and diagnostics of complex systems at scale, with particular depth in distributed systems, observability, networking, performance, virtualization, and platform reliability.",
-        writingKicker: "Writing and Public Work",
-        writingTitle: "What he writes",
-        writingText: "His writing lives in two complementary forms: memoir and reflection. <em>Impossible Crossing</em> tells a deeply personal story of perseverance, migration, education, and grace. <em>Engineering with a Heart</em> expands that voice into essays about technology, ethics, resilience, and the human stories behind the systems we build.",
-        writingBtnBook: "Explore the Book",
-        writingBtnEssays: "Read Essays",
-        musicKicker: "Beyond Engineering",
-        musicTitle: "Music, voice, and creative expression",
-        musicP1: "Music is also part of Roberto’s creative life. Singing and recorded performances reflect another side of the same impulse behind his engineering and writing: attention, emotion, craft, and the desire to communicate something real.",
-        musicP2: "For this website, the strongest approach is to treat music as a curated supporting section rather than a main pillar. A small future area for selected performances or recordings can enrich the site by showing another dimension of voice and personality without competing with the core identity of the platform.",
-        connectTitle: "Where this page connects",
-        connect1: "The home page introduces the central vision of <em>Engineering with a Heart</em>.",
-        connect2: "The essays page develops the reflective and public-facing writing.",
-        connect3: "The resume page presents the technical and professional record.",
-        connect4: "This page ties those threads together into one narrative.",
-        linksKicker: "Selected Links",
-        linksTitle: "Explore more",
-        linksText: "These links bring together the main parts of the site: personal writing, the book, and the broader vision behind the project.",
-        linksBtnResume: "Resume",
-        linksBtnEssays: "Essays",
-        linksBtnBook: "Impossible Crossing",
-        linksBtnLinkedIn: "LinkedIn",
+        journeyTitle: "A Bridge Across Worlds",
+        journeyP1: "Roberto H. Jacob da Silva writes and builds from the perspective of someone who has crossed multiple worlds: Brazil and the United States, scarcity and opportunity, technical rigor and human reflection, private struggle and public contribution. That crossing is not a branding device. It is the lived foundation beneath both <em>Impossible Crossing</em> and <em>Engineering with a Heart</em>.",
+        journeyP2: "The project exists in the space where human story, engineering practice, public understanding, and community meaning meet. It grows out of a life shaped by gratitude for family, teachers, mentors, friends, colleagues, and the unexpected acts of generosity that quietly changed what seemed possible.",
+        journeyP3: "That is why the work on this site is intentionally hybrid. It does not separate technical excellence from memory, purpose, dignity, or service. It asks what engineering looks like when it remains intellectually serious and deeply human at the same time.",
+        stat1: "U.S. patents",
+        stat2: "years in software engineering",
+        stat3: "countries lived and worked",
+        stat4: "main expressions: engineering, book, music",
+        buildKicker: "Professional Focus",
+        buildTitle: "What He Builds",
+        buildP1: "Roberto’s technical work centers on the architecture, visibility, and diagnosis of complex systems at scale. Across Microsoft, Lenovo, IBM, Nokia, and earlier roles, he has built distributed systems, tracing and telemetry platforms, diagnostics frameworks, networking software, virtualization infrastructure, and reliability tooling for environments where failures are difficult to see and expensive to misunderstand.",
+        buildP2: "His work is strongest where deep systems knowledge meets clarity: making invisible behavior observable, turning massive telemetry into understanding, and helping engineers explain, stabilize, and improve the platforms that quietly power modern life.",
+        writeKicker: "Writing and Public Work",
+        writeTitle: "What He Writes",
+        writeP1: "His writing moves in two complementary directions. In <em>Impossible Crossing</em>, he tells a life story marked by poverty, migration, education, faith, love, resilience, and the people whose presence changed its direction. In <em>Engineering with a Heart</em>, that same voice expands into reflection on technology, ethics, inequality, service, and the human meaning behind the systems we build.",
+        writeP2: "What gives the writing force is not spectacle, bitterness, or self-congratulation. It is a mature narrative voice that looks at life with gratitude, lucidity, dignity, and unusual emotional restraint. The result is writing that invites readers to walk alongside the journey rather than admire it from a distance.",
+        writeBtnBook: "Explore the Book",
+        writeBtnEssays: "Read Essays",
+        musicKicker: "Creative Life",
+        musicTitle: "Music, Voice, and Creative Expression",
+        musicP1: "Music is not an accessory in Roberto’s life. It is one of the languages through which memory, love, longing, courage, and hope have been lived and understood. Across the book, the recordings, and the personal reflections behind each song, music appears as refuge, study companion, emotional archive, family bond, and stage for improbable dreams.",
+        musicP2: "Some songs are tied to decisive chapters of life: Air Supply became fuel during the years of impossible academic ambition; “Goodbye Yellow Brick Road” marks the moment he first dared to sing in public; “Halo” carries the joy of recording with his daughter Gabriela; “A Thousand Years” reflects the love of a father for his daughters; “Never Ending Story” preserves a priceless evening in Recife with relatives now gone. Again and again, music becomes the place where feelings continue after words stop.",
+        musicP3: "That is why this site treats music as a true pillar of identity alongside engineering and the book. Over time, this area can grow into selected recordings, stories behind the songs, playlists, and reflections that show how deeply voice and melody helped shape the journey.",
+        musicSideTitle: "Why this matters here",
+        musicSideP1: "The emotional core of <em>Impossible Crossing</em> extends naturally into music. The final pages of the book turn into playlists because some chapters are completed not only in prose, but in sound.",
+        musicSideP2: "For this reason, the site works best when readers can see three connected dimensions at once: the engineer, the author, and the singer.",
+        musicQuote: "“This is my story in words. Then it continues in sound.”",
+        connectKicker: "Selected Links",
+        connectTitle: "Where This Story Continues",
+        connectText: "This website is only one part of a broader personal and creative ecosystem. These links connect the main public expressions of the project today.",
+        connectBtnResume: "Resume",
+        connectBtnBook: "Impossible Crossing",
+        connectBtnEssays: "Essays",
+        connectBtnLinkedIn: "LinkedIn",
+        connectBtnFacebook: "Facebook",
+        connectBtnInstagram: "Instagram",
         footerText: "© 2026 Roberto H. Jacob da Silva. Built with reflection, engineering, and heart."
       },
       pt: {
+        pageTitle: "Sobre | Roberto H. Jacob da Silva",
+        pageDescription: "Sobre Roberto H. Jacob da Silva — engenheiro, inventor, autor, cantor e criador de Engineering with a Heart.",
+        logoAlt: "Logo RJ Silva",
         brandSubtitleMain: "Engineering with a Heart",
         brandSubtitle: "Uma reflexão sobre engenharia, humanidade e propósito",
         navHome: "Início",
@@ -319,66 +310,62 @@
         navBook: "Livro",
         navResume: "Currículo",
         navAbout: "Sobre",
-        heroEyebrow: "Sobre o autor e engenheiro",
-        heroTitle: "Uma vida moldada por engenharia, narrativa, resiliência e gratidão.",
-        heroText: "Roberto H. Jacob da Silva constrói sistemas complexos, escreve sobre o significado humano da tecnologia e acredita que o trabalho mais valioso é aquele que serve às pessoas com excelência e coração.",
-        heroBtnResume: "Ver currículo",
-        heroBtnLinkedIn: "Visitar LinkedIn",
-        heroCardTitle: "Visão geral",
-        heroCard1: "Criador de <em>Engineering with a Heart</em>, um espaço de reflexão sobre tecnologia, humanidade e propósito.",
-        heroCard2: "Autor de <em>Impossible Crossing</em>, um livro de memórias enraizado em perseverança, migração, gratidão e descoberta.",
-        heroCard3: "Uma voz moldada por uma vida entre o Brasil, a Europa e os Estados Unidos.",
-        heroCard4: "Em casa tanto na engenharia quanto na narrativa e na reflexão pública.",
-        introKicker: "Introdução",
-        portraitAlt: "Retrato de Roberto H. Jacob da Silva",
-        introTitle: "Sobre Roberto H. Jacob da Silva",
-        introP1: "Roberto H. Jacob da Silva é engenheiro, inventor, autor e contador de histórias, nascido no Brasil, cujo trabalho conecta sistemas técnicos profundos a significado humano. Ao longo de uma carreira de mais de duas décadas, ele projetou e liderou trabalhos em sistemas distribuídos, redes, virtualização, infraestrutura de nuvem, observabilidade e diagnósticos.",
-        introP2: "Sua trajetória profissional inclui papéis importantes de engenharia na Microsoft, Lenovo, IBM e Nokia, além de um longo histórico de inovação reconhecido por 29 patentes nos Estados Unidos. Ao mesmo tempo, sua escrita permanece enraizada em uma pergunta igualmente importante: como conhecimento, tecnologia e oportunidade podem se tornar mais humanos, mais compreensíveis e mais úteis para os outros?",
-        introQuote: "“A tecnologia tem mais valor quando nos ajuda a enxergar uns aos outros com mais clareza, servir uns aos outros com mais fidelidade e construir com excelência e compaixão.”",
-        stat1: "anos em engenharia de software",
-        stat2: "patentes nos EUA",
-        stat3: "grandes empresas globais de tecnologia",
-        stat4: "plataformas criativas: livro e ensaios",
-        journeyKicker: "Trajetória",
-        journeyTitle: "Uma ponte entre mundos",
-        journeyP1: "Tendo vivido no Brasil, na Espanha, na Bélgica e nos Estados Unidos, Roberto escreve a partir da perspectiva de alguém que atravessou diferentes culturas, línguas e realidades. Essa jornada molda tanto seu livro de memórias quanto sua escrita pública: não como uma celebração do sucesso por si só, mas como uma expressão de gratidão pelas pessoas, pelos sacrifícios e pelos gestos inesperados de generosidade que tornaram a jornada possível.",
-        journeyP2: "Essa é uma das razões pelas quais <em>Engineering with a Heart</em> existe. O projeto está na interseção entre prática de engenharia, explicação pública, memória pessoal e serviço. Ele pergunta como o trabalho técnico pode permanecer rigoroso e, ao mesmo tempo, tornar-se mais legível, mais humano e mais significativo para as comunidades que ele serve.",
-        valuesTitle: "Temas centrais",
-        values1: "Excelência em engenharia deve permanecer conectada à utilidade humana.",
-        values2: "Sistemas invisíveis merecem uma explicação pública mais clara.",
-        values3: "Narrativa pode ampliar o acesso a mundos técnicos.",
-        values4: "Gratidão, dignidade e resiliência importam tanto na vida quanto no trabalho.",
-        values5: "Uma carreira significativa se constrói não apenas com performance, mas também com serviço.",
-        workKicker: "Foco profissional",
-        workTitle: "O que ele constrói",
-        workText: "O trabalho técnico de Roberto abrange arquitetura e diagnóstico de sistemas complexos em grande escala, com profundidade especial em sistemas distribuídos, observabilidade, redes, performance, virtualização e confiabilidade de plataformas.",
-        writingKicker: "Escrita e atuação pública",
-        writingTitle: "O que ele escreve",
-        writingText: "Sua escrita vive em duas formas complementares: memórias e reflexão. <em>Impossible Crossing</em> conta uma história profundamente pessoal de perseverança, migração, educação e graça. <em>Engineering with a Heart</em> amplia essa voz em ensaios sobre tecnologia, ética, resiliência e as histórias humanas por trás dos sistemas que construímos.",
-        writingBtnBook: "Explorar o livro",
-        writingBtnEssays: "Ler ensaios",
-        musicKicker: "Além da engenharia",
-        musicTitle: "Música, voz e expressão criativa",
-        musicP1: "A música também faz parte da vida criativa de Roberto. O canto e as gravações refletem outro lado do mesmo impulso que move sua engenharia e sua escrita: atenção, emoção, ofício e o desejo de comunicar algo verdadeiro.",
-        musicP2: "Para este site, a abordagem mais forte é tratar a música como uma seção complementar e curada, e não como pilar principal. Uma pequena área futura com performances ou gravações selecionadas pode enriquecer o site ao mostrar outra dimensão de voz e personalidade, sem competir com a identidade central da plataforma.",
-        connectTitle: "Como esta página se conecta",
-        connect1: "A página inicial apresenta a visão central de <em>Engineering with a Heart</em>.",
-        connect2: "A página de ensaios desenvolve a escrita reflexiva e voltada ao público.",
-        connect3: "A página de currículo apresenta o histórico técnico e profissional.",
-        connect4: "Esta página une esses fios em uma única narrativa.",
-        linksKicker: "Links selecionados",
-        linksTitle: "Explore mais",
-        linksText: "Estes links reúnem as partes principais do site: escrita pessoal, o livro e a visão mais ampla por trás do projeto.",
-        linksBtnResume: "Currículo",
-        linksBtnEssays: "Ensaios",
-        linksBtnBook: "Impossible Crossing",
-        linksBtnLinkedIn: "LinkedIn",
+        langLabel: "Idioma",
+        heroEyebrow: "Sobre o Autor e Engenheiro",
+        heroTitle: "Uma vida moldada por engenharia, escrita, música e gratidão.",
+        heroText: "Roberto H. Jacob da Silva transita entre sistemas complexos, narrativa profundamente pessoal e canções carregadas de memória. Esta página reúne essas dimensões em um único retrato humano.",
+        heroBtnResume: "Ver Currículo",
+        heroBtnBook: "Explorar o Livro",
+        heroCardTitle: "Visão Geral",
+        heroCard1: "Engenheiro e inventor com atuação em sistemas distribuídos, observabilidade, redes, diagnósticos e infraestrutura de nuvem.",
+        heroCard2: "Autor de <em>Travessia Impossível</em> e criador de <em>Engineering with a Heart</em>.",
+        heroCard3: "Uma vida vivida entre o Brasil, a Europa e os Estados Unidos.",
+        heroCard4: "A música não é nota de rodapé aqui; ela faz parte da estrutura emocional da jornada.",
+        journeyKicker: "Jornada",
+        journeyTitle: "Uma Ponte Entre Mundos",
+        journeyP1: "Roberto H. Jacob da Silva escreve e constrói a partir da perspectiva de alguém que atravessou múltiplos mundos: Brasil e Estados Unidos, escassez e oportunidade, rigor técnico e reflexão humana, luta privada e contribuição pública. Essa travessia não é um recurso de marca. É a base vivida que sustenta tanto <em>Travessia Impossível</em> quanto <em>Engineering with a Heart</em>.",
+        journeyP2: "O projeto existe no espaço em que história humana, prática de engenharia, entendimento público e significado comunitário se encontram. Ele nasce de uma vida moldada pela gratidão à família, a professores, mentores, amigos, colegas e aos atos inesperados de generosidade que silenciosamente mudaram o que parecia possível.",
+        journeyP3: "Por isso o trabalho neste site é intencionalmente híbrido. Ele não separa excelência técnica de memória, propósito, dignidade ou serviço. Ele pergunta como a engenharia se parece quando permanece intelectualmente séria e profundamente humana ao mesmo tempo.",
+        stat1: "patentes nos EUA",
+        stat2: "anos em engenharia de software",
+        stat3: "países onde viveu e trabalhou",
+        stat4: "expressões centrais: engenharia, livro, música",
+        buildKicker: "Foco Profissional",
+        buildTitle: "O Que Ele Constrói",
+        buildP1: "O trabalho técnico de Roberto se concentra na arquitetura, visibilidade e análise de sistemas complexos em larga escala. Ao longo de Microsoft, Lenovo, IBM, Nokia e funções anteriores, ele construiu sistemas distribuídos, plataformas de tracing e telemetria, frameworks de diagnóstico, software de redes, infraestrutura de virtualização e ferramentas de confiabilidade para ambientes em que falhas são difíceis de enxergar e caras de interpretar errado.",
+        buildP2: "Seu trabalho é mais forte onde conhecimento profundo de sistemas encontra clareza: tornar comportamentos invisíveis observáveis, transformar telemetria massiva em entendimento e ajudar engenheiros a explicar, estabilizar e melhorar as plataformas que silenciosamente movem a vida moderna.",
+        writeKicker: "Escrita e Trabalho Público",
+        writeTitle: "O Que Ele Escreve",
+        writeP1: "Sua escrita segue em duas direções complementares. Em <em>Travessia Impossível</em>, ele conta uma história de vida marcada por pobreza, migração, educação, fé, amor, resiliência e pelas pessoas cuja presença mudou o seu rumo. Em <em>Engineering with a Heart</em>, essa mesma voz se expande para reflexões sobre tecnologia, ética, desigualdade, serviço e o significado humano por trás dos sistemas que construímos.",
+        writeP2: "O que dá força a essa escrita não é espetáculo, amargura ou autopromoção. É uma voz narrativa madura que olha para a vida com gratidão, lucidez, dignidade e rara contenção emocional. O resultado é uma escrita que convida o leitor a caminhar ao lado da jornada, em vez de admirá-la de longe.",
+        writeBtnBook: "Explorar o Livro",
+        writeBtnEssays: "Ler Ensaios",
+        musicKicker: "Vida Criativa",
+        musicTitle: "Música, Voz e Expressão Criativa",
+        musicP1: "A música não é acessória na vida de Roberto. Ela é uma das linguagens por meio das quais memória, amor, saudade, coragem e esperança foram vividos e compreendidos. No livro, nas gravações e nos textos pessoais por trás de cada canção, a música aparece como refúgio, companhia de estudo, arquivo emocional, vínculo familiar e palco para sonhos improváveis.",
+        musicP2: "Algumas músicas estão ligadas a capítulos decisivos da vida: Air Supply virou combustível nos anos de ambição acadêmica considerada impossível; “Goodbye Yellow Brick Road” marca o momento em que ele ousou cantar em público pela primeira vez; “Halo” carrega a alegria de gravar com a filha Gabriela; “A Thousand Years” reflete o amor de um pai por suas filhas; “Never Ending Story” preserva uma noite sem preço no Recife com parentes que já partiram. Repetidas vezes, a música se torna o lugar onde os sentimentos continuam depois que as palavras param.",
+        musicP3: "Por isso este site trata a música como um pilar real de identidade ao lado da engenharia e do livro. Com o tempo, essa área pode crescer para incluir gravações selecionadas, histórias por trás das canções, playlists e reflexões que mostrem o quanto voz e melodia ajudaram a moldar a jornada.",
+        musicSideTitle: "Por que isso importa aqui",
+        musicSideP1: "O núcleo emocional de <em>Travessia Impossível</em> se estende naturalmente à música. As páginas finais do livro se transformam em playlists porque alguns capítulos se completam não só em prosa, mas também em som.",
+        musicSideP2: "Por isso, o site funciona melhor quando o leitor consegue ver três dimensões conectadas ao mesmo tempo: o engenheiro, o autor e o cantor.",
+        musicQuote: "“Esta é a minha história em palavras. A seguir, ela continua em som.”",
+        connectKicker: "Links Selecionados",
+        connectTitle: "Onde Esta História Continua",
+        connectText: "Este site é apenas uma parte de um ecossistema pessoal e criativo mais amplo. Estes links conectam hoje as principais expressões públicas do projeto.",
+        connectBtnResume: "Currículo",
+        connectBtnBook: "Travessia Impossível",
+        connectBtnEssays: "Ensaios",
+        connectBtnLinkedIn: "LinkedIn",
+        connectBtnFacebook: "Facebook",
+        connectBtnInstagram: "Instagram",
         footerText: "© 2026 Roberto H. Jacob da Silva. Feito com reflexão, engenharia e coração."
       }
     };
 
     function applyTranslations(lang) {
       document.documentElement.lang = lang;
+      document.title = translations[lang].pageTitle;
+      document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].pageDescription);
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang][key] !== undefined) {
@@ -394,9 +381,7 @@
           }
         });
       });
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
       localStorage.setItem('siteLang', lang);
     }
 
