@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music | Roberto H. Jacob da Silva</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <meta name="description" content="Music | Roberto H. Jacob da Silva — songs, voice, recordings, and the musical dimension of Engineering with a Heart." />
+  <style>
+    :root{
+      --bg:#f5f2ec;
+      --paper:#fffaf3;
+      --text:#1a1a1a;
+      --muted:#5a5148;
+      --brown:#2a1a12;
+      --gold:#c9892b;
+      --gold-dark:#9a6a22;
+      --border:rgba(42,26,18,.14);
+      --shadow:0 10px 30px rgba(42,26,18,.08);
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Georgia, "Times New Roman", serif;background:var(--bg);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 40px));margin:0 auto}
+    .topbar{background:var(--brown);color:#fff;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .topbar-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+    .top-hero-divider{height:1px;background:#ffffff}
+    .brand{display:flex;align-items:center;min-width:0}
+    .brand img{height:72px;width:auto;object-fit:contain;display:block}
+    .brand-text{text-align:center;min-width:0}
+    .brand-subtitle-main{margin:0;font-size:22px;line-height:1.2;color:rgba(255,255,255,.92)}
+    .brand-subtitle{margin:4px 0 0;font-size:16px;color:rgba(255,255,255,.78)}
+    .nav{display:flex;gap:18px;font-size:15px;white-space:nowrap;justify-self:end;align-items:center}
+    .nav a,.lang-btn{color:rgba(255,255,255,.88)}
+    .nav a:hover,.lang-btn:hover{color:#fff}
+    .lang-switch{display:flex;align-items:center;gap:8px;margin-left:6px;padding-left:14px;border-left:1px solid rgba(255,255,255,.18)}
+    .lang-btn{background:none;border:none;padding:0;font:inherit;cursor:pointer}
+    .lang-btn.active{color:#fff;text-decoration:underline;text-underline-offset:3px}
+    .lang-label{color:rgba(255,255,255,.5);font-size:13px}
+    .hero{position:relative;padding:78px 0 60px;color:#fff;background:linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.28)),radial-gradient(circle at 18% 22%, rgba(201,137,43,.18), transparent 34%),linear-gradient(135deg, #2a1a12, #67462b);overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center 50%, rgba(255,210,120,0.18) 0%, rgba(255,210,120,0.08) 22%, rgba(0,0,0,0) 54%);pointer-events:none;mix-blend-mode:screen}
+    .hero-content{position:relative;z-index:2}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .hero-copy{text-align:center}
+    .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#f0c98f;font-weight:700;margin-bottom:12px}
+    .hero h1{margin:0;font-size:clamp(34px, 5vw, 54px);line-height:1.02;letter-spacing:-.03em}
+    .hero p{margin:18px auto 0;max-width:760px;font-size:20px;color:rgba(255,255,255,.88)}
+    .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:22px;box-shadow:0 14px 34px rgba(0,0,0,.14)}
+    .hero-card h2{margin:0 0 12px;font-size:20px;color:#fff}
+    .hero-card ul{margin:0;padding-left:18px;color:rgba(255,255,255,.86);font-size:15px}
+    .hero-card li+li{margin-top:6px}
+    .hero-actions,.button-row,.action-center{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-size:15px;font-weight:700;border:1px solid rgba(255,255,255,.18);transition:.2s ease}
+    .btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
+    .btn-primary:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
+    .btn-secondary{background:rgba(255,255,255,.08);color:#fff}
+    .btn-secondary:hover{background:rgba(255,255,255,.14)}
+    .btn-light{background:#fff;border:1px solid var(--border);color:var(--brown)}
+    .btn-light:hover{border-color:rgba(42,26,18,.28);transform:translateY(-1px)}
+    .hero-divider{height:3px;width:100%;margin:0 auto;background:linear-gradient(to right, transparent, var(--gold), transparent)}
+    .main{padding:38px 0 70px}
+    .section{background:var(--paper);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);padding:30px;margin-bottom:22px}
+    .section-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+    .section h2{margin:0 0 14px;font-size:30px;line-height:1.15;color:var(--brown)}
+    .section p{margin:0 0 14px;font-size:18px}
+    .section p:last-child{margin-bottom:0}
+    .two-col{display:grid;grid-template-columns:1.08fr .92fr;gap:22px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+    .stat{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;text-align:center}
+    .stat strong{display:block;font-size:32px;line-height:1;color:var(--brown);margin-bottom:8px}
+    .stat span{color:var(--muted);font-size:14px}
+    .list-card,.info-card,.callout,.feature-card,.song-card,.media-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
+    .list-card h3,.info-card h3,.callout h3,.feature-card h3,.song-card h3,.media-card h3{margin:0 0 10px;font-size:23px;color:var(--brown)}
+    .list-card ul,.media-card ul{margin:0;padding-left:20px}
+    .list-card li+li,.media-card li+li{margin-top:9px}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .pill{display:inline-flex;align-items:center;padding:9px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:14px;color:var(--brown)}
+    .song-grid,.media-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+    .feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:18px}
+    .playlist-qr{display:block;width:100%;max-width:280px;height:auto;margin:18px auto 14px;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow)}
+    .playlist-actions{display:flex;justify-content:center;margin-top:14px}
+    .quote{margin-top:18px;padding:18px 20px;border-left:4px solid var(--gold);background:#fff;border-radius:0 16px 16px 0;color:var(--brown);font-size:20px;line-height:1.55;font-style:italic}
+    .muted{color:var(--muted)}
+    .placeholder-box{display:grid;place-items:center;min-height:180px;border:2px dashed rgba(42,26,18,.18);border-radius:18px;background:linear-gradient(180deg, rgba(201,137,43,.06), rgba(255,255,255,.5));text-align:center;padding:20px;color:var(--muted)}
+    .qr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+    .qr-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;text-align:center}
+    .qr-card img{display:block;width:100%;max-width:280px;height:auto;margin:0 auto 14px;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow)}
+    .qr-card h3{margin:0 0 10px;font-size:22px;color:var(--brown)}
+    .qr-card p{margin:0 0 14px;font-size:16px;color:var(--muted)}
+    .audio-demo{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}
+    .audio-demo audio{width:100%}
+    .small-note{margin-top:10px;font-size:14px;color:var(--muted)}
+    footer{padding:24px 0 50px;color:var(--muted);text-align:center;font-size:14px}
+    @media (max-width: 980px){
+      .hero-grid,.two-col,.stats,.song-grid,.feature-grid,.media-grid{grid-template-columns:1fr}
+      .topbar{padding:18px 0 14px}
+      .topbar-inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+      .brand{justify-content:center}
+      .brand img{height:62px;max-width:min(100%, 300px)}
+      .brand-subtitle-main{font-size:19px}
+      .brand-subtitle{font-size:14px}
+      .nav{justify-content:center;flex-wrap:wrap;gap:12px 16px;font-size:15px}
+      .lang-switch{margin-left:0;padding-left:0;border-left:none}
+      .hero{padding:60px 0 46px}
+      .hero p{font-size:18px}
+      .section{padding:24px}
+    }
+    @media (max-width: 640px){
+      .container{width:min(var(--max), calc(100% - 28px))}
+      .hero-actions,.button-row,.action-center{flex-direction:column;align-items:stretch}
+      .btn{width:100%}
+      .section h2{font-size:26px}
+      .section p{font-size:17px}
+      .quote{font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="R.J. Silva home">
+        <img src="images/logo.jpg" alt="RJ Silva logo" data-i18n-attr="alt:logoAlt" />
+      </a>
+      <div class="brand-text">
+        <p class="brand-subtitle-main" data-i18n="brandSubtitleMain">Engineering with a Heart</p>
+        <p class="brand-subtitle" data-i18n="brandSubtitle">A reflection on engineering, humanity, and purpose</p>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="essays.html" data-i18n="navEssays">Essays</a>
+        <a href="book.html" data-i18n="navBook">Book</a>
+        <a href="resume.html" data-i18n="navResume">Resume</a>
+        <a href="music.html" aria-current="page" data-i18n="navMusic">Music</a>
+        <div class="lang-switch" aria-label="Language switcher">
+          <span class="lang-label" data-i18n="langLabel">Language</span>
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pt">PT</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="top-hero-divider"></div>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow" data-i18n="heroEyebrow">About the Author and Engineer</div>
+          <h1 data-i18n="heroTitle">A life shaped by engineering, writing, music, and gratitude.</h1>
+          <p data-i18n="heroText">Roberto H. Jacob da Silva moves between complex systems, deeply personal storytelling, and songs that carry memory. This page brings those dimensions together in one human portrait.</p>
+        </div>
+        <aside class="hero-card">
+          <h2 data-i18n="heroCardTitle">At a Glance</h2>
+          <ul>
+            <li data-i18n="heroCard1">Engineer and inventor working across distributed systems, observability, networking, diagnostics, and cloud infrastructure.</li>
+            <li data-i18n="heroCard2">Author of <em>Impossible Crossing</em> and creator of <em>Engineering with a Heart</em>.</li>
+            <li data-i18n="heroCard3">A life lived across Brazil, Spain, Belgium, and the United States.</li>
+            <li data-i18n="heroCard4">Music is not a side note here; it is part of the emotional structure of the journey.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <div class="hero-divider"></div>
+
+  <main class="main">
+    <div class="container">
+
+      
+      <section class="section">
+        <div class="section-kicker" data-i18n="bookMusicKicker">From the Book</div>
+        <h2 data-i18n="bookMusicTitle">When the memoir continues in sound</h2>
+        <p data-i18n="bookMusicP1">Music has always been more than a backdrop in my life. In many moments, it was refuge, company, strength, and, at times, the only way to understand what I was feeling when words still did not exist. Throughout this story, music was present in a quiet but constant way — on the radio, in my headphones, in the lyrics that stayed with me while I studied, dreamed, suffered, fell in love, and tried to find my place in the world.</p>
+        <p data-i18n="bookMusicP2">Some songs made me laugh. Others made me cry. Some gave me energy to prepare for the ITA entrance exam, some inspired me when everything seemed difficult, and some always brought me back to the love of my life — the girl of my dreams. This book tells my story in words. But there are emotions that never fully fit inside them. That is why I decided to share two playlists that are an essential part of this journey. They are not random lists. Each song carries a moment, a feeling, or a memory that helped shape who I became.</p>
+        <p data-i18n="bookMusicP3">You do not need to listen to these songs to understand this story. The book stands on its own. But if you want, you can return to a few chapters, put on your headphones, and let the music accompany the reading. At certain moments, it says what I could not say. This is my story in words. What follows is the continuation in sound.</p>
+        
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3 data-i18n="featureTitle1">Playlist 1 — The Emotional Soundtrack of the Crossing</h3>
+            <p data-i18n="featureText1">This playlist brings together the songs that accompanied me throughout the story told in this book. These are songs that, in one way or another, touched my life — in moments of joy, sadness, doubt, overcoming, and love. Songs that helped me study, dream higher, cross difficult periods, and celebrate both small and great victories.</p>
+            <p data-i18n="featureText1b">Here are songs that made me laugh, cry, and believe. Songs that marked important phases of my life and that, to this day, awaken very specific emotions. This is the emotional soundtrack of my journey.</p>
+            <p data-i18n="featureText1c">Each song in this playlist is associated with a specific chapter of the book. The order of the tracks follows the emotional and narrative progression of the story.</p>
+            <img class="playlist-qr" src="images/timeline_qr.png" alt="Timeline playlist QR code" data-i18n-attr="alt:timelineQrAlt" />
+            <div class="playlist-actions">
+              <a class="btn btn-light" href="https://open.spotify.com/playlist/0eyXBvaY9hxopMEbh3oy6u?si=104b201e068c4b72" target="_blank" rel="noopener noreferrer" data-i18n="timelineBtn">Open on Spotify</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3 data-i18n="featureTitle2">Playlist 2 — The Night When Anyone Can Step Onto the Stage</h3>
+            <p data-i18n="featureText2">This second playlist is connected to a very specific moment in my life — one of the most emotional nights I have ever lived. It was the night of the Kayak band performance during the CTA June festival. An improvised stage, a blend of musicians from the Northeast, different stories, and dreams that until then had seemed unlikely. In front of hundreds of people, we sang, played, and lived something unforgettable.</p>
+            <p data-i18n="featureText2b">Not because anyone there was a famous artist, but because, in that moment, it became clear that it was not necessary to be one. Many people like to sing but never do. They believe they do not have a voice, that they will be compared to professional singers, that they will be judged or ridiculed. Few realize that what we hear on records involves technique, equipment, production, and support — and that music, before anything else, is human expression.</p>
+            <p data-i18n="featureText2c">Being on that stage meant understanding something simple and powerful: it was not about exceptional talent, but about ordinary courage. That night proved that a hidden dream, seemingly distant, can become real. That anyone can step onto the stage — whether literal or symbolic. This playlist is the soundtrack of that night and of everything it represented.</p>
+            <p data-i18n="featureText2d">This soundtrack corresponds to one of the most striking moments in this story, narrated in Chapter 25 — Thank You for the Music.</p>
+            <img class="playlist-qr" src="images/concert_qr.png" alt="Concert playlist QR code" data-i18n-attr="alt:concertQrAlt" />
+            <div class="playlist-actions">
+              <a class="btn btn-light" href="https://open.spotify.com/playlist/6AQg9Fa46OihwVUwYSowGI?si=ada2379353a84fb8" target="_blank" rel="noopener noreferrer" data-i18n="concertBtn">Open on Spotify</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+      <section class="section">
+        <div class="section-kicker" data-i18n="futureKicker">Future Song Stories</div>
+        <h2 data-i18n="futureTitle">A direction for the first dedicated music story</h2>
+        <p data-i18n="futureP1">For the first standalone music story, <em>Goodbye Yellow Brick Road</em> is an especially strong candidate. It connects to the moment Roberto first dared to sing in public, to the encouragement of friends who taught and believed in him, and to the discovery that a hidden artistic voice deserved space too.</p>
+        <p data-i18n="futureP2">That story works well as an opener because it connects courage, gratitude, friendship, and artistic awakening in one place. After that, the series can naturally expand to songs such as “Halo,” “How Can I Go On,” “The Promise,” and “Dancing Queen.”</p>
+      </section>
+
+      <section class="section">
+        <div class="section-kicker" data-i18n="connectKicker">Selected Links</div>
+        <h2 data-i18n="connectTitle">Selected Links</h2>
+        <p data-i18n="connectText">These links connect the main public expressions of the project today.</p>
+        <div class="button-row">
+          <a class="btn btn-light" href="resume.html" data-i18n="connectBtnResume">Resume</a>
+          <a class="btn btn-light" href="book.html" data-i18n="connectBtnBook">Impossible Crossing</a>
+          <a class="btn btn-light" href="essays.html" data-i18n="connectBtnEssays">Essays</a>
+          <a class="btn btn-light" href="https://www.linkedin.com/in/robertohjdasilva/" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnLinkedIn">LinkedIn</a>
+          <a class="btn btn-light" href="https://www.facebook.com/robertohjacobdasilva" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnFacebook">Facebook</a>
+          <a class="btn btn-light" href="https://www.instagram.com/robertohjacobdasilva/" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnInstagram">Instagram</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container" data-i18n="footerText">© 2026 Roberto H. Jacob da Silva. Built with reflection, engineering, and heart.</div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        pageTitle: "Music | Roberto H. Jacob da Silva",
+        pageDescription: "Music | Roberto H. Jacob da Silva — songs, voice, recordings, and the musical dimension of Engineering with a Heart.",
+        logoAlt: "RJ Silva logo",
+        brandSubtitleMain: "Engineering with a Heart",
+        brandSubtitle: "A reflection on engineering, humanity, and purpose",
+        navHome: "Home",
+        navEssays: "Essays",
+        navBook: "Book",
+        navResume: "Resume",
+        navMusic: "Music",
+        langLabel: "Language",
+        heroEyebrow: "Music",
+        heroTitle: "Music as memory, voice, and human expression.",
+        heroText: "This page gathers my musical side — songs, recordings, memory, longing, gratitude, and the emotional thread that runs through the broader project.",
+        heroBtnResume: "View Resume",
+        heroBtnBook: "Explore the Book",
+        heroCardTitle: "At a Glance",
+        heroCard1: "A musical page centered on voice, recordings, memory, and emotional storytelling.",
+        heroCard2: "Music appears across the book, the recordings, and the personal reflections behind each song.",
+        heroCard3: "Songs here carry love, migration, courage, longing, and gratitude across multiple countries and decades.",
+        heroCard4: "Music is not a side note here; it is part of the emotional structure of the journey.",
+        journeyKicker: "Journey",
+        journeyTitle: "A Bridge Across Worlds",
+        journeyP1: "Roberto H. Jacob da Silva writes and builds from the perspective of someone who has crossed multiple worlds: Brazil, Spain, Belgium, and the United States; scarcity and opportunity; technical rigor and human reflection; private struggle and contribution to the development of the broader world around him. That crossing is not a branding device. It is the lived foundation beneath both <em>Impossible Crossing</em> and <em>Engineering with a Heart</em>.",
+        journeyP2: "The project exists where human story, engineering practice, public understanding, and community meaning meet. It grows out of a life shaped by gratitude for family, teachers, mentors, friends, colleagues, and the unexpected acts of generosity that quietly changed what seemed impossible.",
+        journeyP3: "That is why the work on this site is intentionally hybrid. It does not separate technical excellence from memory, purpose, dignity, or service. It asks what engineering looks like when it remains intellectually serious and deeply human at the same time.",
+        stat1: "U.S. patents",
+        stat2: "years in software engineering",
+        stat3: "countries lived and worked",
+        stat4: "main expressions: engineering, writing, music",
+        buildKicker: "Professional Focus",
+        buildTitle: "What He Builds",
+        buildP1: "Roberto’s technical work centers on the architecture, visibility, and diagnosis of complex systems at scale. Across Microsoft, Lenovo, IBM, Nokia, NEC, Siemens, and earlier roles, he has built distributed systems, tracing and telemetry platforms, diagnostics frameworks, networking software, virtualization infrastructure, and reliability tooling for environments where failures are difficult to see and expensive to misunderstand.",
+        buildP2: "His work is strongest where deep systems knowledge meets clarity: making invisible behavior observable, turning massive telemetry into understanding, and helping engineers explain, stabilize, and improve the platforms that quietly power modern life.",
+        writeKicker: "Writing and Public Work",
+        writeTitle: "What He Writes",
+        writeP1: "His writing moves in two complementary directions. In <em>Impossible Crossing</em>, he tells a life story marked by poverty, migration, education, faith, love, resilience, and the people whose presence changed its direction. In <em>Engineering with a Heart</em>, that same voice expands into reflection on technology, ethics, inequality, service, and the responsibilities that live inside the systems we build.",
+        writeP2: "A defining choice behind that writing is to look for the best in people and in difficult situations without denying pain or injustice. The key word is <em>Believe</em>: believe in people, believe that life can be lived courageously, and believe that even what seems impossible may still become real.",
+        writeBtnBook: "Explore the Book",
+        musicKicker: "Creative Life",
+        musicTitle: "Music, Voice, and Creative Expression",
+        musicP1: "Music is not an accessory in Roberto’s life. It is one of the languages through which memory, love, longing, courage, hope, and gratitude have been lived and understood. Across the book, the recordings, and the personal reflections behind each song, music appears as refuge, study companion, emotional archive, family bond, and stage for improbable dreams.",
+        musicP2: "Some songs are tied to decisive chapters of life. “Halo” carries the joy of recording with his daughter Gabriela. “When Your Feet Don’t Touch the Ground” marks the gift of recording with his daughter Rebecca. “The Promise” became a collaboration with his brother Marcelo. ABBA’s “Dancing Queen” reaches back to the first awakening of his love for music in 1978. “How Can I Go On” became a mirror for the impossible dream of reaching a top engineering college in Brazil. Axé and forró opened the door to singing on stage before hundreds of people and realizing a lifelong dream.",
+        bookMusicKicker: "From the Book",
+        bookMusicTitle: "When the memoir continues in sound",
+        bookMusicP1: "Music has always been more than a backdrop in my life. In many moments, it was refuge, company, strength, and, at times, the only way to understand what I was feeling when words still did not exist. Throughout this story, music was present in a quiet but constant way — on the radio, in my headphones, in the lyrics that stayed with me while I studied, dreamed, suffered, fell in love, and tried to find my place in the world.",
+        bookMusicP2: "Some songs made me laugh. Others made me cry. Some gave me energy to prepare for the ITA entrance exam, some inspired me when everything seemed difficult, and some always brought me back to the love of my life — the girl of my dreams. This book tells my story in words. But there are emotions that never fully fit inside them. That is why I decided to share two playlists that are an essential part of this journey. They are not random lists. Each song carries a moment, a feeling, or a memory that helped shape who I became.",
+        featureTitle1: "Playlist 1 — The Emotional Soundtrack of the Crossing",
+        featureText1: "This playlist brings together the songs that accompanied me throughout the story told in this book. These are songs that, in one way or another, touched my life — in moments of joy, sadness, doubt, overcoming, and love. Songs that helped me study, dream higher, cross difficult periods, and celebrate both small and great victories.",
+        featureTitle2: "Playlist 2 — The Night When Anyone Can Step Onto the Stage",
+        featureText2: "This second playlist is connected to a very specific moment in my life — one of the most emotional nights I have ever lived. It was the night of the Kayak band performance during the CTA June festival. An improvised stage, a blend of musicians from the Northeast, different stories, and dreams that until then had seemed unlikely. In front of hundreds of people, we sang, played, and lived something unforgettable.",
+        featureTitle3: "A natural bridge to this website",
+        featureText3: "That ending makes room for this site to expand the musical dimension through recordings, playlists, reflections, and the stories behind individual songs.",
+        bookMusicP3: "You do not need to listen to these songs to understand this story. The book stands on its own. But you can return to a few chapters, put on your headphones, and let the music accompany the reading. At certain moments, it says what I could not say. This is my story in words. What follows is the continuation in sound.",
+        featureText1b: "Here are songs that made me laugh, cry, and believe. Songs that marked important phases of my life and that, to this day, awaken very specific emotions. This is the emotional soundtrack of my journey.",
+        featureSpotify1: "Listen on Spotify.",
+        featureText1c: "Each song in this playlist is associated with a specific chapter of the book. The order of the tracks follows the emotional and narrative progression of the story.",
+        featureText2b: "Not because anyone there was a famous artist, but because, in that moment, it became clear that it was not necessary to be one. Many people like to sing but never do. They believe they do not have a voice, that they will be compared to professional singers, that they will be judged or ridiculed. Few realize that what we hear on records involves technique, equipment, production, and support — and that music, before anything else, is human expression.",
+        featureText2c: "Being on that stage meant understanding something simple and powerful: it was not about exceptional talent, but about ordinary courage. That night proved that a hidden dream, seemingly distant, can become real. That anyone can step onto the stage — whether literal or symbolic. This playlist is the soundtrack of that night and of everything it represented.",
+        featureSpotify2: "Listen on Spotify.",
+        featureText2d: "This soundtrack corresponds to one of the most striking moments in this story, narrated in Chapter 25 — Thank You for the Music.",
+        songsKicker: "Family, Memory, and Milestones",
+        songsTitle: "Selected musical anchors",
+        songCard1Title: "Recording with family",
+        songCard1Text: "“Halo” carries the joy of recording with Gabriela. “When Your Feet Don’t Touch the Ground” carries the joy of recording with Rebecca. “The Promise” preserves a duet with Marcelo and the gratitude of seeing impossible-looking dreams become real.",
+        songCard2Title: "Songs that formed a life",
+        songCard2Text: "“Dancing Queen” points back to 1978 and the first spark of musical love. “How Can I Go On” became part of the inner dialogue of perseverance. Air Supply became motivation during the years when others treated the dream as unattainable.",
+        songCard3Title: "The stage dream",
+        songCard3Text: "Axé and forró led to a defining moment: singing in front of hundreds of people with a college band and realizing that music, before anything else, is human expression and courage.",
+        spotifyKicker: "Spotify and Song Stories",
+        spotifyTitle: "Spotify playlists and QR access",
+        spotifyP1: "The Spotify links are now wired into the page. Visitors can either scan the QR codes with a phone camera or click the buttons below to open each playlist directly in Spotify.",
+        concertQrAlt: "Concert playlist QR code",
+        concertTitle: "Concert and performance playlist",
+        concertText: "A playlist for live energy, stage memories, and songs connected to performance and public musical moments.",
+        concertBtn: "Open on Spotify",
+        timelineQrAlt: "Timeline playlist QR code",
+        timelineTitle: "Timeline and life soundtrack",
+        timelineText: "A playlist organized around memory, life chapters, and the songs that help tell the larger personal journey.",
+        timelineBtn: "Open on Spotify",
+        spotifyNote: "Tip: on most phones, opening the camera over the QR code is enough to bring up the Spotify link automatically.",
+        storiesKicker: "Stories and future expansions",
+        storiesTitle: "From playlists to song stories",
+        storiesP1: "These playlists can become the entry point to a deeper music section. Each one can later branch into short story pages about specific songs, performances, memories, or people connected to them.",
+        storiesP2: "A strong next step would be to add one short featured story below the playlists — for example, a page about “Goodbye Yellow Brick Road,” “Halo,” or the experience of singing with family members and friends.",
+        storiesBtnEssays: "See the essays model",
+        storiesBtnBook: "Return to the book page",
+        storiesNote: "If you later want, I can also turn each playlist card into a richer section with album art, a short description, and direct story links.",
+        spotifyList1: "Add the Spotify QR image as a normal image file, such as <code>images/spotify-qr.png</code>.",
+        spotifyList2: "Add a public playlist button once the Spotify URL is ready.",
+        spotifyList3: "Create separate pages over time for songs and the memories behind them.",
+        spotifyBtnStories: "See the essays model",
+        spotifyBtnBook: "Return to the book page",
+        spotifyPlaceholder: "Spotify QR or playlist image can go here.",
+        mediaKicker: "Video and Audio",
+        mediaTitle: "Yes, audio can live on a GitHub-hosted site",
+        mediaP1: "You can absolutely host audio on a GitHub Pages website. The simplest approach is to place MP3 files inside a folder such as <code>audio/</code> and use the standard HTML <code>&lt;audio controls&gt;</code> player. You can also link to a YouTube performance once you choose the featured video for this page.",
+        mediaP2: "A good next step is to feature one meaningful video, then add a small set of selected recordings below it rather than everything at once.",
+        audioDemoTitle: "Example audio block",
+        audioDemoNote: "Replace <code>audio/sample-track.mp3</code> with your real file path when you upload your recordings.",
+        videoNote: "When you send me the YouTube link, I can wire a featured video button or embedded section directly into this page.",
+        futureKicker: "Future Song Stories",
+        futureTitle: "A direction for the first dedicated music story",
+        futureP1: "For the first standalone music story, <em>Goodbye Yellow Brick Road</em> is an especially strong candidate. It connects to the moment Roberto first dared to sing in public, to the encouragement of friends who taught and believed in him, and to the discovery that a hidden artistic voice deserved space too.",
+        futureP2: "That story works well as an opener because it connects courage, gratitude, friendship, and artistic awakening in one place. After that, the series can naturally expand to songs such as “Halo,” “How Can I Go On,” “The Promise,” and “Dancing Queen.”",
+        connectKicker: "Selected Links",
+        connectTitle: "Selected Links",
+        connectText: "These links connect the main public expressions of the project today.",
+        connectBtnResume: "Resume",
+        connectBtnBook: "Impossible Crossing",
+        connectBtnEssays: "Essays",
+        connectBtnLinkedIn: "LinkedIn",
+        connectBtnFacebook: "Facebook",
+        connectBtnInstagram: "Instagram",
+        footerText: "© 2026 Roberto H. Jacob da Silva. Built with reflection, engineering, and heart."
+      },
+      pt: {
+        pageTitle: "Música | Roberto H. Jacob da Silva",
+        pageDescription: "Música | Roberto H. Jacob da Silva — canções, voz, gravações e a dimensão musical de Engineering with a Heart.",
+        logoAlt: "Logo RJ Silva",
+        brandSubtitleMain: "Engineering with a Heart",
+        brandSubtitle: "Uma reflexão sobre engenharia, humanidade e propósito",
+        navHome: "Início",
+        navEssays: "Ensaios",
+        navBook: "Livro",
+        navResume: "Currículo",
+        navMusic: "Música",
+        langLabel: "Idioma",
+        heroEyebrow: "Música",
+        heroTitle: "Música como memória, voz e expressão humana.",
+        heroText: "Esta página reúne meu lado musical — canções, gravações, memória, saudade, gratidão e o fio emocional que percorre este projeto mais amplo.",
+        heroBtnResume: "Ver Currículo",
+        heroBtnBook: "Explorar o Livro",
+        heroCardTitle: "Visão Geral",
+        heroCard1: "Engenheiro e inventor com atuação em sistemas distribuídos, observabilidade, redes, diagnósticos e infraestrutura de nuvem.",
+        heroCard2: "A música aparece no livro, nas gravações e nas reflexões pessoais por trás de cada canção.",
+        heroCard3: "As canções carregam amor, migração, coragem, saudade e gratidão através de vários países e décadas.",
+        heroCard4: "A música não é nota de rodapé aqui; ela faz parte da estrutura emocional da jornada.",
+        journeyKicker: "Jornada",
+        journeyTitle: "Uma Ponte Entre Mundos",
+        journeyP1: "Roberto H. Jacob da Silva escreve e constrói a partir da perspectiva de alguém que atravessou múltiplos mundos: Brasil, Espanha, Bélgica e Estados Unidos; escassez e oportunidade; rigor técnico e reflexão humana; luta privada e contribuição para o desenvolvimento do mundo mais amplo ao seu redor. Essa travessia não é um recurso de marca. É a base vivida que sustenta tanto <em>Travessia Impossível</em> quanto <em>Engineering with a Heart</em>.",
+        journeyP2: "O projeto existe onde história humana, prática de engenharia, entendimento público e significado comunitário se encontram. Ele nasce de uma vida moldada pela gratidão à família, a professores, mentores, amigos, colegas e aos atos inesperados de generosidade que silenciosamente mudaram o que parecia impossível.",
+        journeyP3: "Por isso o trabalho neste site é intencionalmente híbrido. Ele não separa excelência técnica de memória, propósito, dignidade ou serviço. Ele pergunta como a engenharia se parece quando permanece intelectualmente séria e profundamente humana ao mesmo tempo.",
+        stat1: "patentes nos EUA",
+        stat2: "anos em engenharia de software",
+        stat3: "países onde viveu e trabalhou",
+        stat4: "expressões centrais: engenharia, escrita, música",
+        buildKicker: "Foco Profissional",
+        buildTitle: "O Que Ele Constrói",
+        buildP1: "O trabalho técnico de Roberto se concentra na arquitetura, visibilidade e análise de sistemas complexos em larga escala. Ao longo de Microsoft, Lenovo, IBM, Nokia, NEC, Siemens e funções anteriores, ele construiu sistemas distribuídos, plataformas de tracing e telemetria, frameworks de diagnóstico, software de redes, infraestrutura de virtualização e ferramentas de confiabilidade para ambientes em que falhas são difíceis de enxergar e caras de interpretar errado.",
+        buildP2: "Seu trabalho é mais forte onde conhecimento profundo de sistemas encontra clareza: tornar comportamentos invisíveis observáveis, transformar telemetria massiva em entendimento e ajudar engenheiros a explicar, estabilizar e melhorar as plataformas que silenciosamente movem a vida moderna.",
+        writeKicker: "Escrita e Trabalho Público",
+        writeTitle: "O Que Ele Escreve",
+        writeP1: "Sua escrita segue em duas direções complementares. Em <em>Travessia Impossível</em>, ele conta uma história de vida marcada por pobreza, migração, educação, fé, amor, resiliência e pelas pessoas cuja presença mudou o seu rumo. Em <em>Engineering with a Heart</em>, essa mesma voz se expande para reflexões sobre tecnologia, ética, desigualdade, serviço e as responsabilidades que vivem dentro dos sistemas que construímos.",
+        writeP2: "Uma escolha central por trás dessa escrita é procurar o melhor nas pessoas e nas situações difíceis sem negar a dor nem a injustiça. A palavra-chave é <em>Believe</em>: acredite nas pessoas, acredite que a vida pode ser vivida com coragem e acredite que até o que parece impossível ainda pode se tornar real.",
+        writeBtnBook: "Explorar o Livro",
+        musicKicker: "Vida Criativa",
+        musicTitle: "Música, Voz e Expressão Criativa",
+        musicP1: "A música não é acessória na vida de Roberto. Ela é uma das linguagens por meio das quais memória, amor, saudade, coragem, esperança e gratidão foram vividos e compreendidos. No livro, nas gravações e nos textos pessoais por trás de cada canção, a música aparece como refúgio, companhia de estudo, arquivo emocional, vínculo familiar e palco para sonhos improváveis.",
+        musicP2: "Algumas músicas estão ligadas a capítulos decisivos da vida. “Halo” carrega a alegria de gravar com a filha Gabriela. “When Your Feet Don’t Touch the Ground” marca o presente de gravar com a filha Rebecca. “The Promise” virou uma colaboração com o irmão Marcelo. “Dancing Queen”, do ABBA, remete ao primeiro despertar do amor pela música em 1978. “How Can I Go On” virou espelho do sonho aparentemente impossível de entrar em uma grande escola de engenharia no Brasil. Axé e forró abriram a porta para cantar diante de centenas de pessoas e realizar um sonho de vida.",
+        bookMusicKicker: "Do Livro",
+        bookMusicTitle: "Quando o livro continua em som",
+        bookMusicP1: "As páginas finais de <em>Travessia Impossível</em> se voltam abertamente para música e playlist. A seção da trilha sonora reúne canções que fizeram Roberto rir, chorar e acreditar, ligando cada uma a capítulos específicos e fases emocionais da autobiografia.",
+        bookMusicP2: "Essas páginas finais não são decorativas. Elas mostram que alguns capítulos se completam não apenas em prosa, mas também em som — com Queen, ABBA, Air Supply, Elton John, Maria Bethânia, Paul McCartney, Stevie Wonder, Tears for Fears e outros estendendo a progressão emocional do livro para além das últimas páginas narrativas.",
+        featureTitle1: "Playlist como mapa emocional",
+        featureText1: "A trilha sonora acompanha o movimento do livro capítulo por capítulo, da descoberta musical na infância até perseverança, amor, coragem e expressão pessoal.",
+        featureTitle2: "Uma segunda playlist sobre coragem",
+        featureText2: "O livro termina com a noite em que qualquer pessoa pode subir ao palco: uma memória de cantar com uma banda diante de centenas de pessoas e descobrir que música não é sobre celebridade, mas sobre coragem comum.",
+        featureTitle3: "Uma ponte natural para este site",
+        featureText3: "Esse final abre espaço para que o site expanda a dimensão musical por meio de gravações, playlists, reflexões e histórias por trás de canções individuais.",
+        songsKicker: "Família, Memória e Marcos",
+        songsTitle: "Algumas âncoras musicais",
+        songCard1Title: "Gravações em família",
+        songCard1Text: "“Halo” carrega a alegria de gravar com Gabriela. “When Your Feet Don’t Touch the Ground” carrega a alegria de gravar com Rebecca. “The Promise” preserva um dueto com Marcelo e a gratidão de ver sonhos que pareciam impossíveis se tornarem reais.",
+        songCard2Title: "Canções que formaram uma vida",
+        songCard2Text: "“Dancing Queen” aponta para 1978 e o primeiro impulso do amor pela música. “How Can I Go On” passou a fazer parte do diálogo interno da perseverança. Air Supply virou motivação nos anos em que outros tratavam o sonho como inalcançável.",
+        songCard3Title: "O sonho do palco",
+        songCard3Text: "Axé e forró levaram a um momento decisivo: cantar diante de centenas de pessoas com uma banda da faculdade e perceber que música, antes de tudo, é expressão humana e coragem.",
+        spotifyKicker: "Spotify e Histórias das Canções",
+        spotifyTitle: "Playlists do Spotify e acesso por QR code",
+        spotifyP1: "Os links do Spotify agora já estão ligados à página. O visitante pode escanear os QR codes com a câmera do celular ou clicar nos botões abaixo para abrir cada playlist diretamente no Spotify.",
+        concertQrAlt: "QR code da playlist de shows",
+        concertTitle: "Playlist de shows e apresentações",
+        concertText: "Uma playlist voltada para energia ao vivo, lembranças de palco e músicas ligadas a apresentações e momentos musicais públicos.",
+        concertBtn: "Abrir no Spotify",
+        timelineQrAlt: "QR code da playlist da linha do tempo",
+        timelineTitle: "Linha do tempo e trilha sonora da vida",
+        timelineText: "Uma playlist organizada em torno de memórias, capítulos de vida e canções que ajudam a contar a jornada pessoal mais ampla.",
+        timelineBtn: "Abrir no Spotify",
+        spotifyNote: "Dica: na maioria dos celulares, basta abrir a câmera sobre o QR code para que o link do Spotify apareça automaticamente.",
+        storiesKicker: "Histórias e expansões futuras",
+        storiesTitle: "Das playlists para as histórias das canções",
+        storiesP1: "Essas playlists podem virar a porta de entrada para uma seção musical mais profunda. Cada uma pode depois se desdobrar em páginas curtas sobre canções específicas, apresentações, memórias ou pessoas ligadas a elas.",
+        storiesP2: "Um próximo passo forte seria adicionar uma primeira história curta em destaque abaixo das playlists — por exemplo, uma página sobre “Goodbye Yellow Brick Road”, “Halo” ou a experiência de cantar com familiares e amigos.",
+        storiesBtnEssays: "Ver o modelo dos ensaios",
+        storiesBtnBook: "Voltar para a página do livro",
+        storiesNote: "Depois, eu também posso transformar cada card de playlist em uma seção mais rica, com arte, descrição curta e links diretos para histórias.",
+        spotifyList1: "Adicione a imagem do QR do Spotify como um arquivo normal, por exemplo <code>images/spotify-qr.png</code>.",
+        spotifyList2: "Adicione um botão público da playlist quando a URL do Spotify estiver pronta.",
+        spotifyList3: "Crie com o tempo páginas separadas para canções e para as memórias por trás delas.",
+        spotifyBtnStories: "Ver o modelo dos ensaios",
+        spotifyBtnBook: "Voltar para a página do livro",
+        spotifyPlaceholder: "O QR do Spotify ou a imagem da playlist pode ficar aqui.",
+        mediaKicker: "Vídeo e Áudio",
+        mediaTitle: "Sim, áudio pode viver em um site hospedado no GitHub",
+        mediaP1: "Você pode hospedar áudio em um site no GitHub Pages sem problema. O caminho mais simples é colocar arquivos MP3 dentro de uma pasta como <code>audio/</code> e usar o player padrão HTML <code>&lt;audio controls&gt;</code>. Você também pode colocar um link para uma apresentação no YouTube assim que escolher o vídeo em destaque desta página.",
+        mediaP2: "Um bom próximo passo é destacar um vídeo muito significativo e depois adicionar um pequeno conjunto de gravações selecionadas em vez de tudo de uma vez.",
+        audioDemoTitle: "Exemplo de bloco de áudio",
+        audioDemoNote: "Substitua <code>audio/sample-track.mp3</code> pelo caminho real do arquivo quando você subir suas gravações.",
+        videoNote: "Quando você me enviar o link do YouTube, eu posso encaixar um botão de vídeo em destaque ou uma seção incorporada diretamente nesta página.",
+        futureKicker: "Futuras Histórias de Canções",
+        futureTitle: "Uma direção para a primeira história musical dedicada",
+        futureP1: "Para a primeira história musical independente, <em>Goodbye Yellow Brick Road</em> é uma candidata especialmente forte. Ela se conecta ao momento em que Roberto ousou cantar em público pela primeira vez, ao encorajamento dos amigos que ensinaram e acreditaram nele e à descoberta de que uma voz artística escondida também merecia espaço.",
+        futureP2: "Essa história funciona muito bem como abertura porque reúne coragem, gratidão, amizade e despertar artístico em um só lugar. Depois dela, a série pode se expandir naturalmente para canções como “Halo”, “How Can I Go On”, “The Promise” e “Dancing Queen”.",
+        connectKicker: "Links Selecionados",
+        connectTitle: "Links Selecionados",
+        connectText: "Estes links conectam hoje as principais expressões públicas do projeto.",
+        connectBtnResume: "Currículo",
+        connectBtnBook: "Travessia Impossível",
+        connectBtnEssays: "Ensaios",
+        connectBtnLinkedIn: "LinkedIn",
+        connectBtnFacebook: "Facebook",
+        connectBtnInstagram: "Instagram",
+        footerText: "© 2026 Roberto H. Jacob da Silva. Feito com reflexão, engenharia e coração."
+      }
+    };
+
+    function applyTranslations(lang) {
+      document.documentElement.lang = lang;
+      document.title = translations[lang].pageTitle;
+      document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].pageDescription);
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key] !== undefined) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+        const mapping = el.getAttribute('data-i18n-attr').split(';');
+        mapping.forEach(pair => {
+          const [attr, key] = pair.split(':').map(s => s.trim());
+          if (attr && key && translations[lang][key] !== undefined) {
+            el.setAttribute(attr, translations[lang][key].replace(/<[^>]*>/g, ''));
+          }
+        });
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+      localStorage.setItem('siteLang', lang);
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyTranslations(btn.dataset.lang));
+    });
+
+    applyTranslations(localStorage.getItem('siteLang') || 'en');
+  </script>
+</body>
+</html>
