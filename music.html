@@ -82,6 +82,11 @@
     .quote{margin-top:18px;padding:18px 20px;border-left:4px solid var(--gold);background:#fff;border-radius:0 16px 16px 0;color:var(--brown);font-size:20px;line-height:1.55;font-style:italic}
     .muted{color:var(--muted)}
     .placeholder-box{display:grid;place-items:center;min-height:180px;border:2px dashed rgba(42,26,18,.18);border-radius:18px;background:linear-gradient(180deg, rgba(201,137,43,.06), rgba(255,255,255,.5));text-align:center;padding:20px;color:var(--muted)}
+    .qr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+    .qr-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;text-align:center}
+    .qr-card img{display:block;width:100%;max-width:280px;height:auto;margin:0 auto 14px;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow)}
+    .qr-card h3{margin:0 0 10px;font-size:22px;color:var(--brown)}
+    .qr-card p{margin:0 0 14px;font-size:16px;color:var(--muted)}
     .audio-demo{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}
     .audio-demo audio{width:100%}
     .small-note{margin-top:10px;font-size:14px;color:var(--muted)}
@@ -211,32 +216,34 @@
       <section class="section two-col">
         <div class="media-card">
           <div class="section-kicker" data-i18n="spotifyKicker">Spotify and Song Stories</div>
-          <h2 data-i18n="spotifyTitle">How this section can grow</h2>
-          <p data-i18n="spotifyP1">This page is ready to grow into a music hub with three layers: the soundtrack pages from the book, a Spotify area with playlist links or QR codes, and individual story pages about songs in the same spirit as the essays section.</p>
-          <ul>
-            <li data-i18n="spotifyList1">Add the Spotify QR image as a normal image file, such as <code>images/spotify-qr.png</code>.</li>
-            <li data-i18n="spotifyList2">Add a public playlist button once the Spotify URL is ready.</li>
-            <li data-i18n="spotifyList3">Create separate pages over time for songs and the memories behind them.</li>
-          </ul>
-          <div class="button-row">
-            <a class="btn btn-light" href="essays.html" data-i18n="spotifyBtnStories">See the essays model</a>
-            <a class="btn btn-light" href="book.html" data-i18n="spotifyBtnBook">Return to the book page</a>
+          <h2 data-i18n="spotifyTitle">Spotify playlists and QR access</h2>
+          <p data-i18n="spotifyP1">The Spotify links are now wired into the page. Visitors can either scan the QR codes with a phone camera or click the buttons below to open each playlist directly in Spotify.</p>
+          <div class="qr-grid">
+            <article class="qr-card">
+              <img src="images/concert_qr.png" alt="Concert playlist QR code" data-i18n-attr="alt:concertQrAlt" />
+              <h3 data-i18n="concertTitle">Concert and performance playlist</h3>
+              <p data-i18n="concertText">A playlist for live energy, stage memories, and songs connected to performance and public musical moments.</p>
+              <a class="btn btn-light" href="https://open.spotify.com/playlist/6AQg9Fa46OihwVUwYSowGI?si=ada2379353a84fb8" target="_blank" rel="noopener noreferrer" data-i18n="concertBtn">Open on Spotify</a>
+            </article>
+            <article class="qr-card">
+              <img src="images/timeline_qr.png" alt="Timeline playlist QR code" data-i18n-attr="alt:timelineQrAlt" />
+              <h3 data-i18n="timelineTitle">Timeline and life soundtrack</h3>
+              <p data-i18n="timelineText">A playlist organized around memory, life chapters, and the songs that help tell the larger personal journey.</p>
+              <a class="btn btn-light" href="https://open.spotify.com/playlist/0eyXBvaY9hxopMEbh3oy6u?si=104b201e068c4b72" target="_blank" rel="noopener noreferrer" data-i18n="timelineBtn">Open on Spotify</a>
+            </article>
           </div>
-          <div class="placeholder-box" data-i18n="spotifyPlaceholder">Spotify QR or playlist image can go here.</div>
+          <div class="small-note" data-i18n="spotifyNote">Tip: on most phones, opening the camera over the QR code is enough to bring up the Spotify link automatically.</div>
         </div>
         <div class="media-card">
-          <div class="section-kicker" data-i18n="mediaKicker">Video and Audio</div>
-          <h2 data-i18n="mediaTitle">Yes, audio can live on a GitHub-hosted site</h2>
-          <p data-i18n="mediaP1">You can absolutely host audio on a GitHub Pages website. The simplest approach is to place MP3 files inside a folder such as <code>audio/</code> and use the standard HTML <code>&lt;audio controls&gt;</code> player. You can also link to a YouTube performance once you choose the featured video for this page.</p>
-          <p data-i18n="mediaP2">A good next step is to feature one meaningful video, then add a small set of selected recordings below it rather than everything at once.</p>
-          <div class="audio-demo">
-            <h3 data-i18n="audioDemoTitle">Example audio block</h3>
-            <audio controls preload="none">
-              <source src="audio/sample-track.mp3" type="audio/mpeg">
-            </audio>
-            <div class="small-note" data-i18n="audioDemoNote">Replace <code>audio/sample-track.mp3</code> with your real file path when you upload your recordings.</div>
+          <div class="section-kicker" data-i18n="storiesKicker">Stories and future expansions</div>
+          <h2 data-i18n="storiesTitle">From playlists to song stories</h2>
+          <p data-i18n="storiesP1">These playlists can become the entry point to a deeper music section. Each one can later branch into short story pages about specific songs, performances, memories, or people connected to them.</p>
+          <p data-i18n="storiesP2">A strong next step would be to add one short featured story below the playlists — for example, a page about “Goodbye Yellow Brick Road,” “Halo,” or the experience of singing with family members and friends.</p>
+          <div class="button-row">
+            <a class="btn btn-light" href="essays.html" data-i18n="storiesBtnEssays">See the essays model</a>
+            <a class="btn btn-light" href="book.html" data-i18n="storiesBtnBook">Return to the book page</a>
           </div>
-          <div class="small-note" data-i18n="videoNote">When you send me the YouTube link, I can wire a featured video button or embedded section directly into this page.</div>
+          <div class="small-note" data-i18n="storiesNote">If you later want, I can also turn each playlist card into a richer section with album art, a short description, and direct story links.</div>
         </div>
       </section>
 
@@ -332,8 +339,24 @@
         songCard3Title: "The stage dream",
         songCard3Text: "Axé and forró led to a defining moment: singing in front of hundreds of people with a college band and realizing that music, before anything else, is human expression and courage.",
         spotifyKicker: "Spotify and Song Stories",
-        spotifyTitle: "How this section can grow",
-        spotifyP1: "This page is ready to grow into a music hub with three layers: the soundtrack pages from the book, a Spotify area with playlist links or QR codes, and individual story pages about songs in the same spirit as the essays section.",
+        spotifyTitle: "Spotify playlists and QR access",
+        spotifyP1: "The Spotify links are now wired into the page. Visitors can either scan the QR codes with a phone camera or click the buttons below to open each playlist directly in Spotify.",
+        concertQrAlt: "Concert playlist QR code",
+        concertTitle: "Concert and performance playlist",
+        concertText: "A playlist for live energy, stage memories, and songs connected to performance and public musical moments.",
+        concertBtn: "Open on Spotify",
+        timelineQrAlt: "Timeline playlist QR code",
+        timelineTitle: "Timeline and life soundtrack",
+        timelineText: "A playlist organized around memory, life chapters, and the songs that help tell the larger personal journey.",
+        timelineBtn: "Open on Spotify",
+        spotifyNote: "Tip: on most phones, opening the camera over the QR code is enough to bring up the Spotify link automatically.",
+        storiesKicker: "Stories and future expansions",
+        storiesTitle: "From playlists to song stories",
+        storiesP1: "These playlists can become the entry point to a deeper music section. Each one can later branch into short story pages about specific songs, performances, memories, or people connected to them.",
+        storiesP2: "A strong next step would be to add one short featured story below the playlists — for example, a page about “Goodbye Yellow Brick Road,” “Halo,” or the experience of singing with family members and friends.",
+        storiesBtnEssays: "See the essays model",
+        storiesBtnBook: "Return to the book page",
+        storiesNote: "If you later want, I can also turn each playlist card into a richer section with album art, a short description, and direct story links.",
         spotifyList1: "Add the Spotify QR image as a normal image file, such as <code>images/spotify-qr.png</code>.",
         spotifyList2: "Add a public playlist button once the Spotify URL is ready.",
         spotifyList3: "Create separate pages over time for songs and the memories behind them.",
@@ -425,8 +448,24 @@
         songCard3Title: "O sonho do palco",
         songCard3Text: "Axé e forró levaram a um momento decisivo: cantar diante de centenas de pessoas com uma banda da faculdade e perceber que música, antes de tudo, é expressão humana e coragem.",
         spotifyKicker: "Spotify e Histórias das Canções",
-        spotifyTitle: "Como esta seção pode crescer",
-        spotifyP1: "Esta página está pronta para crescer como um hub musical com três camadas: as páginas de trilha sonora do livro, uma área de Spotify com links ou QR codes de playlists e páginas individuais sobre canções no mesmo espírito da seção de ensaios.",
+        spotifyTitle: "Playlists do Spotify e acesso por QR code",
+        spotifyP1: "Os links do Spotify agora já estão ligados à página. O visitante pode escanear os QR codes com a câmera do celular ou clicar nos botões abaixo para abrir cada playlist diretamente no Spotify.",
+        concertQrAlt: "QR code da playlist de shows",
+        concertTitle: "Playlist de shows e apresentações",
+        concertText: "Uma playlist voltada para energia ao vivo, lembranças de palco e músicas ligadas a apresentações e momentos musicais públicos.",
+        concertBtn: "Abrir no Spotify",
+        timelineQrAlt: "QR code da playlist da linha do tempo",
+        timelineTitle: "Linha do tempo e trilha sonora da vida",
+        timelineText: "Uma playlist organizada em torno de memórias, capítulos de vida e canções que ajudam a contar a jornada pessoal mais ampla.",
+        timelineBtn: "Abrir no Spotify",
+        spotifyNote: "Dica: na maioria dos celulares, basta abrir a câmera sobre o QR code para que o link do Spotify apareça automaticamente.",
+        storiesKicker: "Histórias e expansões futuras",
+        storiesTitle: "Das playlists para as histórias das canções",
+        storiesP1: "Essas playlists podem virar a porta de entrada para uma seção musical mais profunda. Cada uma pode depois se desdobrar em páginas curtas sobre canções específicas, apresentações, memórias ou pessoas ligadas a elas.",
+        storiesP2: "Um próximo passo forte seria adicionar uma primeira história curta em destaque abaixo das playlists — por exemplo, uma página sobre “Goodbye Yellow Brick Road”, “Halo” ou a experiência de cantar com familiares e amigos.",
+        storiesBtnEssays: "Ver o modelo dos ensaios",
+        storiesBtnBook: "Voltar para a página do livro",
+        storiesNote: "Depois, eu também posso transformar cada card de playlist em uma seção mais rica, com arte, descrição curta e links diretos para histórias.",
         spotifyList1: "Adicione a imagem do QR do Spotify como um arquivo normal, por exemplo <code>images/spotify-qr.png</code>.",
         spotifyList2: "Adicione um botão público da playlist quando a URL do Spotify estiver pronta.",
         spotifyList3: "Crie com o tempo páginas separadas para canções e para as memórias por trás delas.",
