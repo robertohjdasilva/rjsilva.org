@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering with a Heart | R.J. Silva</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  
+  <!-- Apple / mobile icon -->
+  <link rel="apple-touch-icon" href="images/favicon.png">  
+  <meta
+    name="description"
+    content="Engineering with a Heart — A reflection on engineering, humanity, and the purpose behind the systems we have built."
+  />
+  <style>
+    :root{
+      --bg:#f5f2ec;
+      --paper:#fffaf3;
+      --text:#1a1a1a;
+      --muted:#5a5148;
+      --brown:#2a1a12;
+      --gold:#c9892b;
+      --gold-dark:#9a6a22;
+      --border:rgba(42,26,18,.14);
+      --shadow:0 10px 30px rgba(42,26,18,.08);
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      background:var(--brown);
+      color:#fff;
+      padding:16px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .topbar-inner{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:24px;
+    }
+
+    .top-hero-divider{
+      height:1px;
+      background:#ffffff;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      min-width:0;
+    }
+
+    .brand img{
+      height:72px;
+      width:auto;
+      object-fit:contain;
+      display:block;
+    }
+
+    .brand-text{
+      text-align:center;
+      min-width:0;
+    }
+
+    .brand-title{
+      margin:0;
+      font-size:24px;
+      line-height:1.0;
+      letter-spacing:.2px;
+    }
+
+    .brand-subtitle{
+      margin:4px 0 0;
+      font-size:16px;
+      color:rgba(255,255,255,.78);
+    }
+
+    .brand-subtitle-main{
+      margin:0;
+      font-size:22px;
+      line-height:1.2;
+      color:rgba(255,255,255,.92);
+    }
+
+    .section-kicker{
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    
+    .book-feature{
+      align-items:start;
+    }
+    
+    .book-copy h3{
+      margin:0 0 12px;
+      font-size:30px;
+      line-height:1.15;
+      color:var(--brown);
+    }
+    
+    .book-meta{
+      margin-top:14px;
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .book-cover-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .book-actions{
+      margin-top:18px;
+    }
+    
+    .book-cover-wrap{
+      position:relative;
+    }
+    
+    .book-cover-wrap::after{
+      content:"";
+      position:absolute;
+      inset:auto 12px -12px 12px;
+      height:22px;
+      background:rgba(42,26,18,.10);
+      filter:blur(14px);
+      border-radius:50%;
+      z-index:0;
+    }
+    
+    .book-cover-wrap img{
+      display:block;
+      transform:rotate(-2deg);
+      box-shadow:0 18px 28px rgba(0,0,0,0.25);
+      border-radius:4px;
+      position:relative;
+      z-index:1;
+    }
+    
+    .nav{
+      display:flex;
+      gap:18px;
+      font-size:15px;
+      white-space:nowrap;
+      justify-self:end;
+      align-items:center;
+    }
+
+    .nav a,
+    .lang-btn{
+      color:rgba(255,255,255,.88);
+    }
+
+    .nav a:hover,
+    .lang-btn:hover{
+      color:#fff;
+    }
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-left:6px;
+      padding-left:14px;
+      border-left:1px solid rgba(255,255,255,.18);
+    }
+
+    .lang-btn{
+      background:none;
+      border:none;
+      padding:0;
+      font:inherit;
+      cursor:pointer;
+    }
+
+    .lang-btn.active{
+      color:#fff;
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .lang-label{
+      color:rgba(255,255,255,.5);
+      font-size:13px;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      height:270px;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background:
+        linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.22)),
+        url("images/bridge.jpg") center 70%/cover no-repeat;
+      overflow:hidden;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(0,0,0,0) 38%,
+          rgba(0,0,0,.42) 100%
+        );
+      pointer-events:none;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(
+          ellipse at center 58%,
+          rgba(255,210,120,0.30) 0%,
+          rgba(255,210,120,0.16) 18%,
+          rgba(255,210,120,0.05) 32%,
+          rgba(0,0,0,0) 55%
+        );
+      pointer-events:none;
+      mix-blend-mode:screen;
+    }
+
+    .hero-divider{
+      height:3px;
+      width:100%;
+      margin:0 auto;
+      background:linear-gradient(
+        to right,
+        transparent,
+        var(--gold),
+        transparent
+      );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    .hero-layout{
+      display:grid;
+      grid-template-columns:350px minmax(120px,1fr) 380px;
+      gap:26px;
+      align-items:stretch;
+      min-height:270px;
+      width:100%;
+    }
+
+    .hero-box{
+      display:flex;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    .hero-box.left{
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-box.right{
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-panel{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:22px;
+      padding:22px 24px;
+      background:rgba(42,26,18,.58);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      box-shadow:0 14px 34px rgba(0,0,0,.18);
+      backdrop-filter: blur(2px);
+      width:min(100%, 380px);
+    }
+
+    .hero-title{
+      margin:0;
+      font-size:clamp(24px, 3.8vw, 43px);
+      line-height:1.03;
+      letter-spacing:-.6px;
+      text-wrap:balance;
+    }
+
+    .hero-text{
+      margin:0;
+      font-size:clamp(16px, 1.9vw, 19px);
+      color:rgba(255,255,255,.94);
+      max-width:340px;
+      line-height:1.45;
+      text-align:center;
+    }
+
+    .hero-spacer{
+      min-height:1px;
+    }
+
+    .actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:nowrap;
+      justify-content:center;
+      align-items:center;
+      margin-top:24px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:13px 20px;
+      border-radius:10px;
+      font-weight:700;
+      font-size:15px;
+      transition:.2s ease;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      background:var(--gold-dark);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.18);
+    }
+
+    section{
+      padding:38px 0;
+    }
+
+    .section-title{
+      margin:0 0 8px;
+      font-size:32px;
+      line-height:1.15;
+      color:var(--brown);
+    }
+
+    .section-intro{
+      margin:0 auto 22px;
+      max-width:900px;
+      font-size:18px;
+      color:var(--muted);
+    }
+
+    .center{
+      text-align:center;
+    }
+
+    .card{
+      background:var(--paper);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .book-card{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .book-card img{
+      width:100%;
+      max-width:350px;
+    }
+
+    .book-card h3,
+    .about h3{
+      margin:0 0 10px;
+      font-size:28px;
+      color:var(--brown);
+    }
+
+    .book-card p,
+    .about p,
+    .feature p{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .feature-list{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .feature{
+      background:var(--paper);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .feature h4{
+      margin:0 0 8px;
+      font-size:20px;
+      color:var(--brown);
+    }
+
+    .essay-links{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .essay-type{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    
+    .essay-link{
+      display:block;
+      padding:16px 18px;
+      background:var(--paper);
+      border:1px solid var(--border);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      transition:.15s ease;
+    }
+
+    .essay-link strong{
+      display:block;
+      color:var(--brown);
+      font-size:19px;
+      margin-bottom:4px;
+    }
+
+    .essay-link span{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .essay-link:hover{
+      border-color:rgba(201,137,43,.45);
+      transform:translateY(-1px);
+    }
+
+    .about-wrap{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .about-wrap img{
+      width:100%;
+      max-width:320px;
+      border-radius:18px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .quote{
+      margin-top:14px;
+      padding:16px 18px;
+      border-left:4px solid var(--gold);
+      background:#fff;
+      border-radius:8px;
+      color:var(--muted);
+      font-style:italic;
+    }
+
+    footer{
+      padding:26px 0 38px;
+      color:var(--muted);
+      text-align:center;
+      font-size:14px;
+    }
+
+
+    .section-actions{
+      display:flex;
+      justify-content:center;
+      margin-top:18px;
+    }
+
+    .link-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+      margin-top:18px;
+    }
+
+    .footer-links{
+      margin-top:10px;
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+      font-size:14px;
+    }
+
+    .footer-links a{
+      color:var(--muted);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .footer-links a:hover{
+      color:var(--brown);
+    }
+
+    /* MOBILE / TABLET FIXES */
+    @media (max-width: 900px){
+      .topbar{
+        padding:18px 0 14px;
+      }
+
+      .topbar-inner{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:14px;
+        text-align:center;
+      }
+
+      .brand{
+        justify-content:center;
+      }
+
+      .brand img{
+        height:62px;
+        max-width:min(100%, 300px);
+      }
+
+      .brand-text{
+        width:100%;
+      }
+
+      .brand-title{
+        font-size:22px;
+      }
+
+      .brand-subtitle{
+        font-size:14px;
+        line-height:1.35;
+      }
+
+      .nav{
+        justify-self:auto;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:14px 18px;
+        white-space:normal;
+        width:100%;
+      }
+
+      .lang-switch{
+        margin-left:0;
+        padding-left:0;
+        border-left:none;
+      }
+
+      .hero{
+        height:auto;
+        min-height:0;
+        padding:36px 0 34px;
+        background-position:center center;
+      }
+
+      .hero-content{
+        width:min(var(--max), calc(100% - 28px));
+      }
+
+      .hero-layout{
+        grid-template-columns:1fr;
+        gap:22px;
+        min-height:auto;
+      }
+
+      .hero-spacer{
+        display:none;
+      }
+
+      .hero-box.left,
+      .hero-box.right{
+        min-height:auto;
+        justify-content:center;
+        align-items:center;
+      }
+
+      .hero-panel{
+        width:min(100%, 420px);
+      }
+
+      .hero-title{
+        font-size:clamp(22px, 10vw, 42px);
+        max-width:10ch;
+      }
+
+      .hero-text{
+        max-width:26ch;
+        font-size:clamp(15px, 4.8vw, 19px);
+      }
+
+      .actions{
+        flex-wrap:wrap;
+        gap:12px;
+        margin-top:18px;
+      }
+
+      .btn{
+        width:auto;
+        min-width:0;
+      }
+
+      .feature-list{
+        grid-template-columns:1fr;
+      }
+
+      .book-card,
+      .about-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .section-title{
+        font-size:clamp(28px, 8vw, 34px);
+      }
+
+      .section-intro{
+        font-size:17px;
+      }
+    }
+
+    @media (max-width: 560px){
+      .container{
+        width:min(var(--max), calc(100% - 24px));
+      }
+
+      .hero-content{
+        width:min(var(--max), calc(100% - 24px));
+      }
+
+      .brand img{
+        height:auto;
+        width:min(100%, 320px);
+      }
+
+      .brand-title{
+        font-size:20px;
+      }
+
+      .brand-subtitle{
+        max-width:28ch;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .nav{
+        font-size:14px;
+        gap:10px 16px;
+      }
+
+      .hero{
+        padding:30px 0 28px;
+      }
+
+      .hero-title{
+        max-width:11ch;
+        line-height:1.02;
+      }
+
+      .hero-text{
+        max-width:24ch;
+      }
+
+      .hero-panel{
+        width:min(100%, 100%);
+        padding:20px 18px;
+      }
+
+      .actions{
+        flex-direction:column;
+        width:100%;
+      }
+
+      .actions .btn{
+        width:min(100%, 260px);
+        text-align:center;
+      }
+
+      .card{
+        padding:20px;
+      }
+
+      .book-card h3,
+      .about h3{
+        font-size:24px;
+      }
+
+      .book-card p,
+      .about p,
+      .feature p{
+        font-size:16px;
+      }
+    }
+  </style>
+</head>
+<body data-page="index">
+
+  <div id="site-header"></div>
+
+<header class="hero">
+    <div class="hero-content">
+      <div class="hero-layout">
+        <div class="hero-box left">
+          <h1 class="hero-title" data-i18n="heroTitle">Engineering, memoir, and music — one human journey.</h1>
+        </div>
+
+        <div class="hero-spacer" aria-hidden="true"></div>
+
+        <div class="hero-box right">
+          <div class="hero-panel">
+            <p class="hero-text" data-i18n="heroText">
+              This site brings together the technical life, the written life, and the musical life behind Engineering with a Heart.
+            </p>
+
+            <div class="actions">
+              <a class="btn btn-primary" href="essays.html" data-i18n="heroBtnEssays">Read the Essays</a>
+              <a class="btn btn-secondary" href="book.html" data-i18n="heroBtnBook">Explore the Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero-divider"></div>
+
+  <section id="project">
+    <div class="container center">
+      <h2 class="section-title" data-i18n="projectTitle">Three Pillars, One Voice</h2>
+      <p class="section-intro" data-i18n="projectIntro">
+        Engineering with a Heart is not only a technical project. It is the meeting point of systems thinking, lived experience, and music — a place where professional work, memoir, and creative expression speak to one another.
+      </p>
+    </div>
+
+    <div class="container feature-list">
+      <div class="feature">
+        <h4 data-i18n="feature1Title">Engineering</h4>
+        <p data-i18n="feature1Text">
+          Distributed systems, infrastructure, observability, diagnostics, and the disciplined craft of building technology that serves real human needs.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h4 data-i18n="feature2Title">Writing</h4>
+        <p data-i18n="feature2Text">
+          Essays and memoir that turn lived experience into reflection — crossing Brazil, Europe, and the United States with honesty, gratitude, and moral clarity.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h4 data-i18n="feature3Title">Music</h4>
+        <p data-i18n="feature3Text">
+          Songs, recordings, and musical memory that reveal another side of the same journey — voice as feeling, resilience, love, and creative expression.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="essays">
+    <div class="container">
+      <div class="center">
+        <h2 class="section-title" data-i18n="essaysTitle">Recent Reflections</h2>
+        <p class="section-intro" data-i18n="essaysIntro">
+          Essays on technology, dignity, migration, memory, and the human responsibilities that live inside modern systems.
+        </p>
+      </div>
+
+      <div class="essay-links">
+        <a class="essay-link" href="essays.html#muddy-truck">
+          <div class="essay-type" data-i18n="essay1Type">Essay · March 2026</div>
+          <strong data-i18n="essay1Title">The Muddy Truck in the Amazon</strong>
+          <span data-i18n="essay1Text">The origin story behind Engineering with a Heart.</span>
+        </a>
+
+        <a class="essay-link" href="essays.html#two-worlds">
+          <div class="essay-type" data-i18n="essay2Type">Reflection · March 2026</div>
+          <strong data-i18n="essay2Title">Living Between Two Worlds</strong>
+          <span data-i18n="essay2Text">A reflection on engineering, inequality, gratitude, and purpose.</span>
+        </a>
+
+        <a class="essay-link" href="essays.html#compassion">
+          <div class="essay-type" data-i18n="essay3Type">Ethics · April 2026</div>
+          <strong data-i18n="essay3Title">Technology Without Compassion Is Incomplete</strong>
+          <span data-i18n="essay3Text">Why systems should serve people, not just efficiency.</span>
+        </a>
+      </div>
+
+      <div class="section-actions">
+        <a class="btn btn-primary" href="essays.html" data-i18n="essaysBtn">View all essays</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="container">
+      <div class="card book-card book-feature">
+        <div class="book-cover-wrap">
+          <img src="images/book.jpg" alt="Impossible Crossing book cover" data-i18n-attr="alt:bookAlt" />
+          <div class="book-actions">
+            <a class="btn btn-primary" href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC/ref=sr_1_1?crid=2BIV5RHUGGM67&dib=eyJ2IjoiMSJ9.U3VQY_JGRKw1ra8WZU4ssQ.qytgrLHto3X1tLRhG3laYYhszEj3DhRu8lfS7YNmOn8&dib_tag=se&keywords=impossible+crossing+rjk+silva+paperback&qid=1773540014&sprefix=impossible+crossing+rjk+silva+paperback%2Caps%2C185&sr=8-1" target="_blank" rel="noopener noreferrer" data-i18n="bookBtn">View on Amazon</a>
+          </div>
+        </div>
+  
+        <div class="book-copy">
+          <div class="section-kicker" data-i18n="bookKicker">Featured Book</div>
+          <h3 data-i18n="bookTitle">The Book: <em>Impossible Crossing</em></h3>
+  
+          <p data-i18n="bookP1">
+            <em>Impossible Crossing</em> is the human story behind <em>Engineering with a Heart</em>.
+            It follows a life shaped not only by hardship, perseverance, and crossing between worlds,
+            but by the extraordinary people who appeared along the way — family, friends, mentors,
+            and unexpected guides whose example, kindness, courage, and influence helped give that journey meaning.
+          </p>
+  
+          <p data-i18n="bookP2">
+            More than a story of personal struggle, it is a tribute to the people and places that formed a life: the culture, streets, classrooms, friendships, acts of compassion, and songs that carried memory forward. The book provides the human foundation for the reflections explored throughout this site — on technology, dignity, service, and the belief that progress matters most when it honors people.
+          </p>
+  
+          <p class="book-meta" data-i18n="bookMeta">Memoir • Resilience • Brazil • Migration • Music • Human dignity</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="card about-wrap">
+        <img src="images/rj.jpg" alt="RJ Silva portrait" data-i18n-attr="alt:portraitAlt" />
+        <div class="about">
+          <h3 data-i18n="aboutTitle">About R.J. Silva</h3>
+        
+          <p data-i18n="aboutP1">
+            R.J. Silva is a Brazilian-born engineer, author, and singer whose work bridges cultures, disciplines, and forms of expression. Across distributed systems, large-scale infrastructure, networking, observability, and software architecture, he has helped build complex systems — while also writing memoir and recording music that give voice to the human story behind the work.
+          </p>
+        
+          <p data-i18n="aboutP2">
+            Having lived in Brazil, Spain, Belgium, and the United States, he writes and creates from the perspective of someone who has crossed different worlds, witnessing both hardship and opportunity. That journey shapes <em>Engineering with a Heart</em>, <em>Impossible Crossing</em>, and a growing body of musical work rooted in gratitude, memory, resilience, and love.
+          </p>
+        
+          <div class="quote" data-i18n="quote">
+            “Technology matters most when it is guided by conscience, strengthened by story, and made more human through compassion.”
+          </div>
+
+          <div class="link-actions">
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/robertohjdasilva/" target="_blank" rel="noopener noreferrer" data-i18n="aboutBtnLinkedIn">Visit LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<footer id="footer"></footer>
+  
+  <script>
+    const HEADER_TRANSLATIONS = {
+      en: {
+        headerLogoAlt: "RJ Silva logo",
+        headerBrandSubtitle: "A reflection on engineering, humanity, and purpose.",
+        headerNavHome: "Home",
+        headerNavEssays: "Essays",
+        headerNavBook: "Book",
+        headerNavResume: "Resume",
+        headerNavMusic: "Music",
+        headerLangLabel: "Language"
+      },
+      pt: {
+        headerLogoAlt: "Logotipo de RJ Silva",
+        headerBrandSubtitle: "Uma reflexão sobre engenharia, humanidade e propósito.",
+        headerNavHome: "Início",
+        headerNavEssays: "Ensaios",
+        headerNavBook: "Livro",
+        headerNavResume: "Currículo",
+        headerNavMusic: "Música",
+        headerLangLabel: "Idioma"
+      }
+    };
+
+    function getStoredSiteLanguage() {
+      return localStorage.getItem('preferredLanguage')
+        || localStorage.getItem('siteLanguage')
+        || localStorage.getItem('siteLang')
+        || 'en';
+    }
+
+    function updateHeaderLanguageState(lang) {
+      const header = document.getElementById('site-header');
+      if (!header) return;
+
+      const dict = HEADER_TRANSLATIONS[lang] || HEADER_TRANSLATIONS.en;
+
+      header.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+
+      header.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+        const mappings = el.getAttribute('data-i18n-attr').split(';');
+        mappings.forEach((pair) => {
+          const [attr, key] = pair.split(':').map((s) => s.trim());
+          if (attr && key && dict[key] !== undefined) {
+            el.setAttribute(attr, String(dict[key]).replace(/<[^>]*>/g, ''));
+          }
+        });
+      });
+
+      header.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    function setSiteLanguage(lang) {
+      const normalized = (lang === 'pt') ? 'pt' : 'en';
+      localStorage.setItem('preferredLanguage', normalized);
+      localStorage.setItem('siteLanguage', normalized);
+      localStorage.setItem('siteLang', normalized);
+      updateHeaderLanguageState(normalized);
+
+      if (typeof applyLanguage === 'function') {
+        applyLanguage(normalized);
+      } else if (typeof applyTranslations === 'function') {
+        applyTranslations(normalized);
+      }
+    }
+
+    function initSharedHeader() {
+      const host = document.getElementById('site-header');
+      if (!host) return;
+
+      fetch('header.html')
+        .then((res) => res.text())
+        .then((markup) => {
+          host.innerHTML = markup;
+
+          const currentPage = document.body.getAttribute('data-page');
+          host.querySelectorAll('.nav a[data-page]').forEach((link) => {
+            if (link.getAttribute('data-page') === currentPage) {
+              link.setAttribute('aria-current', 'page');
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          });
+
+          host.querySelectorAll('.lang-btn').forEach((btn) => {
+            btn.addEventListener('click', () => setSiteLanguage(btn.dataset.lang));
+          });
+
+          updateHeaderLanguageState(getStoredSiteLanguage());
+        });
+    }
+
+    initSharedHeader();
+  </script>
+
+
+<script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+        if (typeof applyLanguage === "function") {
+          const lang = localStorage.getItem("preferredLanguage") || "en";
+          applyLanguage(lang);
+        }
+      });
+  </script>
+
+
+  <script>
+    const translations = {
+      en: {
+        pageTitle: "Engineering with a Heart | R.J. Silva",
+        pageDescription: "Engineering with a Heart — A reflection on engineering, humanity, and the purpose behind the systems we have built.",
+        logoAlt: "RJ Silva logo",
+        bookAlt: "Impossible Crossing book cover",
+        portraitAlt: "RJ Silva portrait",
+        brandTitle: "Engineering with a Heart",
+        brandSubtitle: "Engineering, story, and song — held together by purpose.",
+        navProject: "Project",
+        navEssays: "Essays",
+        navResume: "Resume",
+        navBook: "Book",
+        navMusic: "Music",
+        langLabel: "Language",
+        heroTitle: "Engineering, memoir, and music — one human journey.",
+        heroText: "This site brings together the technical life, the written life, and the musical life behind Engineering with a Heart.",
+        heroBtnEssays: "Read the Essays",
+        heroBtnBook: "Explore the Book",
+        projectTitle: "Three Pillars, One Voice",
+        projectIntro: "Engineering with a Heart is not only a technical project. It is the meeting point of systems thinking, lived experience, and music — a place where professional work, memoir, and creative expression speak to one another.",
+        feature1Title: "Engineering",
+        feature1Text: "Distributed systems, infrastructure, observability, diagnostics, and the disciplined craft of building technology that serves real human needs.",
+        feature2Title: "Writing",
+        feature2Text: "Essays and memoir that turn lived experience into reflection — crossing Brazil, Europe, and the United States with honesty, gratitude, and moral clarity.",
+        feature3Title: "Music",
+        feature3Text: "Songs, recordings, and musical memory that reveal another side of the same journey — voice as feeling, resilience, love, and creative expression.",
+        essaysTitle: "Recent Reflections",
+        essaysIntro: "Essays on technology, dignity, migration, memory, and the human responsibilities that live inside modern systems.",
+        essay1Type: "Essay · March 2026",
+        essay1Title: "The Muddy Truck in the Amazon",
+        essay1Text: "The origin story behind Engineering with a Heart.",
+        essay2Type: "Reflection · March 2026",
+        essay2Title: "Living Between Two Worlds",
+        essay2Text: "A reflection on engineering, inequality, gratitude, and purpose.",
+        essay3Type: "Ethics · April 2026",
+        essay3Title: "Technology Without Compassion Is Incomplete",
+        essay3Text: "Why systems should serve people, not just efficiency.",
+        essaysBtn: "View all essays",
+        bookBtn: "View on Amazon",
+        bookKicker: "Featured Book",
+        bookTitle: "The Book: <em>Impossible Crossing</em>",
+        bookP1: "<em>Impossible Crossing</em> is the human story behind <em>Engineering with a Heart</em>. It follows a life shaped not only by hardship, perseverance, and crossing between worlds, but by the extraordinary people who appeared along the way — family, friends, mentors, and unexpected guides whose example, kindness, courage, and influence helped give that journey meaning.",
+        bookP2: "More than a story of personal struggle, it is a tribute to the people and places that formed a life: the culture, streets, classrooms, friendships, acts of compassion, and songs that carried memory forward. The book provides the human foundation for the reflections explored throughout this site — on technology, dignity, service, and the belief that progress matters most when it honors people.",
+        bookMeta: "Memoir • Resilience • Brazil • Migration • Music • Human dignity",
+        aboutTitle: "About",
+        aboutP1: "R.J. Silva is a Brazilian-born engineer, author, and singer whose work bridges cultures, disciplines, and forms of expression. Across distributed systems, large-scale infrastructure, networking, observability, and software architecture, he has helped build complex systems — while also writing memoir and recording music that give voice to the human story behind the work.",
+        aboutP2: "Having lived in Brazil, Spain, Belgium, and the United States, he writes and creates from the perspective of someone who has crossed different worlds, witnessing both hardship and opportunity. That journey shapes <em>Engineering with a Heart</em>, <em>Impossible Crossing</em>, and a growing body of musical work rooted in gratitude, memory, resilience, and love.",
+        quote: "“Technology matters most when it is guided by conscience, strengthened by story, and made more human through compassion.”",
+        aboutBtnLinkedIn: "Visit LinkedIn",
+        footer: "© 2022–2026 R.J. Silva · Engineering with a Heart",
+        footerLinkedIn: "LinkedIn",
+        footerFacebook: "Facebook",
+        footerInstagram: "Instagram",
+        footerAmazon: "View the book on Amazon"
+      },
+      pt: {
+        pageTitle: "Engineering with a Heart | R.J. Silva",
+        pageDescription: "Engineering with a Heart — Uma reflexão sobre engenharia, humanidade e o propósito por trás dos sistemas que construímos.",
+        logoAlt: "Logotipo de RJ Silva",
+        bookAlt: "Capa do livro Impossible Crossing",
+        portraitAlt: "Retrato de RJ Silva",
+        brandTitle: "Engineering with a Heart",
+        brandSubtitle: "Engenharia, história e música — unidas por propósito.",
+        navProject: "Projeto",
+        navEssays: "Ensaios",
+        navResume: "Currículo",
+        navBook: "Livro",
+        navMusic: "Música",
+        langLabel: "Idioma",
+        heroTitle: "Engenharia, memórias e música — uma só jornada humana.",
+        heroText: "Este site reúne a vida técnica, a vida literária e a vida musical por trás de Engineering with a Heart.",
+        heroBtnEssays: "Ler os Ensaios",
+        heroBtnBook: "Explorar o Livro",
+        projectTitle: "Três Pilares, Uma Voz",
+        projectIntro: "Engineering with a Heart não é apenas um projeto técnico. É o ponto de encontro entre pensamento sistêmico, experiência vivida e música — um espaço onde trabalho profissional, memórias e expressão criativa conversam entre si.",
+        feature1Title: "Engenharia",
+        feature1Text: "Sistemas distribuídos, infraestrutura, observabilidade, diagnósticos e a disciplina de construir tecnologia que sirva a necessidades humanas reais.",
+        feature2Title: "Escrita",
+        feature2Text: "Ensaios e memórias que transformam experiência vivida em reflexão — atravessando Brasil, Europa e Estados Unidos com honestidade, gratidão e clareza moral.",
+        feature3Title: "Música",
+        feature3Text: "Canções, gravações e memória musical que revelam outro lado da mesma jornada — a voz como sentimento, resiliência, amor e expressão criativa.",
+        essaysTitle: "Reflexões Recentes",
+        essaysIntro: "Ensaios sobre tecnologia, dignidade, migração, memória e as responsabilidades humanas que vivem dentro dos sistemas modernos.",
+        essay1Type: "Ensaio · Março de 2026",
+        essay1Title: "O Caminhão Coberto de Lama na Amazônia",
+        essay1Text: "A história de origem por trás de Engineering with a Heart.",
+        essay2Type: "Reflexão · Março de 2026",
+        essay2Title: "Vivendo Entre Dois Mundos",
+        essay2Text: "Uma reflexão sobre engenharia, desigualdade, gratidão e propósito.",
+        essay3Type: "Ética · Abril de 2026",
+        essay3Title: "Tecnologia Sem Compaixão É Incompleta",
+        essay3Text: "Por que os sistemas devem servir às pessoas, e não apenas à eficiência.",
+        essaysBtn: "Ver todos os ensaios",
+        bookBtn: "Ver na Amazon",
+        bookKicker: "Livro em Destaque",
+        bookTitle: "O Livro: <em>Impossible Crossing</em>",
+        bookP1: "<em>Impossible Crossing</em> é a história humana por trás de <em>Engineering with a Heart</em>. Ele acompanha uma vida moldada não apenas por dificuldades, perseverança e travessias entre mundos, mas também pelas pessoas extraordinárias que surgiram ao longo do caminho — família, amigos, mentores e guias inesperados, cujo exemplo, bondade, coragem e influência ajudaram a dar sentido a essa jornada.",
+        bookP2: "Mais do que uma história de luta pessoal, é uma homenagem às pessoas e aos lugares que formaram uma vida: a cultura, as ruas, as salas de aula, as amizades, os gestos de compaixão e as músicas que levaram a memória adiante. O livro oferece a base humana para as reflexões exploradas neste site — sobre tecnologia, dignidade, serviço e a convicção de que o progresso importa mais quando honra as pessoas.",
+        bookMeta: "Memórias • Resiliência • Brasil • Migração • Música • Dignidade humana",
+        aboutTitle: "Sobre",
+        aboutP1: "R.J. Silva é um engenheiro, autor e cantor nascido no Brasil, cujo trabalho conecta culturas, disciplinas e formas de expressão. Ao longo de uma trajetória em sistemas distribuídos, infraestrutura em grande escala, redes, observabilidade e arquitetura de software, ele ajudou a construir sistemas complexos — enquanto também escrevia memórias e gravava músicas que dão voz à história humana por trás desse trabalho.",
+        aboutP2: "Tendo vivido no Brasil, na Espanha, na Bélgica e nos Estados Unidos, ele escreve e cria a partir da perspectiva de alguém que atravessou diferentes mundos, testemunhando tanto dificuldades quanto oportunidades. Essa jornada molda <em>Engineering with a Heart</em>, <em>Impossible Crossing</em> e um corpo crescente de trabalho musical enraizado em gratidão, memória, resiliência e amor.",
+        quote: "“A tecnologia tem mais valor quando é guiada pela consciência, fortalecida pela história e tornada mais humana pela compaixão.”",
+        musicBtnReadMore: "Ler a página completa de música",
+        aboutBtnLinkedIn: "Visitar LinkedIn",
+        footer: "© 2022–2026 R.J. Silva · Engineering with a Heart",
+        footerLinkedIn: "LinkedIn",
+        footerFacebook: "Facebook",
+        footerInstagram: "Instagram",
+        footerAmazon: "Ver o livro na Amazon"
+      }
+    };
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    function applyLanguage(lang) {
+      const selected = translations[lang] ? lang : 'en';
+      const content = translations[selected];
+
+      document.documentElement.lang = selected === 'pt' ? 'pt-BR' : 'en';
+      document.title = content.pageTitle;
+      if (metaDescription) metaDescription.setAttribute('content', content.pageDescription);
+
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (content[key] !== undefined) {
+          el.innerHTML = content[key];
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+        const [attr, key] = el.getAttribute('data-i18n-attr').split(':');
+        if (content[key] !== undefined) {
+          el.setAttribute(attr, content[key]);
+        }
+      });
+
+      document.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === selected);
+      });
+
+      localStorage.setItem('preferredLanguage', selected);
+    }
+
+    function detectInitialLanguage() {
+      const saved = localStorage.getItem('preferredLanguage');
+      if (saved && translations[saved]) return saved;
+
+      const browserLanguages = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || 'en'];
+
+      return browserLanguages.some((lang) => String(lang).toLowerCase().startsWith('pt')) ? 'pt' : 'en';
+    }
+
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+    });
+
+    applyLanguage(detectInitialLanguage());
+  </script>
+
+</body>
+</html>

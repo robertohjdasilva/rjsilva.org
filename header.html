@@ -1,0 +1,191 @@
+<style>
+  .topbar{
+    background:var(--brown);
+    color:#fff;
+    padding:16px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+
+  .topbar-inner{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:24px;
+  }
+
+  .top-hero-divider{
+    height:1px;
+    background:#ffffff;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    min-width:0;
+  }
+
+  .brand img{
+    height:72px;
+    width:auto;
+    object-fit:contain;
+    display:block;
+  }
+
+  .brand-text{
+    text-align:center;
+    min-width:0;
+  }
+
+  .brand-subtitle{
+    margin:4px 0 0;
+    font-size:16px;
+    color:rgba(255,255,255,.78);
+  }
+
+  .brand-subtitle-main{
+    margin:0;
+    font-size:22px;
+    line-height:1.2;
+    color:rgba(255,255,255,.92);
+  }
+
+  .nav{
+    display:flex;
+    gap:18px;
+    font-size:15px;
+    white-space:nowrap;
+    justify-self:end;
+    align-items:center;
+  }
+
+  .nav a,
+  .lang-btn{
+    color:rgba(255,255,255,.88);
+  }
+
+  .nav a:hover,
+  .lang-btn:hover{
+    color:#fff;
+  }
+
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-left:6px;
+    padding-left:14px;
+    border-left:1px solid rgba(255,255,255,.18);
+  }
+
+  .lang-btn{
+    background:none;
+    border:none;
+    padding:0;
+    font:inherit;
+    cursor:pointer;
+  }
+
+  .lang-btn.active{
+    color:#fff;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+
+  .lang-label{
+    color:rgba(255,255,255,.5);
+    font-size:13px;
+  }
+
+  @media (max-width: 900px){
+    .topbar{
+      padding:18px 0 14px;
+    }
+
+    .topbar-inner{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      text-align:center;
+    }
+
+    .brand{
+      justify-content:center;
+    }
+
+    .brand img{
+      height:62px;
+      max-width:min(100%, 300px);
+    }
+
+    .brand-text{
+      width:100%;
+    }
+
+    .brand-subtitle{
+      font-size:14px;
+      line-height:1.35;
+    }
+
+    .nav{
+      justify-self:auto;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:14px 18px;
+      white-space:normal;
+      width:100%;
+    }
+
+    .lang-switch{
+      margin-left:0;
+      padding-left:0;
+      border-left:none;
+    }
+  }
+
+  @media (max-width: 560px){
+    .brand img{
+      height:auto;
+      width:min(100%, 320px);
+    }
+
+    .brand-subtitle{
+      max-width:28ch;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .nav{
+      font-size:14px;
+      gap:10px 16px;
+    }
+  }
+</style>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="index.html" aria-label="R.J. Silva home">
+      <img src="images/logo.jpg" alt="RJ Silva logo" data-i18n-attr="alt:headerLogoAlt" />
+    </a>
+
+    <div class="brand-text">
+      <p class="brand-subtitle brand-subtitle-main" data-i18n="headerBrandSubtitle">A reflection on engineering, humanity, and purpose.</p>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" data-page="index" data-i18n="headerNavHome">Home</a>
+      <a href="essays.html" data-page="essays" data-i18n="headerNavEssays">Essays</a>
+      <a href="book.html" data-page="book" data-i18n="headerNavBook">Book</a>
+      <a href="resume.html" data-page="resume" data-i18n="headerNavResume">Resume</a>
+      <a href="music.html" data-page="music" data-i18n="headerNavMusic">Music</a>
+      <div class="lang-switch" aria-label="Language selector">
+        <span class="lang-label" data-i18n="headerLangLabel">Language</span>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <span class="lang-label">/</span>
+        <button type="button" class="lang-btn" data-lang="pt">PT</button>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="top-hero-divider"></div>
