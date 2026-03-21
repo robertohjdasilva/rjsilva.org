@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impossible Crossing | R.J. Silva</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <meta name="description" content="Impossible Crossing — a memoir of resilience, migration, faith, music, and the people who quietly shape a life." />
+  <style>
+    :root{
+      --bg:#f5f2ec;
+      --paper:#fffaf3;
+      --text:#1a1a1a;
+      --muted:#5a5148;
+      --brown:#2a1a12;
+      --gold:#c9892b;
+      --gold-dark:#9a6a22;
+      --border:rgba(42,26,18,.14);
+      --shadow:0 10px 30px rgba(42,26,18,.08);
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Georgia, "Times New Roman", serif;background:var(--bg);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 40px));margin:0 auto}
+    .topbar{background:var(--brown);color:#fff;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .topbar-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+    .top-hero-divider{height:1px;background:#ffffff}
+    .brand{display:flex;align-items:center;min-width:0}
+    .brand img{height:72px;width:auto;object-fit:contain;display:block}
+    .brand-text{text-align:center;min-width:0}
+    .brand-subtitle{margin:0;font-size:22px;line-height:1.2;color:rgba(255,255,255,.92)}
+    .nav{display:flex;gap:18px;font-size:15px;white-space:nowrap;justify-self:end;align-items:center}
+    .nav a,.lang-btn{color:rgba(255,255,255,.88)}
+    .nav a:hover,.lang-btn:hover{color:#fff}
+    .lang-switch{display:flex;align-items:center;gap:8px;margin-left:6px;padding-left:14px;border-left:1px solid rgba(255,255,255,.18)}
+    .lang-btn{background:none;border:none;padding:0;font:inherit;cursor:pointer}
+    .lang-btn.active{color:#fff;text-decoration:underline;text-underline-offset:3px}
+    .lang-label{color:rgba(255,255,255,.5);font-size:13px}
+    .hero{position:relative;padding:74px 0 58px;color:#fff;background:linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.28)), url("images/bridge.jpg") center 68%/cover no-repeat;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center 52%, rgba(255,210,120,0.18) 0%, rgba(255,210,120,0.07) 22%, rgba(0,0,0,0) 58%);pointer-events:none;mix-blend-mode:screen}
+    .hero-content{position:relative;z-index:2}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#f0c98f;font-weight:700;margin-bottom:12px}
+    .hero h1{margin:0;font-size:clamp(34px, 5vw, 54px);line-height:1.02;letter-spacing:-.03em;max-width:760px}
+    .hero p{margin:18px 0 0;max-width:760px;font-size:20px;color:rgba(255,255,255,.88)}
+    .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:22px;box-shadow:0 14px 34px rgba(0,0,0,.14)}
+    .hero-card h2{margin:0 0 12px;font-size:20px;color:#fff}
+    .hero-card ul{margin:0;padding-left:18px;color:rgba(255,255,255,.86);font-size:15px}
+    .hero-card li+li{margin-top:6px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-size:15px;font-weight:700;border:1px solid rgba(255,255,255,.18);transition:.2s ease}
+    .btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
+    .btn-primary:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
+    .btn-secondary{background:rgba(255,255,255,.08);color:#fff}
+    .btn-secondary:hover{background:rgba(255,255,255,.16)}
+    .main{padding:34px 0 70px}
+    .section{background:var(--paper);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);padding:30px;margin-bottom:22px}
+    .section-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+    .section h2{margin:0 0 14px;font-size:30px;line-height:1.15;color:var(--brown)}
+    .section p{margin:0 0 14px;font-size:18px}
+    .two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+    .book-layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:28px;align-items:start}
+    .book-cover-wrap{position:relative;display:flex;flex-direction:column;align-items:center}
+    .book-cover-wrap::after{content:"";position:absolute;inset:auto 14px -14px 14px;height:26px;background:rgba(42,26,18,.10);filter:blur(14px);border-radius:50%;z-index:0}
+    .book-cover-wrap img{display:block;max-width:100%;height:auto;border-radius:6px;transform:rotate(-2deg);box-shadow:0 18px 28px rgba(0,0,0,.24);position:relative;z-index:1}
+    .book-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+    .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .pill{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:13px;color:var(--muted)}
+    .quote{font-size:24px;line-height:1.45;color:var(--brown);font-style:italic;margin:8px 0 16px}
+    .quote-source{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .list-card,.info-card,.callout{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
+    .list-card h3,.info-card h3,.callout h3{margin:0 0 12px;font-size:22px;color:var(--brown)}
+    .list-card ul{margin:0;padding-left:20px}
+    .list-card li+li{margin-top:10px}
+    .callout p:last-child,.info-card p:last-child{margin-bottom:0}
+    .chapter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+    .chapter-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
+    .chapter-card h3{margin:0 0 10px;font-size:22px;color:var(--brown)}
+    .chapter-card .mini{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    footer{padding:18px 0 34px;color:var(--muted);font-size:14px;text-align:center}
+    .footer-links{
+          margin-top:10px;
+          display:flex;
+          gap:14px;
+          justify-content:center;
+          flex-wrap:wrap;
+          font-size:14px;
+        }
+    
+        .footer-links a{
+          color:var(--muted);
+          text-decoration:underline;
+          text-underline-offset:3px;
+        }
+    
+        .footer-links a:hover{
+          color:var(--brown);
+        }
+
+    @media (max-width: 980px){
+      .hero-grid,.two-col,.book-layout,.chapter-grid{grid-template-columns:1fr}
+      .topbar-inner{grid-template-columns:1fr;justify-items:center}
+      .nav{justify-content:center;flex-wrap:wrap;gap:12px 16px;font-size:15px}
+      .lang-switch{margin-left:0;padding-left:0;border-left:none}
+      .hero{padding:60px 0 46px}
+      .hero p{font-size:18px}
+      .section{padding:24px}
+    }
+    @media (max-width: 640px){
+      .container{width:min(var(--max), calc(100% - 28px))}
+      .hero-actions,.book-actions,.cta-row,.links{flex-direction:column;align-items:stretch}
+      .btn{width:100%}
+      .section h2{font-size:26px}
+      .section p{font-size:17px}
+      .quote{font-size:20px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="R.J. Silva home">
+        <img src="images/logo.jpg" alt="RJ Silva logo" data-i18n-attr="alt:logoAlt" />
+      </a>
+      <div class="brand-text">
+        <p class="brand-subtitle" data-i18n="brandSubtitle">Engineering with a Heart</p>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="essays.html" data-i18n="navEssays">Essays</a>
+        <a href="book.html" data-i18n="navBook">Book</a>
+        <a href="resume.html" data-i18n="navResume">Resume</a>
+        <a href="music.html" data-i18n="navMusic">Music</a>
+        <div class="lang-switch" aria-label="Language switcher">
+          <span class="lang-label" data-i18n="langLabel">Language</span>
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pt">PT</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="top-hero-divider"></div>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow" data-i18n="heroEyebrow">Featured Memoir</div>
+          <h1 data-i18n="heroTitle"><em>Impossible Crossing</em> is a memoir about perseverance, gratitude, and the people who quietly make the impossible possible.</h1>
+          <p data-i18n="heroText">This book is the human foundation beneath <em>Engineering with a Heart</em>: a life shaped by hardship, education, migration, faith, love, and music — told not as self-celebration, but as homage.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC/ref=sr_1_1?crid=2BIV5RHUGGM67&dib=eyJ2IjoiMSJ9.U3VQY_JGRKw1ra8WZU4ssQ.qytgrLHto3X1tLRhG3laYYhszEj3DhRu8lfS7YNmOn8&dib_tag=se&keywords=impossible+crossing+rjk+silva+paperback&qid=1773540014&sprefix=impossible+crossing+rjk+silva+paperback%2Caps%2C185&sr=8-1" target="_blank" rel="noopener noreferrer" data-i18n="heroBtnAmazon">View on Amazon</a>
+            <a class="btn btn-secondary" href="#highlights" data-i18n="heroBtnHighlights">Read Highlights</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h2 data-i18n="heroCardTitle">At a Glance</h2>
+          <ul>
+            <li data-i18n="heroCard1">A memoir grounded in dignity, not spectacle.</li>
+            <li data-i18n="heroCard2">A portrait of Brazil, migration, education, love, and human generosity.</li>
+            <li data-i18n="heroCard3">A rare narrative voice marked by lucidity, gratitude, and emotional maturity.</li>
+            <li data-i18n="heroCard4">A book where music becomes part of the story itself.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container">
+      <section class="section" id="highlights">
+        <div class="section-kicker" data-i18n="overviewKicker">Book Overview</div>
+        <div class="book-layout">
+          <div class="book-cover-wrap">
+            <img src="images/book.jpg" alt="Impossible Crossing book cover" data-i18n-attr="alt:bookAlt" />
+            <div class="book-actions">
+              <a class="btn btn-primary" href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC/ref=sr_1_1?crid=2BIV5RHUGGM67&dib=eyJ2IjoiMSJ9.U3VQY_JGRKw1ra8WZU4ssQ.qytgrLHto3X1tLRhG3laYYhszEj3DhRu8lfS7YNmOn8&dib_tag=se&keywords=impossible+crossing+rjk+silva+paperback&qid=1773540014&sprefix=impossible+crossing+rjk+silva+paperback%2Caps%2C185&sr=8-1" target="_blank" rel="noopener noreferrer" data-i18n="overviewBtnAmazon">Buy the Book</a>
+            </div>
+          </div>
+          <div>
+            <h2 data-i18n="overviewTitle">A human crossing through hardship, belonging, hope, and purpose</h2>
+            <p data-i18n="overviewP1"><em>Impossible Crossing</em> is an autobiographical work of unusual emotional maturity. It does not present life as a neat ascent toward success. Instead, it follows a long crossing shaped by poverty, bullying, education, migration, faith, perseverance, love, and the many people whose generosity changed one life without fanfare.</p>
+            <p data-i18n="overviewP2">What makes the book powerful is not just what happens, but how the world is observed. It looks at people through the best they were able to offer, without denying pain, injustice, ambiguity, or loss. That ethical gaze gives the memoir unusual dignity and lasting force.</p>
+            <p data-i18n="overviewP3">At its center, this is a book about believing: believing in people, in meaning, in gratitude, and in the possibility that even an impossible crossing can be crossed.</p>
+            <div class="meta-row">
+              <span class="pill" data-i18n="meta1">Memoir</span>
+              <span class="pill" data-i18n="meta2">Resilience</span>
+              <span class="pill" data-i18n="meta3">Brazil</span>
+              <span class="pill" data-i18n="meta4">Migration</span>
+              <span class="pill" data-i18n="meta5">Faith</span>
+              <span class="pill" data-i18n="meta6">Music</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section two-col">
+        <div class="callout">
+          <div class="section-kicker" data-i18n="forewordKicker">Foreword</div>
+          <h2 data-i18n="forewordTitle">Nicole Neuman on courage, humanity, and resonance</h2>
+          <div class="quote" data-i18n="forewordQuote">“Its power does not come from noise or spectacle, but from the way courage becomes intimate and contagious.”</div>
+          <p data-i18n="forewordP1">The foreword helps frame the memoir as something more enduring than a dramatic life story. It recognizes a narrative marked by gratitude rather than resentment, intimacy rather than posture, and a rare trust in the reader’s intelligence.</p>
+          <p data-i18n="forewordP2">That perspective matters because it identifies what makes the book distinctive: it is generous without naivety, emotionally strong without self-pity, and deeply rooted in ordinary people whose gestures quietly alter destinies.</p>
+          <div class="quote-source" data-i18n="forewordSource">Foreword by Nicole Neuman · editor, psychologist, and novelist</div>
+        </div>
+        <div class="list-card">
+          <h3 data-i18n="forewordListTitle">Why this book feels rare</h3>
+          <ul>
+            <li data-i18n="forewordList1">It refuses the usual autobiographical extremes of self-justification or self-glorification.</li>
+            <li data-i18n="forewordList2">It turns a personal story into a collective homage to people, places, and human decency.</li>
+            <li data-i18n="forewordList3">It portrays Brazil from the inside, with intimacy, complexity, and dignity.</li>
+            <li data-i18n="forewordList4">It carries the kind of emotional resonance that spreads by recommendation rather than hype.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section two-col">
+        <div class="info-card">
+          <div class="section-kicker" data-i18n="prologueKicker">Prologue</div>
+          <h2 data-i18n="prologueTitle">The airplane as mystery, rupture, departure, and hope</h2>
+          <p data-i18n="prologueP1">The prologue opens with an airplane image that becomes more than a childhood memory. It becomes a symbol of separation, survival, migration, return, and the opening of worlds that once felt unreachable.</p>
+          <p data-i18n="prologueP2">From the first pages, the memoir announces its deeper movement: this is not the story of an idealized hero, but of an ordinary person carried forward by faith, perseverance, unexpected help, and the human encounters that made each next step possible.</p>
+          <p data-i18n="prologueP3">It is an elegant beginning because it compresses the whole arc of the book into one image: leaving the ground without certainty and discovering that life-changing crossings often begin before we understand where they lead.</p>
+        </div>
+        <div class="callout">
+          <div class="quote" data-i18n="prologueQuote">“Almost every major change in my life began like this: with the airplane leaving the ground.”</div>
+          <p data-i18n="prologueSide">That image also anticipates the structure of the memoir itself: a story of movement not only across geography, but across class, language, belonging, identity, and hope.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-kicker" data-i18n="chaptersKicker">Selected Highlights</div>
+        <h2 data-i18n="chaptersTitle">Three dimensions of the memoir</h2>
+        <div class="chapter-grid">
+          <article class="chapter-card">
+            <div class="mini" data-i18n="chapter1Kicker">Beginning</div>
+            <h3 data-i18n="chapter1Title">An impossible crossing</h3>
+            <p data-i18n="chapter1Text">The early chapters reveal a life shaped by fragility, separation, hardship, and social vulnerability. Yet even there, the memoir focuses on the people whose presence made survival, dignity, and growth possible.</p>
+          </article>
+          <article class="chapter-card">
+            <div class="mini" data-i18n="chapter2Kicker">Formation</div>
+            <h3 data-i18n="chapter2Title">Education, discipline, and perseverance</h3>
+            <p data-i18n="chapter2Text">Across school years, bullying, failure, ambition, and improbable goals, the book follows the long formation of character. The emotional center is never prestige alone, but the stubborn decision to keep believing in a future not yet visible.</p>
+          </article>
+          <article class="chapter-card">
+            <div class="mini" data-i18n="chapter3Kicker">Expression</div>
+            <h3 data-i18n="chapter3Title">Music as refuge, courage, and memory</h3>
+            <p data-i18n="chapter3Text">In the later chapters, music becomes more than soundtrack. Songs become emotional anchors — holding together pain, joy, longing, romantic memory, parental love, study, courage, and self-discovery.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section two-col">
+        <div class="info-card">
+          <div class="section-kicker" data-i18n="musicKicker">Final Pages</div>
+          <h2 data-i18n="musicTitle">When the story continues in sound</h2>
+          <p data-i18n="musicP1">The closing pages make an important move: they openly state that music has always been more than background. It was refuge, companionship, motivation, and sometimes the only way to understand feelings before words could fully carry them.</p>
+          <p data-i18n="musicP2">Those pages end in curated playlists tied to specific chapters. Queen, ABBA, Air Supply, Elton John, Maria Bethânia, Paul McCartney, Stevie Wonder, Tears for Fears, and others are not used decoratively; they map the emotional progression of the memoir and extend it beyond the page.</p>
+          <p data-i18n="musicP3">This section matters because it reveals one of the book’s deepest truths: endurance is built not only through sacrifice and discipline, but also through beauty, melody, memory, and the songs that help a person keep going.</p>
+        </div>
+        <div class="list-card">
+          <h3 data-i18n="musicListTitle">Why these pages stand out</h3>
+          <ul>
+            <li data-i18n="musicList1">They show that the book’s emotional life continues after the last chapter.</li>
+            <li data-i18n="musicList2">They connect biography to a broader cultural soundtrack.</li>
+            <li data-i18n="musicList3">They prepare the reader to see the author not only as engineer and writer, but also as singer.</li>
+            <li data-i18n="musicList4">They make the memoir feel even more intimate, lived, and memorable.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section two-col">
+        <div class="list-card">
+          <div class="section-kicker" data-i18n="authorKicker">Author</div>
+          <h2 data-i18n="authorTitle">About R. J. Silva</h2>
+          <p data-i18n="authorP1">R. J. Silva is a software engineer, inventor, writer, and singer with 29 U.S. patents. Born in Brazil, he later lived and worked in Europe and the United States, carrying those crossings into both his technical work and creative life.</p>
+          <p data-i18n="authorP2">His path never moved away from people or from the inner life that stories and songs preserve. <em>Impossible Crossing</em> was born from a desire to honor the people, encounters, and invisible acts of generosity that changed a destiny.</p>
+        </div>
+        <div class="callout">
+          <div class="section-kicker" data-i18n="connectKicker">Beyond the Book</div>
+          <h3 data-i18n="connectTitle">Part of a larger creative project</h3>
+          <p data-i18n="connectP1">The memoir is one pillar of a broader ecosystem that includes <em>Engineering with a Heart</em>, essays, music, and public reflection. The book tells the life story; the site extends that voice into technology, ethics, resilience, and creative expression.</p>
+          <div class="links">
+            <a class="btn btn-primary" href="music.html" data-i18n="connectBtnMusic">Music</a>
+            <a class="btn btn-secondary" href="essays.html" data-i18n="connectBtnEssays">Read Essays</a>
+            <a class="btn btn-secondary" href="https://www.facebook.com/robertohjacobdasilva" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnFacebook">Facebook</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/robertohjacobdasilva/" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnInstagram">Instagram</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  
+<footer id="footer"></footer>
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+        if (typeof applyLanguage === "function") {
+          const lang = localStorage.getItem("preferredLanguage") || "en";
+          applyLanguage(lang);
+        }
+      });
+  </script>
+
+
+  <script>
+    const translations = {
+      en: {
+        pageTitle: "Impossible Crossing | R.J. Silva",
+        pageDescription: "Impossible Crossing — a memoir of resilience, migration, faith, music, and the people who quietly shape a life.",
+        logoAlt: "RJ Silva logo",
+        bookAlt: "Impossible Crossing book cover",
+        brandSubtitle: "Engineering with a Heart",
+        navHome: "Home",
+        navEssays: "Essays",
+        navBook: "Book",
+        navResume: "Resume",
+        navMusic: "Music",
+        langLabel: "Language",
+        heroEyebrow: "Featured Memoir",
+        heroTitle: "<em>Impossible Crossing</em> is a memoir about perseverance, gratitude, and the people who quietly make the impossible possible.",
+        heroText: "This book is the human foundation beneath <em>Engineering with a Heart</em>: a life shaped by hardship, education, migration, faith, love, and music — told not as self-celebration, but as homage.",
+        heroBtnAmazon: "View on Amazon",
+        heroBtnHighlights: "Read Highlights",
+        heroCardTitle: "At a Glance",
+        heroCard1: "A memoir grounded in dignity, not spectacle.",
+        heroCard2: "A portrait of Brazil, migration, education, love, and human generosity.",
+        heroCard3: "A rare narrative voice marked by lucidity, gratitude, and emotional maturity.",
+        heroCard4: "A book where music becomes part of the story itself.",
+        overviewKicker: "Book Overview",
+        overviewTitle: "A human crossing through hardship, belonging, hope, and purpose",
+        overviewP1: "<em>Impossible Crossing</em> is an autobiographical work of unusual emotional maturity. It does not present life as a neat ascent toward success. Instead, it follows a long crossing shaped by poverty, bullying, education, migration, faith, perseverance, love, and the many people whose generosity changed one life without fanfare.",
+        overviewP2: "What makes the book powerful is not just what happens, but how the world is observed. It looks at people through the best they were able to offer, without denying pain, injustice, ambiguity, or loss. That ethical gaze gives the memoir unusual dignity and lasting force.",
+        overviewP3: "At its center, this is a book about believing: believing in people, in meaning, in gratitude, and in the possibility that even an impossible crossing can be crossed.",
+        overviewBtnAmazon: "Buy the Book",
+        meta1: "Memoir",
+        meta2: "Resilience",
+        meta3: "Brazil",
+        meta4: "Migration",
+        meta5: "Faith",
+        meta6: "Music",
+        forewordKicker: "Foreword",
+        forewordTitle: "Nicole Neuman on courage, humanity, and resonance",
+        forewordQuote: "“Its power does not come from noise or spectacle, but from the way courage becomes intimate and contagious.”",
+        forewordP1: "The foreword helps frame the memoir as something more enduring than a dramatic life story. It recognizes a narrative marked by gratitude rather than resentment, intimacy rather than posture, and a rare trust in the reader’s intelligence.",
+        forewordP2: "That perspective matters because it identifies what makes the book distinctive: it is generous without naivety, emotionally strong without self-pity, and deeply rooted in ordinary people whose gestures quietly alter destinies.",
+        forewordSource: "Foreword by Nicole Neuman · editor, psychologist, and novelist",
+        forewordListTitle: "Why this book feels rare",
+        forewordList1: "It refuses the usual autobiographical extremes of self-justification or self-glorification.",
+        forewordList2: "It turns a personal story into a collective homage to people, places, and human decency.",
+        forewordList3: "It portrays Brazil from the inside, with intimacy, complexity, and dignity.",
+        forewordList4: "It carries the kind of emotional resonance that spreads by recommendation rather than hype.",
+        prologueKicker: "Prologue",
+        prologueTitle: "The airplane as mystery, rupture, departure, and hope",
+        prologueP1: "The prologue opens with an airplane image that becomes more than a childhood memory. It becomes a symbol of separation, survival, migration, return, and the opening of worlds that once felt unreachable.",
+        prologueP2: "From the first pages, the memoir announces its deeper movement: this is not the story of an idealized hero, but of an ordinary person carried forward by faith, perseverance, unexpected help, and the human encounters that made each next step possible.",
+        prologueP3: "It is an elegant beginning because it compresses the whole arc of the book into one image: leaving the ground without certainty and discovering that life-changing crossings often begin before we understand where they lead.",
+        prologueQuote: "“Almost every major change in my life began like this: with the airplane leaving the ground.”",
+        prologueSide: "That image also anticipates the structure of the memoir itself: a story of movement not only across geography, but across class, language, belonging, identity, and hope.",
+        chaptersKicker: "Selected Highlights",
+        chaptersTitle: "Three dimensions of the memoir",
+        chapter1Kicker: "Beginning",
+        chapter1Title: "An impossible crossing",
+        chapter1Text: "The early chapters reveal a life shaped by fragility, separation, hardship, and social vulnerability. Yet even there, the memoir focuses on the people whose presence made survival, dignity, and growth possible.",
+        chapter2Kicker: "Formation",
+        chapter2Title: "Education, discipline, and perseverance",
+        chapter2Text: "Across school years, bullying, failure, ambition, and improbable goals, the book follows the long formation of character. The emotional center is never prestige alone, but the stubborn decision to keep believing in a future not yet visible.",
+        chapter3Kicker: "Expression",
+        chapter3Title: "Music as refuge, courage, and memory",
+        chapter3Text: "In the later chapters, music becomes more than soundtrack. Songs become emotional anchors — holding together pain, joy, longing, romantic memory, parental love, study, courage, and self-discovery.",
+        musicKicker: "Final Pages",
+        musicTitle: "When the story continues in sound",
+        musicP1: "The closing pages make an important move: they openly state that music has always been more than background. It was refuge, companionship, motivation, and sometimes the only way to understand feelings before words could fully carry them.",
+        musicP2: "Those pages end in curated playlists tied to specific chapters. Queen, ABBA, Air Supply, Elton John, Maria Bethânia, Paul McCartney, Stevie Wonder, Tears for Fears, and others are not used decoratively; they map the emotional progression of the memoir and extend it beyond the page.",
+        musicP3: "This section matters because it reveals one of the book’s deepest truths: endurance is built not only through sacrifice and discipline, but also through beauty, melody, memory, and the songs that help a person keep going.",
+        musicListTitle: "Why these pages stand out",
+        musicList1: "They show that the book’s emotional life continues after the last chapter.",
+        musicList2: "They connect biography to a broader cultural soundtrack.",
+        musicList3: "They prepare the reader to see the author not only as engineer and writer, but also as singer.",
+        musicList4: "They make the memoir feel even more intimate, lived, and memorable.",
+        authorKicker: "Author",
+        authorTitle: "Music",
+        authorP1: "R. J. Silva is a software engineer, inventor, writer, and singer with 29 U.S. patents. Born in Brazil, he later lived and worked in Europe and the United States, carrying those crossings into both his technical work and creative life.",
+        authorP2: "His path never moved away from people or from the inner life that stories and songs preserve. <em>Impossible Crossing</em> was born from a desire to honor the people, encounters, and invisible acts of generosity that changed a destiny.",
+        connectKicker: "Beyond the Book",
+        connectTitle: "Part of a larger creative project",
+        connectP1: "The memoir is one pillar of a broader ecosystem that includes <em>Engineering with a Heart</em>, essays, music, and public reflection. The book tells the life story; the site extends that voice into technology, ethics, resilience, and creative expression.",
+        connectBtnMusic: "Music",
+        connectBtnEssays: "Read Essays",
+        connectBtnFacebook: "Facebook",
+        connectBtnInstagram: "Instagram",
+        footerText: "© 2026 Roberto H. Jacob da Silva. Built with reflection, engineering, and heart."
+      },
+      pt: {
+        pageTitle: "Travessia Impossível | R.J. Silva",
+        pageDescription: "Travessia Impossível — memórias de resiliência, migração, fé, música e das pessoas que silenciosamente moldam uma vida.",
+        logoAlt: "Logo RJ Silva",
+        bookAlt: "Capa do livro Travessia Impossível",
+        brandSubtitle: "Engineering with a Heart",
+        navHome: "Início",
+        navEssays: "Ensaios",
+        navBook: "Livro",
+        navResume: "Currículo",
+        navMusic: "Música",
+        langLabel: "Idioma",
+        heroEyebrow: "Livro em Destaque",
+        heroTitle: "<em>Travessia Impossível</em> é uma memória sobre perseverança, gratidão e as pessoas que silenciosamente tornam o impossível possível.",
+        heroText: "Este livro é a base humana de <em>Engineering with a Heart</em>: uma vida moldada por dificuldade, educação, migração, fé, amor e música — contada não como autopromoção, mas como homenagem.",
+        heroBtnAmazon: "Ver na Amazon",
+        heroBtnHighlights: "Ler Destaques",
+        heroCardTitle: "Visão Geral",
+        heroCard1: "Uma memória enraizada em dignidade, não em espetáculo.",
+        heroCard2: "Um retrato do Brasil, da migração, da educação, do amor e da generosidade humana.",
+        heroCard3: "Uma voz narrativa rara, marcada por lucidez, gratidão e maturidade emocional.",
+        heroCard4: "Um livro em que a música passa a fazer parte da própria história.",
+        overviewKicker: "Visão do Livro",
+        overviewTitle: "Uma travessia humana por dificuldade, pertencimento, esperança e propósito",
+        overviewP1: "<em>Travessia Impossível</em> é uma obra autobiográfica de notável maturidade emocional. Ela não apresenta a vida como uma ascensão organizada rumo ao sucesso. Em vez disso, acompanha uma longa travessia moldada por pobreza, bullying, educação, migração, fé, perseverança, amor e pelas muitas pessoas cuja generosidade mudou uma vida sem alarde.",
+        overviewP2: "O que torna o livro poderoso não é apenas o que acontece, mas a forma como o mundo é observado. Ele olha para as pessoas a partir do melhor que foram capazes de oferecer, sem negar dor, injustiça, ambiguidade ou perda. Esse olhar ético dá à memória uma dignidade incomum e uma força duradoura.",
+        overviewP3: "No centro, este é um livro sobre acreditar: acreditar nas pessoas, no sentido, na gratidão e na possibilidade de que até uma travessia impossível possa ser atravessada.",
+        overviewBtnAmazon: "Comprar o Livro",
+        meta1: "Memórias",
+        meta2: "Resiliência",
+        meta3: "Brasil",
+        meta4: "Migração",
+        meta5: "Fé",
+        meta6: "Música",
+        forewordKicker: "Prefácio",
+        forewordTitle: "Nicole Neuman sobre coragem, humanidade e ressonância",
+        forewordQuote: "“Sua força não vem de barulho ou espetáculo, mas da maneira como a coragem se torna íntima e contagiante.”",
+        forewordP1: "O prefácio ajuda a situar a obra como algo mais duradouro do que uma história de vida dramática. Ele reconhece uma narrativa marcada por gratidão em vez de ressentimento, intimidade em vez de pose, e uma confiança rara na inteligência do leitor.",
+        forewordP2: "Essa perspectiva importa porque identifica o que torna o livro distinto: ele é generoso sem ingenuidade, emocionalmente forte sem autopiedade e profundamente enraizado em pessoas comuns cujos gestos silenciosamente alteram destinos.",
+        forewordSource: "Prefácio de Nicole Neuman · editora, psicóloga e romancista",
+        forewordListTitle: "Por que este livro parece raro",
+        forewordList1: "Ele recusa os extremos autobiográficos usuais de autojustificação ou autoglorificação.",
+        forewordList2: "Ele transforma uma história pessoal em homenagem coletiva a pessoas, lugares e à decência humana.",
+        forewordList3: "Ele retrata o Brasil por dentro, com intimidade, complexidade e dignidade.",
+        forewordList4: "Ele carrega o tipo de ressonância emocional que se espalha por recomendação, não por hype.",
+        prologueKicker: "Prólogo",
+        prologueTitle: "O avião como mistério, ruptura, partida e esperança",
+        prologueP1: "O prólogo se abre com a imagem de um avião que se torna mais do que uma lembrança de infância. Ela vira símbolo de separação, sobrevivência, migração, retorno e da abertura de mundos que antes pareciam inalcançáveis.",
+        prologueP2: "Desde as primeiras páginas, a memória anuncia seu movimento mais profundo: esta não é a história de um herói idealizado, mas de uma pessoa comum levada adiante por fé, perseverança, ajuda inesperada e pelos encontros humanos que tornaram possível cada passo seguinte.",
+        prologueP3: "É um começo elegante porque comprime o arco inteiro do livro em uma única imagem: sair do chão sem certeza e descobrir que travessias transformadoras muitas vezes começam antes de entendermos para onde levam.",
+        prologueQuote: "“Quase toda grande mudança da minha vida começou assim: com o avião deixando o chão.”",
+        prologueSide: "Essa imagem também antecipa a própria estrutura do livro: uma história de movimento não apenas pela geografia, mas por classe social, linguagem, pertencimento, identidade e esperança.",
+        chaptersKicker: "Destaques Selecionados",
+        chaptersTitle: "Três dimensões das memórias",
+        chapter1Kicker: "Começo",
+        chapter1Title: "Uma travessia impossível",
+        chapter1Text: "Os capítulos iniciais revelam uma vida marcada por fragilidade, separação, dificuldade e vulnerabilidade social. Ainda assim, a memória foca nas pessoas cuja presença tornou possível a sobrevivência, a dignidade e o crescimento.",
+        chapter2Kicker: "Formação",
+        chapter2Title: "Educação, disciplina e perseverança",
+        chapter2Text: "Ao longo dos anos escolares, do bullying, das falhas, da ambição e de metas improváveis, o livro acompanha a longa formação do caráter. O centro emocional nunca é apenas prestígio, mas a decisão teimosa de continuar acreditando num futuro ainda invisível.",
+        chapter3Kicker: "Expressão",
+        chapter3Title: "Música como refúgio, coragem e memória",
+        chapter3Text: "Nos capítulos finais, a música se torna mais do que trilha sonora. As canções viram âncoras emocionais — segurando dor, alegria, saudade, memória romântica, amor de pai, estudo, coragem e autodescoberta.",
+        musicKicker: "Páginas Finais",
+        musicTitle: "Quando a história continua em som",
+        musicP1: "As páginas finais fazem um movimento importante: afirmam claramente que a música sempre foi mais do que pano de fundo. Ela foi refúgio, companhia, motivação e, às vezes, a única forma de compreender sentimentos antes que as palavras conseguissem carregá-los por inteiro.",
+        musicP2: "Essas páginas terminam em playlists curadas ligadas a capítulos específicos. Queen, ABBA, Air Supply, Elton John, Maria Bethânia, Paul McCartney, Stevie Wonder, Tears for Fears e outros não aparecem de forma decorativa; eles mapeiam a progressão emocional da memória e a estendem para além da página.",
+        musicP3: "Essa seção importa porque revela uma das verdades mais profundas do livro: a resistência não se constrói apenas por sacrifício e disciplina, mas também por beleza, melodia, memória e pelas canções que ajudam uma pessoa a continuar.",
+        musicListTitle: "Por que essas páginas se destacam",
+        musicList1: "Elas mostram que a vida emocional do livro continua depois do último capítulo.",
+        musicList2: "Elas conectam biografia a uma trilha cultural mais ampla.",
+        musicList3: "Elas preparam o leitor para ver o autor não apenas como engenheiro e escritor, mas também como cantor.",
+        musicList4: "Elas tornam as memórias ainda mais íntimas, vividas e memoráveis.",
+        authorKicker: "Autor",
+        authorTitle: "Música",
+        authorP1: "R. J. Silva é engenheiro de software, inventor, escritor e cantor com 29 patentes nos Estados Unidos. Nascido no Brasil, mais tarde viveu e trabalhou na Europa e nos Estados Unidos, levando essas travessias tanto para o trabalho técnico quanto para a vida criativa.",
+        authorP2: "Seu caminho nunca se afastou das pessoas nem da vida interior que histórias e canções preservam. <em>Travessia Impossível</em> nasceu do desejo de homenagear as pessoas, os encontros e os atos invisíveis de generosidade que mudaram um destino.",
+        connectKicker: "Além do Livro",
+        connectTitle: "Parte de um projeto criativo maior",
+        connectP1: "As memórias são um dos pilares de um ecossistema mais amplo que inclui <em>Engineering with a Heart</em>, ensaios, música e reflexão pública. O livro conta a história de vida; o site expande essa voz para tecnologia, ética, resiliência e expressão criativa.",
+        connectBtnMusic: "Música",
+        connectBtnEssays: "Ler Ensaios",
+        connectBtnFacebook: "Facebook",
+        connectBtnInstagram: "Instagram",
+        footerText: "© 2026 Roberto H. Jacob da Silva. Feito com reflexão, engenharia e coração."
+        footerLinkedIn: "LinkedIn",
+        footerFacebook: "Facebook",
+        footerInstagram: "Instagram",
+        footerAmazon: "Ver o livro na Amazon",
+      }
+    };
+
+    function applyTranslations(lang) {
+      document.documentElement.lang = lang;
+      document.title = translations[lang].pageTitle;
+      document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].pageDescription);
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key] !== undefined) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+        const mapping = el.getAttribute('data-i18n-attr').split(';');
+        mapping.forEach(pair => {
+          const [attr, key] = pair.split(':').map(s => s.trim());
+          if (attr && key && translations[lang][key] !== undefined) {
+            el.setAttribute(attr, translations[lang][key].replace(/<[^>]*>/g, ''));
+          }
+        });
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+      localStorage.setItem('siteLang', lang);
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyTranslations(btn.dataset.lang));
+    });
+
+    applyTranslations(localStorage.getItem('siteLang') || 'en');
+  </script>
+</body>
+</html>
