@@ -49,6 +49,26 @@
     .hero-box{display:flex;flex-direction:column;text-align:center}
     .hero-box.left{justify-content:center;align-items:center}
     .hero-box.right{justify-content:center;align-items:center;gap:30px}
+    .hero-panel{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      padding:20px 22px;
+      background:rgba(42,26,18,.55);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:16px;
+      box-shadow:0 14px 30px rgba(0,0,0,.18);
+      backdrop-filter: blur(2px);
+      width:min(100%, 360px);
+    }
+    .actions{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      align-items:center;
+    }
     .hero-title{margin:0;font-size:clamp(24px, 3.8vw, 43px);line-height:1.03;letter-spacing:-.6px;text-wrap:balance}
     .hero-text{margin:0;font-size:clamp(16px, 1.9vw, 19px);color:rgba(255,255,255,.94);max-width:330px;line-height:1.45}
     .hero-spacer{min-height:1px}
@@ -145,8 +165,15 @@
         <div class="hero-spacer" aria-hidden="true"></div>
 
         <div class="hero-box right">
-          <p class="hero-text" data-i18n="heroText">Ideas about technology, resilience, and the human meaning behind the systems we build.
-          </p>
+          <div class="hero-panel">
+            <p class="hero-text" data-i18n="heroText">
+              Ideas about technology, resilience, and the human meaning behind the systems we build.
+            </p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.linkedin.com/in/robertohjdasilva/" target="_blank">LinkedIn</a>
+              <a class="btn btn-secondary" href="resume.html">View Resume</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -207,7 +234,15 @@
   </section>
 
   <footer>
-    <div class="container" data-i18n="footer">© 2022–2026 R.J. Silva · Engineering with a Heart</div>
+    <div class="container">
+      <div data-i18n="footer">© 2022–2026 R.J. Silva · Engineering with a Heart</div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/robertohjdasilva/" target="_blank">LinkedIn</a>
+        <a href="https://www.facebook.com/robertohjacobdasilva" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/robertohjacobdasilva/" target="_blank">Instagram</a>
+        <a href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC" target="_blank">View the book on Amazon</a>
+      </div>
+    </div>
   </footer>
 
   <script>
