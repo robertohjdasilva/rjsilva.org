@@ -298,7 +298,21 @@
     .hero-box.right{
       justify-content:center;
       align-items:center;
-      gap:30px;
+    }
+
+    .hero-panel{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:22px;
+      padding:22px 24px;
+      background:rgba(42,26,18,.68);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      box-shadow:0 14px 34px rgba(0,0,0,.18);
+      backdrop-filter: blur(2px);
+      width:min(100%, 330px);
     }
 
     .hero-title{
@@ -315,6 +329,7 @@
       color:rgba(255,255,255,.94);
       max-width:330px;
       line-height:1.45;
+      text-align:center;
     }
 
     .hero-spacer{
@@ -625,6 +640,10 @@
         align-items:center;
       }
 
+      .hero-panel{
+        width:min(100%, 420px);
+      }
+
       .hero-title{
         font-size:clamp(22px, 10vw, 42px);
         max-width:10ch;
@@ -706,6 +725,11 @@
         max-width:24ch;
       }
 
+      .hero-panel{
+        width:min(100%, 100%);
+        padding:20px 18px;
+      }
+
       .actions{
         flex-direction:column;
         width:100%;
@@ -775,13 +799,15 @@
         <div class="hero-spacer" aria-hidden="true"></div>
 
         <div class="hero-box right">
-          <p class="hero-text" data-i18n="heroText">
-            This site brings together the technical life, the written life, and the musical life behind Engineering with a Heart.
-          </p>
+          <div class="hero-panel">
+            <p class="hero-text" data-i18n="heroText">
+              This site brings together the technical life, the written life, and the musical life behind Engineering with a Heart.
+            </p>
 
-          <div class="actions">
-            <a class="btn btn-primary" href="music.html" data-i18n="heroBtnMusic">Explore Music</a>
-            <a class="btn btn-secondary" href="book.html" data-i18n="heroBtnBook">Explore the book</a>
+            <div class="actions">
+              <a class="btn btn-primary" href="music.html" data-i18n="heroBtnMusic">Explore Music</a>
+              <a class="btn btn-secondary" href="book.html" data-i18n="heroBtnBook">Explore the book</a>
+            </div>
           </div>
         </div>
       </div>
