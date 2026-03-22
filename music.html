@@ -94,13 +94,24 @@
     .qr-card p{margin:0 0 14px;font-size:16px;color:var(--muted)}
     .audio-demo{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}
     .audio-demo audio{width:100%}
+    .music-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:18px}
+    .video-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
+    .video-card p:last-child,.music-track-list p:last-child{margin-bottom:0}
+    .track-list{display:grid;gap:14px;margin-top:16px}
+    .track-item{background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px}
+    .track-item h3{margin:0 0 10px;font-size:20px;color:var(--brown)}
+    .track-item audio{width:100%}
+    .essay-links{display:grid;gap:16px;margin-top:18px}
+    .essay-link{display:block;background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px;transition:.2s ease}
+    .essay-link:hover{transform:translateY(-1px);border-color:rgba(42,26,18,.28)}
+    .essay-type{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
     .small-note{margin-top:10px;font-size:14px;color:var(--muted)}
     footer{padding:26px 0 38px;color:var(--muted);text-align:center;font-size:14px}
     .footer-links{margin-top:10px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:14px}
     .footer-links a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
     .footer-links a:hover{color:var(--brown)}
     @media (max-width: 980px){
-      .two-col,.stats,.song-grid,.feature-grid,.media-grid{grid-template-columns:1fr}
+      .two-col,.stats,.song-grid,.feature-grid,.media-grid,.music-grid{grid-template-columns:1fr}
       .topbar{padding:18px 0 14px}
       .topbar-inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
       .brand{justify-content:center}
@@ -175,19 +186,70 @@
             <h3 data-i18n="featureTitle1">Playlist 1 — The Emotional Soundtrack of the Crossing</h3>
             <p data-i18n="featureText1">This playlist brings together the songs that accompanied me throughout the story told in this book. These are songs that, in one way or another, touched my life — in moments of joy, sadness, doubt, overcoming, and love. Songs that helped me study, dream higher, cross difficult periods, and celebrate both small and great victories.</p>
             <p data-i18n="featureText1b">Here are songs that made me laugh, cry, and believe. Songs that marked important phases of my life and that, to this day, awaken very specific emotions. This is the emotional soundtrack of my journey.</p>
+            <p><strong data-i18n="spotifyQrAccess">Spotify QR Access</strong></p>
             <div class="feature-qr">
               <img src="images/timeline_qr.png" alt="Timeline playlist QR code" data-i18n-attr="alt:timelineQrAlt" />
             </div>
           </article>
           <article class="feature-card">
             <h3 data-i18n="featureTitle2">Playlist 2 — The Night When Anyone Can Step Onto the Stage</h3>
-            <p data-i18n="featureText2">This second playlist is connected to a very specific moment in my life — one of the most emotional nights I have ever lived. It was the night of the Kayak band performance during the CTA June festival. An improvised stage, a blend of musicians from the Northeast, different stories, and dreams that until then had seemed unlikely. In front of hundreds of people, we sang, played, and lived something unforgettable.</p>
-            <p data-i18n="featureText2b">Not because anyone there was a famous artist, but because, in that moment, it became clear that it was not necessary to be one. Many people like to sing but never do. They believe they do not have a voice, that they will be compared to professional singers, that they will be judged or ridiculed. Few realize that what we hear on records involves technique, equipment, production, and support — and that music, before anything else, is human expression.</p>
-            <p data-i18n="featureText2c">Being on that stage meant understanding something simple and powerful: it was not about exceptional talent, but about ordinary courage. That night proved that a hidden dream, seemingly distant, can become real. That anyone can step onto the stage — whether literal or symbolic. This playlist is the soundtrack of that night and of everything it represented.</p>
+            <p data-i18n="featureText2Short">This playlist comes from one unforgettable night: singing with the Kayak band at the CTA June festival, before hundreds of people, on an improvised stage that turned a distant dream into something real. It became proof that music is not only for professionals or famous voices — it is also courage, joy, and human expression. This playlist preserves the sound of that night and what it revealed: sometimes anyone really can step onto the stage.</p>
+            <p><strong data-i18n="spotifyQrAccess">Spotify QR Access</strong></p>
             <div class="feature-qr">
               <img src="images/concert_qr.png" alt="Concert playlist QR code" data-i18n-attr="alt:concertQrAlt" />
             </div>
           </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-kicker" data-i18n="myMusicKicker">My Music</div>
+        <h2 data-i18n="myMusicTitle">Recordings, studio sessions, and a more personal musical voice</h2>
+        <p data-i18n="myMusicP1">This section opens space for songs I recorded over time — some in the studio, some tied to memory, and some simply connected to the joy of singing. It is a more personal layer of this page: not only the music that shaped me, but also the music I chose to interpret with my own voice.</p>
+        <p data-i18n="myMusicP2">You can watch a featured YouTube performance and listen to a small set of recordings already hosted on this website. Over time, this area can grow into a richer archive of performances, studio tracks, and musical memories.</p>
+        <div class="music-grid">
+          <div class="video-card">
+            <h3 data-i18n="featuredVideoTitle">Featured YouTube video</h3>
+            <p data-i18n="featuredVideoText">A live performance that represents this musical side of the journey.</p>
+            <div class="button-row">
+              <a class="btn btn-light" href="https://www.youtube.com/watch?v=bvk8Yvrtu4A" target="_blank" rel="noopener noreferrer" data-i18n="watchOnYouTube">Watch on YouTube</a>
+            </div>
+            <p class="small-note" data-i18n="featuredVideoNote">The video opens in a new tab so visitors can watch it directly on YouTube.</p>
+          </div>
+          <div class="music-track-list">
+            <h3 data-i18n="studioTracksTitle">Selected recordings</h3>
+            <p data-i18n="studioTracksText">These audio players can stream the recordings directly from the <code>audio/</code> folder on the site.</p>
+            <div class="track-list">
+              <div class="track-item">
+                <h3>Can't Fight This Feeling</h3>
+                <audio controls preload="none">
+                  <source src="audio/cant_fight_this_feeling.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div class="track-item">
+                <h3>A Viagem</h3>
+                <audio controls preload="none">
+                  <source src="audio/a_viagem.m4a" type="audio/mp4">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div class="track-item">
+                <h3>You're the Inspiration</h3>
+                <audio controls preload="none">
+                  <source src="audio/youre_the_inspiration.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div class="track-item">
+                <h3>Ainda Vou Te Encontrar</h3>
+                <audio controls preload="none">
+                  <source src="audio/ainda_vou_te_encontrar.m4a" type="audio/mp4">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -369,8 +431,8 @@
         musicP2: "Some songs are tied to decisive chapters of life. “Halo” carries the joy of recording with his daughter Gabriela. “When Your Feet Don’t Touch the Ground” marks the gift of recording with his daughter Rebecca. “The Promise” became a collaboration with his brother Marcelo. ABBA’s “Dancing Queen” reaches back to the first awakening of his love for music in 1978. “How Can I Go On” became a mirror for the impossible dream of reaching a top engineering college in Brazil. Axé and forró opened the door to singing on stage before hundreds of people and realizing a lifelong dream.",
         bookMusicKicker: "From the Book",
         bookMusicTitle: "When the memoir continues in sound",
-        bookMusicP1: "A música sempre foi mais do que um pano de fundo na minha vida. Em muitos momentos, ela foi refúgio, companhia, força e, às vezes, a única forma de entender o que eu estava sentindo quando as palavras ainda não existiam. Ao longo desta história, a música esteve presente de forma silenciosa, mas constante — no rádio ligado, nos fones de ouvido, nas letras que me acompanhavam enquanto eu estudava, sonhava, sofria, me apaixonava e tentava encontrar meu lugar no mundo.",
-        bookMusicP2: "Algumas músicas me fizeram rir. Outras me fizeram chorar. Houve aquelas que me deram energia para estudar para o vestibular do ITA, aquelas que me inspiraram quando tudo parecia difícil, e aquelas que sempre me levaram de volta ao amor da minha vida — à garota dos meus sonhos. Este livro conta a minha história em palavras. Mas há emoções que nunca couberam totalmente nelas. Por isso, decidi compartilhar dois playlists que fazem parte essencial dessa jornada. Eles não são listas aleatórias. Cada música carrega um momento, um sentimento ou uma lembrança que ajudou a moldar quem eu me tornei.",
+        bookMusicP1: "Music has always been more than a backdrop in my life. In many moments, it was refuge, company, strength, and, at times, the only way to understand what I was feeling when words still did not exist. Throughout this story, music was present in a quiet but constant way — on the radio, in my headphones, in the lyrics that stayed with me while I studied, dreamed, suffered, fell in love, and tried to find my place in the world.",
+        bookMusicP2: "Some songs made me laugh. Others made me cry. Some gave me energy to prepare for the ITA entrance exam, some inspired me when everything seemed difficult, and some always brought me back to the love of my life — the girl of my dreams. This book tells my story in words. But there are emotions that never fully fit inside them. That is why I decided to share two playlists that are an essential part of this journey. They are not random lists. Each song carries a moment, a feeling, or a memory that helped shape who I became.",
         featureTitle1: "Playlist 1 — A Trilha Emocional da Travessia",
         featureText1: "Este playlist reúne as músicas que me acompanharam ao longo de toda a história contada neste livro. São canções que, de alguma forma, tocaram minha vida — em momentos de alegria, de tristeza, de dúvida, de superação e de amor. Músicas que me ajudaram a estudar, a sonhar mais alto, a atravessar períodos difíceis e a celebrar pequenas e grandes vitórias.",
         featureTitle2: "Playlist 2 — A Noite em que Qualquer Um Pode Subir ao Palco",
@@ -382,7 +444,19 @@
         featureSpotify1: "Ouça no Spotify.",
         featureText1c: "Cada música deste playlist está associada a um capítulo específico do livro. A ordem das faixas acompanha a progressão emocional e narrativa da história.",
         featureText2b: "Não porque alguém ali fosse um artista famoso. Mas porque, naquele momento, ficou claro que não era preciso ser. Muitas pessoas gostam de cantar, mas nunca cantam. Acreditam que não têm voz, que vão ser comparadas a cantores profissionais, que vão ser julgadas ou ridicularizadas. Poucas percebem que aquilo que ouvimos em discos envolve técnica, equipamento, produção e apoio — e que a música, antes de tudo, é expressão humana.",
-        featureText2c: "Estar naquele palco significou entender algo simples e poderoso: não era sobre talento excepcional, mas sobre coragem comum. Aquela noite provou que um sonho guardado, aparentemente distante, pode se tornar real. Que qualquer pessoa pode subir ao palco — seja ele literal ou simbólico. Este playlist é a trilha sonora daquela noite. E de tudo o que ela representou.",
+        featureText2c: "Estar naquele palco significou entender algo simples e poderoso: não era sobre talento excepcional, mas sobre coragem comum. Aquela noite provou que um sonho guardado, aparentemente distante, pode se tornar real. Que qualquer pessoa pode subir ao palco — seja ele literal ou simbólico. Esta playlist é a trilha sonora daquela noite e de tudo o que ela representou.",
+        featureText2Short: "Esta playlist nasceu de uma noite inesquecível: cantar com a banda Kayak na festa junina do CTA, diante de centenas de pessoas, em um palco improvisado que transformou um sonho distante em algo real. Ela mostrou que a música não pertence apenas a profissionais ou vozes famosas — ela também é coragem, alegria e expressão humana. Esta playlist guarda o som daquela noite e aquilo que ela revelou: às vezes, qualquer pessoa realmente pode subir ao palco.",
+        spotifyQrAccess: "Acesso por QR code no Spotify",
+        myMusicKicker: "My Music",
+        myMusicTitle: "Gravações, sessões de estúdio e uma voz musical mais pessoal",
+        myMusicP1: "Esta seção abre espaço para músicas que gravei ao longo do tempo — algumas em estúdio, algumas ligadas à memória e outras simplesmente conectadas à alegria de cantar. É uma camada mais pessoal desta página: não apenas a música que me formou, mas também a música que escolhi interpretar com a minha própria voz.",
+        myMusicP2: "Aqui você pode assistir a um vídeo em destaque no YouTube e ouvir um pequeno conjunto de gravações já hospedadas neste website. Com o tempo, esta área pode crescer e se tornar um arquivo mais rico de apresentações, faixas de estúdio e memórias musicais.",
+        featuredVideoTitle: "Vídeo em destaque no YouTube",
+        featuredVideoText: "Uma apresentação que representa este lado musical da jornada.",
+        watchOnYouTube: "Assistir no YouTube",
+        featuredVideoNote: "O vídeo abre em uma nova aba para que o visitante possa assisti-lo diretamente no YouTube.",
+        studioTracksTitle: "Gravações selecionadas",
+        studioTracksText: "Esses players podem tocar as gravações diretamente da pasta <code>audio/</code> do site.",
         featureSpotify2: "Ouça no Spotify.",
         featureText2d: "Esta trilha sonora corresponde a um dos momentos mais marcantes desta história, narrado no Capítulo 25 — Obrigado pela Música.",
         songsKicker: "Family, Memory, and Milestones",
@@ -479,12 +553,12 @@
         musicP2: "Algumas músicas estão ligadas a capítulos decisivos da vida. “Halo” carrega a alegria de gravar com a filha Gabriela. “When Your Feet Don’t Touch the Ground” marca o presente de gravar com a filha Rebecca. “The Promise” virou uma colaboração com o irmão Marcelo. “Dancing Queen”, do ABBA, remete ao primeiro despertar do amor pela música em 1978. “How Can I Go On” virou espelho do sonho aparentemente impossível de entrar em uma grande escola de engenharia no Brasil. Axé e forró abriram a porta para cantar diante de centenas de pessoas e realizar um sonho de vida.",
         bookMusicKicker: "Do Livro",
         bookMusicTitle: "Quando o livro continua em som",
-        bookMusicP1: "As páginas finais de <em>Travessia Impossível</em> se voltam abertamente para música e playlist. A seção da trilha sonora reúne canções que fizeram Roberto rir, chorar e acreditar, ligando cada uma a capítulos específicos e fases emocionais da autobiografia.",
-        bookMusicP2: "Essas páginas finais não são decorativas. Elas mostram que alguns capítulos se completam não apenas em prosa, mas também em som — com Queen, ABBA, Air Supply, Elton John, Maria Bethânia, Paul McCartney, Stevie Wonder, Tears for Fears e outros estendendo a progressão emocional do livro para além das últimas páginas narrativas.",
-        featureTitle1: "Playlist como mapa emocional",
-        featureText1: "A trilha sonora acompanha o movimento do livro capítulo por capítulo, da descoberta musical na infância até perseverança, amor, coragem e expressão pessoal.",
-        featureTitle2: "Uma segunda playlist sobre coragem",
-        featureText2: "O livro termina com a noite em que qualquer pessoa pode subir ao palco: uma memória de cantar com uma banda diante de centenas de pessoas e descobrir que música não é sobre celebridade, mas sobre coragem comum.",
+        bookMusicP1: "A música sempre foi mais do que um pano de fundo na minha vida. Em muitos momentos, ela foi refúgio, companhia, força e, às vezes, a única forma de entender o que eu estava sentindo quando as palavras ainda não existiam. Ao longo desta história, a música esteve presente de forma silenciosa, mas constante — no rádio ligado, nos fones de ouvido, nas letras que me acompanhavam enquanto eu estudava, sonhava, sofria, me apaixonava e tentava encontrar meu lugar no mundo.",
+        bookMusicP2: "Algumas músicas me fizeram rir. Outras me fizeram chorar. Houve aquelas que me deram energia para estudar para o vestibular do ITA, aquelas que me inspiraram quando tudo parecia difícil, e aquelas que sempre me levaram de volta ao amor da minha vida — à garota dos meus sonhos. Este livro conta a minha história em palavras. Mas há emoções que nunca couberam totalmente nelas. Por isso, decidi compartilhar duas playlists que fazem parte essencial dessa jornada. Elas não são listas aleatórias. Cada música carrega um momento, um sentimento ou uma lembrança que ajudou a moldar quem eu me tornei.",
+        featureTitle1: "Playlist 1 — A Trilha Emocional da Travessia",
+        featureText1: "Esta playlist reúne as músicas que me acompanharam ao longo de toda a história contada neste livro. São canções que, de alguma forma, tocaram minha vida — em momentos de alegria, tristeza, dúvida, superação e amor. Músicas que me ajudaram a estudar, a sonhar mais alto, a atravessar períodos difíceis e a celebrar pequenas e grandes vitórias.",
+        featureTitle2: "Playlist 2 — A Noite em que Qualquer Um Pode Subir ao Palco",
+        featureText2: "Esta segunda playlist está ligada a um momento muito específico da minha vida — uma das noites mais emocionantes que já vivi. Foi a noite do show da banda Kayak, durante a festa junina do CTA. Um palco improvisado, uma mistura de músicos do Nordeste, histórias diferentes e sonhos que, até então, pareciam improváveis. Diante de centenas de pessoas, cantamos, tocamos e vivemos algo inesquecível.",
         featureTitle3: "Uma ponte natural para este site",
         featureText3: "Esse final abre espaço para que o site expanda a dimensão musical por meio de gravações, playlists, reflexões e histórias por trás de canções individuais.",
         songsKicker: "Família, Memória e Marcos",
