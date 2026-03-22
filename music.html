@@ -53,6 +53,10 @@
     .hero-text{margin:0;font-size:clamp(16px, 1.9vw, 19px);color:rgba(255,255,255,.94);max-width:340px;line-height:1.45;text-align:center}
     .hero-spacer{min-height:1px}
     .hero-actions,.button-row,.action-center{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px}
+    .hero-actions{margin-top:2px}
+    .hero-panel .btn{padding:13px 20px;border-radius:10px;white-space:nowrap}
+    .feature-qr{margin:8px 0 4px;text-align:center}
+    .feature-qr img{display:block;width:100%;max-width:210px;height:auto;margin:0 auto;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow)}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-size:15px;font-weight:700;border:1px solid rgba(255,255,255,.18);transition:.2s ease}
     .btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
     .btn-primary:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
@@ -78,7 +82,8 @@
     .list-card li+li,.media-card li+li{margin-top:9px}
     .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
     .pill{display:inline-flex;align-items:center;padding:9px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:14px;color:var(--brown)}
-    .song-grid,.feature-grid,.media-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+    .song-grid,.media-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+    .feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
     .quote{margin-top:18px;padding:18px 20px;border-left:4px solid var(--gold);background:#fff;border-radius:0 16px 16px 0;color:var(--brown);font-size:20px;line-height:1.55;font-style:italic}
     .muted{color:var(--muted)}
     .placeholder-box{display:grid;place-items:center;min-height:180px;border:2px dashed rgba(42,26,18,.18);border-radius:18px;background:linear-gradient(180deg, rgba(201,137,43,.06), rgba(255,255,255,.5));text-align:center;padding:20px;color:var(--muted)}
@@ -144,6 +149,10 @@
         <div class="hero-box right">
           <div class="hero-panel">
             <p class="hero-text" data-i18n="heroCardSummary">A musical page where voice, memory, recordings, and emotion meet across love, distance, and time.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://open.spotify.com/playlist/0eyXBvaY9hxopMEbh3oy6u?si=104b201e068c4b72" target="_blank" rel="noopener noreferrer" data-i18n="heroBtnTimeline">Timeline Playlist</a>
+              <a class="btn btn-secondary" href="https://open.spotify.com/playlist/6AQg9Fa46OihwVUwYSowGI?si=ada2379353a84fb8" target="_blank" rel="noopener noreferrer" data-i18n="heroBtnConcert">Concert Playlist</a>
+            </div>
           </div>
         </div>
       </div>
@@ -166,74 +175,22 @@
             <h3 data-i18n="featureTitle1">Playlist 1 — The Emotional Soundtrack of the Crossing</h3>
             <p data-i18n="featureText1">This playlist brings together the songs that accompanied me throughout the story told in this book. These are songs that, in one way or another, touched my life — in moments of joy, sadness, doubt, overcoming, and love. Songs that helped me study, dream higher, cross difficult periods, and celebrate both small and great victories.</p>
             <p data-i18n="featureText1b">Here are songs that made me laugh, cry, and believe. Songs that marked important phases of my life and that, to this day, awaken very specific emotions. This is the emotional soundtrack of my journey.</p>
-            <p><strong data-i18n="featureSpotify1">Listen on Spotify.</strong></p>
-            <p data-i18n="featureText1c">Each song in this playlist is associated with a specific chapter of the book. The order of the tracks follows the emotional and narrative progression of the story.</p>
+            <div class="feature-qr">
+              <img src="images/timeline_qr.png" alt="Timeline playlist QR code" data-i18n-attr="alt:timelineQrAlt" />
+            </div>
           </article>
           <article class="feature-card">
             <h3 data-i18n="featureTitle2">Playlist 2 — The Night When Anyone Can Step Onto the Stage</h3>
             <p data-i18n="featureText2">This second playlist is connected to a very specific moment in my life — one of the most emotional nights I have ever lived. It was the night of the Kayak band performance during the CTA June festival. An improvised stage, a blend of musicians from the Northeast, different stories, and dreams that until then had seemed unlikely. In front of hundreds of people, we sang, played, and lived something unforgettable.</p>
             <p data-i18n="featureText2b">Not because anyone there was a famous artist, but because, in that moment, it became clear that it was not necessary to be one. Many people like to sing but never do. They believe they do not have a voice, that they will be compared to professional singers, that they will be judged or ridiculed. Few realize that what we hear on records involves technique, equipment, production, and support — and that music, before anything else, is human expression.</p>
             <p data-i18n="featureText2c">Being on that stage meant understanding something simple and powerful: it was not about exceptional talent, but about ordinary courage. That night proved that a hidden dream, seemingly distant, can become real. That anyone can step onto the stage — whether literal or symbolic. This playlist is the soundtrack of that night and of everything it represented.</p>
-            <p><strong data-i18n="featureSpotify2">Listen on Spotify.</strong></p>
-            <p data-i18n="featureText2d">This soundtrack corresponds to one of the most striking moments in this story, narrated in Chapter 25 — Thank You for the Music.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-kicker" data-i18n="songsKicker">Family, Memory, and Milestones</div>
-        <h2 data-i18n="songsTitle">Selected musical anchors</h2>
-        <div class="song-grid">
-          <article class="song-card">
-            <h3 data-i18n="songCard1Title">Recording with family</h3>
-            <p data-i18n="songCard1Text">“Halo” carries the joy of recording with Gabriela. “When Your Feet Don’t Touch the Ground” carries the joy of recording with Rebecca. “The Promise” preserves a duet with Marcelo and the gratitude of seeing impossible-looking dreams become real.</p>
-          </article>
-          <article class="song-card">
-            <h3 data-i18n="songCard2Title">Songs that formed a life</h3>
-            <p data-i18n="songCard2Text">“Dancing Queen” points back to 1978 and the first spark of musical love. “How Can I Go On” became part of the inner dialogue of perseverance. Air Supply became motivation during the years when others treated the dream as unattainable.</p>
-          </article>
-          <article class="song-card">
-            <h3 data-i18n="songCard3Title">The stage dream</h3>
-            <p data-i18n="songCard3Text">Axé and forró led to a defining moment: singing in front of hundreds of people with a college band and realizing that music, before anything else, is human expression and courage.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section two-col">
-        <div class="media-card">
-          <div class="section-kicker" data-i18n="spotifyKicker">Spotify and Song Stories</div>
-          <h2 data-i18n="spotifyTitle">Spotify playlists and QR access</h2>
-          <p data-i18n="spotifyP1">The Spotify links are now wired into the page. Visitors can either scan the QR codes with a phone camera or click the buttons below to open each playlist directly in Spotify.</p>
-          <div class="qr-grid">
-            <article class="qr-card">
+            <div class="feature-qr">
               <img src="images/concert_qr.png" alt="Concert playlist QR code" data-i18n-attr="alt:concertQrAlt" />
-              <h3 data-i18n="concertTitle">Concert and performance playlist</h3>
-              <p data-i18n="concertText">A playlist for live energy, stage memories, and songs connected to performance and public musical moments.</p>
-              <a class="btn btn-light" href="https://open.spotify.com/playlist/6AQg9Fa46OihwVUwYSowGI?si=ada2379353a84fb8" target="_blank" rel="noopener noreferrer" data-i18n="concertBtn">Open on Spotify</a>
-            </article>
-            <article class="qr-card">
-              <img src="images/timeline_qr.png" alt="Timeline playlist QR code" data-i18n-attr="alt:timelineQrAlt" />
-              <h3 data-i18n="timelineTitle">Timeline and life soundtrack</h3>
-              <p data-i18n="timelineText">A playlist organized around memory, life chapters, and the songs that help tell the larger personal journey.</p>
-              <a class="btn btn-light" href="https://open.spotify.com/playlist/0eyXBvaY9hxopMEbh3oy6u?si=104b201e068c4b72" target="_blank" rel="noopener noreferrer" data-i18n="timelineBtn">Open on Spotify</a>
-            </article>
-          </div>
-          <div class="small-note" data-i18n="spotifyNote">Tip: on most phones, opening the camera over the QR code is enough to bring up the Spotify link automatically.</div>
-        </div>
-        <div class="media-card">
-          <div class="section-kicker" data-i18n="storiesKicker">Stories and future expansions</div>
-          <h2 data-i18n="storiesTitle">From playlists to song stories</h2>
-          <p data-i18n="storiesP1">These playlists can become the entry point to a deeper music section. Each one can later branch into short story pages about specific songs, performances, memories, or people connected to them.</p>
-          <p data-i18n="storiesP2">A strong next step would be to add one short featured story below the playlists — for example, a page about “Goodbye Yellow Brick Road,” “Halo,” or the experience of singing with family members and friends.</p>
-          <div class="button-row">
-            <a class="btn btn-light" href="essays.html" data-i18n="storiesBtnEssays">See the essays model</a>
-            <a class="btn btn-light" href="book.html" data-i18n="storiesBtnBook">Return to the book page</a>
-          </div>
-          <div class="small-note" data-i18n="storiesNote">If you later want, I can also turn each playlist card into a richer section with album art, a short description, and direct story links.</div>
+            </div>
+          </article>
         </div>
       </section>
 
-      
       <section class="section">
         <div class="section-kicker" data-i18n="songStoriesKicker">Song Stories</div>
         <h2 data-i18n="songStoriesTitle">The story behind a song</h2>
@@ -386,6 +343,8 @@
         langLabel: "Language",
         heroTitle: "Music as memory, voice, and human expression.",
         heroCardSummary: "A musical page where voice, memory, recordings, and emotion meet across love, distance, and time.",
+        heroBtnTimeline: "Timeline Playlist",
+        heroBtnConcert: "Concert Playlist",
         journeyKicker: "Journey",
         journeyTitle: "A Bridge Across Worlds",
         journeyP1: "Roberto H. Jacob da Silva writes and builds from the perspective of someone who has crossed multiple worlds: Brazil, Spain, Belgium, and the United States; scarcity and opportunity; technical rigor and human reflection; private struggle and contribution to the development of the broader world around him. That crossing is not a branding device. It is the lived foundation beneath both <em>Impossible Crossing</em> and <em>Engineering with a Heart</em>.",
@@ -492,6 +451,8 @@
         langLabel: "Idioma",
         heroTitle: "Música como memória, voz e expressão humana.",
         heroCardSummary: "Uma página musical onde voz, memória, gravações e emoção se encontram entre amor, distância e tempo.",
+        heroBtnTimeline: "Timeline Playlist",
+        heroBtnConcert: "Concert Playlist",
         heroBtnResume: "Ver Currículo",
         heroBtnBook: "Explorar o Livro",
         journeyKicker: "Jornada",
