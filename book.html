@@ -39,18 +39,18 @@
     .lang-btn{background:none;border:none;padding:0;font:inherit;cursor:pointer}
     .lang-btn.active{color:#fff;text-decoration:underline;text-underline-offset:3px}
     .lang-label{color:rgba(255,255,255,.5);font-size:13px}
-    .hero{position:relative;padding:74px 0 58px;color:#fff;background:linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.28)), url("images/bridge.jpg") center 68%/cover no-repeat;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center 52%, rgba(255,210,120,0.18) 0%, rgba(255,210,120,0.07) 22%, rgba(0,0,0,0) 58%);pointer-events:none;mix-blend-mode:screen}
-    .hero-content{position:relative;z-index:2}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
-    .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#f0c98f;font-weight:700;margin-bottom:12px}
-    .hero h1{margin:0;font-size:clamp(34px, 5vw, 54px);line-height:1.02;letter-spacing:-.03em;max-width:760px}
-    .hero p{margin:18px 0 0;max-width:760px;font-size:20px;color:rgba(255,255,255,.88)}
-    .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:22px;box-shadow:0 14px 34px rgba(0,0,0,.14)}
-    .hero-card h2{margin:0 0 12px;font-size:20px;color:#fff}
-    .hero-card ul{margin:0;padding-left:18px;color:rgba(255,255,255,.86);font-size:15px}
-    .hero-card li+li{margin-top:6px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .hero{position:relative;height:270px;display:flex;align-items:center;color:#fff;background:linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.22)), url("images/hero_book.jpg") center 70%/cover no-repeat;overflow:hidden}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center, rgba(0,0,0,0) 38%, rgba(0,0,0,.42) 100%);pointer-events:none}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center 58%, rgba(255,210,120,0.30) 0%, rgba(255,210,120,0.16) 18%, rgba(255,210,120,0.05) 32%, rgba(0,0,0,0) 55%);pointer-events:none;mix-blend-mode:screen}
+    .hero-content{position:relative;z-index:2;width:min(var(--max), calc(100% - 40px));margin:0 auto}
+    .hero-grid{display:grid;grid-template-columns:350px minmax(120px,1fr) 380px;gap:26px;align-items:stretch;min-height:270px;width:100%}
+    .hero-box{display:flex;flex-direction:column;text-align:center}
+    .hero-box.left,.hero-box.right{justify-content:center;align-items:center}
+    .hero-spacer{min-height:1px}
+    .hero h1{margin:0;font-size:clamp(24px, 3.8vw, 43px);line-height:1.03;letter-spacing:-.6px;text-wrap:balance;max-width:10ch}
+    .hero-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:22px 24px;background:rgba(42,26,18,.58);border:1px solid rgba(255,255,255,.14);border-radius:18px;box-shadow:0 14px 34px rgba(0,0,0,.18);backdrop-filter:blur(2px);width:min(100%, 380px)}
+    .hero-card p{margin:0;font-size:clamp(16px, 1.9vw, 19px);color:rgba(255,255,255,.94);max-width:340px;line-height:1.45;text-align:center}
+    .hero-actions{display:flex;gap:14px;flex-wrap:nowrap;justify-content:center;align-items:center;margin-top:0}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-size:15px;font-weight:700;border:1px solid rgba(255,255,255,.18);transition:.2s ease}
     .btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
     .btn-primary:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
@@ -107,13 +107,27 @@
       .topbar-inner{grid-template-columns:1fr;justify-items:center}
       .nav{justify-content:center;flex-wrap:wrap;gap:12px 16px;font-size:15px}
       .lang-switch{margin-left:0;padding-left:0;border-left:none}
-      .hero{padding:60px 0 46px}
-      .hero p{font-size:18px}
+      .hero{height:auto;min-height:0;padding:36px 0 34px;background-position:center center}
+      .hero-content{width:min(var(--max), calc(100% - 28px))}
+      .hero-grid{gap:22px;min-height:auto}
+      .hero-spacer{display:none}
+      .hero-box.left,.hero-box.right{min-height:auto;justify-content:center;align-items:center}
+      .hero-card{width:min(100%, 420px)}
+      .hero h1{font-size:clamp(22px, 10vw, 42px);max-width:10ch}
+      .hero-card p{max-width:26ch;font-size:clamp(15px, 4.8vw, 19px)}
+      .hero-actions{flex-wrap:wrap;gap:12px;margin-top:0}
+      .btn{width:auto;min-width:0}
       .section{padding:24px}
     }
     @media (max-width: 640px){
-      .container{width:min(var(--max), calc(100% - 28px))}
+      .container{width:min(var(--max), calc(100% - 24px))}
+      .hero-content{width:min(var(--max), calc(100% - 24px))}
+      .hero{padding:30px 0 28px}
+      .hero h1{max-width:11ch;line-height:1.02}
+      .hero-card{width:min(100%, 100%);padding:20px 18px}
+      .hero-card p{max-width:24ch}
       .hero-actions,.book-actions,.cta-row,.links{flex-direction:column;align-items:stretch}
+      .hero-actions .btn{width:min(100%, 260px);text-align:center}
       .btn{width:100%}
       .section h2{font-size:26px}
       .section p{font-size:17px}
@@ -125,25 +139,22 @@
   <div id="site-header"></div>
 
 <section class="hero">
-    <div class="container hero-content">
+    <div class="hero-content">
       <div class="hero-grid">
-        <div>
-          <div class="eyebrow" data-i18n="heroEyebrow">Featured Memoir</div>
-          <h1 data-i18n="heroTitle"><em>Impossible Crossing</em> is a memoir about perseverance, gratitude, and the people who quietly make the impossible possible.</h1>
-          <p data-i18n="heroText">This book is the human foundation beneath <em>Engineering with a Heart</em>: a life shaped by hardship, education, migration, faith, love, and music — told not as self-celebration, but as homage.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC/ref=sr_1_1?crid=2BIV5RHUGGM67&dib=eyJ2IjoiMSJ9.U3VQY_JGRKw1ra8WZU4ssQ.qytgrLHto3X1tLRhG3laYYhszEj3DhRu8lfS7YNmOn8&dib_tag=se&keywords=impossible+crossing+rjk+silva+paperback&qid=1773540014&sprefix=impossible+crossing+rjk+silva+paperback%2Caps%2C185&sr=8-1" target="_blank" rel="noopener noreferrer" data-i18n="heroBtnAmazon">View on Amazon</a>
-            <a class="btn btn-secondary" href="#highlights" data-i18n="heroBtnHighlights">Read Highlights</a>
-          </div>
+        <div class="hero-box left">
+          <h1 data-i18n="heroTitle"><em>Impossible Crossing</em> — a memoir of ordinary lives, extraordinary journeys.</h1>
         </div>
-        <aside class="hero-card">
-          <h2 data-i18n="heroCardTitle">At a Glance</h2>
-          <ul>
-            <li data-i18n="heroCard1">A memoir grounded in dignity, not spectacle.</li>
-            <li data-i18n="heroCard2">A portrait of Brazil, migration, education, love, and human generosity.</li>
-            <li data-i18n="heroCard3">A rare narrative voice marked by lucidity, gratitude, and emotional maturity.</li>
-            <li data-i18n="heroCard4">A book where music becomes part of the story itself.</li>
-          </ul>
+
+        <div class="hero-spacer" aria-hidden="true"></div>
+
+        <aside class="hero-box right">
+          <div class="hero-card">
+            <p data-i18n="heroCardText">A tribute to the ordinary people who made this journey possible.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC/ref=sr_1_1?crid=2BIV5RHUGGM67&dib=eyJ2IjoiMSJ9.U3VQY_JGRKw1ra8WZU4ssQ.qytgrLHto3X1tLRhG3laYYhszEj3DhRu8lfS7YNmOn8&dib_tag=se&keywords=impossible+crossing+rjk+silva+paperback&qid=1773540014&sprefix=impossible+crossing+rjk+silva+paperback%2Caps%2C185&sr=8-1" target="_blank" rel="noopener noreferrer" data-i18n="heroBtnAmazon">View on Amazon</a>
+              <a class="btn btn-secondary" href="#highlights" data-i18n="heroBtnHighlights">Read Highlights</a>
+            </div>
+          </div>
         </aside>
       </div>
     </div>
@@ -407,16 +418,10 @@
         navResume: "Resume",
         navMusic: "Music",
         langLabel: "Language",
-        heroEyebrow: "Featured Memoir",
-        heroTitle: "<em>Impossible Crossing</em> is a memoir about perseverance, gratitude, and the people who quietly make the impossible possible.",
-        heroText: "This book is the human foundation beneath <em>Engineering with a Heart</em>: a life shaped by hardship, education, migration, faith, love, and music — told not as self-celebration, but as homage.",
+                heroTitle: "<em>Impossible Crossing</em> — a memoir of ordinary lives, extraordinary journeys.",
+        heroCardText: "A tribute to the ordinary people who made this journey possible.",
         heroBtnAmazon: "View on Amazon",
         heroBtnHighlights: "Read Highlights",
-        heroCardTitle: "At a Glance",
-        heroCard1: "A memoir grounded in dignity, not spectacle.",
-        heroCard2: "A portrait of Brazil, migration, education, love, and human generosity.",
-        heroCard3: "A rare narrative voice marked by lucidity, gratitude, and emotional maturity.",
-        heroCard4: "A book where music becomes part of the story itself.",
         overviewKicker: "Book Overview",
         overviewTitle: "A human crossing through hardship, belonging, hope, and purpose",
         overviewP1: "<em>Impossible Crossing</em> is an autobiographical work of unusual emotional maturity. It does not present life as a neat ascent toward success. Instead, it follows a long crossing shaped by poverty, bullying, education, migration, faith, perseverance, love, and the many people whose generosity changed one life without fanfare.",
@@ -493,16 +498,10 @@
         navResume: "Currículo",
         navMusic: "Música",
         langLabel: "Idioma",
-        heroEyebrow: "Livro em Destaque",
-        heroTitle: "<em>Travessia Impossível</em> é uma memória sobre perseverança, gratidão e as pessoas que silenciosamente tornam o impossível possível.",
-        heroText: "Este livro é a base humana de <em>Engineering with a Heart</em>: uma vida moldada por dificuldade, educação, migração, fé, amor e música — contada não como autopromoção, mas como homenagem.",
+                heroTitle: "<em>Travessia Impossível</em> — um livro de memórias sobre vidas comuns e jornadas extraordinárias.",
+        heroCardText: "Uma homenagem às pessoas comuns que tornaram esta jornada possível.",
         heroBtnAmazon: "Ver na Amazon",
         heroBtnHighlights: "Ler Destaques",
-        heroCardTitle: "Visão Geral",
-        heroCard1: "Uma memória enraizada em dignidade, não em espetáculo.",
-        heroCard2: "Um retrato do Brasil, da migração, da educação, do amor e da generosidade humana.",
-        heroCard3: "Uma voz narrativa rara, marcada por lucidez, gratidão e maturidade emocional.",
-        heroCard4: "Um livro em que a música passa a fazer parte da própria história.",
         overviewKicker: "Visão do Livro",
         overviewTitle: "Uma travessia humana por dificuldade, pertencimento, esperança e propósito",
         overviewP1: "<em>Travessia Impossível</em> é uma obra autobiográfica de notável maturidade emocional. Ela não apresenta a vida como uma ascensão organizada rumo ao sucesso. Em vez disso, acompanha uma longa travessia moldada por pobreza, bullying, educação, migração, fé, perseverança, amor e pelas muitas pessoas cuja generosidade mudou uma vida sem alarde.",
