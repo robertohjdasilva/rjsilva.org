@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Impossible Crossing | R.J. Silva</title>
-<link href="images/favicon.png" rel="icon" type="image/png"/>
-<link href="images/favicon.png" rel="apple-touch-icon"/>
-<meta content="Impossible Crossing — a memoir of resilience, faith, music, education, courage, and the people who quietly shape a life." name="description"/>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music | Roberto H. Jacob da Silva</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <meta name="description" content="Music | Roberto H. Jacob da Silva — songs, voice, recordings, and the musical dimension of Engineering with a Heart." />
+  <style>
     :root{
       --bg:#f5f2ec;
       --paper:#fffaf3;
@@ -32,7 +31,8 @@
     .brand{display:flex;align-items:center;min-width:0}
     .brand img{height:72px;width:auto;object-fit:contain;display:block}
     .brand-text{text-align:center;min-width:0}
-    .brand-subtitle{margin:0;font-size:22px;line-height:1.2;color:rgba(255,255,255,.92)}
+    .brand-subtitle-main{margin:0;font-size:22px;line-height:1.2;color:rgba(255,255,255,.92)}
+    .brand-subtitle{margin:4px 0 0;font-size:16px;color:rgba(255,255,255,.78)}
     .nav{display:flex;gap:18px;font-size:15px;white-space:nowrap;justify-self:end;align-items:center}
     .nav a,.lang-btn{color:rgba(255,255,255,.88)}
     .nav a:hover,.lang-btn:hover{color:#fff}
@@ -40,199 +40,296 @@
     .lang-btn{background:none;border:none;padding:0;font:inherit;cursor:pointer}
     .lang-btn.active{color:#fff;text-decoration:underline;text-underline-offset:3px}
     .lang-label{color:rgba(255,255,255,.5);font-size:13px}
-    .hero{position:relative;height:270px;display:flex;align-items:center;color:#fff;background:linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.22)), url("images/hero_book.jpg") center 70%/cover no-repeat;overflow:hidden}
+    .hero{position:relative;height:270px;display:flex;align-items:center;color:#fff;background:linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.22)),url("images/hero_music.jpg") center 55%/cover no-repeat;overflow:hidden}
     .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center, rgba(0,0,0,0) 38%, rgba(0,0,0,.42) 100%);pointer-events:none}
     .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center 58%, rgba(255,210,120,0.30) 0%, rgba(255,210,120,0.16) 18%, rgba(255,210,120,0.05) 32%, rgba(0,0,0,0) 55%);pointer-events:none;mix-blend-mode:screen}
     .hero-content{position:relative;z-index:2;width:min(var(--max), calc(100% - 40px));margin:0 auto}
-    .hero-grid{display:grid;grid-template-columns:420px 100px 380px;gap:26px;align-items:stretch;min-height:270px;width:100%}
+    .hero-layout{display:grid;grid-template-columns:350px minmax(120px,1fr) 380px;gap:26px;align-items:stretch;min-height:270px;width:100%}
     .hero-box{display:flex;flex-direction:column;text-align:center}
-    .hero-box.left,.hero-box.right{justify-content:center;align-items:center}
+    .hero-box.left{justify-content:center;align-items:center}
+    .hero-box.right{justify-content:center;align-items:center}
+    .hero-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:22px 24px;background:rgba(42,26,18,.58);border:1px solid rgba(255,255,255,.14);border-radius:18px;box-shadow:0 14px 34px rgba(0,0,0,.18);backdrop-filter:blur(2px);width:min(100%, 380px)}
+    .hero-title{margin:0;font-size:clamp(24px, 3.8vw, 43px);line-height:1.03;letter-spacing:-.6px;text-wrap:balance}
+    .hero-text{margin:0;font-size:clamp(16px, 1.9vw, 19px);color:rgba(255,255,255,.94);max-width:340px;line-height:1.45;text-align:center}
     .hero-spacer{min-height:1px}
-    .hero h1{margin:0;font-size:clamp(24px, 3.8vw, 43px);line-height:1.03;letter-spacing:-.6px;text-wrap:balance;max-width:18ch;text-align:center}
-    .hero-box.left{width:100%;max-width:420px}
-    .hero-box.right{width:100%;max-width:380px}
-    .hero-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:22px 24px;background:rgba(42,26,18,.58);border:1px solid rgba(255,255,255,.14);border-radius:18px;box-shadow:0 14px 34px rgba(0,0,0,.18);backdrop-filter:blur(2px);width:min(100%, 380px)}
-    .hero-card p{margin:0;font-size:clamp(16px, 1.9vw, 19px);color:rgba(255,255,255,.94);max-width:340px;line-height:1.45;text-align:center}
-    .hero-actions{display:flex;gap:14px;flex-wrap:nowrap;justify-content:center;align-items:center;margin-top:0}
-    .btn{display:inline-block;padding:13px 20px;border-radius:10px;font-weight:700;font-size:15px;transition:.2s ease;white-space:nowrap;border:1px solid transparent}
-    .btn-primary{background:var(--gold);color:#fff;border-color:var(--gold)}
+    .hero-actions,.button-row,.action-center{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px}
+    .hero-actions{margin-top:2px}
+    .hero-panel .btn{padding:13px 20px;border-radius:10px;white-space:nowrap}
+    .feature-qr{margin:8px 0 4px;text-align:center}
+    .feature-qr img{display:block;width:100%;max-width:210px;height:auto;margin:0 auto;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-size:15px;font-weight:700;border:1px solid rgba(255,255,255,.18);transition:.2s ease}
+    .btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
     .btn-primary:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
-    .btn-secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.18)}
-    .btn-secondary:hover{background:rgba(255,255,255,.18)}
-    .main{padding:34px 0 34px}
+    .btn-secondary{background:rgba(255,255,255,.08);color:#fff}
+    .btn-secondary:hover{background:rgba(255,255,255,.14)}
+    .btn-light{background:#fff;border:1px solid var(--border);color:var(--brown)}
+    .btn-light:hover{border-color:rgba(42,26,18,.28);transform:translateY(-1px)}
+    .hero-divider{height:3px;width:100%;margin:0 auto;background:linear-gradient(to right, transparent, var(--gold), transparent)}
+    .main{padding:38px 0 24px}
     .section{background:var(--paper);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);padding:30px;margin-bottom:22px}
     .section-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
     .section h2{margin:0 0 14px;font-size:30px;line-height:1.15;color:var(--brown)}
     .section p{margin:0 0 14px;font-size:18px}
-    .section.single{max-width:none;margin-left:0;margin-right:0}
-    .placeholder-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
-    .placeholder-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
-    .placeholder-card h3{margin:0 0 10px;font-size:22px;color:var(--brown)}
-    .placeholder-note{font-size:15px;color:var(--muted)}
-    .two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
-    .book-layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:28px;align-items:start}
-    .book-cover-wrap{position:relative;display:flex;flex-direction:column;align-items:center}
-    .book-cover-wrap::after{content:"";position:absolute;inset:auto 14px -14px 14px;height:26px;background:rgba(42,26,18,.10);filter:blur(14px);border-radius:50%;z-index:0}
-    .book-cover-wrap img{display:block;max-width:100%;height:auto;border-radius:6px;transform:rotate(-2deg);box-shadow:0 18px 28px rgba(0,0,0,.24);position:relative;z-index:1}
-    .book-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:20px}
-    .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .pill{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:13px;color:var(--muted)}
-    .quote{font-size:24px;line-height:1.45;color:var(--brown);font-style:italic;margin:8px 0 16px}
-    .quote-source{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-    .list-card,.info-card,.callout{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
-    .list-card h3,.info-card h3,.callout h3{margin:0 0 12px;font-size:22px;color:var(--brown)}
-    .list-card ul{margin:0;padding-left:20px}
-    .list-card li+li{margin-top:10px}
-    .callout p:last-child,.info-card p:last-child{margin-bottom:0}
-    .chapter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
-    .chapter-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
-    .chapter-card h3{margin:0 0 10px;font-size:22px;color:var(--brown)}
-    .chapter-card .mini{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;justify-content:center}
-    .links-primary{display:flex;justify-content:center;width:100%;margin-top:18px}
-    .links-secondary{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px}
-    footer{padding:18px 0 34px;color:var(--muted);font-size:14px;text-align:center}
-    .footer-links{
-          margin-top:10px;
-          display:flex;
-          gap:14px;
-          justify-content:center;
-          flex-wrap:wrap;
-          font-size:14px;
-        }
-    
-        .footer-links a{
-          color:var(--muted);
-          text-decoration:underline;
-          text-underline-offset:3px;
-        }
-    
-        .footer-links a:hover{
-          color:var(--brown);
-        }
+    .section p:last-child{margin-bottom:0}
+    .two-col{display:grid;grid-template-columns:1.08fr .92fr;gap:22px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+    .stat{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;text-align:center}
+    .stat strong{display:block;font-size:32px;line-height:1;color:var(--brown);margin-bottom:8px}
+    .stat span{color:var(--muted);font-size:14px}
+    .list-card,.info-card,.callout,.feature-card,.song-card,.media-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
+.media-section-card{background:linear-gradient(180deg, rgba(42,26,18,.96), rgba(78,49,33,.96));border:1px solid rgba(201,137,43,.28);border-radius:22px;padding:18px 18px 16px;box-shadow:0 16px 32px rgba(42,26,18,.18);color:#fff}
+.media-section-card h3{margin:0 0 10px;font-size:23px;color:#fff}
+.media-section-card p{margin:0 0 16px;color:rgba(255,255,255,.84)}
+.media-row-list{display:grid;gap:10px;margin-top:8px}
+.media-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:14px;min-height:72px}
+.media-row-title{font-size:17px;color:#fff;font-weight:700;line-height:1.25;flex:1}
+.media-row-action{display:flex;align-items:center;justify-content:flex-end;min-width:260px;flex-shrink:0}
+.media-row-action audio{width:100%;max-width:420px;height:40px}
+.video-link-icon{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:999px;background:var(--gold);color:#fff;font-size:19px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.22);transition:.2s ease}
+.video-link-icon:hover{background:var(--gold-dark);transform:translateY(-1px)}
+.video-link-icon .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .spotify-access-label{text-align:center;margin:14px 0 8px;font-size:15px;color:var(--brown)}
+    .spotify-button-row{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:12px}
+    .spotify-button-row .btn{min-width:190px}
+    .music-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:18px;align-items:start}
+    .video-card,.music-track-list{background:linear-gradient(180deg, rgba(42,26,18,.96), rgba(78,49,33,.96));border:1px solid rgba(201,137,43,.28);border-radius:22px;padding:24px;box-shadow:0 16px 32px rgba(42,26,18,.18);color:#fff}
+    .video-card h3,.music-track-list h3{color:#fff}
+    .video-card p,.music-track-list p,.video-card .small-note{color:rgba(255,255,255,.84)}
+    .video-links{display:grid;gap:12px;margin-top:14px}
+    .video-links .btn{width:100%;justify-content:flex-start;padding:14px 18px;border-radius:14px}
+    .track-list{display:grid;gap:14px;margin-top:16px}
+    .track-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px}
+    .track-item h3{margin:0 0 10px;font-size:19px;color:#fff}
+    .story-list{display:grid;gap:16px;margin-top:6px}
+    .story-entry{display:block;background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px;transition:.2s ease;box-shadow:var(--shadow)}
+    .story-entry:hover{transform:translateY(-1px);border-color:rgba(42,26,18,.28)}
+    .story-entry-type{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+    .story-entry strong{display:block;font-size:24px;line-height:1.2;color:var(--brown);margin-bottom:10px}
+    .story-entry span{display:block;color:var(--muted);font-size:17px;line-height:1.6}
+    .story-status{display:inline-block;margin-top:14px;padding:6px 12px;border-radius:999px;background:rgba(201,137,43,.12);color:var(--gold-dark);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .list-card h3,.info-card h3,.callout h3,.feature-card h3,.song-card h3,.media-card h3{margin:0 0 10px;font-size:23px;color:var(--brown)}
+    .list-card ul,.media-card ul{margin:0;padding-left:20px}
+.media-section-note{color:rgba(255,255,255,.78)}
 
+    .list-card li+li,.media-card li+li{margin-top:9px}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .pill{display:inline-flex;align-items:center;padding:9px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:14px;color:var(--brown)}
+    .song-grid,.media-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+    .feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+    .quote{margin-top:18px;padding:18px 20px;border-left:4px solid var(--gold);background:#fff;border-radius:0 16px 16px 0;color:var(--brown);font-size:20px;line-height:1.55;font-style:italic}
+    .muted{color:var(--muted)}
+    .placeholder-box{display:grid;place-items:center;min-height:180px;border:2px dashed rgba(42,26,18,.18);border-radius:18px;background:linear-gradient(180deg, rgba(201,137,43,.06), rgba(255,255,255,.5));text-align:center;padding:20px;color:var(--muted)}
+    .qr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+    .qr-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px;text-align:center}
+    .qr-card img{display:block;width:100%;max-width:280px;height:auto;margin:0 auto 14px;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow)}
+    .qr-card h3{margin:0 0 10px;font-size:22px;color:var(--brown)}
+    .qr-card p{margin:0 0 14px;font-size:16px;color:var(--muted)}
+    .audio-demo{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}
+    .audio-demo audio{width:100%}
+    .music-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:18px}
+    .video-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
+    .video-card p:last-child,.music-track-list p:last-child{margin-bottom:0}
+    .track-list{display:grid;gap:14px;margin-top:16px}
+    .track-item{background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px}
+    .track-item h3{margin:0 0 10px;font-size:20px;color:var(--brown)}
+    .track-item audio{width:100%}
+    .essay-links{display:grid;gap:16px;margin-top:18px}
+    .essay-link{display:block;background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px;transition:.2s ease}
+    .essay-link:hover{transform:translateY(-1px);border-color:rgba(42,26,18,.28)}
+    .essay-type{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+    .small-note{margin-top:10px;font-size:14px;color:var(--muted)}
+    footer{padding:26px 0 38px;color:var(--muted);text-align:center;font-size:14px}
+    .footer-links{margin-top:10px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:14px}
+    .footer-links a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    .footer-links a:hover{color:var(--brown)}
     @media (max-width: 980px){
-      .hero-grid,.two-col,.book-layout,.chapter-grid,.placeholder-grid{grid-template-columns:1fr}
-      .topbar-inner{grid-template-columns:1fr;justify-items:center}
+      .two-col,.stats,.song-grid,.feature-grid,.media-grid,.music-grid{grid-template-columns:1fr}
+      .media-row{flex-direction:column;align-items:flex-start}
+      .media-row-action{width:100%;min-width:0;justify-content:flex-start}
+      .media-row-action audio{max-width:none}
+      .topbar{padding:18px 0 14px}
+      .topbar-inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+      .brand{justify-content:center}
+      .brand img{height:62px;max-width:min(100%, 300px)}
+      .brand-subtitle-main{font-size:19px}
+      .brand-subtitle{font-size:14px}
       .nav{justify-content:center;flex-wrap:wrap;gap:12px 16px;font-size:15px}
       .lang-switch{margin-left:0;padding-left:0;border-left:none}
       .hero{height:auto;min-height:0;padding:36px 0 34px;background-position:center center}
       .hero-content{width:min(var(--max), calc(100% - 28px))}
-      .hero-grid{grid-template-columns:1fr;gap:22px;min-height:auto}
+      .hero-layout{grid-template-columns:1fr;gap:22px;min-height:auto}
       .hero-spacer{display:none}
       .hero-box.left,.hero-box.right{min-height:auto;justify-content:center;align-items:center}
-      .hero-card{width:min(100%, 420px)}
-      .hero h1{font-size:clamp(22px, 10vw, 42px);max-width:10ch}
-      .hero-card p{max-width:26ch;font-size:clamp(15px, 4.8vw, 19px)}
-      .hero-actions{flex-wrap:wrap;gap:12px;margin-top:0}
-      .btn{width:auto;min-width:0}
+      .hero-panel{width:min(100%, 420px)}
+      .hero-title{font-size:clamp(22px, 10vw, 42px);max-width:10ch}
+      .hero-text{max-width:26ch;font-size:clamp(15px, 4.8vw, 19px)}
       .section{padding:24px}
     }
     @media (max-width: 640px){
-      .container{width:min(var(--max), calc(100% - 24px))}
-      .hero-content{width:min(var(--max), calc(100% - 24px))}
+      .container{width:min(var(--max), calc(100% - 28px))}
       .hero{padding:30px 0 28px}
-      .hero h1{max-width:11ch;line-height:1.02}
-      .hero-card{width:min(100%, 100%);padding:20px 18px}
-      .hero-card p{max-width:24ch}
-      .hero-actions,.book-actions,.cta-row,.links{flex-direction:column;align-items:stretch}
-      .hero-actions .btn{width:min(100%, 260px);text-align:center}
+      .hero-content{width:min(var(--max), calc(100% - 24px))}
+      .hero-title{max-width:11ch;line-height:1.02}
+      .hero-text{max-width:24ch}
+      .hero-panel{width:min(100%, 100%);padding:20px 18px}
+      .hero-actions,.button-row,.action-center{flex-direction:column;align-items:stretch}
       .btn{width:100%}
       .section h2{font-size:26px}
       .section p{font-size:17px}
-      .quote{font-size:20px}
+      .quote{font-size:18px}
     }
   </style>
 </head>
-<body data-page="book">
-<div id="site-header"></div>
+<body data-page="music">
+  <div id="site-header"></div>
+
 <section class="hero">
-<div class="hero-content">
-<div class="hero-grid">
-<div class="hero-box left">
-<h1 data-i18n="heroTitle"><em>Impossible Crossing</em> — a memoir of people and courage.</h1>
-</div>
-<div aria-hidden="true" class="hero-spacer"></div>
-<aside class="hero-box right">
-<div class="hero-card">
-<p data-i18n="heroCardText">A tribute to the ordinary lives that made an unexpected, impossible journey possible.</p>
-<div class="hero-actions">
-<a class="btn btn-primary" data-i18n="heroBtnStories" href="#stories">Explore My Stories</a>
-<a class="btn btn-secondary" data-i18n="heroBtnPhotos" href="#photos">Visual History</a>
-</div>
-</div>
-</aside>
-</div>
-</div>
-</section>
-<main class="main">
-<div class="container">
-<section class="section single" id="highlights">
-<div class="section-kicker" data-i18n="overviewKicker">Book Overview</div>
-<div class="book-layout">
-<div class="book-cover-wrap">
-<img alt="Impossible Crossing book cover" data-i18n-attr="alt:bookAlt" src="images/book_front.jpg"/>
-<div class="book-actions">
-<a class="btn btn-primary" data-i18n="overviewBtnAmazon" href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC/ref=sr_1_1?crid=2BIV5RHUGGM67&amp;dib=eyJ2IjoiMSJ9.U3VQY_JGRKw1ra8WZU4ssQ.qytgrLHto3X1tLRhG3laYYhszEj3DhRu8lfS7YNmOn8&amp;dib_tag=se&amp;keywords=impossible+crossing+rjk+silva+paperback&amp;qid=1773540014&amp;sprefix=impossible+crossing+rjk+silva+paperback%2Caps%2C185&amp;sr=8-1" rel="noopener noreferrer" target="_blank">View on Amazon</a>
-</div>
-</div>
-<div>
-<h2 data-i18n="overviewTitle">A Human Crossing Through Hardship, Belonging, Hope, and Purpose</h2>
-<p data-i18n="overviewP1"><em>Impossible Crossing</em> is, above all, a book about people. It follows one life shaped by poverty, bullying, education, faith, love, and the quiet generosity of ordinary people whose presence changed a destiny without spectacle.</p>
-<p data-i18n="overviewP2">What gives the memoir its force is not just what happens, but the way the world is seen. The story chooses a generous gaze: it does not deny pain, injustice, ambiguity, or loss, yet it keeps returning to dignity, gratitude, and the good that people are still able to offer.</p>
-<p data-i18n="overviewP3">At its center, this is a book about believing — in people, in meaning, in hope, and in the possibility that even an impossible crossing can be crossed.</p>
-<div class="meta-row">
-<span class="pill" data-i18n="meta1">Memoir</span>
-<span class="pill" data-i18n="meta2">Courage</span>
-<span class="pill" data-i18n="meta3">Bullying</span>
-<span class="pill" data-i18n="meta4">Education</span>
-<span class="pill" data-i18n="meta5">Tolerance</span>
-<span class="pill" data-i18n="meta6">Perseverance</span>
-<span class="pill" data-i18n="meta7">Hope</span>
-<span class="pill" data-i18n="meta8">Faith</span>
-<span class="pill" data-i18n="meta9">Gratitude</span>
-<span class="pill" data-i18n="meta10">Family</span>
-<span class="pill" data-i18n="meta11">Brazil</span>
-<span class="pill" data-i18n="meta12">Human Dignity</span>
-<span class="pill" data-i18n="meta13">Music</span>
-<span class="pill" data-i18n="meta14">Dreams</span>
-</div>
-</div>
-</div>
-</section>
-<section class="section single">
-<div class="callout">
-<div class="section-kicker" data-i18n="forewordKicker">Foreword</div>
-<h2 data-i18n="forewordTitle">Nicole Neuman on Courage, Humanity, and Resonance</h2>
-<div class="quote" data-i18n="forewordQuote">“Its power does not come from noise or spectacle, but from the way courage becomes intimate and contagious.”</div>
-<p data-i18n="forewordP1">The foreword frames the memoir as something more lasting than a dramatic life story. It highlights a narrative marked by gratitude rather than resentment, intimacy rather than posture, and a rare trust in the reader’s intelligence.</p>
-<p data-i18n="forewordP2">It also helps explain why the book feels unusual: it refuses self-glorification, turns a personal story into a tribute to people and human decency, portrays Brazil with intimacy and dignity, and carries the kind of emotional resonance that tends to spread by recommendation rather than hype.</p>
-<div class="quote-source" data-i18n="forewordSource">Foreword by Nicole Neuman · editor, psychologist, and novelist</div>
-</div>
-</section>
-<section class="section single">
-<div class="section-kicker" data-i18n="testimonialsKicker">Testimonials</div>
-<h2 data-i18n="testimonialsTitle">Readers, Messages, and Early Responses</h2>
-<p data-i18n="testimonialsP1">This section will bring together selected reader responses over time: notes, screenshots, messages, photos with the book, and meaningful reactions from readers.</p>
-<p class="placeholder-note" data-i18n="testimonialsP2">Placeholder for future testimonials and featured responses.</p>
-</section>
-<section class="section single" id="stories">
-<div class="section-kicker" data-i18n="storiesKicker">Stories from the Book</div>
-<h2 data-i18n="storiesTitle">Passages, Context, and Deeper Reflections</h2>
-<p data-i18n="storiesP1">Over time, this area will expand into a companion space for selected passages from the memoir — adding context, background, interpretation, and the stories behind specific moments in the book.</p>
-<p class="placeholder-note" data-i18n="storiesP2">Placeholder for future story posts and commentary.</p>
-</section>
-<section class="section single" id="photos">
-<div class="section-kicker" data-i18n="photosKicker">Photos</div>
-<h2 data-i18n="photosTitle">Places, Memories, and Visual History</h2>
-<p data-i18n="photosP1">This section will gradually gather photographs connected to the memoir: people, places, neighborhoods, schools, and later visits to important locations that shaped the story.</p>
-<p class="placeholder-note" data-i18n="photosP2">Placeholder for future photo galleries and image collections.</p>
-</section>
-</div>
-</main>
+    <div class="hero-content">
+      <div class="hero-layout">
+        <div class="hero-box left">
+          <h1 class="hero-title" data-i18n="heroTitle">Music as memory, voice, and human expression.</h1>
+        </div>
+
+        <div class="hero-spacer" aria-hidden="true"></div>
+
+        <div class="hero-box right">
+          <div class="hero-panel">
+            <p class="hero-text" data-i18n="heroCardSummary">A musical page where voice, memory, recordings, and emotion meet across love, distance, and time.</p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#my-music-videos" data-i18n="heroBtnExploreMusic">Explore My Music</a>
+              <a class="btn btn-secondary" href="#song-stories" data-i18n="heroBtnDiscoverStories">Discover Song Stories</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="hero-divider"></div>
+
+  <main class="main">
+    <div class="container">
+
+      
+      <section class="section">
+        <div class="section-kicker" data-i18n="bookMusicKicker">From the Book</div>
+        <h2 data-i18n="bookMusicTitle">When the Memoir Continues in Sound</h2>
+        <p data-i18n="bookMusicP1">Music has always been more than a backdrop in my life. In many moments, it was refuge, company, strength, and sometimes the only way to understand what I was feeling before words were ready. Throughout this story, music stayed close — on the radio, in my headphones, in the lyrics that followed me while I studied, dreamed, suffered, fell in love, and tried to find my place in the world.</p>
+        <p data-i18n="bookMusicP2">Some songs made me laugh. Others made me cry. Some gave me strength to prepare for the ITA entrance exam, some inspired me when everything felt difficult, and some always brought me back to the love of my life — the girl of my dreams. This book tells my story in words, but some emotions overflow language. That is why these two playlists matter so much to me: each one carries a chapter, a feeling, a memory, and a part of the person I became.</p>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3 data-i18n="featureTitle1">Playlist 1 — The Emotional Soundtrack of the Crossing</h3>
+            <p data-i18n="featureText1">This playlist brings together the songs that accompanied me throughout the story told in this book. These are songs that touched my life in moments of joy, sadness, doubt, resilience, and love. They helped me study, dream higher, cross difficult seasons, and celebrate both small and great victories.</p>
+            <p data-i18n="featureText1b">Here are songs that made me laugh, cry, and believe. They marked important phases of my life and still awaken very specific emotions. This is the emotional soundtrack of my journey.</p>
+            <p class="spotify-access-label"><strong data-i18n="spotifyQrAccess">Spotify QR Access</strong></p>
+            <div class="feature-qr">
+              <img src="images/timeline_qr.png" alt="Timeline playlist QR code" data-i18n-attr="alt:timelineQrAlt" />
+            </div>
+            <div class="spotify-button-row">
+              <a class="btn btn-light" href="https://open.spotify.com/playlist/0eyXBvaY9hxopMEbh3oy6u?si=104b201e068c4b72" target="_blank" rel="noopener noreferrer" data-i18n="listenOnSpotify">Listen on Spotify</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3 data-i18n="featureTitle2">Playlist 2 — The Night When Anyone Can Step Onto the Stage</h3>
+            <p data-i18n="featureText2Short">This playlist was born from one unforgettable night: singing with the Kayak band at the CTA June festival, in front of hundreds of people, on an improvised stage that turned a distant dream into something real. It became proof that music also belongs to courage, joy, and human expression.</p>
+            <p data-i18n="featureText2Extra">That night taught me something simple and powerful: many people carry music inside them, but fear comparison, judgment, or ridicule. This playlist keeps the sound of that night and the meaning it still carries for me.</p>
+            <p class="spotify-access-label"><strong data-i18n="spotifyQrAccess">Spotify QR Access</strong></p>
+            <div class="feature-qr">
+              <img src="images/concert_qr.png" alt="Concert playlist QR code" data-i18n-attr="alt:concertQrAlt" />
+            </div>
+            <div class="spotify-button-row">
+              <a class="btn btn-light" href="https://open.spotify.com/playlist/6AQg9Fa46OihwVUwYSowGI?si=ada2379353a84fb8" target="_blank" rel="noopener noreferrer" data-i18n="listenOnSpotify">Listen on Spotify</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="my-music-videos" class="section">
+        <div class="section-kicker" data-i18n="myMusicKicker">My Music</div>
+        <h2 data-i18n="myMusicVideosTitle">YouTube Videos</h2>
+        <p data-i18n="myMusicVideosP1">This section gathers video performances connected to my musical journey. Some are simple recordings, some carry memory, and all of them reflect the joy of singing and sharing music with other people.</p>
+        <div class="media-section-card">
+          <div class="media-row-list">
+            <div class="media-row">
+              <div class="media-row-title">La Forza Della Vita - Paolo Vallesi</div>
+              <div class="media-row-action">
+                <a class="video-link-icon" href="https://www.youtube.com/watch?v=bvk8Yvrtu4A" target="_blank" rel="noopener noreferrer" aria-label="Open video: La Forza Della Vita - Paolo Vallesi">
+                  <span aria-hidden="true">▶</span>
+                  <span class="sr-only">Open video</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="my-music-studio" class="section">
+        <div class="section-kicker" data-i18n="myMusicKicker">My Music</div>
+        <h2 data-i18n="myMusicStudioTitle">Studio Sessions</h2>
+        <p data-i18n="myMusicStudioP1">These recordings bring together songs I chose to interpret with my own voice. They are part of the musical side of this project: memory, affection, interpretation, and the pleasure of giving familiar songs a personal tone.</p>
+        <div class="media-section-card">
+          <div class="media-row-list">
+            <div class="media-row">
+              <div class="media-row-title">A Viagem - Roupa Nova</div>
+              <div class="media-row-action">
+                <audio controls preload="none">
+                  <source src="audio/a_viagem.m4a" type="audio/mp4">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+            <div class="media-row">
+              <div class="media-row-title">Ainda Vou Te Encontrar - KLB</div>
+              <div class="media-row-action">
+                <audio controls preload="none">
+                  <source src="audio/ainda_vou_te_encontrar.m4a" type="audio/mp4">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+            <div class="media-row">
+              <div class="media-row-title">Can't Fight This Feeling - REO Speedwagon</div>
+              <div class="media-row-action">
+                <audio controls preload="none">
+                  <source src="audio/cant_fight_this_feeling.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+            <div class="media-row">
+              <div class="media-row-title">You're the Inspiration - Chicago</div>
+              <div class="media-row-action">
+                <audio controls preload="none">
+                  <source src="audio/youre_the_inspiration.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="song-stories" class="section">
+        <div class="section-kicker" data-i18n="songStoriesKicker">Song Stories</div>
+        <h2 data-i18n="songStoriesTitle">The Story Behind a Song</h2>
+        <div class="story-list">
+          <a class="story-entry" href="#">
+            <div class="story-entry-type" data-i18n="songStory1Type">Song Story · March 2026</div>
+            <strong data-i18n="songStory1Title">Goodbye Yellow Brick Road</strong>
+            <span data-i18n="songStory1Text">A story about memory, longing, and the emotional world a song can open long after the music ends.</span>
+            <span class="story-status" data-i18n="fullStoryComingSoon">Full Story Coming Soon</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  
 <footer id="footer"></footer>
-<script>
+  
+  <script>
     const HEADER_TRANSLATIONS = {
       en: {
         headerLogoAlt: "RJ Silva logo",
@@ -333,130 +430,98 @@
 
     initSharedHeader();
   </script>
+
+
 <script>
     fetch("footer.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("footer").innerHTML = data;
-        if (typeof applyTranslations === "function") {
-          const lang = localStorage.getItem("siteLanguage") || localStorage.getItem("siteLang") || "en";
-          applyTranslations(lang);
+        if (typeof applyLanguage === "function") {
+          const lang = localStorage.getItem("preferredLanguage") || "en";
+          applyLanguage(lang);
         }
       });
   </script>
-<script>
+
+
+  <script>
     const translations = {
       en: {
-        pageTitle: "Impossible Crossing | R.J. Silva",
-        pageDescription: "Impossible Crossing — a memoir of resilience, faith, music, education, courage, and the people who quietly shape a life.",
-        logoAlt: "RJ Silva logo",
-        bookAlt: "Impossible Crossing book cover",
-        brandSubtitle: "Engineering with a Heart",
-        navHome: "Home",
-        navEssays: "Essays",
-        navBook: "Book",
-        navResume: "Resume",
-        navMusic: "Music",
-        langLabel: "Language",
-        heroTitle: "<em>Impossible Crossing</em> — a memoir of people and courage.",
-        heroCardText: "A tribute to the ordinary lives that made an unexpected, impossible journey possible.",
-        heroBtnStories: "Explore My Stories",
-        heroBtnPhotos: "Visual History",
-        overviewKicker: "Book Overview",
-        overviewTitle: "A Human Crossing Through Hardship, Belonging, Hope, and Purpose",
-        overviewP1: "<em>Impossible Crossing</em> is, above all, a book about people. It follows one life shaped by poverty, bullying, education, faith, love, and the quiet generosity of ordinary people whose presence changed a destiny without spectacle.",
-        overviewP2: "What gives the memoir its force is not just what happens, but the way the world is seen. The story chooses a generous gaze: it does not deny pain, injustice, ambiguity, or loss, yet it keeps returning to dignity, gratitude, and the good that people are still able to offer.",
-        overviewP3: "At its center, this is a book about believing — in people, in meaning, in hope, and in the possibility that even an impossible crossing can be crossed.",
-        overviewBtnAmazon: "View on Amazon",
-        meta1: "Memoir",
-        meta2: "Courage",
-        meta3: "Bullying",
-        meta4: "Education",
-        meta5: "Tolerance",
-        meta6: "Perseverance",
-        meta7: "Hope",
-        meta8: "Faith",
-        meta9: "Gratitude",
-        meta10: "Family",
-        meta11: "Brazil",
-        meta12: "Human Dignity",
-        meta13: "Music",
-        meta14: "Dreams",
-        forewordKicker: "Foreword",
-        forewordTitle: "Nicole Neuman on Courage, Humanity, and Resonance",
-        forewordQuote: "“Its power does not come from noise or spectacle, but from the way courage becomes intimate and contagious.”",
-        forewordP1: "The foreword frames the memoir as something more lasting than a dramatic life story. It highlights a narrative marked by gratitude rather than resentment, intimacy rather than posture, and a rare trust in the reader’s intelligence.",
-        forewordP2: "It also helps explain why the book feels unusual: it refuses self-glorification, turns a personal story into a tribute to people and human decency, portrays Brazil with intimacy and dignity, and carries the kind of emotional resonance that tends to spread by recommendation rather than hype.",
-        forewordSource: "Foreword by Nicole Neuman · editor, psychologist, and novelist",
-        testimonialsKicker: "Testimonials",
-        testimonialsTitle: "Readers, Messages, and Early Responses",
-        testimonialsP1: "This section will bring together selected reader responses over time: notes, screenshots, messages, photos with the book, and meaningful reactions from readers.",
-        testimonialsP2: "Placeholder for future testimonials and featured responses.",
-        storiesKicker: "Stories from the Book",
-        storiesTitle: "Passages, Context, and Deeper Reflections",
-        storiesP1: "Over time, this area will expand into a companion space for selected passages from the memoir — adding context, background, interpretation, and the stories behind specific moments in the book.",
-        storiesP2: "Placeholder for future story posts and commentary.",
-        photosKicker: "Photos",
-        photosTitle: "Places, Memories, and Visual History",
-        photosP1: "This section will gradually gather photographs connected to the memoir: people, places, neighborhoods, schools, and later visits to important locations that shaped the story.",
-        photosP2: "Placeholder for future photo galleries and image collections.",
-        footerText: "© 2026 Roberto H. Jacob da Silva. Built with reflection, engineering, and heart."
+        pageTitle: "Music | Roberto H. Jacob da Silva",
+        pageDescription: "Music | Roberto H. Jacob da Silva — songs, voice, recordings, and the musical dimension of Engineering with a Heart.",
+        heroTitle: "Music as memory, voice, and human expression.",
+        heroCardSummary: "A musical page where voice, memory, recordings, and emotion meet across love, distance, and time.",
+        heroBtnExploreMusic: "Explore Minha Música",
+        heroBtnDiscoverStories: "Descubra Histórias das Canções",
+        bookMusicKicker: "From the Book",
+        bookMusicTitle: "When the Memoir Continues in Sound",
+        bookMusicP1: "Music has always been more than a backdrop in my life. In many moments, it was refuge, company, strength, and sometimes the only way to understand what I was feeling before words were ready. Throughout this story, music stayed close — on the radio, in my headphones, in the lyrics that followed me while I studied, dreamed, suffered, fell in love, and tried to find my place in the world.",
+        bookMusicP2: "Some songs made me laugh. Others made me cry. Some gave me strength to prepare for the ITA entrance exam, some inspired me when everything felt difficult, and some always brought me back to the love of my life — the girl of my dreams. This book tells my story in words, but some emotions overflow language. That is why these two playlists matter so much to me: each one carries a chapter, a feeling, a memory, and a part of the person I became.",
+        featureTitle1: "Playlist 1 — The Emotional Soundtrack of the Crossing",
+        featureText1: "This playlist brings together the songs that accompanied me throughout the story told in this book. These are songs that touched my life in moments of joy, sadness, doubt, resilience, and love. They helped me study, dream higher, cross difficult seasons, and celebrate both small and great victories.",
+        featureText1b: "Here are songs that made me laugh, cry, and believe. They marked important phases of my life and still awaken very specific emotions. This is the emotional soundtrack of my journey.",
+        featureTitle2: "Playlist 2 — The Night When Anyone Can Step Onto the Stage",
+        featureText2Short: "This playlist was born from one unforgettable night: singing with the Kayak band at the CTA June festival, in front of hundreds of people, on an improvised stage that turned a distant dream into something real. It became proof that music also belongs to courage, joy, and human expression.",
+        featureText2Extra: "That night taught me something simple and powerful: many people carry music inside them, but fear comparison, judgment, or ridicule. This playlist keeps the sound of that night and the meaning it still carries for me.",
+        spotifyQrAccess: "Spotify QR Access",
+        listenOnSpotify: "Listen on Spotify",
+        timelineQrAlt: "Timeline playlist QR code",
+        concertQrAlt: "Concert playlist QR code",
+        myMusicKicker: "My Music",
+        myMusicTitle: "Recordings and Studio Sessions",
+        myMusicP1: "This section makes room for songs I recorded over time — some in the studio, some tied to memory, and all connected to the joy of singing. It is the place where the music that shaped me meets the music I chose to interpret with my own voice.",
+        myMusicVideosTitle: "YouTube Videos",
+        myMusicVideosP1: "This section gathers video performances connected to my musical journey. Some are simple recordings, some carry memory, and all of them reflect the joy of singing and sharing music with other people.",
+        myMusicStudioTitle: "Studio Sessions",
+        myMusicStudioP1: "These recordings bring together songs I chose to interpret with my own voice. They are part of the musical side of this project: memory, affection, interpretation, and the pleasure of giving familiar songs a personal tone.",
+        featuredVideoTitle: "YouTube Videos",
+        featuredVideoButton: "▶ La Forza Della Vita - Paolo Vallesi",
+        studioTracksTitle: "Studio Recordings",
+        songStoriesKicker: "Song Stories",
+        songStoriesTitle: "The Story Behind a Song",
+        songStory1Type: "Song Story · March 2026",
+        songStory1Title: "Goodbye Yellow Brick Road",
+        songStory1Text: "A story about memory, longing, and the emotional world a song can open long after the music ends.",
+        fullStoryComingSoon: "Full Story Coming Soon"
       },
       pt: {
-        pageTitle: "Travessia Impossível | R.J. Silva",
-        pageDescription: "Travessia Impossível — memórias de resiliência, fé, música, educação, coragem e das pessoas que silenciosamente moldam uma vida.",
-        logoAlt: "Logo RJ Silva",
-        bookAlt: "Capa do livro Travessia Impossível",
-        brandSubtitle: "Engineering with a Heart",
-        navHome: "Início",
-        navEssays: "Ensaios",
-        navBook: "Livro",
-        navResume: "Currículo",
-        navMusic: "Música",
-        langLabel: "Idioma",
-        heroTitle: "<em>Travessia Impossível</em> — um livro de memórias sobre pessoas e coragem.",
-        heroCardText: "Uma homenagem às vidas comuns que tornaram possível uma jornada inesperada e impossível.",
-        heroBtnStories: "Explore My Stories",
-        heroBtnPhotos: "História Visual",
-        overviewKicker: "Visão do Livro",
-        overviewTitle: "Uma Travessia Humana por Dificuldade, Pertencimento, Esperança e Propósito",
-        overviewP1: "<em>Travessia Impossível</em> é, acima de tudo, um livro sobre pessoas. Ele acompanha uma vida moldada por pobreza, bullying, educação, fé, amor e pela generosidade silenciosa de pessoas comuns cuja presença mudou um destino sem espetáculo.",
-        overviewP2: "O que dá força ao livro não é apenas o que acontece, mas a maneira como o mundo é visto. A narrativa escolhe um olhar generoso: ela não nega dor, injustiça, ambiguidade ou perda, mas volta sempre à dignidade, à gratidão e ao bem que as pessoas ainda são capazes de oferecer.",
-        overviewP3: "No centro, este é um livro sobre acreditar — nas pessoas, no sentido, na esperança e na possibilidade de que até uma travessia impossível possa ser atravessada.",
-        overviewBtnAmazon: "Ver na Amazon",
-        meta1: "Memórias",
-        meta2: "Coragem",
-        meta3: "Bullying",
-        meta4: "Educação",
-        meta5: "Tolerância",
-        meta6: "Perseverança",
-        meta7: "Esperança",
-        meta8: "Fé",
-        meta9: "Gratidão",
-        meta10: "Família",
-        meta11: "Brasil",
-        meta12: "Dignidade Humana",
-        meta13: "Música",
-        meta14: "Sonhos",
-        forewordKicker: "Prefácio",
-        forewordTitle: "Nicole Neuman sobre Coragem, Humanidade e Ressonância",
-        forewordQuote: "“Sua força não vem de barulho ou espetáculo, mas da maneira como a coragem se torna íntima e contagiante.”",
-        forewordP1: "O prefácio apresenta o livro como algo mais duradouro do que uma história dramática de vida. Ele destaca uma narrativa marcada por gratidão em vez de ressentimento, intimidade em vez de pose e uma confiança rara na inteligência emocional do leitor.",
-        forewordP2: "Ele também ajuda a explicar por que o livro parece incomum: recusa a autoglorificação, transforma uma história pessoal em homenagem às pessoas e à decência humana, retrata o Brasil com intimidade e dignidade e carrega um tipo de ressonância emocional que tende a se espalhar mais por recomendação do que por hype.",
-        forewordSource: "Prefácio de Nicole Neuman · editora, psicóloga e romancista",
-        testimonialsKicker: "Depoimentos",
-        testimonialsTitle: "Leitores, Mensagens e Primeiras Reações",
-        testimonialsP1: "Esta seção reunirá, ao longo do tempo, respostas selecionadas de leitores: bilhetes, screenshots, mensagens, fotos com o livro e reações significativas.",
-        testimonialsP2: "Espaço reservado para futuros depoimentos e respostas em destaque.",
-        storiesKicker: "Histórias do Livro",
-        storiesTitle: "Passagens, Contexto e Reflexões Mais Profundas",
-        storiesP1: "Com o tempo, esta área vai se tornar um espaço complementar para passagens selecionadas do livro — acrescentando contexto, bastidores, interpretação e histórias por trás de momentos específicos da obra.",
-        storiesP2: "Espaço reservado para futuras histórias e comentários.",
-        photosKicker: "Fotos",
-        photosTitle: "Lugares, Memórias e História Visual",
-        photosP1: "Esta seção reunirá gradualmente fotografias ligadas ao livro: pessoas, lugares, bairros, escolas e visitas posteriores a locais importantes que moldaram a história.",
-        photosP2: "Espaço reservado para futuras galerias e coleções de imagens.",
-        footerText: "© 2026 Roberto H. Jacob da Silva. Feito com reflexão, engenharia e coração."
+        pageTitle: "Música | Roberto H. Jacob da Silva",
+        pageDescription: "Música | Roberto H. Jacob da Silva — canções, voz, gravações e a dimensão musical de Engineering with a Heart.",
+        heroTitle: "Música como memória, voz e expressão humana.",
+        heroCardSummary: "Uma página musical onde voz, memória, gravações e emoção se encontram entre amor, distância e tempo.",
+        heroBtnExploreMusic: "Explore Minha Música",
+        heroBtnDiscoverStories: "Descubra Histórias das Canções",
+        bookMusicKicker: "Do Livro",
+        bookMusicTitle: "Quando o Livro Continua em Som",
+        bookMusicP1: "A música sempre foi mais do que um pano de fundo na minha vida. Em muitos momentos, ela foi refúgio, companhia, força e, às vezes, a única forma de entender o que eu estava sentindo antes que as palavras estivessem prontas. Ao longo desta história, a música permaneceu por perto — no rádio, nos fones de ouvido, nas letras que me acompanhavam enquanto eu estudava, sonhava, sofria, me apaixonava e tentava encontrar meu lugar no mundo.",
+        bookMusicP2: "Algumas músicas me fizeram rir. Outras me fizeram chorar. Algumas me deram força para estudar para o vestibular do ITA, algumas me inspiraram quando tudo parecia difícil, e algumas sempre me levavam de volta ao amor da minha vida — à garota dos meus sonhos. Este livro conta a minha história em palavras, mas certas emoções transbordam a linguagem. É por isso que estas duas playlists são tão importantes para mim: cada uma carrega um capítulo, um sentimento, uma lembrança e uma parte da pessoa que me tornei.",
+        featureTitle1: "Playlist 1 — A Trilha Emocional da Travessia",
+        featureText1: "Esta playlist reúne as músicas que me acompanharam ao longo da história contada neste livro. São canções que tocaram minha vida em momentos de alegria, tristeza, dúvida, superação e amor. Músicas que me ajudaram a estudar, a sonhar mais alto, a atravessar períodos difíceis e a celebrar pequenas e grandes vitórias.",
+        featureText1b: "Aqui estão músicas que me fizeram rir, chorar e acreditar. Elas marcaram fases importantes da minha vida e ainda despertam emoções muito específicas. Esta é a trilha sonora emocional da minha jornada.",
+        featureTitle2: "Playlist 2 — A Noite em que Qualquer Um Pode Subir ao Palco",
+        featureText2Short: "Esta playlist nasceu de uma noite inesquecível: cantar com a banda Kayak na festa junina do CTA, diante de centenas de pessoas, em um palco improvisado que transformou um sonho distante em algo real. Ela mostrou que a música também pertence à coragem, à alegria e à expressão humana.",
+        featureText2Extra: "Naquela noite, eu entendi algo simples e poderoso: muitas pessoas carregam música dentro de si, mas têm medo da comparação, do julgamento ou do ridículo. Esta playlist guarda o som daquela noite e o significado que ela ainda carrega para mim.",
+        spotifyQrAccess: "Acesso por QR Code no Spotify",
+        listenOnSpotify: "Ouvir no Spotify",
+        timelineQrAlt: "QR code da playlist da linha do tempo",
+        concertQrAlt: "QR code da playlist de palco",
+        myMusicKicker: "Minha Música",
+        myMusicTitle: "Gravações e Sessões de Estúdio",
+        myMusicP1: "Esta seção abre espaço para músicas que gravei ao longo do tempo — algumas em estúdio, algumas ligadas à memória e todas conectadas à alegria de cantar. É o lugar onde a música que me formou encontra a música que escolhi interpretar com a minha própria voz.",
+        myMusicVideosTitle: "Vídeos no YouTube",
+        myMusicVideosP1: "Esta seção reúne vídeos ligados à minha trajetória musical. Alguns são registros simples, outros carregam memória, e todos refletem a alegria de cantar e de compartilhar música com outras pessoas.",
+        myMusicStudioTitle: "Sessões de Estúdio",
+        myMusicStudioP1: "Estas gravações reúnem canções que escolhi interpretar com a minha própria voz. Elas fazem parte do lado musical deste projeto: memória, afeto, interpretação e o prazer de dar um tom pessoal a músicas já conhecidas.",
+        featuredVideoTitle: "Vídeos no YouTube",
+        featuredVideoButton: "▶ La Forza Della Vita - Paolo Vallesi",
+        studioTracksTitle: "Gravações em Estúdio",
+        songStoriesKicker: "Histórias das Canções",
+        songStoriesTitle: "A História por Trás de uma Canção",
+        songStory1Type: "História da Canção · Março de 2026",
+        songStory1Title: "Goodbye Yellow Brick Road",
+        songStory1Text: "Uma história sobre memória, saudade e o mundo emocional que uma canção pode abrir muito depois de a música terminar.",
+        fullStoryComingSoon: "História Completa em Breve"
       }
     };
 
@@ -481,14 +546,13 @@
       });
       document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
       localStorage.setItem('siteLang', lang);
-      localStorage.setItem('siteLanguage', lang);
     }
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => applyTranslations(btn.dataset.lang));
     });
 
-    applyTranslations(localStorage.getItem('siteLanguage') || localStorage.getItem('siteLang') || 'en');
+    applyTranslations(localStorage.getItem('siteLang') || 'en');
   </script>
 </body>
 </html>
