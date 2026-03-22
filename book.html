@@ -43,7 +43,7 @@
     .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center, rgba(0,0,0,0) 38%, rgba(0,0,0,.42) 100%);pointer-events:none}
     .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center 58%, rgba(255,210,120,0.30) 0%, rgba(255,210,120,0.16) 18%, rgba(255,210,120,0.05) 32%, rgba(0,0,0,0) 55%);pointer-events:none;mix-blend-mode:screen}
     .hero-content{position:relative;z-index:2;width:min(var(--max), calc(100% - 40px));margin:0 auto}
-    .hero-grid{display:grid;grid-template-columns:350px minmax(120px,1fr) 380px;gap:26px;align-items:stretch;min-height:270px;width:100%}
+    .hero-grid{display:grid;grid-template-columns:525px minmax(120px,1fr) 380px;gap:26px;align-items:stretch;min-height:270px;width:100%}
     .hero-box{display:flex;flex-direction:column;text-align:center}
     .hero-box.left,.hero-box.right{justify-content:center;align-items:center}
     .hero-spacer{min-height:1px}
@@ -82,7 +82,8 @@
     .chapter-card .mini{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
     .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
     .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;justify-content:center}
-    .links .btn-primary{margin-left:auto;margin-right:auto}
+    .links-primary{display:flex;justify-content:center;width:100%;margin-top:18px}
+    .links-secondary{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px}
     footer{padding:18px 0 34px;color:var(--muted);font-size:14px;text-align:center}
     .footer-links{
           margin-top:10px;
@@ -276,10 +277,14 @@
           <h3 data-i18n="connectTitle">Part of a larger creative project</h3>
           <p data-i18n="connectP1">The memoir is one pillar of a broader ecosystem that includes <em>Engineering with a Heart</em>, essays, music, and public reflection. The book tells the life story; the site extends that voice into technology, ethics, resilience, and creative expression.</p>
           <div class="links">
-            <a class="btn btn-primary" href="music.html" data-i18n="connectBtnMusic">Music</a>
-            <a class="btn btn-secondary" href="essays.html" data-i18n="connectBtnEssays">Read Essays</a>
-            <a class="btn btn-secondary" href="https://www.facebook.com/robertohjacobdasilva" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnFacebook">Facebook</a>
-            <a class="btn btn-secondary" href="https://www.instagram.com/robertohjacobdasilva/" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnInstagram">Instagram</a>
+            <div class="links-primary">
+              <a class="btn btn-primary" href="music.html" data-i18n="connectBtnMusic">Music</a>
+            </div>
+            <div class="links-secondary">
+              <a class="btn btn-secondary" href="essays.html" data-i18n="connectBtnEssays">Read Essays</a>
+              <a class="btn btn-secondary" href="https://www.facebook.com/robertohjacobdasilva" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnFacebook">Facebook</a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/robertohjacobdasilva/" target="_blank" rel="noopener noreferrer" data-i18n="connectBtnInstagram">Instagram</a>
+            </div>
           </div>
         </div>
       </section>
