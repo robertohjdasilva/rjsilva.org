@@ -40,18 +40,18 @@
     .lang-btn{background:none;border:none;padding:0;font:inherit;cursor:pointer}
     .lang-btn.active{color:#fff;text-decoration:underline;text-underline-offset:3px}
     .lang-label{color:rgba(255,255,255,.5);font-size:13px}
-    .hero{position:relative;padding:78px 0 60px;color:#fff;background:linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.28)),radial-gradient(circle at 18% 22%, rgba(201,137,43,.18), transparent 34%),linear-gradient(135deg, #2a1a12, #67462b);overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center 50%, rgba(255,210,120,0.18) 0%, rgba(255,210,120,0.08) 22%, rgba(0,0,0,0) 54%);pointer-events:none;mix-blend-mode:screen}
-    .hero-content{position:relative;z-index:2}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
-    .hero-copy{text-align:center}
-    .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#f0c98f;font-weight:700;margin-bottom:12px}
-    .hero h1{margin:0;font-size:clamp(34px, 5vw, 54px);line-height:1.02;letter-spacing:-.03em}
-    .hero p{margin:18px auto 0;max-width:760px;font-size:20px;color:rgba(255,255,255,.88)}
-    .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:22px;box-shadow:0 14px 34px rgba(0,0,0,.14)}
-    .hero-card h2{margin:0 0 12px;font-size:20px;color:#fff}
-    .hero-card ul{margin:0;padding-left:18px;color:rgba(255,255,255,.86);font-size:15px}
-    .hero-card li+li{margin-top:6px}
+    .hero{position:relative;height:270px;display:flex;align-items:center;color:#fff;background:linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.22)),url("images/hero_music.jpg") center 55%/cover no-repeat;overflow:hidden}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center, rgba(0,0,0,0) 38%, rgba(0,0,0,.42) 100%);pointer-events:none}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center 58%, rgba(255,210,120,0.30) 0%, rgba(255,210,120,0.16) 18%, rgba(255,210,120,0.05) 32%, rgba(0,0,0,0) 55%);pointer-events:none;mix-blend-mode:screen}
+    .hero-content{position:relative;z-index:2;width:min(var(--max), calc(100% - 40px));margin:0 auto}
+    .hero-layout{display:grid;grid-template-columns:350px minmax(120px,1fr) 380px;gap:26px;align-items:stretch;min-height:270px;width:100%}
+    .hero-box{display:flex;flex-direction:column;text-align:center}
+    .hero-box.left{justify-content:center;align-items:center}
+    .hero-box.right{justify-content:center;align-items:center}
+    .hero-panel{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:22px 24px;background:rgba(42,26,18,.58);border:1px solid rgba(255,255,255,.14);border-radius:18px;box-shadow:0 14px 34px rgba(0,0,0,.18);backdrop-filter:blur(2px);width:min(100%, 380px)}
+    .hero-title{margin:0;font-size:clamp(24px, 3.8vw, 43px);line-height:1.03;letter-spacing:-.6px;text-wrap:balance}
+    .hero-text{margin:0;font-size:clamp(16px, 1.9vw, 19px);color:rgba(255,255,255,.94);max-width:340px;line-height:1.45;text-align:center}
+    .hero-spacer{min-height:1px}
     .hero-actions,.button-row,.action-center{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;font-size:15px;font-weight:700;border:1px solid rgba(255,255,255,.18);transition:.2s ease}
     .btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
@@ -95,7 +95,7 @@
     .footer-links a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
     .footer-links a:hover{color:var(--brown)}
     @media (max-width: 980px){
-      .hero-grid,.two-col,.stats,.song-grid,.feature-grid,.media-grid{grid-template-columns:1fr}
+      .two-col,.stats,.song-grid,.feature-grid,.media-grid{grid-template-columns:1fr}
       .topbar{padding:18px 0 14px}
       .topbar-inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
       .brand{justify-content:center}
@@ -104,12 +104,23 @@
       .brand-subtitle{font-size:14px}
       .nav{justify-content:center;flex-wrap:wrap;gap:12px 16px;font-size:15px}
       .lang-switch{margin-left:0;padding-left:0;border-left:none}
-      .hero{padding:60px 0 46px}
-      .hero p{font-size:18px}
+      .hero{height:auto;min-height:0;padding:36px 0 34px;background-position:center center}
+      .hero-content{width:min(var(--max), calc(100% - 28px))}
+      .hero-layout{grid-template-columns:1fr;gap:22px;min-height:auto}
+      .hero-spacer{display:none}
+      .hero-box.left,.hero-box.right{min-height:auto;justify-content:center;align-items:center}
+      .hero-panel{width:min(100%, 420px)}
+      .hero-title{font-size:clamp(22px, 10vw, 42px);max-width:10ch}
+      .hero-text{max-width:26ch;font-size:clamp(15px, 4.8vw, 19px)}
       .section{padding:24px}
     }
     @media (max-width: 640px){
       .container{width:min(var(--max), calc(100% - 28px))}
+      .hero{padding:30px 0 28px}
+      .hero-content{width:min(var(--max), calc(100% - 24px))}
+      .hero-title{max-width:11ch;line-height:1.02}
+      .hero-text{max-width:24ch}
+      .hero-panel{width:min(100%, 100%);padding:20px 18px}
       .hero-actions,.button-row,.action-center{flex-direction:column;align-items:stretch}
       .btn{width:100%}
       .section h2{font-size:26px}
@@ -122,22 +133,19 @@
   <div id="site-header"></div>
 
 <section class="hero">
-    <div class="container hero-content">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow" data-i18n="heroEyebrow">About the Author and Engineer</div>
-          <h1 data-i18n="heroTitle">A life shaped by engineering, writing, music, and gratitude.</h1>
-          <p data-i18n="heroText">Roberto H. Jacob da Silva moves between complex systems, deeply personal storytelling, and songs that carry memory. This page brings those dimensions together in one human portrait.</p>
+    <div class="hero-content">
+      <div class="hero-layout">
+        <div class="hero-box left">
+          <h1 class="hero-title" data-i18n="heroTitle">Music as memory, voice, and human expression.</h1>
         </div>
-        <aside class="hero-card">
-          <h2 data-i18n="heroCardTitle">At a Glance</h2>
-          <ul>
-            <li data-i18n="heroCard1">Engineer and inventor working across distributed systems, observability, networking, diagnostics, and cloud infrastructure.</li>
-            <li data-i18n="heroCard2">Author of <em>Impossible Crossing</em> and creator of <em>Engineering with a Heart</em>.</li>
-            <li data-i18n="heroCard3">A life lived across Brazil, Spain, Belgium, and the United States.</li>
-            <li data-i18n="heroCard4">Music is not a side note here; it is part of the emotional structure of the journey.</li>
-          </ul>
-        </aside>
+
+        <div class="hero-spacer" aria-hidden="true"></div>
+
+        <div class="hero-box right">
+          <div class="hero-panel">
+            <p class="hero-text" data-i18n="heroCardSummary">A musical page where voice, memory, recordings, and emotion meet across love, distance, and time.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -376,16 +384,8 @@
         navResume: "Resume",
         navMusic: "Music",
         langLabel: "Language",
-        heroEyebrow: "Music",
         heroTitle: "Music as memory, voice, and human expression.",
-        heroText: "This page gathers my musical side — songs, recordings, memory, longing, gratitude, and the emotional thread that runs through the broader project.",
-        heroBtnResume: "View Resume",
-        heroBtnBook: "Explore the Book",
-        heroCardTitle: "At a Glance",
-        heroCard1: "A musical page centered on voice, recordings, memory, and emotional storytelling.",
-        heroCard2: "Music appears across the book, the recordings, and the personal reflections behind each song.",
-        heroCard3: "Songs here carry love, migration, courage, longing, and gratitude across multiple countries and decades.",
-        heroCard4: "Music is not a side note here; it is part of the emotional structure of the journey.",
+        heroCardSummary: "A musical page where voice, memory, recordings, and emotion meet across love, distance, and time.",
         journeyKicker: "Journey",
         journeyTitle: "A Bridge Across Worlds",
         journeyP1: "Roberto H. Jacob da Silva writes and builds from the perspective of someone who has crossed multiple worlds: Brazil, Spain, Belgium, and the United States; scarcity and opportunity; technical rigor and human reflection; private struggle and contribution to the development of the broader world around him. That crossing is not a branding device. It is the lived foundation beneath both <em>Impossible Crossing</em> and <em>Engineering with a Heart</em>.",
@@ -490,16 +490,10 @@
         navResume: "Currículo",
         navMusic: "Música",
         langLabel: "Idioma",
-        heroEyebrow: "Música",
         heroTitle: "Música como memória, voz e expressão humana.",
-        heroText: "Esta página reúne meu lado musical — canções, gravações, memória, saudade, gratidão e o fio emocional que percorre este projeto mais amplo.",
+        heroCardSummary: "Uma página musical onde voz, memória, gravações e emoção se encontram entre amor, distância e tempo.",
         heroBtnResume: "Ver Currículo",
         heroBtnBook: "Explorar o Livro",
-        heroCardTitle: "Visão Geral",
-        heroCard1: "Engenheiro e inventor com atuação em sistemas distribuídos, observabilidade, redes, diagnósticos e infraestrutura de nuvem.",
-        heroCard2: "A música aparece no livro, nas gravações e nas reflexões pessoais por trás de cada canção.",
-        heroCard3: "As canções carregam amor, migração, coragem, saudade e gratidão através de vários países e décadas.",
-        heroCard4: "A música não é nota de rodapé aqui; ela faz parte da estrutura emocional da jornada.",
         journeyKicker: "Jornada",
         journeyTitle: "Uma Ponte Entre Mundos",
         journeyP1: "Roberto H. Jacob da Silva escreve e constrói a partir da perspectiva de alguém que atravessou múltiplos mundos: Brasil, Espanha, Bélgica e Estados Unidos; escassez e oportunidade; rigor técnico e reflexão humana; luta privada e contribuição para o desenvolvimento do mundo mais amplo ao seu redor. Essa travessia não é um recurso de marca. É a base vivida que sustenta tanto <em>Travessia Impossível</em> quanto <em>Engineering with a Heart</em>.",
