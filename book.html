@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impossible Crossing | R.J. Silva</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="apple-touch-icon" href="images/favicon.png">
-  <meta name="description" content="Impossible Crossing — a memoir of resilience, faith, music, education, courage, and the people who quietly shape a life." />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Impossible Crossing | R.J. Silva</title>
+<link href="images/favicon.png" rel="icon" type="image/png"/>
+<link href="images/favicon.png" rel="apple-touch-icon"/>
+<meta content="Impossible Crossing — a memoir of resilience, faith, music, education, courage, and the people who quietly shape a life." name="description"/>
+<style>
     :root{
       --bg:#f5f2ec;
       --paper:#fffaf3;
@@ -140,107 +141,840 @@
       .section p{font-size:17px}
       .quote{font-size:20px}
     }
+  
+
+/* Imported from index */
+
+    :root{
+      --bg:#f5f2ec;
+      --paper:#fffaf3;
+      --text:#1a1a1a;
+      --muted:#5a5148;
+      --brown:#2a1a12;
+      --gold:#c9892b;
+      --gold-dark:#9a6a22;
+      --border:rgba(42,26,18,.14);
+      --shadow:0 10px 30px rgba(42,26,18,.08);
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      background:var(--brown);
+      color:#fff;
+      padding:16px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .topbar-inner{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:24px;
+    }
+
+    .top-hero-divider{
+      height:1px;
+      background:#ffffff;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      min-width:0;
+    }
+
+    .brand img{
+      height:72px;
+      width:auto;
+      object-fit:contain;
+      display:block;
+    }
+
+    .brand-text{
+      text-align:center;
+      min-width:0;
+    }
+
+    .brand-title{
+      margin:0;
+      font-size:24px;
+      line-height:1.0;
+      letter-spacing:.2px;
+    }
+
+    .brand-subtitle{
+      margin:4px 0 0;
+      font-size:16px;
+      color:rgba(255,255,255,.78);
+    }
+
+    .brand-subtitle-main{
+      margin:0;
+      font-size:22px;
+      line-height:1.2;
+      color:rgba(255,255,255,.92);
+    }
+
+    .section-kicker{
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    
+    .book-feature{
+      align-items:start;
+    }
+    
+    .book-copy h3{
+      margin:0 0 12px;
+      font-size:30px;
+      line-height:1.15;
+      color:var(--brown);
+    }
+    
+    .book-meta{
+      margin-top:14px;
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .book-cover-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .book-actions{
+      margin-top:18px;
+    }
+    
+    .book-cover-wrap{
+      position:relative;
+    }
+    
+    .book-cover-wrap::after{
+      content:"";
+      position:absolute;
+      inset:auto 12px -12px 12px;
+      height:22px;
+      background:rgba(42,26,18,.10);
+      filter:blur(14px);
+      border-radius:50%;
+      z-index:0;
+    }
+    
+    .book-cover-wrap img{
+      display:block;
+      transform:rotate(-2deg);
+      box-shadow:0 18px 28px rgba(0,0,0,0.25);
+      border-radius:4px;
+      position:relative;
+      z-index:1;
+    }
+    
+    .nav{
+      display:flex;
+      gap:18px;
+      font-size:15px;
+      white-space:nowrap;
+      justify-self:end;
+      align-items:center;
+    }
+
+    .nav a,
+    .lang-btn{
+      color:rgba(255,255,255,.88);
+    }
+
+    .nav a:hover,
+    .lang-btn:hover{
+      color:#fff;
+    }
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-left:6px;
+      padding-left:14px;
+      border-left:1px solid rgba(255,255,255,.18);
+    }
+
+    .lang-btn{
+      background:none;
+      border:none;
+      padding:0;
+      font:inherit;
+      cursor:pointer;
+    }
+
+    .lang-btn.active{
+      color:#fff;
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .lang-label{
+      color:rgba(255,255,255,.5);
+      font-size:13px;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      height:270px;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background:
+        linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.22)),
+        url("images/bridge.jpg") center 70%/cover no-repeat;
+      overflow:hidden;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(0,0,0,0) 38%,
+          rgba(0,0,0,.42) 100%
+        );
+      pointer-events:none;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(
+          ellipse at center 58%,
+          rgba(255,210,120,0.30) 0%,
+          rgba(255,210,120,0.16) 18%,
+          rgba(255,210,120,0.05) 32%,
+          rgba(0,0,0,0) 55%
+        );
+      pointer-events:none;
+      mix-blend-mode:screen;
+    }
+
+    .hero-divider{
+      height:3px;
+      width:100%;
+      margin:0 auto;
+      background:linear-gradient(
+        to right,
+        transparent,
+        var(--gold),
+        transparent
+      );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    .hero-layout{
+      display:grid;
+      grid-template-columns:350px minmax(120px,1fr) 380px;
+      gap:26px;
+      align-items:stretch;
+      min-height:270px;
+      width:100%;
+    }
+
+    .hero-box{
+      display:flex;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    .hero-box.left{
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-box.right{
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-panel{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:22px;
+      padding:22px 24px;
+      background:rgba(42,26,18,.58);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      box-shadow:0 14px 34px rgba(0,0,0,.18);
+      backdrop-filter: blur(2px);
+      width:min(100%, 380px);
+    }
+
+    .hero-title{
+      margin:0;
+      font-size:clamp(24px, 3.8vw, 43px);
+      line-height:1.03;
+      letter-spacing:-.6px;
+      text-wrap:balance;
+    }
+
+    .hero-text{
+      margin:0;
+      font-size:clamp(16px, 1.9vw, 19px);
+      color:rgba(255,255,255,.94);
+      max-width:340px;
+      line-height:1.45;
+      text-align:center;
+    }
+
+    .hero-spacer{
+      min-height:1px;
+    }
+
+    .actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:nowrap;
+      justify-content:center;
+      align-items:center;
+      margin-top:24px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:13px 20px;
+      border-radius:10px;
+      font-weight:700;
+      font-size:15px;
+      transition:.2s ease;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      background:var(--gold-dark);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.18);
+    }
+
+    section{
+      padding:38px 0;
+    }
+
+    .section-title{
+      margin:0 0 8px;
+      font-size:32px;
+      line-height:1.15;
+      color:var(--brown);
+    }
+
+    .section-intro{
+      margin:0 auto 22px;
+      max-width:900px;
+      font-size:18px;
+      color:var(--muted);
+    }
+
+    .center{
+      text-align:center;
+    }
+
+    .card{
+      background:var(--paper);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .book-card{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .book-card img{
+      width:100%;
+      max-width:350px;
+    }
+
+    .book-card h3,
+    .about h3{
+      margin:0 0 10px;
+      font-size:28px;
+      color:var(--brown);
+    }
+
+    .book-card p,
+    .about p,
+    .feature p{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .feature-list{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .feature{
+      background:var(--paper);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .feature h4{
+      margin:0 0 8px;
+      font-size:20px;
+      color:var(--brown);
+    }
+
+    .essay-links{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .essay-type{
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    
+    .essay-link{
+      display:block;
+      padding:16px 18px;
+      background:var(--paper);
+      border:1px solid var(--border);
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      transition:.15s ease;
+    }
+
+    .essay-link strong{
+      display:block;
+      color:var(--brown);
+      font-size:19px;
+      margin-bottom:4px;
+    }
+
+    .essay-link span{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .essay-link:hover{
+      border-color:rgba(201,137,43,.45);
+      transform:translateY(-1px);
+    }
+
+    .about-wrap{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .about-wrap img{
+      width:100%;
+      max-width:320px;
+      border-radius:18px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .quote{
+      margin-top:14px;
+      padding:16px 18px;
+      border-left:4px solid var(--gold);
+      background:#fff;
+      border-radius:8px;
+      color:var(--muted);
+      font-style:italic;
+    }
+
+    footer{
+      padding:26px 0 38px;
+      color:var(--muted);
+      text-align:center;
+      font-size:14px;
+    }
+
+
+    .section-actions{
+      display:flex;
+      justify-content:center;
+      margin-top:18px;
+    }
+
+    .link-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+      margin-top:18px;
+    }
+
+    .footer-links{
+      margin-top:10px;
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+      font-size:14px;
+    }
+
+    .footer-links a{
+      color:var(--muted);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .footer-links a:hover{
+      color:var(--brown);
+    }
+
+    /* MOBILE / TABLET FIXES */
+    @media (max-width: 900px){
+      .topbar{
+        padding:18px 0 14px;
+      }
+
+      .topbar-inner{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:14px;
+        text-align:center;
+      }
+
+      .brand{
+        justify-content:center;
+      }
+
+      .brand img{
+        height:62px;
+        max-width:min(100%, 300px);
+      }
+
+      .brand-text{
+        width:100%;
+      }
+
+      .brand-title{
+        font-size:22px;
+      }
+
+      .brand-subtitle{
+        font-size:14px;
+        line-height:1.35;
+      }
+
+      .nav{
+        justify-self:auto;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:14px 18px;
+        white-space:normal;
+        width:100%;
+      }
+
+      .lang-switch{
+        margin-left:0;
+        padding-left:0;
+        border-left:none;
+      }
+
+      .hero{
+        height:auto;
+        min-height:0;
+        padding:36px 0 34px;
+        background-position:center center;
+      }
+
+      .hero-content{
+        width:min(var(--max), calc(100% - 28px));
+      }
+
+      .hero-layout{
+        grid-template-columns:1fr;
+        gap:22px;
+        min-height:auto;
+      }
+
+      .hero-spacer{
+        display:none;
+      }
+
+      .hero-box.left,
+      .hero-box.right{
+        min-height:auto;
+        justify-content:center;
+        align-items:center;
+      }
+
+      .hero-panel{
+        width:min(100%, 420px);
+      }
+
+      .hero-title{
+        font-size:clamp(22px, 10vw, 42px);
+        max-width:10ch;
+      }
+
+      .hero-text{
+        max-width:26ch;
+        font-size:clamp(15px, 4.8vw, 19px);
+      }
+
+      .actions{
+        flex-wrap:wrap;
+        gap:12px;
+        margin-top:18px;
+      }
+
+      .btn{
+        width:auto;
+        min-width:0;
+      }
+
+      .feature-list{
+        grid-template-columns:1fr;
+      }
+
+      .book-card,
+      .about-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .section-title{
+        font-size:clamp(28px, 8vw, 34px);
+      }
+
+      .section-intro{
+        font-size:17px;
+      }
+    }
+
+    @media (max-width: 560px){
+      .container{
+        width:min(var(--max), calc(100% - 24px));
+      }
+
+      .hero-content{
+        width:min(var(--max), calc(100% - 24px));
+      }
+
+      .brand img{
+        height:auto;
+        width:min(100%, 320px);
+      }
+
+      .brand-title{
+        font-size:20px;
+      }
+
+      .brand-subtitle{
+        max-width:28ch;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .nav{
+        font-size:14px;
+        gap:10px 16px;
+      }
+
+      .hero{
+        padding:30px 0 28px;
+      }
+
+      .hero-title{
+        max-width:11ch;
+        line-height:1.02;
+      }
+
+      .hero-text{
+        max-width:24ch;
+      }
+
+      .hero-panel{
+        width:min(100%, 100%);
+        padding:20px 18px;
+      }
+
+      .actions{
+        flex-direction:column;
+        width:100%;
+      }
+
+      .actions .btn{
+        width:min(100%, 260px);
+        text-align:center;
+      }
+
+      .card{
+        padding:20px;
+      }
+
+      .book-card h3,
+      .about h3{
+        font-size:24px;
+      }
+
+      .book-card p,
+      .about p,
+      .feature p{
+        font-size:16px;
+      }
+    }
   </style>
 </head>
 <body data-page="book">
-  <div id="site-header"></div>
-
+<div id="site-header"></div>
 <section class="hero">
-    <div class="hero-content">
-      <div class="hero-grid">
-        <div class="hero-box left">
-          <h1 data-i18n="heroTitle"><em>Impossible Crossing</em> — a memoir of people and courage.</h1>
-        </div>
-
-        <aside class="hero-box right">
-          <div class="hero-card">
-            <p data-i18n="heroCardText">A tribute to the ordinary lives that made an unexpected, impossible journey possible.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC/ref=sr_1_1?crid=2BIV5RHUGGM67&dib=eyJ2IjoiMSJ9.U3VQY_JGRKw1ra8WZU4ssQ.qytgrLHto3X1tLRhG3laYYhszEj3DhRu8lfS7YNmOn8&dib_tag=se&keywords=impossible+crossing+rjk+silva+paperback&qid=1773540014&sprefix=impossible+crossing+rjk+silva+paperback%2Caps%2C185&sr=8-1" target="_blank" rel="noopener noreferrer" data-i18n="heroBtnAmazon">View on Amazon</a>
-              <a class="btn btn-secondary" href="#highlights" data-i18n="heroBtnHighlights">Read Highlights</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  
-  <main class="main">
-    <div class="container">
-      <section class="section single" id="highlights">
-        <div class="section-kicker" data-i18n="overviewKicker">Book Overview</div>
-        <div class="book-layout">
-          <div class="book-cover-wrap">
-            <img src="images/book_front.jpg" alt="Impossible Crossing book cover" data-i18n-attr="alt:bookAlt" />
-            <div class="book-actions">
-              <a class="btn btn-primary" href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC/ref=sr_1_1?crid=2BIV5RHUGGM67&dib=eyJ2IjoiMSJ9.U3VQY_JGRKw1ra8WZU4ssQ.qytgrLHto3X1tLRhG3laYYhszEj3DhRu8lfS7YNmOn8&dib_tag=se&keywords=impossible+crossing+rjk+silva+paperback&qid=1773540014&sprefix=impossible+crossing+rjk+silva+paperback%2Caps%2C185&sr=8-1" target="_blank" rel="noopener noreferrer" data-i18n="overviewBtnAmazon">Buy the Book</a>
-            </div>
-          </div>
-          <div>
-            <h2 data-i18n="overviewTitle">A Human Crossing Through Hardship, Belonging, Hope, and Purpose</h2>
-            <p data-i18n="overviewP1"><em>Impossible Crossing</em> is, above all, a book about people. It follows one life shaped by poverty, bullying, education, faith, love, and the quiet generosity of ordinary people whose presence changed a destiny without spectacle.</p>
-            <p data-i18n="overviewP2">What gives the memoir its force is not just what happens, but the way the world is seen. The story chooses a generous gaze: it does not deny pain, injustice, ambiguity, or loss, yet it keeps returning to dignity, gratitude, and the good that people are still able to offer.</p>
-            <p data-i18n="overviewP3">At its center, this is a book about believing — in people, in meaning, in hope, and in the possibility that even an impossible crossing can be crossed.</p>
-            <div class="meta-row">
-              <span class="pill" data-i18n="meta1">Memoir</span>
-              <span class="pill" data-i18n="meta2">Courage</span>
-              <span class="pill" data-i18n="meta3">Bullying</span>
-              <span class="pill" data-i18n="meta4">Education</span>
-              <span class="pill" data-i18n="meta5">Tolerance</span>
-              <span class="pill" data-i18n="meta6">Perseverance</span>
-              <span class="pill" data-i18n="meta7">Hope</span>
-              <span class="pill" data-i18n="meta8">Faith</span>
-              <span class="pill" data-i18n="meta9">Gratitude</span>
-              <span class="pill" data-i18n="meta10">Family</span>
-              <span class="pill" data-i18n="meta11">Brazil</span>
-              <span class="pill" data-i18n="meta12">Human Dignity</span>
-              <span class="pill" data-i18n="meta13">Music</span>
-              <span class="pill" data-i18n="meta14">Dreams</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section single">
-        <div class="callout">
-          <div class="section-kicker" data-i18n="forewordKicker">Foreword</div>
-          <h2 data-i18n="forewordTitle">Nicole Neuman on Courage, Humanity, and Resonance</h2>
-          <div class="quote" data-i18n="forewordQuote">“Its power does not come from noise or spectacle, but from the way courage becomes intimate and contagious.”</div>
-          <p data-i18n="forewordP1">The foreword frames the memoir as something more lasting than a dramatic life story. It highlights a narrative marked by gratitude rather than resentment, intimacy rather than posture, and a rare trust in the reader’s intelligence.</p>
-          <p data-i18n="forewordP2">It also helps explain why the book feels unusual: it refuses self-glorification, turns a personal story into a tribute to people and human decency, portrays Brazil with intimacy and dignity, and carries the kind of emotional resonance that tends to spread by recommendation rather than hype.</p>
-          <div class="quote-source" data-i18n="forewordSource">Foreword by Nicole Neuman · editor, psychologist, and novelist</div>
-        </div>
-      </section>
-
-      <section class="section single">
-        <div class="section-kicker" data-i18n="testimonialsKicker">Testimonials</div>
-        <h2 data-i18n="testimonialsTitle">Readers, Messages, and Early Responses</h2>
-        <p data-i18n="testimonialsP1">This section will bring together selected reader responses over time: notes, screenshots, messages, photos with the book, and meaningful reactions from readers.</p>
-        <p class="placeholder-note" data-i18n="testimonialsP2">Placeholder for future testimonials and featured responses.</p>
-      </section>
-
-      <section class="section single">
-        <div class="section-kicker" data-i18n="storiesKicker">Stories from the Book</div>
-        <h2 data-i18n="storiesTitle">Passages, Context, and Deeper Reflections</h2>
-        <p data-i18n="storiesP1">Over time, this area will expand into a companion space for selected passages from the memoir — adding context, background, interpretation, and the stories behind specific moments in the book.</p>
-        <p class="placeholder-note" data-i18n="storiesP2">Placeholder for future story posts and commentary.</p>
-      </section>
-
-      <section class="section single">
-        <div class="section-kicker" data-i18n="photosKicker">Photos</div>
-        <h2 data-i18n="photosTitle">Places, Memories, and Visual History</h2>
-        <p data-i18n="photosP1">This section will gradually gather photographs connected to the memoir: people, places, neighborhoods, schools, and later visits to important locations that shaped the story.</p>
-        <p class="placeholder-note" data-i18n="photosP2">Placeholder for future photo galleries and image collections.</p>
-      </section>
-    </div>
-  </main>
-
-
-  
-<footer id="footer"></footer>
-  
-  <script>
+<div class="hero-content">
+<div class="hero-grid">
+<div class="hero-box left">
+<h1 data-i18n="heroTitle"><em>Impossible Crossing</em> — a memoir of people and courage.</h1>
+</div>
+<aside class="hero-box right">
+<div class="hero-card">
+<p data-i18n="heroCardText">A tribute to the ordinary lives that made an unexpected, impossible journey possible.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" data-i18n="heroBtnAmazon" href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC/ref=sr_1_1?crid=2BIV5RHUGGM67&amp;dib=eyJ2IjoiMSJ9.U3VQY_JGRKw1ra8WZU4ssQ.qytgrLHto3X1tLRhG3laYYhszEj3DhRu8lfS7YNmOn8&amp;dib_tag=se&amp;keywords=impossible+crossing+rjk+silva+paperback&amp;qid=1773540014&amp;sprefix=impossible+crossing+rjk+silva+paperback%2Caps%2C185&amp;sr=8-1" rel="noopener noreferrer" target="_blank">View on Amazon</a>
+<a class="btn btn-secondary" data-i18n="heroBtnHighlights" href="#highlights">Read Highlights</a>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<main class="main">
+<div class="container">
+<section class="section single" id="highlights">
+<div class="section-kicker" data-i18n="overviewKicker">Book Overview</div>
+<div class="book-layout">
+<div class="book-cover-wrap">
+<img alt="Impossible Crossing book cover" data-i18n-attr="alt:bookAlt" src="images/book_front.jpg"/>
+<div class="book-actions">
+<a class="btn btn-primary" data-i18n="overviewBtnAmazon" href="https://www.amazon.com/IMPOSSIBLE-CROSSING-Inspirational-Journey-Perseverance/dp/B0BN8M5NLC/ref=sr_1_1?crid=2BIV5RHUGGM67&amp;dib=eyJ2IjoiMSJ9.U3VQY_JGRKw1ra8WZU4ssQ.qytgrLHto3X1tLRhG3laYYhszEj3DhRu8lfS7YNmOn8&amp;dib_tag=se&amp;keywords=impossible+crossing+rjk+silva+paperback&amp;qid=1773540014&amp;sprefix=impossible+crossing+rjk+silva+paperback%2Caps%2C185&amp;sr=8-1" rel="noopener noreferrer" target="_blank">Buy the Book</a>
+</div>
+</div>
+<div>
+<h2 data-i18n="overviewTitle">A Human Crossing Through Hardship, Belonging, Hope, and Purpose</h2>
+<p data-i18n="overviewP1"><em>Impossible Crossing</em> is, above all, a book about people. It follows one life shaped by poverty, bullying, education, faith, love, and the quiet generosity of ordinary people whose presence changed a destiny without spectacle.</p>
+<p data-i18n="overviewP2">What gives the memoir its force is not just what happens, but the way the world is seen. The story chooses a generous gaze: it does not deny pain, injustice, ambiguity, or loss, yet it keeps returning to dignity, gratitude, and the good that people are still able to offer.</p>
+<p data-i18n="overviewP3">At its center, this is a book about believing — in people, in meaning, in hope, and in the possibility that even an impossible crossing can be crossed.</p>
+<div class="meta-row">
+<span class="pill" data-i18n="meta1">Memoir</span>
+<span class="pill" data-i18n="meta2">Courage</span>
+<span class="pill" data-i18n="meta3">Bullying</span>
+<span class="pill" data-i18n="meta4">Education</span>
+<span class="pill" data-i18n="meta5">Tolerance</span>
+<span class="pill" data-i18n="meta6">Perseverance</span>
+<span class="pill" data-i18n="meta7">Hope</span>
+<span class="pill" data-i18n="meta8">Faith</span>
+<span class="pill" data-i18n="meta9">Gratitude</span>
+<span class="pill" data-i18n="meta10">Family</span>
+<span class="pill" data-i18n="meta11">Brazil</span>
+<span class="pill" data-i18n="meta12">Human Dignity</span>
+<span class="pill" data-i18n="meta13">Music</span>
+<span class="pill" data-i18n="meta14">Dreams</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section single">
+<div class="callout">
+<div class="section-kicker" data-i18n="forewordKicker">Foreword</div>
+<h2 data-i18n="forewordTitle">Nicole Neuman on Courage, Humanity, and Resonance</h2>
+<div class="quote" data-i18n="forewordQuote">“Its power does not come from noise or spectacle, but from the way courage becomes intimate and contagious.”</div>
+<p data-i18n="forewordP1">The foreword frames the memoir as something more lasting than a dramatic life story. It highlights a narrative marked by gratitude rather than resentment, intimacy rather than posture, and a rare trust in the reader’s intelligence.</p>
+<p data-i18n="forewordP2">It also helps explain why the book feels unusual: it refuses self-glorification, turns a personal story into a tribute to people and human decency, portrays Brazil with intimacy and dignity, and carries the kind of emotional resonance that tends to spread by recommendation rather than hype.</p>
+<div class="quote-source" data-i18n="forewordSource">Foreword by Nicole Neuman · editor, psychologist, and novelist</div>
+</div>
+</section>
+<section class="section single">
+<div class="section-kicker" data-i18n="testimonialsKicker">Testimonials</div>
+<h2 data-i18n="testimonialsTitle">Readers, Messages, and Early Responses</h2>
+<p data-i18n="testimonialsP1">This section will bring together selected reader responses over time: notes, screenshots, messages, photos with the book, and meaningful reactions from readers.</p>
+<p class="placeholder-note" data-i18n="testimonialsP2">Placeholder for future testimonials and featured responses.</p>
+</section>
+<section class="section single">
+<div class="section-kicker" data-i18n="storiesKicker">Stories from the Book</div>
+<h2 data-i18n="storiesTitle">Passages, Context, and Deeper Reflections</h2>
+<p data-i18n="storiesP1">Over time, this area will expand into a companion space for selected passages from the memoir — adding context, background, interpretation, and the stories behind specific moments in the book.</p>
+<p class="placeholder-note" data-i18n="storiesP2">Placeholder for future story posts and commentary.</p>
+</section>
+<section class="section single">
+<div class="section-kicker" data-i18n="photosKicker">Photos</div>
+<h2 data-i18n="photosTitle">Places, Memories, and Visual History</h2>
+<p data-i18n="photosP1">This section will gradually gather photographs connected to the memoir: people, places, neighborhoods, schools, and later visits to important locations that shaped the story.</p>
+<p class="placeholder-note" data-i18n="photosP2">Placeholder for future photo galleries and image collections.</p>
+</section>
+</div>
+</main>
+<footer id="footer" style="margin-top:40px;"></footer>
+<script>
     const HEADER_TRANSLATIONS = {
       en: {
         headerLogoAlt: "RJ Silva logo",
@@ -341,8 +1075,6 @@
 
     initSharedHeader();
   </script>
-
-
 <script>
     fetch("footer.html")
       .then(res => res.text())
@@ -354,9 +1086,7 @@
         }
       });
   </script>
-
-
-  <script>
+<script>
     const translations = {
       en: {
         pageTitle: "Impossible Crossing | R.J. Silva",
