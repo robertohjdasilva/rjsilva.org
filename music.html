@@ -77,6 +77,17 @@
     .stat strong{display:block;font-size:32px;line-height:1;color:var(--brown);margin-bottom:8px}
     .stat span{color:var(--muted);font-size:14px}
     .list-card,.info-card,.callout,.feature-card,.song-card,.media-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
+.media-section-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px}
+.media-section-card h3{margin:0 0 10px;font-size:23px;color:var(--brown)}
+.media-section-card p{margin:0 0 16px}
+.media-row-list{display:grid;gap:14px;margin-top:10px}
+.media-row{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 18px;background:#fff;border:1px solid var(--border);border-radius:16px}
+.media-row-title{font-size:18px;color:var(--brown);font-weight:700;line-height:1.35;flex:1}
+.media-row-action{display:flex;align-items:center;justify-content:flex-end;min-width:170px;flex-shrink:0}
+.media-row-action audio{width:100%;max-width:320px}
+.video-link-icon{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:999px;background:var(--gold);color:#fff;font-size:24px;font-weight:700;box-shadow:var(--shadow);transition:.2s ease}
+.video-link-icon:hover{background:var(--gold-dark);transform:translateY(-1px)}
+.video-link-icon .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .spotify-access-label{text-align:center;margin:14px 0 8px;font-size:15px;color:var(--brown)}
     .spotify-button-row{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:12px}
     .spotify-button-row .btn{min-width:190px}
@@ -131,6 +142,9 @@
     .footer-links a:hover{color:var(--brown)}
     @media (max-width: 980px){
       .two-col,.stats,.song-grid,.feature-grid,.media-grid,.music-grid{grid-template-columns:1fr}
+      .media-row{flex-direction:column;align-items:flex-start}
+      .media-row-action{width:100%;min-width:0;justify-content:flex-start}
+      .media-row-action audio{max-width:none}
       .topbar{padding:18px 0 14px}
       .topbar-inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
       .brand{justify-content:center}
@@ -211,8 +225,8 @@
           </article>
           <article class="feature-card">
             <h3 data-i18n="featureTitle2">Playlist 2 — The Night When Anyone Can Step Onto the Stage</h3>
-            <p data-i18n="featureText2Short">This playlist was born from one unforgettable night: singing with the Kayak band at the CTA June festival, in front of hundreds of people, on an improvised stage that turned a distant dream into something real. It became proof that music does not belong only to professionals or famous voices — it also belongs to courage, joy, and human expression.</p>
-            <p data-i18n="featureText2Extra">That night also revealed something simple and powerful: many people carry music inside them, but fear comparison, judgment, or ridicule. On that stage, I understood that what matters most is not extraordinary talent, but ordinary courage. This playlist keeps the sound of that night and the meaning it still carries for me.</p>
+            <p data-i18n="featureText2Short">This playlist was born from one unforgettable night: singing with the Kayak band at the CTA June festival, in front of hundreds of people, on an improvised stage that turned a distant dream into something real. It became proof that music also belongs to courage, joy, and human expression.</p>
+            <p data-i18n="featureText2Extra">That night taught me something simple and powerful: many people carry music inside them, but fear comparison, judgment, or ridicule. This playlist keeps the sound of that night and the meaning it still carries for me.</p>
             <p class="spotify-access-label"><strong data-i18n="spotifyQrAccess">Spotify QR Access</strong></p>
             <div class="feature-qr">
               <img src="images/concert_qr.png" alt="Concert playlist QR code" data-i18n-attr="alt:concertQrAlt" />
@@ -226,41 +240,59 @@
 
       <section class="section">
         <div class="section-kicker" data-i18n="myMusicKicker">My Music</div>
-        <h2 data-i18n="myMusicTitle">Recordings and Studio Sessions</h2>
-        <p data-i18n="myMusicP1">This section makes room for songs I recorded over time — some in the studio, some tied to memory, and all connected to the joy of singing. It is the place where the music that shaped me meets the music I chose to interpret with my own voice.</p>
-        <div class="music-grid">
-          <div class="video-card">
-            <h3 data-i18n="featuredVideoTitle">YouTube Videos</h3>
-            <div class="video-links">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=bvk8Yvrtu4A" target="_blank" rel="noopener noreferrer" data-i18n="featuredVideoButton">▶ La Forza Della Vita - Paolo Vallesi</a>
+        <h2 data-i18n="myMusicVideosTitle">YouTube Videos</h2>
+        <p data-i18n="myMusicVideosP1">This section gathers video performances connected to my musical journey. Some are simple recordings, some carry memory, and all of them reflect the joy of singing and sharing music with other people.</p>
+        <div class="media-section-card">
+          <div class="media-row-list">
+            <div class="media-row">
+              <div class="media-row-title">La Forza Della Vita - Paolo Vallesi</div>
+              <div class="media-row-action">
+                <a class="video-link-icon" href="https://www.youtube.com/watch?v=bvk8Yvrtu4A" target="_blank" rel="noopener noreferrer" aria-label="Open video: La Forza Della Vita - Paolo Vallesi">
+                  <span aria-hidden="true">▶</span>
+                  <span class="sr-only">Open video</span>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="music-track-list">
-            <h3 data-i18n="studioTracksTitle">Studio Recordings</h3>
-            <div class="track-list">
-              <div class="track-item">
-                <h3>A Viagem - Roupa Nova</h3>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-kicker" data-i18n="myMusicKicker">My Music</div>
+        <h2 data-i18n="myMusicStudioTitle">Studio Sessions</h2>
+        <p data-i18n="myMusicStudioP1">These recordings bring together songs I chose to interpret with my own voice. They are part of the musical side of this project: memory, affection, interpretation, and the pleasure of giving familiar songs a personal tone.</p>
+        <div class="media-section-card">
+          <div class="media-row-list">
+            <div class="media-row">
+              <div class="media-row-title">A Viagem - Roupa Nova</div>
+              <div class="media-row-action">
                 <audio controls preload="none">
                   <source src="audio/a_viagem.m4a" type="audio/mp4">
                   Your browser does not support the audio element.
                 </audio>
               </div>
-              <div class="track-item">
-                <h3>Ainda Vou Te Encontrar - KLB</h3>
+            </div>
+            <div class="media-row">
+              <div class="media-row-title">Ainda Vou Te Encontrar - KLB</div>
+              <div class="media-row-action">
                 <audio controls preload="none">
                   <source src="audio/ainda_vou_te_encontrar.m4a" type="audio/mp4">
                   Your browser does not support the audio element.
                 </audio>
               </div>
-              <div class="track-item">
-                <h3>Can't Fight This Feeling - REO Speedwagon</h3>
+            </div>
+            <div class="media-row">
+              <div class="media-row-title">Can't Fight This Feeling - REO Speedwagon</div>
+              <div class="media-row-action">
                 <audio controls preload="none">
                   <source src="audio/cant_fight_this_feeling.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
               </div>
-              <div class="track-item">
-                <h3>You're the Inspiration - Chicago</h3>
+            </div>
+            <div class="media-row">
+              <div class="media-row-title">You're the Inspiration - Chicago</div>
+              <div class="media-row-action">
                 <audio controls preload="none">
                   <source src="audio/youre_the_inspiration.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
@@ -421,8 +453,8 @@
         featureText1: "This playlist brings together the songs that accompanied me throughout the story told in this book. These are songs that touched my life in moments of joy, sadness, doubt, resilience, and love. They helped me study, dream higher, cross difficult seasons, and celebrate both small and great victories.",
         featureText1b: "Here are songs that made me laugh, cry, and believe. They marked important phases of my life and still awaken very specific emotions. This is the emotional soundtrack of my journey.",
         featureTitle2: "Playlist 2 — The Night When Anyone Can Step Onto the Stage",
-        featureText2Short: "This playlist was born from one unforgettable night: singing with the Kayak band at the CTA June festival, in front of hundreds of people, on an improvised stage that turned a distant dream into something real. It became proof that music does not belong only to professionals or famous voices — it also belongs to courage, joy, and human expression.",
-        featureText2Extra: "That night also revealed something simple and powerful: many people carry music inside them, but fear comparison, judgment, or ridicule. On that stage, I understood that what matters most is not extraordinary talent, but ordinary courage. This playlist keeps the sound of that night and the meaning it still carries for me.",
+        featureText2Short: "This playlist was born from one unforgettable night: singing with the Kayak band at the CTA June festival, in front of hundreds of people, on an improvised stage that turned a distant dream into something real. It became proof that music also belongs to courage, joy, and human expression.",
+        featureText2Extra: "That night taught me something simple and powerful: many people carry music inside them, but fear comparison, judgment, or ridicule. This playlist keeps the sound of that night and the meaning it still carries for me.",
         spotifyQrAccess: "Spotify QR Access",
         listenOnSpotify: "Listen on Spotify",
         timelineQrAlt: "Timeline playlist QR code",
@@ -453,8 +485,8 @@
         featureText1: "Esta playlist reúne as músicas que me acompanharam ao longo da história contada neste livro. São canções que tocaram minha vida em momentos de alegria, tristeza, dúvida, superação e amor. Músicas que me ajudaram a estudar, a sonhar mais alto, a atravessar períodos difíceis e a celebrar pequenas e grandes vitórias.",
         featureText1b: "Aqui estão músicas que me fizeram rir, chorar e acreditar. Elas marcaram fases importantes da minha vida e ainda despertam emoções muito específicas. Esta é a trilha sonora emocional da minha jornada.",
         featureTitle2: "Playlist 2 — A Noite em que Qualquer Um Pode Subir ao Palco",
-        featureText2Short: "Esta playlist nasceu de uma noite inesquecível: cantar com a banda Kayak na festa junina do CTA, diante de centenas de pessoas, em um palco improvisado que transformou um sonho distante em algo real. Ela mostrou que a música não pertence apenas a profissionais ou vozes famosas — ela também pertence à coragem, à alegria e à expressão humana.",
-        featureText2Extra: "Naquela noite, eu também entendi algo simples e poderoso: muitas pessoas carregam música dentro de si, mas têm medo da comparação, do julgamento ou do ridículo. Naquele palco, percebi que o mais importante não era um talento extraordinário, mas uma coragem comum. Esta playlist guarda o som daquela noite e o significado que ela ainda carrega para mim.",
+        featureText2Short: "Esta playlist nasceu de uma noite inesquecível: cantar com a banda Kayak na festa junina do CTA, diante de centenas de pessoas, em um palco improvisado que transformou um sonho distante em algo real. Ela mostrou que a música também pertence à coragem, à alegria e à expressão humana.",
+        featureText2Extra: "Naquela noite, eu entendi algo simples e poderoso: muitas pessoas carregam música dentro de si, mas têm medo da comparação, do julgamento ou do ridículo. Esta playlist guarda o som daquela noite e o significado que ela ainda carrega para mim.",
         spotifyQrAccess: "Acesso por QR Code no Spotify",
         listenOnSpotify: "Ouvir no Spotify",
         timelineQrAlt: "QR code da playlist da linha do tempo",
