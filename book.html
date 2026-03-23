@@ -103,12 +103,13 @@
     .testimonial-highlight{margin:22px 0 26px;padding:22px 24px;border-radius:20px;background:linear-gradient(180deg, rgba(201,137,43,.10), rgba(255,250,243,.96));border:1px solid rgba(201,137,43,.25)}
     .testimonial-highlight .quote{margin:0;font-size:clamp(24px, 3vw, 34px)}
     .testimonial-highlight .quote-source{margin-top:10px}
-    .testimonial-visuals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:0 0 24px}
-    .testimonial-photo-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(42,26,18,.05)}
-    .testimonial-photo-card img{display:block;width:100%;height:320px;object-fit:cover;object-position:center}
-    .testimonial-photo-copy{padding:16px 18px 18px}
-    .testimonial-photo-copy h3{margin:0 0 6px;font-size:19px}
-    .testimonial-photo-copy p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+    .testimonial-visuals{margin:0 0 24px}
+    .testimonial-photo-card{background:#fff;border:1px solid rgba(201,137,43,.22);border-radius:22px;overflow:hidden;box-shadow:0 12px 28px rgba(42,26,18,.08)}
+    .testimonial-photo-frame{padding:14px;background:linear-gradient(135deg, rgba(201,137,43,.18), rgba(42,26,18,.06));border-bottom:1px solid rgba(201,137,43,.18)}
+    .testimonial-photo-card img{display:block;width:100%;height:auto;max-height:520px;object-fit:cover;object-position:center;border-radius:16px;border:3px solid var(--gold);box-shadow:0 10px 24px rgba(42,26,18,.12)}
+    .testimonial-photo-copy{padding:18px 20px 20px}
+    .testimonial-photo-copy h3{margin:0 0 8px;font-size:22px;color:var(--brown)}
+    .testimonial-photo-copy p{margin:0;color:var(--muted);font-size:16px;line-height:1.65}
     .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;justify-content:center}
     .links-primary{display:flex;justify-content:center;width:100%;margin-top:18px}
     .links-secondary{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px}
@@ -249,26 +250,15 @@
 <p class="testimonial-intro" data-i18n="testimonialsP1">The responses below were selected from early reader feedback across Amazon reviews, LinkedIn posts, WhatsApp messages, and institutional exchanges. Together, they show a pattern that matters more than hype: emotional resonance, credibility, gratitude, and the sense that the memoir stays with people after they finish reading.</p>
 <div class="testimonial-visuals">
   <article class="testimonial-photo-card">
-    <img src="images/alfredo_f_book_photo.jpg" alt="Reader from the ITA community holding a copy of Impossible Crossing" data-i18n-attr="alt:tp1Alt"/>
+    <div class="testimonial-photo-frame">
+      <img src="images/testimonials_book_photo.jpg" alt="Readers holding copies of Impossible Crossing in meaningful personal moments" data-i18n-attr="alt:tpCombinedAlt"/>
+    </div>
     <div class="testimonial-photo-copy">
-      <h3 data-i18n="tp1Title">A reader from the ITA community</h3>
-      <p data-i18n="tp1Body">This portrait format gives the image the space it needs: the reader, the book, and the human warmth of the moment are all easier to see. It makes the testimonial section feel more personal and grounded.</p>
+      <h3 data-i18n="tpCombinedTitle">Readers across communities, countries, and personal moments</h3>
+      <p data-i18n="tpCombinedBody">This combined image brings together the warmth of the ITA community, the sense that the memoir has already crossed borders and generations, and the tenderness of being welcomed into real homes and meaningful seasons of memory. With the readers and the book clearly visible, the testimonial section feels more personal, grounded, and human.</p>
     </div>
   </article>
-  <article class="testimonial-photo-card">
-    <img src="images/joao_m_book_photo.jpg" alt="Two readers in Canada with Impossible Crossing" data-i18n-attr="alt:tp2Alt"/>
-    <div class="testimonial-photo-copy">
-      <h3 data-i18n="tp2Title">Readers in Canada</h3>
-      <p data-i18n="tp2Body">This photo helps show that the memoir has already crossed borders and generations. The portrait crop keeps the readers and the book visible instead of letting the image feel secondary to the layout.</p>
-    </div>
-  </article>
-  <article class="testimonial-photo-card">
-    <img src="images/morgana_m_book_photo.jpg" alt="Reader holding Impossible Crossing beside a decorated Christmas tree" data-i18n-attr="alt:tp3Alt"/>
-    <div class="testimonial-photo-copy">
-      <h3 data-i18n="tp3Title">A reader in a season of affection and memory</h3>
-      <p data-i18n="tp3Body">This image adds another kind of resonance to the page: intimacy, tenderness, and the sense that the book is being welcomed into real homes and meaningful personal moments. It broadens the testimonial section with a different voice and presence.</p>
-    </div>
-  </article>
+</div>
 </div>
 <div class="testimonial-highlight">
   <div class="quote" data-i18n="testimonialsHighlight">“Very few books can achieve what this one does — contagious courage.”</div>
@@ -498,15 +488,9 @@
         testimonialsKicker: "Testimonials",
         testimonialsTitle: "Readers, Messages, and Early Responses",
         testimonialsP1: "The responses below were selected from early reader feedback across Amazon reviews, LinkedIn posts, WhatsApp messages, and institutional exchanges. Together, they show a pattern that matters more than hype: emotional resonance, credibility, gratitude, and the sense that the memoir stays with people after they finish reading.",
-        tp1Alt: "Reader from the ITA community holding a copy of Impossible Crossing",
-        tp1Title: "A reader from the ITA community",
-        tp1Body: "This portrait format gives the image the space it needs: the reader, the book, and the human warmth of the moment are all easier to see. It makes the testimonial section feel more personal and grounded.",
-        tp2Alt: "Two readers in Canada with Impossible Crossing",
-        tp2Title: "Readers in Canada",
-        tp2Body: "This photo helps show that the memoir has already crossed borders and generations. The portrait crop keeps the readers and the book visible instead of letting the image feel secondary to the layout.",
-        tp3Alt: "Reader holding Impossible Crossing beside a decorated Christmas tree",
-        tp3Title: "A reader in a season of affection and memory",
-        tp3Body: "This image adds another kind of resonance to the page: intimacy, tenderness, and the sense that the book is being welcomed into real homes and meaningful personal moments. It broadens the testimonial section with a different voice and presence.",
+        tpCombinedAlt: "Readers holding copies of Impossible Crossing in meaningful personal moments",
+        tpCombinedTitle: "Readers across communities, countries, and personal moments",
+        tpCombinedBody: "This combined image brings together the warmth of the ITA community, the sense that the memoir has already crossed borders and generations, and the tenderness of being welcomed into real homes and meaningful seasons of memory. With the readers and the book clearly visible, the testimonial section feels more personal, grounded, and human.",
         testimonialsHighlight: "“Very few books can achieve what this one does — contagious courage.”",
         testimonialsHighlightSource: "Nicole Neuman · foreword, editor, psychologist, and novelist",
         t1Source: "Foreword",
@@ -588,15 +572,9 @@
         testimonialsKicker: "Depoimentos",
         testimonialsTitle: "Leitores, Mensagens e Primeiras Reações",
         testimonialsP1: "Os trechos abaixo foram selecionados a partir de retornos iniciais de leitores em avaliações da Amazon, posts no LinkedIn, mensagens de WhatsApp e trocas institucionais. Juntos, eles mostram um padrão que importa mais do que hype: ressonância emocional, credibilidade, gratidão e a sensação de que o livro permanece com as pessoas depois da leitura.",
-        tp1Alt: "Leitor da comunidade do ITA segurando um exemplar de Travessia Impossível",
-        tp1Title: "Um leitor da comunidade do ITA",
-        tp1Body: "Este formato em retrato dá à imagem o espaço de que ela precisa: o leitor, o livro e o calor humano do momento ficam bem mais visíveis. Isso torna a seção de depoimentos mais pessoal e mais concreta.",
-        tp2Alt: "Dois leitores no Canadá com Travessia Impossível",
-        tp2Title: "Leitores no Canadá",
-        tp2Body: "Esta foto ajuda a mostrar que o memoir já cruzou fronteiras e gerações. O enquadramento em retrato mantém os leitores e o livro visíveis, em vez de deixar a imagem em segundo plano dentro do layout.",
-        tp3Alt: "Leitora segurando Travessia Impossível ao lado de uma árvore de Natal decorada",
-        tp3Title: "Uma leitora em um momento de afeto e memória",
-        tp3Body: "Esta imagem acrescenta outro tipo de ressonância à página: intimidade, ternura e a sensação de que o livro está sendo acolhido em lares reais e em momentos pessoais significativos. Ela amplia a seção de depoimentos com outra voz e outra presença.",
+        tpCombinedAlt: "Leitores segurando exemplares de Travessia Impossível em momentos pessoais significativos",
+        tpCombinedTitle: "Leitores em diferentes comunidades, países e momentos pessoais",
+        tpCombinedBody: "Esta imagem combinada reúne o calor humano da comunidade do ITA, a sensação de que o livro já cruzou fronteiras e gerações, e a ternura de ser acolhido em lares reais e em temporadas marcadas por afeto e memória. Com os leitores e o livro claramente visíveis, a seção de depoimentos fica mais pessoal, concreta e humana.",
         testimonialsHighlight: "“Pouquíssimos livros conseguem alcançar o que este alcança — coragem contagiante.”",
         testimonialsHighlightSource: "Nicole Neuman · prefácio, editora, psicóloga e romancista",
         t1Source: "Prefácio",
