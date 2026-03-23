@@ -100,6 +100,15 @@
     .testimonial-author{font-size:16px;font-weight:700;color:var(--brown);margin:0}
     .testimonial-meta{font-size:14px;color:var(--muted);margin-top:4px}
     .testimonial-note{margin-top:18px;font-size:14px;color:var(--muted)}
+    .testimonial-highlight{margin:22px 0 26px;padding:22px 24px;border-radius:20px;background:linear-gradient(180deg, rgba(201,137,43,.10), rgba(255,250,243,.96));border:1px solid rgba(201,137,43,.25)}
+    .testimonial-highlight .quote{margin:0;font-size:clamp(24px, 3vw, 34px)}
+    .testimonial-highlight .quote-source{margin-top:10px}
+    .testimonial-visuals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:0 0 24px}
+    .testimonial-photo-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(42,26,18,.05)}
+    .testimonial-photo-card img{display:block;width:100%;height:320px;object-fit:cover;object-position:center}
+    .testimonial-photo-copy{padding:16px 18px 18px}
+    .testimonial-photo-copy h3{margin:0 0 6px;font-size:19px}
+    .testimonial-photo-copy p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
     .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;justify-content:center}
     .links-primary{display:flex;justify-content:center;width:100%;margin-top:18px}
     .links-secondary{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px}
@@ -124,7 +133,7 @@
         }
 
     @media (max-width: 980px){
-      .hero-grid,.two-col,.book-layout,.chapter-grid,.placeholder-grid,.testimonial-grid{grid-template-columns:1fr}
+      .hero-grid,.two-col,.book-layout,.chapter-grid,.placeholder-grid,.testimonial-grid,.testimonial-visuals{grid-template-columns:1fr}
       .topbar-inner{grid-template-columns:1fr;justify-items:center}
       .nav{justify-content:center;flex-wrap:wrap;gap:12px 16px;font-size:15px}
       .lang-switch{margin-left:0;padding-left:0;border-left:none}
@@ -226,55 +235,75 @@
 <div class="section-kicker" data-i18n="testimonialsKicker">Testimonials</div>
 <h2 data-i18n="testimonialsTitle">Readers, Messages, and Early Responses</h2>
 <p class="testimonial-intro" data-i18n="testimonialsP1">The responses below were selected from early reader feedback across Amazon reviews, LinkedIn posts, WhatsApp messages, and institutional exchanges. Together, they show a pattern that matters more than hype: emotional resonance, credibility, gratitude, and the sense that the memoir stays with people after they finish reading.</p>
+<div class="testimonial-visuals">
+  <article class="testimonial-photo-card">
+    <img src="IMG-20231125-WA0014.jpg" alt="Reader holding a copy of Impossible Crossing" data-i18n-attr="alt:tp1Alt"/>
+    <div class="testimonial-photo-copy">
+      <h3 data-i18n="tp1Title">A reader from the ITA community</h3>
+      <p data-i18n="tp1Body">One of the strongest signs that a memoir is traveling well is when readers choose to photograph themselves with the book and share it back. This image adds warmth, embodiment, and human continuity to the testimonial section.</p>
+    </div>
+  </article>
+  <article class="testimonial-photo-card">
+    <img src="IMG-20230301-WA0014.jpg" alt="Two readers with Impossible Crossing" data-i18n-attr="alt:tp2Alt"/>
+    <div class="testimonial-photo-copy">
+      <h3 data-i18n="tp2Title">Readers in Canada</h3>
+      <p data-i18n="tp2Body">These reader photos help communicate something the text alone cannot: the book has already crossed borders and is being received by people who knew Roberto in different places and stages of life.</p>
+    </div>
+  </article>
+</div>
+<div class="testimonial-highlight">
+  <div class="quote" data-i18n="testimonialsHighlight">“Very few books can achieve what this one does — contagious courage.”</div>
+  <div class="quote-source" data-i18n="testimonialsHighlightSource">Nicole Neuman · foreword, editor, psychologist, and novelist</div>
+</div>
 <div class="testimonial-grid">
   <article class="testimonial-card">
     <div class="testimonial-topline">
-      <div class="testimonial-source" data-i18n="t1Source">Institutional message</div>
-      <div class="testimonial-role" data-i18n="t1Role">ITA · Museum of the Person initiative</div>
+      <div class="testimonial-source" data-i18n="t1Source">Foreword</div>
+      <div class="testimonial-role" data-i18n="t1Role">Editor, psychologist, and novelist</div>
     </div>
-    <p class="testimonial-quote" data-i18n="t1Quote">“I am already very impressed by the little I have read… I would like to count on your testimony for the Núcleo ITA at the Museum of the Person.”</p>
+    <p class="testimonial-quote" data-i18n="t1Quote">“Things started improving in other areas of my life and I can only attribute it to this book… Very few books can achieve what this one does — contagious courage.”</p>
+    <p class="testimonial-author">Nicole Neuman</p>
+    <div class="testimonial-meta" data-i18n="t1Meta">A powerful professional endorsement from the person who edited the manuscript and wrote the foreword</div>
+  </article>
+
+  <article class="testimonial-card">
+    <div class="testimonial-topline">
+      <div class="testimonial-source" data-i18n="t2Source">LinkedIn post and email</div>
+      <div class="testimonial-role" data-i18n="t2Role">ITA · Museum of the Person initiative</div>
+    </div>
+    <p class="testimonial-quote" data-i18n="t2Quote">“An incredible story… I am loving the reading.”</p>
     <p class="testimonial-author">Cristiane Pessoa da Cunha</p>
-    <div class="testimonial-meta" data-i18n="t1Meta">Reader, educator, and institutional voice connected to ITA memory work</div>
+    <div class="testimonial-meta" data-i18n="t2Meta">Her response became more than praise: it led to an interview invitation for the Núcleo ITA at the Museum of the Person</div>
   </article>
 
   <article class="testimonial-card">
     <div class="testimonial-topline">
-      <div class="testimonial-source" data-i18n="t2Source">Email response</div>
-      <div class="testimonial-role" data-i18n="t2Role">ITA alumnus</div>
+      <div class="testimonial-source" data-i18n="t3Source">Email response</div>
+      <div class="testimonial-role" data-i18n="t3Role">ITA alumnus</div>
     </div>
-    <p class="testimonial-quote" data-i18n="t2Quote">“Your testimony is therefore of extreme importance… it makes clear that Conscious Discipline is not merely an honor code among students, but part of a deeper formation based on trust.”</p>
+    <p class="testimonial-quote" data-i18n="t3Quote">“Your testimony is therefore of extreme importance… it makes clear that Conscious Discipline is not merely an honor code among students, but part of a deeper formation based on trust.”</p>
     <p class="testimonial-author">Alfred Volkmer</p>
-    <div class="testimonial-meta" data-i18n="t2Meta">A response that highlights the book’s educational and institutional relevance</div>
-  </article>
-
-  <article class="testimonial-card">
-    <div class="testimonial-topline">
-      <div class="testimonial-source" data-i18n="t3Source">Amazon review</div>
-      <div class="testimonial-role" data-i18n="t3Role">Verified purchase · Brazil</div>
-    </div>
-    <p class="testimonial-quote" data-i18n="t3Quote">“More than an exciting account of persistence, faith, hope and hard work over adversity, the author gives us a beautiful and inspiring journey toward success.”</p>
-    <p class="testimonial-author">Victor Hugo Margraf</p>
-    <div class="testimonial-meta" data-i18n="t3Meta">Emphasizes generosity, inspiration, and the book’s uplifting arc</div>
+    <div class="testimonial-meta" data-i18n="t3Meta">A response that highlights the memoir’s educational and institutional relevance inside the ITA tradition</div>
   </article>
 
   <article class="testimonial-card">
     <div class="testimonial-topline">
       <div class="testimonial-source" data-i18n="t4Source">Amazon review</div>
-      <div class="testimonial-role" data-i18n="t4Role">Verified purchase · Canada</div>
+      <div class="testimonial-role" data-i18n="t4Role">Verified purchase · Brazil</div>
     </div>
-    <p class="testimonial-quote" data-i18n="t4Quote">“A very heartwarming story, showing how integrity, positive attitude and hard work generate wonderful long-term results.”</p>
-    <p class="testimonial-author">Joao M.</p>
-    <div class="testimonial-meta" data-i18n="t4Meta">A concise reader summary of the memoir’s moral and emotional core</div>
+    <p class="testimonial-quote" data-i18n="t4Quote">“More than an exciting account of persistence, faith, hope and hard work over adversity, the author gives us a beautiful and inspiring journey toward success.”</p>
+    <p class="testimonial-author">Victor Hugo Margraf</p>
+    <div class="testimonial-meta" data-i18n="t4Meta">Emphasizes generosity, inspiration, and the book’s uplifting arc</div>
   </article>
 
   <article class="testimonial-card">
     <div class="testimonial-topline">
-      <div class="testimonial-source" data-i18n="t5Source">WhatsApp message</div>
-      <div class="testimonial-role" data-i18n="t5Role">Personal reader response</div>
+      <div class="testimonial-source" data-i18n="t5Source">Amazon review</div>
+      <div class="testimonial-role" data-i18n="t5Role">Verified purchase · Canada</div>
     </div>
-    <p class="testimonial-quote" data-i18n="t5Quote">“Your crossing seemed impossible, but it was not. What feels impossible is giving back, in a fair way, all the lessons I received and will carry forever… they have already changed my attitude and renewed my hope in a difficult moment.”</p>
-    <p class="testimonial-author">Tarugo</p>
-    <div class="testimonial-meta" data-i18n="t5Meta">A direct example of the book affecting a reader’s inner life in the present tense</div>
+    <p class="testimonial-quote" data-i18n="t5Quote">“A very heartwarming story, showing how integrity, positive attitude and hard work generate wonderful long-term results.”</p>
+    <p class="testimonial-author">Joao M.</p>
+    <div class="testimonial-meta" data-i18n="t5Meta">A concise reader summary of the memoir’s moral and emotional core</div>
   </article>
 
   <article class="testimonial-card">
@@ -287,7 +316,7 @@
     <div class="testimonial-meta" data-i18n="t6Meta">Public recommendation that broadens the testimonial mix beyond private messages</div>
   </article>
 </div>
-<p class="testimonial-note" data-i18n="testimonialsP2">This section can later expand with screenshots, additional photos with the book, audio excerpts converted to text, and a rotating selection of new reader responses.</p>
+<p class="testimonial-note" data-i18n="testimonialsP2">For now, this page prioritizes the strongest written evidence. A future revision can still add screenshots, a transcribed audio excerpt from Pastor Carlos, and a rotating selection of new reader responses.</p>
 </section>
 <section class="section single" id="stories">
 <div class="section-kicker" data-i18n="storiesKicker">Stories from the Book</div>
@@ -463,27 +492,35 @@
         testimonialsKicker: "Testimonials",
         testimonialsTitle: "Readers, Messages, and Early Responses",
         testimonialsP1: "The responses below were selected from early reader feedback across Amazon reviews, LinkedIn posts, WhatsApp messages, and institutional exchanges. Together, they show a pattern that matters more than hype: emotional resonance, credibility, gratitude, and the sense that the memoir stays with people after they finish reading.",
-        testimonialsP2: "This section can later expand with screenshots, additional photos with the book, audio excerpts converted to text, and a rotating selection of new reader responses.",
-        t1Source: "Institutional message",
-        t1Role: "ITA · Museum of the Person initiative",
-        t1Quote: "“I am already very impressed by the little I have read… I would like to count on your testimony for the Núcleo ITA at the Museum of the Person.”",
-        t1Meta: "Reader, educator, and institutional voice connected to ITA memory work",
-        t2Source: "Email response",
-        t2Role: "ITA alumnus",
-        t2Quote: "“Your testimony is therefore of extreme importance… it makes clear that Conscious Discipline is not merely an honor code among students, but part of a deeper formation based on trust.”",
-        t2Meta: "A response that highlights the book’s educational and institutional relevance",
-        t3Source: "Amazon review",
-        t3Role: "Verified purchase · Brazil",
-        t3Quote: "“More than an exciting account of persistence, faith, hope and hard work over adversity, the author gives us a beautiful and inspiring journey toward success.”",
-        t3Meta: "Emphasizes generosity, inspiration, and the book’s uplifting arc",
+        testimonialsP2: "For now, this page prioritizes the strongest written evidence. A future revision can still add screenshots, a transcribed audio excerpt from Pastor Carlos, and a rotating selection of new reader responses.",
+        tp1Alt: "Reader holding a copy of Impossible Crossing",
+        tp1Title: "A reader from the ITA community",
+        tp1Body: "One of the strongest signs that a memoir is traveling well is when readers choose to photograph themselves with the book and share it back. This image adds warmth, embodiment, and human continuity to the testimonial section.",
+        tp2Alt: "Two readers with Impossible Crossing",
+        tp2Title: "Readers in Canada",
+        tp2Body: "These reader photos help communicate something the text alone cannot: the book has already crossed borders and is being received by people who knew Roberto in different places and stages of life.",
+        testimonialsHighlight: "“Very few books can achieve what this one does — contagious courage.”",
+        testimonialsHighlightSource: "Nicole Neuman · foreword, editor, psychologist, and novelist",
+        t1Source: "Foreword",
+        t1Role: "Editor, psychologist, and novelist",
+        t1Quote: "“Things started improving in other areas of my life and I can only attribute it to this book… Very few books can achieve what this one does — contagious courage.”",
+        t1Meta: "A powerful professional endorsement from the person who edited the manuscript and wrote the foreword",
+        t2Source: "LinkedIn post and email",
+        t2Role: "ITA · Museum of the Person initiative",
+        t2Quote: "“An incredible story… I am loving the reading.”",
+        t2Meta: "Her response became more than praise: it led to an interview invitation for the Núcleo ITA at the Museum of the Person",
+        t3Source: "Email response",
+        t3Role: "ITA alumnus",
+        t3Quote: "“Your testimony is therefore of extreme importance… it makes clear that Conscious Discipline is not merely an honor code among students, but part of a deeper formation based on trust.”",
+        t3Meta: "A response that highlights the memoir’s educational and institutional relevance inside the ITA tradition",
         t4Source: "Amazon review",
-        t4Role: "Verified purchase · Canada",
-        t4Quote: "“A very heartwarming story, showing how integrity, positive attitude and hard work generate wonderful long-term results.”",
-        t4Meta: "A concise reader summary of the memoir’s moral and emotional core",
-        t5Source: "WhatsApp message",
-        t5Role: "Personal reader response",
-        t5Quote: "“Your crossing seemed impossible, but it was not. What feels impossible is giving back, in a fair way, all the lessons I received and will carry forever… they have already changed my attitude and renewed my hope in a difficult moment.”",
-        t5Meta: "A direct example of the book affecting a reader’s inner life in the present tense",
+        t4Role: "Verified purchase · Brazil",
+        t4Quote: "“More than an exciting account of persistence, faith, hope and hard work over adversity, the author gives us a beautiful and inspiring journey toward success.”",
+        t4Meta: "Emphasizes generosity, inspiration, and the book’s uplifting arc",
+        t5Source: "Amazon review",
+        t5Role: "Verified purchase · Canada",
+        t5Quote: "“A very heartwarming story, showing how integrity, positive attitude and hard work generate wonderful long-term results.”",
+        t5Meta: "A concise reader summary of the memoir’s moral and emotional core",
         t6Source: "LinkedIn post",
         t6Role: "Technology leader and reader recommendation",
         t6Quote: "“I recommend to everyone the autobiography of Roberto Jacob da Silva… Roberto is a unique human being.”",
@@ -543,27 +580,35 @@
         testimonialsKicker: "Depoimentos",
         testimonialsTitle: "Leitores, Mensagens e Primeiras Reações",
         testimonialsP1: "Os trechos abaixo foram selecionados a partir de retornos iniciais de leitores em avaliações da Amazon, posts no LinkedIn, mensagens de WhatsApp e trocas institucionais. Juntos, eles mostram um padrão que importa mais do que hype: ressonância emocional, credibilidade, gratidão e a sensação de que o livro permanece com as pessoas depois da leitura.",
-        testimonialsP2: "Esta seção poderá crescer depois com screenshots, mais fotos com o livro, trechos de áudio convertidos em texto e uma seleção rotativa de novos retornos de leitores.",
-        t1Source: "Mensagem institucional",
-        t1Role: "ITA · iniciativa Museu da Pessoa",
-        t1Quote: "“Já estou muito impressionada com o pouco que li… gostaria de já contar com o seu depoimento para o Núcleo ITA no Museu da Pessoa.”",
-        t1Meta: "Leitora, educadora e voz institucional ligada à memória do ITA",
-        t2Source: "Resposta por e-mail",
-        t2Role: "Ex-aluno do ITA",
-        t2Quote: "“O seu testemunho é por isso de extrema importância… ele deixa claro que a Disciplina Consciente não é apenas um código de honra entre alunos, mas parte de uma formação mais profunda baseada em confiança.”",
-        t2Meta: "Um retorno que destaca a relevância educacional e institucional do livro",
-        t3Source: "Avaliação na Amazon",
-        t3Role: "Compra verificada · Brasil",
-        t3Quote: "“Mais do que um relato empolgante da vitória da persistência, da fé, da esperança e do trabalho duro sobre a adversidade, o autor nos presenteia com uma bela e inspiradora jornada rumo ao sucesso.”",
-        t3Meta: "Enfatiza generosidade, inspiração e o arco esperançoso do livro",
+        testimonialsP2: "Por enquanto, esta página prioriza as evidências escritas mais fortes. Numa próxima revisão, ela ainda poderá incluir screenshots, um trecho transcrito do áudio do Pastor Carlos e uma seleção rotativa de novos retornos de leitores.",
+        tp1Alt: "Leitor segurando um exemplar de Travessia Impossível",
+        tp1Title: "Um leitor da comunidade do ITA",
+        tp1Body: "Um dos sinais mais fortes de que um livro está circulando bem é quando leitores escolhem se fotografar com ele e compartilhar a imagem de volta. Esta foto acrescenta calor humano, presença e continuidade visual à seção de depoimentos.",
+        tp2Alt: "Dois leitores com Travessia Impossível",
+        tp2Title: "Leitores no Canadá",
+        tp2Body: "Essas fotos ajudam a comunicar algo que o texto sozinho não comunica: o livro já atravessou fronteiras e está sendo recebido por pessoas que conheceram Roberto em lugares e fases diferentes da vida.",
+        testimonialsHighlight: "“Pouquíssimos livros conseguem alcançar o que este alcança — coragem contagiante.”",
+        testimonialsHighlightSource: "Nicole Neuman · prefácio, editora, psicóloga e romancista",
+        t1Source: "Prefácio",
+        t1Role: "Editora, psicóloga e romancista",
+        t1Quote: "“As coisas começaram a melhorar em outras áreas da minha vida e eu só posso atribuir isso a este livro… Pouquíssimos livros conseguem alcançar o que este alcança — coragem contagiante.”",
+        t1Meta: "Um forte endosso profissional da pessoa que editou o manuscrito e escreveu o prefácio",
+        t2Source: "Post no LinkedIn e e-mail",
+        t2Role: "ITA · iniciativa Museu da Pessoa",
+        t2Quote: "“Incrível a história… estou adorando a leitura.”",
+        t2Meta: "A reação dela foi além do elogio: levou a um convite de entrevista para o Núcleo ITA no Museu da Pessoa",
+        t3Source: "Resposta por e-mail",
+        t3Role: "Ex-aluno do ITA",
+        t3Quote: "“O seu testemunho é por isso de extrema importância… ele deixa claro que a Disciplina Consciente não é apenas um código de honra entre alunos, mas parte de uma formação mais profunda baseada em confiança.”",
+        t3Meta: "Um retorno que destaca a relevância educacional e institucional do livro dentro da tradição do ITA",
         t4Source: "Avaliação na Amazon",
-        t4Role: "Compra verificada · Canadá",
-        t4Quote: "“Uma história muito tocante, mostrando como integridade, atitude positiva e trabalho duro geram resultados maravilhosos no longo prazo.”",
-        t4Meta: "Um resumo curto e claro do núcleo moral e emocional da obra",
-        t5Source: "Mensagem de WhatsApp",
-        t5Role: "Retorno pessoal de leitor",
-        t5Quote: "“Sua travessia parecia impossível, mas não foi. Impossível é eu te devolver, de forma justa, todas as lições recebidas e que vou levar para sempre… elas já me fizeram mudar de atitude e renovar minha esperança em um momento difícil.”",
-        t5Meta: "Exemplo direto de um leitor descrevendo impacto real na própria vida",
+        t4Role: "Compra verificada · Brasil",
+        t4Quote: "“Mais do que um relato empolgante da vitória da persistência, da fé, da esperança e do trabalho duro sobre a adversidade, o autor nos presenteia com uma bela e inspiradora jornada rumo ao sucesso.”",
+        t4Meta: "Enfatiza generosidade, inspiração e o arco esperançoso do livro",
+        t5Source: "Avaliação na Amazon",
+        t5Role: "Compra verificada · Canadá",
+        t5Quote: "“Uma história muito tocante, mostrando como integridade, atitude positiva e trabalho duro geram resultados maravilhosos no longo prazo.”",
+        t5Meta: "Um resumo curto e claro do núcleo moral e emocional da obra",
         t6Source: "Post no LinkedIn",
         t6Role: "Líder de tecnologia e recomendação pública",
         t6Quote: "“Recomendo a todos a autobiografia de Roberto Jacob da Silva… Roberto é um ser humano único.”",
