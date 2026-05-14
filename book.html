@@ -415,8 +415,10 @@
           host.querySelectorAll('.nav a[data-page]').forEach((link) => {
             if (link.getAttribute('data-page') === currentPage) {
               link.setAttribute('aria-current', 'page');
+              link.classList.add('active');
             } else {
               link.removeAttribute('aria-current');
+              link.classList.remove('active');
             }
           });
 
