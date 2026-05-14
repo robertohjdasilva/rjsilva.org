@@ -68,6 +68,21 @@
     color:#fff;
   }
 
+  .nav a[aria-current="page"],
+  .nav a.active{
+    color:#fff;
+    text-decoration:underline;
+    text-underline-offset:4px;
+    pointer-events:none;
+    cursor:default;
+  }
+
+  .nav a[aria-current="page"]:hover,
+  .nav a.active:hover{
+    color:#fff;
+  }
+
+
   .lang-switch{
     display:flex;
     align-items:center;
